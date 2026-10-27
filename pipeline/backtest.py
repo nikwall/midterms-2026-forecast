@@ -137,17 +137,22 @@ def senate_results():
         if "total" in modes and len(modes) > 1:
             rs = [x for x in rs if x.get("mode", "").strip('"').lower() == "total"]
         total = max(num(x["totalvotes"], 0) for x in rs)
-        votes = defaultdict(float)
+        # A candidate can run on several party lines (fusion voting, e.g. Connecticut, New York):
+        # add up all lines and give the candidate the major party among them.
+        votes, party = defaultdict(float), {}
         for x in rs:
-            votes[(x["candidate"].strip('"'), x["party_simplified"].strip('"'))] += num(x["candidatevotes"], 0)
-        d = sum(v for (c, p), v in votes.items() if p == "DEMOCRAT")
-        rep = sum(v for (c, p), v in votes.items() if p == "REPUBLICAN")
-        top_other = max([v for (c, p), v in votes.items() if p not in ("DEMOCRAT", "REPUBLICAN")] or [0])
+            c, p = x["candidate"].strip('"'), {"DEMOCRAT": "D", "REPUBLICAN": "R"}.get(x["party_simplified"].strip('"'), "O")
+            votes[c] += num(x["candidatevotes"], 0)
+            if party.get(c) not in ("D", "R"):
+                party[c] = p
+        d = sum(v for c, v in votes.items() if party[c] == "D")
+        rep = sum(v for c, v in votes.items() if party[c] == "R")
+        top_other = max([v for c, v in votes.items() if party[c] == "O"] or [0])
         if total <= 0 or rep == 0 or max(d, top_other) == 0:
             continue  # uncontested by one side, or two candidates of the same party
         winner = max(votes.items(), key=lambda kv: kv[1])[0]
-        out[key] = {"margin": 100 * (max(d, top_other) - rep) / total, "winner": winner,
-                    "cands": {surname(c): {"DEMOCRAT": "D", "REPUBLICAN": "R"}.get(p, "O") for (c, p) in votes}}
+        out[key] = {"margin": 100 * (max(d, top_other) - rep) / total, "winner": (winner, party[winner]),
+                    "cands": {surname(c): party[c] for c in votes}}
     return out
 
 
@@ -266,7 +271,9 @@ def market_rows(pm, results):
         for o in e["outcomes"]:
             if o["price"] is None:
                 continue
-            party = res["cands"].get(surname(o["label"]), "O")
+            label = (o["label"] or "").strip().lower()
+            # Polymarket names the candidates in some races and only the party in others.
+            party = {"democrat": "D", "democratic": "D", "republican": "R"}.get(label) or res["cands"].get(surname(o["label"]), "O")
             p[party] += o["price"]
         total = sum(p.values())
         if not total or not p["R"]:

@@ -227,6 +227,14 @@ The entry form (see README) settles the open questions:
 
 | C45 | Published on 27 Oct as a public repository [nikwall/midterms-2026-forecast](https://github.com/nikwall/midterms-2026-forecast) with the dashboard on GitHub Pages: https://nikwall.github.io/midterms-2026-forecast/. Commits are signed with the GitHub noreply address. | Your request to host the app on your GitHub. Free Pages requires a public repository, which you approved. |
 
+**Discussion of fundamentals and weights (27 Oct, late):**
+
+| # | Finding or choice | Detail |
+|---|---|---|
+| C46 | Backtest market check fixed | Polymarket sometimes names only the party; fusion candidates (one candidate on several party lines) are now added up across lines. Polymarket 2024 Senate, 33 races one week out: Brier 0.034, margin error in the 14 close races 3.4 points. For comparison, Senate polls in midterms 1998–2022: Brier 0.044, close-race error 5.5 points. Different years, so indicative only. |
+| C47 | Evidence on fundamentals | **Senate midterms:** fundamentals alone miss by 14.3 points (RMS) and polls alone by 6.6. A blend of 80% polls and 20% fundamentals is best (5.8); our inverse-variance rule lands close to it (0.87 poll weight, 5.9). **Senate fundamentals calibration:** incumbency bonus about 11 points and race error about 16 (v1: 3 and 9), so our Senate fundamentals are overconfident. **House fundamentals:** not calibrated (no results file). |
+| C48 | Candidate final settings and their answers (seats, P(majority), NC-01 / NC-11 / OH-07 / PA-08 / NY-17) | 1. v1: 238, 0.94, .89/.92/.82/.77/.79 · 2. v1 + DDHQ as fundamentals: 237, 0.93, .90/.92/.89/.83/.64 · 3. calibrated constants (poll error 2.4/9.7, national ±3.6, Senate fundamentals error 16): 238, 0.90, .87/.89/.82/.78/.77 · **4. calibrated + DDHQ as fundamentals: 236, 0.90, .88/.90/.88/.84/.63** · 5. as 4 with markets ×1.5: 236, 0.92, .88/.90/.89/.86/.63 |
+
 **Entry as of 27 Oct (model v1, before calibration and the district review):**
 
 | Question | Answer |

@@ -3,8 +3,8 @@
   "poll_base": 2.4,
   "poll_sampling": 9.7,
   "nat_sd": 3.6,
-  "incumbency": 11.3,
-  "fund_sd_senate": 16.0
+  "incumbency": 11.0,
+  "fund_sd_senate": 16.1
  },
  "v1": {
   "poll_base": 4.5,
