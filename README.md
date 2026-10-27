@@ -2,6 +2,8 @@
 
 A forecast of the 2026 US House (and Senate) elections, built for the HKS forecasting contest in API-232: Computational Policy Analysis. Election Day is Tuesday, 3 November 2026.
 
+**Dashboard:** https://nikwall.github.io/midterms-2026-forecast/
+
 ## What is here
 
 | Path | Contents |

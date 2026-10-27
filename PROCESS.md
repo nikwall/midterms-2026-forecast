@@ -225,6 +225,8 @@ The entry form (see README) settles the open questions:
 | C44 | "Try your own weights" panel (`app/whatif.js`). It re-runs the House model in the browser (10,000 simulations, fixed random seed) with three sliders (polls, markets, fundamentals, ×0 to ×3 on each source's precision) and a fundamentals switch (ours / DDHQ 22 Oct). "Reset to our final model" restores the defaults. At the defaults it reproduces the official numbers (238, 0.94, districts within 0.01). With DDHQ it reproduces bridge step G. | Your request: make the fundamentals source and the weights a choice for the viewer, with a way back to our model. |
 | | The DDHQ file (`app/data/ddhq.json`) is kept out of the repository for now, so on the public site the DDHQ switch is greyed out. | The 435 probabilities come from DDHQ via the course workbook; publishing them is your call. |
 
+| C45 | Published on 27 Oct as a public repository [nikwall/midterms-2026-forecast](https://github.com/nikwall/midterms-2026-forecast) with the dashboard on GitHub Pages: https://nikwall.github.io/midterms-2026-forecast/. Commits are signed with the GitHub noreply address. | Your request to host the app on your GitHub. Free Pages requires a public repository, which you approved. |
+
 **Entry as of 27 Oct (model v1, before calibration and the district review):**
 
 | Question | Answer |
