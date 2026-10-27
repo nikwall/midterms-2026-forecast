@@ -1,0 +1,133 @@
+{
+ "steps": [
+  {
+   "step": "A",
+   "change": "Part 2: DDHQ probabilities, independent coin flips",
+   "mean": 235.6,
+   "median": 236,
+   "p10": 230,
+   "p90": 242,
+   "p_majority": 1.0,
+   "H-NC-01": 0.59,
+   "H-NC-11": 0.52,
+   "H-OH-07": 0.47,
+   "H-PA-08": 0.54,
+   "H-NY-17": 0.59,
+   "H-TX-15": 0.45
+  },
+  {
+   "step": "B",
+   "change": "Part 3: regional waves (Option 1), alpha = 0.4",
+   "mean": 235.4,
+   "median": 234,
+   "p10": 223,
+   "p90": 249,
+   "p_majority": 0.961,
+   "H-NC-01": 0.59,
+   "H-NC-11": 0.51,
+   "H-OH-07": 0.47,
+   "H-PA-08": 0.54,
+   "H-NY-17": 0.59,
+   "H-TX-15": 0.46
+  },
+  {
+   "step": "C",
+   "change": "Our correlation (national \u00b13, division, state, race); Hill not a Democrat",
+   "mean": 235.0,
+   "median": 234,
+   "p10": 213,
+   "p90": 259,
+   "p_majority": 0.844,
+   "H-NC-01": 0.59,
+   "H-NC-11": 0.52,
+   "H-OH-07": 0.48,
+   "H-PA-08": 0.53,
+   "H-NY-17": 0.59,
+   "H-TX-15": 0.45
+  },
+  {
+   "step": "D",
+   "change": "Our fundamentals instead of DDHQ's probabilities",
+   "mean": 234.4,
+   "median": 233,
+   "p10": 218,
+   "p90": 252,
+   "p_majority": 0.913,
+   "H-NC-01": 0.56,
+   "H-NC-11": 0.5,
+   "H-OH-07": 0.25,
+   "H-PA-08": 0.38,
+   "H-NY-17": 0.86,
+   "H-TX-15": 0.05
+  },
+  {
+   "step": "E",
+   "change": "+ prediction markets, weighted by information",
+   "mean": 237.1,
+   "median": 236,
+   "p10": 221,
+   "p90": 254,
+   "p_majority": 0.935,
+   "H-NC-01": 0.8,
+   "H-NC-11": 0.82,
+   "H-OH-07": 0.65,
+   "H-PA-08": 0.73,
+   "H-NY-17": 0.81,
+   "H-TX-15": 0.36
+  },
+  {
+   "step": "F",
+   "change": "+ polls = our model",
+   "mean": 238.8,
+   "median": 238,
+   "p10": 221,
+   "p90": 257,
+   "p_majority": 0.937,
+   "H-NC-01": 0.89,
+   "H-NC-11": 0.92,
+   "H-OH-07": 0.82,
+   "H-PA-08": 0.77,
+   "H-NY-17": 0.79,
+   "H-TX-15": 0.57
+  },
+  {
+   "step": "G",
+   "change": "Alternative: DDHQ in place of our fundamentals, + markets + polls",
+   "mean": 238.8,
+   "median": 237,
+   "p10": 221,
+   "p90": 259,
+   "p_majority": 0.932,
+   "H-NC-01": 0.9,
+   "H-NC-11": 0.92,
+   "H-OH-07": 0.89,
+   "H-PA-08": 0.83,
+   "H-NY-17": 0.64,
+   "H-TX-15": 0.83
+  }
+ ],
+ "contest": [
+  "H-NC-01",
+  "H-NC-11",
+  "H-OH-07",
+  "H-PA-08",
+  "H-NY-17"
+ ],
+ "check": [
+  "H-TX-15"
+ ],
+ "ddhq_sum_p": 235.6,
+ "ddhq_weights_competitive": {
+  "w_polls": 0.041,
+  "w_markets": 0.25,
+  "w_fund": 0.709
+ },
+ "ddhq_contest": {
+  "H-NC-01": 0.59,
+  "H-NC-11": 0.52,
+  "H-OH-07": 0.48,
+  "H-PA-08": 0.54,
+  "H-NY-17": 0.59,
+  "H-TX-15": 0.45
+ }
+}

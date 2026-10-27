@@ -1,0 +1,9 @@
+# Downloaded raw data (re-fetched by the pipeline) and course material (not ours to publish)
+data/raw/
+*.pdf
+*.xlsx
+# DDHQ district probabilities from the course workbook (for the dashboard switch); not published yet
+app/data/ddhq.json
+
+__pycache__/
+.DS_Store

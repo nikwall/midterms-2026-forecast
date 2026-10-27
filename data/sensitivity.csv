@@ -1,0 +1,26 @@
+group,variant,description,p_dem_house,p_dem_senate,house_median,senate_median,house_ci80,senate_ci80
+Baseline,Model v1,"Polls, markets and fundamentals, weighted by information",0.9357,0.6463,238,51,221-257,48-54
+Which sources,Without markets,Polls and fundamentals only,0.9183,0.6243,237,51,219-258,48-54
+Which sources,Without polls,Markets and fundamentals only,0.9355,0.5915,236,51,221-254,48-54
+Which sources,Without fundamentals,Polls and markets only (fundamentals where neither exists),0.8928,0.6722,244,52,217-273,48-55
+Which sources,Polls alone,Fundamentals only where a race has no polls,0.957,0.6908,241,52,224-260,48-55
+Which sources,Markets alone,Fundamentals only where a race has no market,0.8913,0.6159,242,51,217-271,47-55
+Which sources,Fundamentals alone,"No polls, no markets",0.915,0.383,233,50,219-252,47-52
+How to weight,Equal weights,"Plain average of the available inputs, ignoring information",0.9314,0.5421,238,51,221-257,48-54
+How to weight,Markets count double,Market precision x2,0.9469,0.6526,238,52,222-255,48-54
+How to weight,Polls count double,Poll precision x2,0.9364,0.6602,239,52,221-258,48-55
+How to weight,Markets worth at most 3 polls,Cap of poll-equivalents 3 instead of 10,0.9386,0.6585,238,51,221-256,48-54
+How to weight,Markets worth up to 30 polls,Cap of poll-equivalents 30 instead of 10,0.9358,0.6408,238,51,221-257,48-54
+Uncertainty,National error ±2,Shared national error 2 points instead of 3,0.9759,0.6626,238,51,226-252,49-54
+Uncertainty,National error ±4,Shared national error 4 points instead of 3,0.8934,0.644,238,52,217-262,47-55
+Uncertainty,Race floor ±3,No race more certain than ±3 instead of ±4,0.9336,0.6845,238,52,221-257,48-54
+Uncertainty,Race floor ±5,No race more certain than ±5 instead of ±4,0.9403,0.6164,238,51,221-256,48-54
+Uncertainty,More regional correlation,Rest split 40% division / 30% state / 30% race,0.9348,0.6452,238,51,221-257,48-54
+Uncertainty,Less regional correlation,Rest split 10% division / 20% state / 70% race,0.9367,0.6442,238,51,221-256,48-54
+Uncertainty,Poll error floor 3.5,Irreducible poll error 3.5 instead of 4.5,0.9296,0.6407,238,51,220-258,48-55
+Uncertainty,Poll error floor 5.5,Irreducible poll error 5.5 instead of 4.5,0.9405,0.6519,237,51,221-256,48-54
+Fundamentals,Environment 2 pts more Republican,National environment D+5.9 instead of D+7.9,0.9044,0.611,234,51,218-252,48-54
+Fundamentals,Environment 2 pts more Democratic,National environment D+9.9 instead of D+7.9,0.9561,0.6779,242,52,224-262,48-55
+Fundamentals,No incumbency bonus,0 instead of 3 points,0.9433,0.6734,241,52,223-262,48-55
+Fundamentals,Incumbency bonus 5,5 instead of 3 points,0.9295,0.6281,236,51,220-254,48-54
+Fundamentals,Fundamentals 50% less certain,Race error 9 (House) / 13.5 (Senate),0.9407,0.6627,241,52,222-262,48-55

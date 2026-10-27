@@ -1,0 +1,3818 @@
+{
+ "generated": "2026-10-26",
+ "election_day": "2026-11-03",
+ "chambers": {
+  "house": {
+   "seats": 435,
+   "majority": 218,
+   "not_up": {
+    "D": 0,
+    "R": 0
+   }
+  },
+  "senate": {
+   "seats": 100,
+   "majority": 51,
+   "not_up": {
+    "D": 34,
+    "R": 31
+   }
+  }
+ },
+ "states": [
+  {
+   "abbr": "AK",
+   "name": "Alaska",
+   "col": 0,
+   "row": 0,
+   "division": "Pacific",
+   "house_seats": 1,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "ME",
+   "name": "Maine",
+   "col": 10,
+   "row": 0,
+   "division": "New England",
+   "house_seats": 2,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "WI",
+   "name": "Wisconsin",
+   "col": 5,
+   "row": 1,
+   "division": "East North Central",
+   "house_seats": 8,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "VT",
+   "name": "Vermont",
+   "col": 9,
+   "row": 1,
+   "division": "New England",
+   "house_seats": 1,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "NH",
+   "name": "New Hampshire",
+   "col": 10,
+   "row": 1,
+   "division": "New England",
+   "house_seats": 2,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "WA",
+   "name": "Washington",
+   "col": 0,
+   "row": 2,
+   "division": "Pacific",
+   "house_seats": 10,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "ID",
+   "name": "Idaho",
+   "col": 1,
+   "row": 2,
+   "division": "Mountain",
+   "house_seats": 2,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "MT",
+   "name": "Montana",
+   "col": 2,
+   "row": 2,
+   "division": "Mountain",
+   "house_seats": 2,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "ND",
+   "name": "North Dakota",
+   "col": 3,
+   "row": 2,
+   "division": "West North Central",
+   "house_seats": 1,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "MN",
+   "name": "Minnesota",
+   "col": 4,
+   "row": 2,
+   "division": "West North Central",
+   "house_seats": 8,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "IL",
+   "name": "Illinois",
+   "col": 5,
+   "row": 2,
+   "division": "East North Central",
+   "house_seats": 17,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "MI",
+   "name": "Michigan",
+   "col": 6,
+   "row": 2,
+   "division": "East North Central",
+   "house_seats": 13,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "NY",
+   "name": "New York",
+   "col": 8,
+   "row": 2,
+   "division": "Middle Atlantic",
+   "house_seats": 26,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "MA",
+   "name": "Massachusetts",
+   "col": 9,
+   "row": 2,
+   "division": "New England",
+   "house_seats": 9,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "OR",
+   "name": "Oregon",
+   "col": 0,
+   "row": 3,
+   "division": "Pacific",
+   "house_seats": 6,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "NV",
+   "name": "Nevada",
+   "col": 1,
+   "row": 3,
+   "division": "Mountain",
+   "house_seats": 4,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "WY",
+   "name": "Wyoming",
+   "col": 2,
+   "row": 3,
+   "division": "Mountain",
+   "house_seats": 1,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "SD",
+   "name": "South Dakota",
+   "col": 3,
+   "row": 3,
+   "division": "West North Central",
+   "house_seats": 1,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "IA",
+   "name": "Iowa",
+   "col": 4,
+   "row": 3,
+   "division": "West North Central",
+   "house_seats": 4,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "IN",
+   "name": "Indiana",
+   "col": 5,
+   "row": 3,
+   "division": "East North Central",
+   "house_seats": 9,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "OH",
+   "name": "Ohio",
+   "col": 6,
+   "row": 3,
+   "division": "East North Central",
+   "house_seats": 15,
+   "senate_race": true,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "PA",
+   "name": "Pennsylvania",
+   "col": 7,
+   "row": 3,
+   "division": "Middle Atlantic",
+   "house_seats": 17,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "NJ",
+   "name": "New Jersey",
+   "col": 8,
+   "row": 3,
+   "division": "Middle Atlantic",
+   "house_seats": 12,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "CT",
+   "name": "Connecticut",
+   "col": 9,
+   "row": 3,
+   "division": "New England",
+   "house_seats": 5,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "RI",
+   "name": "Rhode Island",
+   "col": 10,
+   "row": 3,
+   "division": "New England",
+   "house_seats": 2,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "CA",
+   "name": "California",
+   "col": 0,
+   "row": 4,
+   "division": "Pacific",
+   "house_seats": 52,
+   "senate_race": false,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "UT",
+   "name": "Utah",
+   "col": 1,
+   "row": 4,
+   "division": "Mountain",
+   "house_seats": 4,
+   "senate_race": false,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "CO",
+   "name": "Colorado",
+   "col": 2,
+   "row": 4,
+   "division": "Mountain",
+   "house_seats": 8,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "NE",
+   "name": "Nebraska",
+   "col": 3,
+   "row": 4,
+   "division": "West North Central",
+   "house_seats": 3,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "MO",
+   "name": "Missouri",
+   "col": 4,
+   "row": 4,
+   "division": "West North Central",
+   "house_seats": 8,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "KY",
+   "name": "Kentucky",
+   "col": 5,
+   "row": 4,
+   "division": "East South Central",
+   "house_seats": 6,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "WV",
+   "name": "West Virginia",
+   "col": 6,
+   "row": 4,
+   "division": "South Atlantic",
+   "house_seats": 2,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "VA",
+   "name": "Virginia",
+   "col": 7,
+   "row": 4,
+   "division": "South Atlantic",
+   "house_seats": 11,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "MD",
+   "name": "Maryland",
+   "col": 8,
+   "row": 4,
+   "division": "South Atlantic",
+   "house_seats": 8,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "DE",
+   "name": "Delaware",
+   "col": 9,
+   "row": 4,
+   "division": "South Atlantic",
+   "house_seats": 1,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "AZ",
+   "name": "Arizona",
+   "col": 1,
+   "row": 5,
+   "division": "Mountain",
+   "house_seats": 9,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "NM",
+   "name": "New Mexico",
+   "col": 2,
+   "row": 5,
+   "division": "Mountain",
+   "house_seats": 3,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "KS",
+   "name": "Kansas",
+   "col": 3,
+   "row": 5,
+   "division": "West North Central",
+   "house_seats": 4,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "AR",
+   "name": "Arkansas",
+   "col": 4,
+   "row": 5,
+   "division": "West South Central",
+   "house_seats": 4,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "TN",
+   "name": "Tennessee",
+   "col": 5,
+   "row": 5,
+   "division": "East South Central",
+   "house_seats": 9,
+   "senate_race": true,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "NC",
+   "name": "North Carolina",
+   "col": 6,
+   "row": 5,
+   "division": "South Atlantic",
+   "house_seats": 14,
+   "senate_race": true,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "SC",
+   "name": "South Carolina",
+   "col": 7,
+   "row": 5,
+   "division": "South Atlantic",
+   "house_seats": 7,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "OK",
+   "name": "Oklahoma",
+   "col": 3,
+   "row": 6,
+   "division": "West South Central",
+   "house_seats": 5,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "LA",
+   "name": "Louisiana",
+   "col": 4,
+   "row": 6,
+   "division": "West South Central",
+   "house_seats": 6,
+   "senate_race": true,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "MS",
+   "name": "Mississippi",
+   "col": 5,
+   "row": 6,
+   "division": "East South Central",
+   "house_seats": 4,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "AL",
+   "name": "Alabama",
+   "col": 6,
+   "row": 6,
+   "division": "East South Central",
+   "house_seats": 7,
+   "senate_race": true,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "GA",
+   "name": "Georgia",
+   "col": 7,
+   "row": 6,
+   "division": "South Atlantic",
+   "house_seats": 14,
+   "senate_race": true,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "HI",
+   "name": "Hawaii",
+   "col": 0,
+   "row": 7,
+   "division": "Pacific",
+   "house_seats": 2,
+   "senate_race": false,
+   "new_map_2026": false
+  },
+  {
+   "abbr": "TX",
+   "name": "Texas",
+   "col": 3,
+   "row": 7,
+   "division": "West South Central",
+   "house_seats": 38,
+   "senate_race": true,
+   "new_map_2026": true
+  },
+  {
+   "abbr": "FL",
+   "name": "Florida",
+   "col": 8,
+   "row": 7,
+   "division": "South Atlantic",
+   "house_seats": 28,
+   "senate_race": true,
+   "new_map_2026": true
+  }
+ ],
+ "senate": [
+  {
+   "id": "S-AK",
+   "label": "AK Senate",
+   "state": "AK",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-ME",
+   "label": "ME Senate",
+   "state": "ME",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-NH",
+   "label": "NH Senate",
+   "state": "NH",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-ID",
+   "label": "ID Senate",
+   "state": "ID",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-MT",
+   "label": "MT Senate",
+   "state": "MT",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-MN",
+   "label": "MN Senate",
+   "state": "MN",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-IL",
+   "label": "IL Senate",
+   "state": "IL",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-MI",
+   "label": "MI Senate",
+   "state": "MI",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-MA",
+   "label": "MA Senate",
+   "state": "MA",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-OR",
+   "label": "OR Senate",
+   "state": "OR",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-WY",
+   "label": "WY Senate",
+   "state": "WY",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-SD",
+   "label": "SD Senate",
+   "state": "SD",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-IA",
+   "label": "IA Senate",
+   "state": "IA",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-OH",
+   "label": "OH Senate (special)",
+   "state": "OH",
+   "holder": "R",
+   "special": true
+  },
+  {
+   "id": "S-NJ",
+   "label": "NJ Senate",
+   "state": "NJ",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-RI",
+   "label": "RI Senate",
+   "state": "RI",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-CO",
+   "label": "CO Senate",
+   "state": "CO",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-NE",
+   "label": "NE Senate",
+   "state": "NE",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-KY",
+   "label": "KY Senate",
+   "state": "KY",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-WV",
+   "label": "WV Senate",
+   "state": "WV",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-VA",
+   "label": "VA Senate",
+   "state": "VA",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-DE",
+   "label": "DE Senate",
+   "state": "DE",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-NM",
+   "label": "NM Senate",
+   "state": "NM",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-KS",
+   "label": "KS Senate",
+   "state": "KS",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-AR",
+   "label": "AR Senate",
+   "state": "AR",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-TN",
+   "label": "TN Senate",
+   "state": "TN",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-NC",
+   "label": "NC Senate",
+   "state": "NC",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-SC",
+   "label": "SC Senate",
+   "state": "SC",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-OK",
+   "label": "OK Senate",
+   "state": "OK",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-LA",
+   "label": "LA Senate",
+   "state": "LA",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-MS",
+   "label": "MS Senate",
+   "state": "MS",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-AL",
+   "label": "AL Senate",
+   "state": "AL",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-GA",
+   "label": "GA Senate",
+   "state": "GA",
+   "holder": "D",
+   "special": false
+  },
+  {
+   "id": "S-TX",
+   "label": "TX Senate",
+   "state": "TX",
+   "holder": "R",
+   "special": false
+  },
+  {
+   "id": "S-FL",
+   "label": "FL Senate (special)",
+   "state": "FL",
+   "holder": "R",
+   "special": true
+  }
+ ],
+ "house": [
+  {
+   "id": "H-AK-AL",
+   "label": "AK-AL",
+   "state": "AK",
+   "district": 0,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-ME-01",
+   "label": "ME-01",
+   "state": "ME",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-ME-02",
+   "label": "ME-02",
+   "state": "ME",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-01",
+   "label": "WI-01",
+   "state": "WI",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-02",
+   "label": "WI-02",
+   "state": "WI",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-03",
+   "label": "WI-03",
+   "state": "WI",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-04",
+   "label": "WI-04",
+   "state": "WI",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-05",
+   "label": "WI-05",
+   "state": "WI",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-06",
+   "label": "WI-06",
+   "state": "WI",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-07",
+   "label": "WI-07",
+   "state": "WI",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WI-08",
+   "label": "WI-08",
+   "state": "WI",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VT-AL",
+   "label": "VT-AL",
+   "state": "VT",
+   "district": 0,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NH-01",
+   "label": "NH-01",
+   "state": "NH",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NH-02",
+   "label": "NH-02",
+   "state": "NH",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-01",
+   "label": "WA-01",
+   "state": "WA",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-02",
+   "label": "WA-02",
+   "state": "WA",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-03",
+   "label": "WA-03",
+   "state": "WA",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-04",
+   "label": "WA-04",
+   "state": "WA",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-05",
+   "label": "WA-05",
+   "state": "WA",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-06",
+   "label": "WA-06",
+   "state": "WA",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-07",
+   "label": "WA-07",
+   "state": "WA",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-08",
+   "label": "WA-08",
+   "state": "WA",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-09",
+   "label": "WA-09",
+   "state": "WA",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WA-10",
+   "label": "WA-10",
+   "state": "WA",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-ID-01",
+   "label": "ID-01",
+   "state": "ID",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-ID-02",
+   "label": "ID-02",
+   "state": "ID",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MT-01",
+   "label": "MT-01",
+   "state": "MT",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MT-02",
+   "label": "MT-02",
+   "state": "MT",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-ND-AL",
+   "label": "ND-AL",
+   "state": "ND",
+   "district": 0,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-01",
+   "label": "MN-01",
+   "state": "MN",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-02",
+   "label": "MN-02",
+   "state": "MN",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-03",
+   "label": "MN-03",
+   "state": "MN",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-04",
+   "label": "MN-04",
+   "state": "MN",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-05",
+   "label": "MN-05",
+   "state": "MN",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-06",
+   "label": "MN-06",
+   "state": "MN",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-07",
+   "label": "MN-07",
+   "state": "MN",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MN-08",
+   "label": "MN-08",
+   "state": "MN",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-01",
+   "label": "IL-01",
+   "state": "IL",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-02",
+   "label": "IL-02",
+   "state": "IL",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-03",
+   "label": "IL-03",
+   "state": "IL",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-04",
+   "label": "IL-04",
+   "state": "IL",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-05",
+   "label": "IL-05",
+   "state": "IL",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-06",
+   "label": "IL-06",
+   "state": "IL",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-07",
+   "label": "IL-07",
+   "state": "IL",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-08",
+   "label": "IL-08",
+   "state": "IL",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-09",
+   "label": "IL-09",
+   "state": "IL",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-10",
+   "label": "IL-10",
+   "state": "IL",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-11",
+   "label": "IL-11",
+   "state": "IL",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-12",
+   "label": "IL-12",
+   "state": "IL",
+   "district": 12,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-13",
+   "label": "IL-13",
+   "state": "IL",
+   "district": 13,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-14",
+   "label": "IL-14",
+   "state": "IL",
+   "district": 14,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-15",
+   "label": "IL-15",
+   "state": "IL",
+   "district": 15,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-16",
+   "label": "IL-16",
+   "state": "IL",
+   "district": 16,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IL-17",
+   "label": "IL-17",
+   "state": "IL",
+   "district": 17,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-01",
+   "label": "MI-01",
+   "state": "MI",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-02",
+   "label": "MI-02",
+   "state": "MI",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-03",
+   "label": "MI-03",
+   "state": "MI",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-04",
+   "label": "MI-04",
+   "state": "MI",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-05",
+   "label": "MI-05",
+   "state": "MI",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-06",
+   "label": "MI-06",
+   "state": "MI",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-07",
+   "label": "MI-07",
+   "state": "MI",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-08",
+   "label": "MI-08",
+   "state": "MI",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-09",
+   "label": "MI-09",
+   "state": "MI",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-10",
+   "label": "MI-10",
+   "state": "MI",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-11",
+   "label": "MI-11",
+   "state": "MI",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-12",
+   "label": "MI-12",
+   "state": "MI",
+   "district": 12,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MI-13",
+   "label": "MI-13",
+   "state": "MI",
+   "district": 13,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-01",
+   "label": "NY-01",
+   "state": "NY",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-02",
+   "label": "NY-02",
+   "state": "NY",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-03",
+   "label": "NY-03",
+   "state": "NY",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-04",
+   "label": "NY-04",
+   "state": "NY",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-05",
+   "label": "NY-05",
+   "state": "NY",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-06",
+   "label": "NY-06",
+   "state": "NY",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-07",
+   "label": "NY-07",
+   "state": "NY",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-08",
+   "label": "NY-08",
+   "state": "NY",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-09",
+   "label": "NY-09",
+   "state": "NY",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-10",
+   "label": "NY-10",
+   "state": "NY",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-11",
+   "label": "NY-11",
+   "state": "NY",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-12",
+   "label": "NY-12",
+   "state": "NY",
+   "district": 12,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-13",
+   "label": "NY-13",
+   "state": "NY",
+   "district": 13,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-14",
+   "label": "NY-14",
+   "state": "NY",
+   "district": 14,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-15",
+   "label": "NY-15",
+   "state": "NY",
+   "district": 15,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-16",
+   "label": "NY-16",
+   "state": "NY",
+   "district": 16,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-17",
+   "label": "NY-17",
+   "state": "NY",
+   "district": 17,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-18",
+   "label": "NY-18",
+   "state": "NY",
+   "district": 18,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-19",
+   "label": "NY-19",
+   "state": "NY",
+   "district": 19,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-20",
+   "label": "NY-20",
+   "state": "NY",
+   "district": 20,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-21",
+   "label": "NY-21",
+   "state": "NY",
+   "district": 21,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-22",
+   "label": "NY-22",
+   "state": "NY",
+   "district": 22,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-23",
+   "label": "NY-23",
+   "state": "NY",
+   "district": 23,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-24",
+   "label": "NY-24",
+   "state": "NY",
+   "district": 24,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-25",
+   "label": "NY-25",
+   "state": "NY",
+   "district": 25,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NY-26",
+   "label": "NY-26",
+   "state": "NY",
+   "district": 26,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-01",
+   "label": "MA-01",
+   "state": "MA",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-02",
+   "label": "MA-02",
+   "state": "MA",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-03",
+   "label": "MA-03",
+   "state": "MA",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-04",
+   "label": "MA-04",
+   "state": "MA",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-05",
+   "label": "MA-05",
+   "state": "MA",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-06",
+   "label": "MA-06",
+   "state": "MA",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-07",
+   "label": "MA-07",
+   "state": "MA",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-08",
+   "label": "MA-08",
+   "state": "MA",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MA-09",
+   "label": "MA-09",
+   "state": "MA",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OR-01",
+   "label": "OR-01",
+   "state": "OR",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OR-02",
+   "label": "OR-02",
+   "state": "OR",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OR-03",
+   "label": "OR-03",
+   "state": "OR",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OR-04",
+   "label": "OR-04",
+   "state": "OR",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OR-05",
+   "label": "OR-05",
+   "state": "OR",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OR-06",
+   "label": "OR-06",
+   "state": "OR",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NV-01",
+   "label": "NV-01",
+   "state": "NV",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NV-02",
+   "label": "NV-02",
+   "state": "NV",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NV-03",
+   "label": "NV-03",
+   "state": "NV",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NV-04",
+   "label": "NV-04",
+   "state": "NV",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WY-AL",
+   "label": "WY-AL",
+   "state": "WY",
+   "district": 0,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SD-AL",
+   "label": "SD-AL",
+   "state": "SD",
+   "district": 0,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IA-01",
+   "label": "IA-01",
+   "state": "IA",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IA-02",
+   "label": "IA-02",
+   "state": "IA",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IA-03",
+   "label": "IA-03",
+   "state": "IA",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IA-04",
+   "label": "IA-04",
+   "state": "IA",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-01",
+   "label": "IN-01",
+   "state": "IN",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-02",
+   "label": "IN-02",
+   "state": "IN",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-03",
+   "label": "IN-03",
+   "state": "IN",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-04",
+   "label": "IN-04",
+   "state": "IN",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-05",
+   "label": "IN-05",
+   "state": "IN",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-06",
+   "label": "IN-06",
+   "state": "IN",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-07",
+   "label": "IN-07",
+   "state": "IN",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-08",
+   "label": "IN-08",
+   "state": "IN",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-IN-09",
+   "label": "IN-09",
+   "state": "IN",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OH-01",
+   "label": "OH-01",
+   "state": "OH",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-02",
+   "label": "OH-02",
+   "state": "OH",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-03",
+   "label": "OH-03",
+   "state": "OH",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-04",
+   "label": "OH-04",
+   "state": "OH",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-05",
+   "label": "OH-05",
+   "state": "OH",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-06",
+   "label": "OH-06",
+   "state": "OH",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-07",
+   "label": "OH-07",
+   "state": "OH",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-08",
+   "label": "OH-08",
+   "state": "OH",
+   "district": 8,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-09",
+   "label": "OH-09",
+   "state": "OH",
+   "district": 9,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-10",
+   "label": "OH-10",
+   "state": "OH",
+   "district": 10,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-11",
+   "label": "OH-11",
+   "state": "OH",
+   "district": 11,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-12",
+   "label": "OH-12",
+   "state": "OH",
+   "district": 12,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-13",
+   "label": "OH-13",
+   "state": "OH",
+   "district": 13,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-14",
+   "label": "OH-14",
+   "state": "OH",
+   "district": 14,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-OH-15",
+   "label": "OH-15",
+   "state": "OH",
+   "district": 15,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-PA-01",
+   "label": "PA-01",
+   "state": "PA",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-02",
+   "label": "PA-02",
+   "state": "PA",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-03",
+   "label": "PA-03",
+   "state": "PA",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-04",
+   "label": "PA-04",
+   "state": "PA",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-05",
+   "label": "PA-05",
+   "state": "PA",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-06",
+   "label": "PA-06",
+   "state": "PA",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-07",
+   "label": "PA-07",
+   "state": "PA",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-08",
+   "label": "PA-08",
+   "state": "PA",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-09",
+   "label": "PA-09",
+   "state": "PA",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-10",
+   "label": "PA-10",
+   "state": "PA",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-11",
+   "label": "PA-11",
+   "state": "PA",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-12",
+   "label": "PA-12",
+   "state": "PA",
+   "district": 12,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-13",
+   "label": "PA-13",
+   "state": "PA",
+   "district": 13,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-14",
+   "label": "PA-14",
+   "state": "PA",
+   "district": 14,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-15",
+   "label": "PA-15",
+   "state": "PA",
+   "district": 15,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-16",
+   "label": "PA-16",
+   "state": "PA",
+   "district": 16,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-PA-17",
+   "label": "PA-17",
+   "state": "PA",
+   "district": 17,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-01",
+   "label": "NJ-01",
+   "state": "NJ",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-02",
+   "label": "NJ-02",
+   "state": "NJ",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-03",
+   "label": "NJ-03",
+   "state": "NJ",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-04",
+   "label": "NJ-04",
+   "state": "NJ",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-05",
+   "label": "NJ-05",
+   "state": "NJ",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-06",
+   "label": "NJ-06",
+   "state": "NJ",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-07",
+   "label": "NJ-07",
+   "state": "NJ",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-08",
+   "label": "NJ-08",
+   "state": "NJ",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-09",
+   "label": "NJ-09",
+   "state": "NJ",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-10",
+   "label": "NJ-10",
+   "state": "NJ",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-11",
+   "label": "NJ-11",
+   "state": "NJ",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NJ-12",
+   "label": "NJ-12",
+   "state": "NJ",
+   "district": 12,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CT-01",
+   "label": "CT-01",
+   "state": "CT",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CT-02",
+   "label": "CT-02",
+   "state": "CT",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CT-03",
+   "label": "CT-03",
+   "state": "CT",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CT-04",
+   "label": "CT-04",
+   "state": "CT",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CT-05",
+   "label": "CT-05",
+   "state": "CT",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-RI-01",
+   "label": "RI-01",
+   "state": "RI",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-RI-02",
+   "label": "RI-02",
+   "state": "RI",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CA-01",
+   "label": "CA-01",
+   "state": "CA",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-02",
+   "label": "CA-02",
+   "state": "CA",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-03",
+   "label": "CA-03",
+   "state": "CA",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-04",
+   "label": "CA-04",
+   "state": "CA",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-05",
+   "label": "CA-05",
+   "state": "CA",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-06",
+   "label": "CA-06",
+   "state": "CA",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-07",
+   "label": "CA-07",
+   "state": "CA",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-08",
+   "label": "CA-08",
+   "state": "CA",
+   "district": 8,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-09",
+   "label": "CA-09",
+   "state": "CA",
+   "district": 9,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-10",
+   "label": "CA-10",
+   "state": "CA",
+   "district": 10,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-11",
+   "label": "CA-11",
+   "state": "CA",
+   "district": 11,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-12",
+   "label": "CA-12",
+   "state": "CA",
+   "district": 12,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-13",
+   "label": "CA-13",
+   "state": "CA",
+   "district": 13,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-14",
+   "label": "CA-14",
+   "state": "CA",
+   "district": 14,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-15",
+   "label": "CA-15",
+   "state": "CA",
+   "district": 15,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-16",
+   "label": "CA-16",
+   "state": "CA",
+   "district": 16,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-17",
+   "label": "CA-17",
+   "state": "CA",
+   "district": 17,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-18",
+   "label": "CA-18",
+   "state": "CA",
+   "district": 18,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-19",
+   "label": "CA-19",
+   "state": "CA",
+   "district": 19,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-20",
+   "label": "CA-20",
+   "state": "CA",
+   "district": 20,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-21",
+   "label": "CA-21",
+   "state": "CA",
+   "district": 21,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-22",
+   "label": "CA-22",
+   "state": "CA",
+   "district": 22,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-23",
+   "label": "CA-23",
+   "state": "CA",
+   "district": 23,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-24",
+   "label": "CA-24",
+   "state": "CA",
+   "district": 24,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-25",
+   "label": "CA-25",
+   "state": "CA",
+   "district": 25,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-26",
+   "label": "CA-26",
+   "state": "CA",
+   "district": 26,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-27",
+   "label": "CA-27",
+   "state": "CA",
+   "district": 27,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-28",
+   "label": "CA-28",
+   "state": "CA",
+   "district": 28,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-29",
+   "label": "CA-29",
+   "state": "CA",
+   "district": 29,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-30",
+   "label": "CA-30",
+   "state": "CA",
+   "district": 30,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-31",
+   "label": "CA-31",
+   "state": "CA",
+   "district": 31,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-32",
+   "label": "CA-32",
+   "state": "CA",
+   "district": 32,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-33",
+   "label": "CA-33",
+   "state": "CA",
+   "district": 33,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-34",
+   "label": "CA-34",
+   "state": "CA",
+   "district": 34,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-35",
+   "label": "CA-35",
+   "state": "CA",
+   "district": 35,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-36",
+   "label": "CA-36",
+   "state": "CA",
+   "district": 36,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-37",
+   "label": "CA-37",
+   "state": "CA",
+   "district": 37,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-38",
+   "label": "CA-38",
+   "state": "CA",
+   "district": 38,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-39",
+   "label": "CA-39",
+   "state": "CA",
+   "district": 39,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-40",
+   "label": "CA-40",
+   "state": "CA",
+   "district": 40,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-41",
+   "label": "CA-41",
+   "state": "CA",
+   "district": 41,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-42",
+   "label": "CA-42",
+   "state": "CA",
+   "district": 42,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-43",
+   "label": "CA-43",
+   "state": "CA",
+   "district": 43,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-44",
+   "label": "CA-44",
+   "state": "CA",
+   "district": 44,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-45",
+   "label": "CA-45",
+   "state": "CA",
+   "district": 45,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-46",
+   "label": "CA-46",
+   "state": "CA",
+   "district": 46,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-47",
+   "label": "CA-47",
+   "state": "CA",
+   "district": 47,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-48",
+   "label": "CA-48",
+   "state": "CA",
+   "district": 48,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-49",
+   "label": "CA-49",
+   "state": "CA",
+   "district": 49,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-50",
+   "label": "CA-50",
+   "state": "CA",
+   "district": 50,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-51",
+   "label": "CA-51",
+   "state": "CA",
+   "district": 51,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CA-52",
+   "label": "CA-52",
+   "state": "CA",
+   "district": 52,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-UT-01",
+   "label": "UT-01",
+   "state": "UT",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-UT-02",
+   "label": "UT-02",
+   "state": "UT",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-UT-03",
+   "label": "UT-03",
+   "state": "UT",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-UT-04",
+   "label": "UT-04",
+   "state": "UT",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-CO-01",
+   "label": "CO-01",
+   "state": "CO",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-02",
+   "label": "CO-02",
+   "state": "CO",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-03",
+   "label": "CO-03",
+   "state": "CO",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-04",
+   "label": "CO-04",
+   "state": "CO",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-05",
+   "label": "CO-05",
+   "state": "CO",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-06",
+   "label": "CO-06",
+   "state": "CO",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-07",
+   "label": "CO-07",
+   "state": "CO",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-CO-08",
+   "label": "CO-08",
+   "state": "CO",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NE-01",
+   "label": "NE-01",
+   "state": "NE",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NE-02",
+   "label": "NE-02",
+   "state": "NE",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NE-03",
+   "label": "NE-03",
+   "state": "NE",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-01",
+   "label": "MO-01",
+   "state": "MO",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-02",
+   "label": "MO-02",
+   "state": "MO",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-03",
+   "label": "MO-03",
+   "state": "MO",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-04",
+   "label": "MO-04",
+   "state": "MO",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-05",
+   "label": "MO-05",
+   "state": "MO",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-06",
+   "label": "MO-06",
+   "state": "MO",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-07",
+   "label": "MO-07",
+   "state": "MO",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MO-08",
+   "label": "MO-08",
+   "state": "MO",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KY-01",
+   "label": "KY-01",
+   "state": "KY",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KY-02",
+   "label": "KY-02",
+   "state": "KY",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KY-03",
+   "label": "KY-03",
+   "state": "KY",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KY-04",
+   "label": "KY-04",
+   "state": "KY",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KY-05",
+   "label": "KY-05",
+   "state": "KY",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KY-06",
+   "label": "KY-06",
+   "state": "KY",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WV-01",
+   "label": "WV-01",
+   "state": "WV",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-WV-02",
+   "label": "WV-02",
+   "state": "WV",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-01",
+   "label": "VA-01",
+   "state": "VA",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-02",
+   "label": "VA-02",
+   "state": "VA",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-03",
+   "label": "VA-03",
+   "state": "VA",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-04",
+   "label": "VA-04",
+   "state": "VA",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-05",
+   "label": "VA-05",
+   "state": "VA",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-06",
+   "label": "VA-06",
+   "state": "VA",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-07",
+   "label": "VA-07",
+   "state": "VA",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-08",
+   "label": "VA-08",
+   "state": "VA",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-09",
+   "label": "VA-09",
+   "state": "VA",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-10",
+   "label": "VA-10",
+   "state": "VA",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-VA-11",
+   "label": "VA-11",
+   "state": "VA",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-01",
+   "label": "MD-01",
+   "state": "MD",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-02",
+   "label": "MD-02",
+   "state": "MD",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-03",
+   "label": "MD-03",
+   "state": "MD",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-04",
+   "label": "MD-04",
+   "state": "MD",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-05",
+   "label": "MD-05",
+   "state": "MD",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-06",
+   "label": "MD-06",
+   "state": "MD",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-07",
+   "label": "MD-07",
+   "state": "MD",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MD-08",
+   "label": "MD-08",
+   "state": "MD",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-DE-AL",
+   "label": "DE-AL",
+   "state": "DE",
+   "district": 0,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-01",
+   "label": "AZ-01",
+   "state": "AZ",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-02",
+   "label": "AZ-02",
+   "state": "AZ",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-03",
+   "label": "AZ-03",
+   "state": "AZ",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-04",
+   "label": "AZ-04",
+   "state": "AZ",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-05",
+   "label": "AZ-05",
+   "state": "AZ",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-06",
+   "label": "AZ-06",
+   "state": "AZ",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-07",
+   "label": "AZ-07",
+   "state": "AZ",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-08",
+   "label": "AZ-08",
+   "state": "AZ",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AZ-09",
+   "label": "AZ-09",
+   "state": "AZ",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NM-01",
+   "label": "NM-01",
+   "state": "NM",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NM-02",
+   "label": "NM-02",
+   "state": "NM",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-NM-03",
+   "label": "NM-03",
+   "state": "NM",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KS-01",
+   "label": "KS-01",
+   "state": "KS",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KS-02",
+   "label": "KS-02",
+   "state": "KS",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KS-03",
+   "label": "KS-03",
+   "state": "KS",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-KS-04",
+   "label": "KS-04",
+   "state": "KS",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AR-01",
+   "label": "AR-01",
+   "state": "AR",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AR-02",
+   "label": "AR-02",
+   "state": "AR",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AR-03",
+   "label": "AR-03",
+   "state": "AR",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AR-04",
+   "label": "AR-04",
+   "state": "AR",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-TN-01",
+   "label": "TN-01",
+   "state": "TN",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-02",
+   "label": "TN-02",
+   "state": "TN",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-03",
+   "label": "TN-03",
+   "state": "TN",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-04",
+   "label": "TN-04",
+   "state": "TN",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-05",
+   "label": "TN-05",
+   "state": "TN",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-06",
+   "label": "TN-06",
+   "state": "TN",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-07",
+   "label": "TN-07",
+   "state": "TN",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-08",
+   "label": "TN-08",
+   "state": "TN",
+   "district": 8,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TN-09",
+   "label": "TN-09",
+   "state": "TN",
+   "district": 9,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-01",
+   "label": "NC-01",
+   "state": "NC",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-02",
+   "label": "NC-02",
+   "state": "NC",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-03",
+   "label": "NC-03",
+   "state": "NC",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-04",
+   "label": "NC-04",
+   "state": "NC",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-05",
+   "label": "NC-05",
+   "state": "NC",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-06",
+   "label": "NC-06",
+   "state": "NC",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-07",
+   "label": "NC-07",
+   "state": "NC",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-08",
+   "label": "NC-08",
+   "state": "NC",
+   "district": 8,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-09",
+   "label": "NC-09",
+   "state": "NC",
+   "district": 9,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-10",
+   "label": "NC-10",
+   "state": "NC",
+   "district": 10,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-11",
+   "label": "NC-11",
+   "state": "NC",
+   "district": 11,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-12",
+   "label": "NC-12",
+   "state": "NC",
+   "district": 12,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-13",
+   "label": "NC-13",
+   "state": "NC",
+   "district": 13,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-NC-14",
+   "label": "NC-14",
+   "state": "NC",
+   "district": 14,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-SC-01",
+   "label": "SC-01",
+   "state": "SC",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SC-02",
+   "label": "SC-02",
+   "state": "SC",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SC-03",
+   "label": "SC-03",
+   "state": "SC",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SC-04",
+   "label": "SC-04",
+   "state": "SC",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SC-05",
+   "label": "SC-05",
+   "state": "SC",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SC-06",
+   "label": "SC-06",
+   "state": "SC",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-SC-07",
+   "label": "SC-07",
+   "state": "SC",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OK-01",
+   "label": "OK-01",
+   "state": "OK",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OK-02",
+   "label": "OK-02",
+   "state": "OK",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OK-03",
+   "label": "OK-03",
+   "state": "OK",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OK-04",
+   "label": "OK-04",
+   "state": "OK",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-OK-05",
+   "label": "OK-05",
+   "state": "OK",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-LA-01",
+   "label": "LA-01",
+   "state": "LA",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-LA-02",
+   "label": "LA-02",
+   "state": "LA",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-LA-03",
+   "label": "LA-03",
+   "state": "LA",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-LA-04",
+   "label": "LA-04",
+   "state": "LA",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-LA-05",
+   "label": "LA-05",
+   "state": "LA",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-LA-06",
+   "label": "LA-06",
+   "state": "LA",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-MS-01",
+   "label": "MS-01",
+   "state": "MS",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MS-02",
+   "label": "MS-02",
+   "state": "MS",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MS-03",
+   "label": "MS-03",
+   "state": "MS",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-MS-04",
+   "label": "MS-04",
+   "state": "MS",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-AL-01",
+   "label": "AL-01",
+   "state": "AL",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-AL-02",
+   "label": "AL-02",
+   "state": "AL",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-AL-03",
+   "label": "AL-03",
+   "state": "AL",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-AL-04",
+   "label": "AL-04",
+   "state": "AL",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-AL-05",
+   "label": "AL-05",
+   "state": "AL",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-AL-06",
+   "label": "AL-06",
+   "state": "AL",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-AL-07",
+   "label": "AL-07",
+   "state": "AL",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-GA-01",
+   "label": "GA-01",
+   "state": "GA",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-02",
+   "label": "GA-02",
+   "state": "GA",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-03",
+   "label": "GA-03",
+   "state": "GA",
+   "district": 3,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-04",
+   "label": "GA-04",
+   "state": "GA",
+   "district": 4,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-05",
+   "label": "GA-05",
+   "state": "GA",
+   "district": 5,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-06",
+   "label": "GA-06",
+   "state": "GA",
+   "district": 6,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-07",
+   "label": "GA-07",
+   "state": "GA",
+   "district": 7,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-08",
+   "label": "GA-08",
+   "state": "GA",
+   "district": 8,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-09",
+   "label": "GA-09",
+   "state": "GA",
+   "district": 9,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-10",
+   "label": "GA-10",
+   "state": "GA",
+   "district": 10,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-11",
+   "label": "GA-11",
+   "state": "GA",
+   "district": 11,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-12",
+   "label": "GA-12",
+   "state": "GA",
+   "district": 12,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-13",
+   "label": "GA-13",
+   "state": "GA",
+   "district": 13,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-GA-14",
+   "label": "GA-14",
+   "state": "GA",
+   "district": 14,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-HI-01",
+   "label": "HI-01",
+   "state": "HI",
+   "district": 1,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-HI-02",
+   "label": "HI-02",
+   "state": "HI",
+   "district": 2,
+   "new_map_2026": false
+  },
+  {
+   "id": "H-TX-01",
+   "label": "TX-01",
+   "state": "TX",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-02",
+   "label": "TX-02",
+   "state": "TX",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-03",
+   "label": "TX-03",
+   "state": "TX",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-04",
+   "label": "TX-04",
+   "state": "TX",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-05",
+   "label": "TX-05",
+   "state": "TX",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-06",
+   "label": "TX-06",
+   "state": "TX",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-07",
+   "label": "TX-07",
+   "state": "TX",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-08",
+   "label": "TX-08",
+   "state": "TX",
+   "district": 8,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-09",
+   "label": "TX-09",
+   "state": "TX",
+   "district": 9,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-10",
+   "label": "TX-10",
+   "state": "TX",
+   "district": 10,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-11",
+   "label": "TX-11",
+   "state": "TX",
+   "district": 11,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-12",
+   "label": "TX-12",
+   "state": "TX",
+   "district": 12,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-13",
+   "label": "TX-13",
+   "state": "TX",
+   "district": 13,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-14",
+   "label": "TX-14",
+   "state": "TX",
+   "district": 14,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-15",
+   "label": "TX-15",
+   "state": "TX",
+   "district": 15,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-16",
+   "label": "TX-16",
+   "state": "TX",
+   "district": 16,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-17",
+   "label": "TX-17",
+   "state": "TX",
+   "district": 17,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-18",
+   "label": "TX-18",
+   "state": "TX",
+   "district": 18,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-19",
+   "label": "TX-19",
+   "state": "TX",
+   "district": 19,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-20",
+   "label": "TX-20",
+   "state": "TX",
+   "district": 20,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-21",
+   "label": "TX-21",
+   "state": "TX",
+   "district": 21,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-22",
+   "label": "TX-22",
+   "state": "TX",
+   "district": 22,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-23",
+   "label": "TX-23",
+   "state": "TX",
+   "district": 23,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-24",
+   "label": "TX-24",
+   "state": "TX",
+   "district": 24,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-25",
+   "label": "TX-25",
+   "state": "TX",
+   "district": 25,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-26",
+   "label": "TX-26",
+   "state": "TX",
+   "district": 26,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-27",
+   "label": "TX-27",
+   "state": "TX",
+   "district": 27,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-28",
+   "label": "TX-28",
+   "state": "TX",
+   "district": 28,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-29",
+   "label": "TX-29",
+   "state": "TX",
+   "district": 29,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-30",
+   "label": "TX-30",
+   "state": "TX",
+   "district": 30,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-31",
+   "label": "TX-31",
+   "state": "TX",
+   "district": 31,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-32",
+   "label": "TX-32",
+   "state": "TX",
+   "district": 32,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-33",
+   "label": "TX-33",
+   "state": "TX",
+   "district": 33,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-34",
+   "label": "TX-34",
+   "state": "TX",
+   "district": 34,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-35",
+   "label": "TX-35",
+   "state": "TX",
+   "district": 35,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-36",
+   "label": "TX-36",
+   "state": "TX",
+   "district": 36,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-37",
+   "label": "TX-37",
+   "state": "TX",
+   "district": 37,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-TX-38",
+   "label": "TX-38",
+   "state": "TX",
+   "district": 38,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-01",
+   "label": "FL-01",
+   "state": "FL",
+   "district": 1,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-02",
+   "label": "FL-02",
+   "state": "FL",
+   "district": 2,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-03",
+   "label": "FL-03",
+   "state": "FL",
+   "district": 3,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-04",
+   "label": "FL-04",
+   "state": "FL",
+   "district": 4,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-05",
+   "label": "FL-05",
+   "state": "FL",
+   "district": 5,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-06",
+   "label": "FL-06",
+   "state": "FL",
+   "district": 6,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-07",
+   "label": "FL-07",
+   "state": "FL",
+   "district": 7,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-08",
+   "label": "FL-08",
+   "state": "FL",
+   "district": 8,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-09",
+   "label": "FL-09",
+   "state": "FL",
+   "district": 9,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-10",
+   "label": "FL-10",
+   "state": "FL",
+   "district": 10,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-11",
+   "label": "FL-11",
+   "state": "FL",
+   "district": 11,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-12",
+   "label": "FL-12",
+   "state": "FL",
+   "district": 12,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-13",
+   "label": "FL-13",
+   "state": "FL",
+   "district": 13,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-14",
+   "label": "FL-14",
+   "state": "FL",
+   "district": 14,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-15",
+   "label": "FL-15",
+   "state": "FL",
+   "district": 15,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-16",
+   "label": "FL-16",
+   "state": "FL",
+   "district": 16,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-17",
+   "label": "FL-17",
+   "state": "FL",
+   "district": 17,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-18",
+   "label": "FL-18",
+   "state": "FL",
+   "district": 18,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-19",
+   "label": "FL-19",
+   "state": "FL",
+   "district": 19,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-20",
+   "label": "FL-20",
+   "state": "FL",
+   "district": 20,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-21",
+   "label": "FL-21",
+   "state": "FL",
+   "district": 21,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-22",
+   "label": "FL-22",
+   "state": "FL",
+   "district": 22,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-23",
+   "label": "FL-23",
+   "state": "FL",
+   "district": 23,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-24",
+   "label": "FL-24",
+   "state": "FL",
+   "district": 24,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-25",
+   "label": "FL-25",
+   "state": "FL",
+   "district": 25,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-26",
+   "label": "FL-26",
+   "state": "FL",
+   "district": 26,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-27",
+   "label": "FL-27",
+   "state": "FL",
+   "district": 27,
+   "new_map_2026": true
+  },
+  {
+   "id": "H-FL-28",
+   "label": "FL-28",
+   "state": "FL",
+   "district": 28,
+   "new_map_2026": true
+  }
+ ]
+}

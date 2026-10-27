@@ -1,0 +1,69 @@
+{
+ "mean": 7.86,
+ "sd": 3.0,
+ "components": [
+  {
+   "name": "Generic-ballot polls (VoteHub, weighted v1)",
+   "mean": 7.36,
+   "sd": 3.0,
+   "detail": "307 polls, latest ended 2026-10-04; no LV adjustment yet",
+   "weight": 0.691
+  },
+  {
+   "name": "Kalshi House popular-vote margin market",
+   "mean": 8.97,
+   "sd": 4.49,
+   "detail": "KXHOUSEPOPVOTEMARGIN-27NOV03, $3,399,119 traded; spread of the price distribution used as sd",
+   "brackets": [
+    {
+     "mid": -3.0,
+     "p": 0.0597
+    },
+    {
+     "mid": 1.0,
+     "p": 0.021
+    },
+    {
+     "mid": 3.0,
+     "p": 0.0279
+    },
+    {
+     "mid": 5.0,
+     "p": 0.0641
+    },
+    {
+     "mid": 7.0,
+     "p": 0.1419
+    },
+    {
+     "mid": 9.0,
+     "p": 0.2594
+    },
+    {
+     "mid": 11.0,
+     "p": 0.2203
+    },
+    {
+     "mid": 13.0,
+     "p": 0.1126
+    },
+    {
+     "mid": 15.0,
+     "p": 0.0485
+    },
+    {
+     "mid": 17.5,
+     "p": 0.0445
+    }
+   ],
+   "weight": 0.309
+  }
+ ],
+ "cross_checks": [
+  "Special elections since 2025: Democrats ran about 13 points ahead of Harris's 2024 margin (The Downballot, 104 races); not converted to a national margin yet",
+  "Expectation polls: Pew (28 Sep - 4 Oct) 55% expect a Democratic House, 40% a Republican one",
+  "Other poll averages: RCP D+8.3 (8-23 Oct), FiftyPlusOne 52.2-43.0 (25 Oct)"
+ ],
+ "national_pres_margin_2024": -1.65,
+ "computed": "2026-10-27"
+}

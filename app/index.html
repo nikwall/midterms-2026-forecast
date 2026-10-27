@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2026 Midterms Forecast</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="brand">2026 Midterms Forecast</span>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#contest">Contest entry</a>
+      <a href="#chambers">Forecast</a>
+      <a href="#map">Map</a>
+      <a href="#races">Races</a>
+      <a href="#method">Method</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <div class="topbar-meta"><span>API-232 · HKS forecasting tournament</span><span id="updated"></span></div>
+  </div>
+</header>
+
+<main class="page">
+
+  <p class="lede" id="lede"></p>
+
+  <section class="section" id="contest" aria-labelledby="contest-title">
+    <div class="section-head">
+      <h2 id="contest-title">Our contest entry</h2>
+      <span class="muted" id="contest-due"></span>
+    </div>
+    <p class="contest-intro">The HKS contest scores the House only: the number of Democratic seats, the chance of a Democratic majority, and the chance the Democrat wins five districts. These are the numbers our model gives today.</p>
+    <div class="contest-top">
+      <article class="contest-answer">
+        <span class="contest-q">(a) Democratic House seats</span>
+        <span class="contest-a" id="ans-seats">–</span>
+        <span class="contest-sub" id="ans-seats-sub"></span>
+      </article>
+      <article class="contest-answer">
+        <span class="contest-q">(b) Probability Democrats win a majority (218+)</span>
+        <span class="contest-a" id="ans-majority">–</span>
+        <span class="contest-sub" id="ans-majority-sub"></span>
+      </article>
+    </div>
+    <div class="contest-districts">
+      <div class="contest-q">(c) Probability the Democrat wins each district</div>
+      <div class="legend" aria-hidden="true">
+        <span class="legend-item"><span class="mark mark-polls"></span>Polls</span>
+        <span class="legend-item"><span class="mark mark-market"></span>Markets</span>
+        <span class="legend-item"><span class="mark mark-fund"></span>Fundamentals</span>
+        <span class="legend-item"><span class="mark mark-model"></span>Our answer</span>
+      </div>
+      <div class="contest-axis" aria-hidden="true"><span></span><span></span><span class="gap-scale"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></span></div>
+      <div id="contest-rows"></div>
+    </div>
+    <div class="explainers">
+      <details>
+        <summary>Why we enter the median for (a)</summary>
+        <div class="explain" id="explain-median"></div>
+      </details>
+      <details>
+        <summary>How the tiebreaker is scored</summary>
+        <div class="explain">
+          <p>If teams tie on (a), the six probabilities from (b) and (c) decide. They are scored with the Brier score: the average of (probability − outcome)², where the outcome is 1 if the Democrat wins and 0 if not. Lower is better.</p>
+          <p>The Brier score rewards honest probabilities. Pushing a number toward 0 or 1 only pays off if the race really is that certain, so we enter the model's probabilities as they are.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="whatif" aria-labelledby="whatif-title" hidden>
+    <div class="section-head">
+      <h2 id="whatif-title">Try your own weights</h2>
+      <span class="muted">Re-runs the House model in your browser, 10,000 simulations</span>
+    </div>
+    <div class="whatif-grid">
+      <div class="card whatif-controls">
+        <fieldset>
+          <legend>Fundamentals</legend>
+          <label><input type="radio" name="wi-base" value="ours" checked> Ours: 2024 result on the 2026 lines + national swing + incumbency</label>
+          <label><input type="radio" name="wi-base" value="ddhq"> Decision Desk HQ's probabilities (22 Oct), as in the course</label>
+          <p class="muted small" id="wi-ddhq-note"></p>
+        </fieldset>
+        <fieldset>
+          <legend>How much each source counts</legend>
+          <label class="slider" for="wi-polls"><span>Polls</span><input type="range" id="wi-polls" min="0" max="3" step="0.25" value="1"><output id="wi-polls-out">×1</output></label>
+          <label class="slider" for="wi-market"><span>Markets</span><input type="range" id="wi-market" min="0" max="3" step="0.25" value="1"><output id="wi-market-out">×1</output></label>
+          <label class="slider" for="wi-fund"><span>Fundamentals</span><input type="range" id="wi-fund" min="0" max="3" step="0.25" value="1"><output id="wi-fund-out">×1</output></label>
+          <p class="muted small">×1 is our model: each source counts by how much it knows about a race. ×2 makes a source count double, ×0 leaves it out (a race with nothing left falls back to fundamentals).</p>
+        </fieldset>
+        <button type="button" class="button" id="wi-reset">Reset to our final model</button>
+      </div>
+      <div class="card whatif-results">
+        <table>
+          <thead><tr><th></th><th class="num">Your settings</th><th class="num">Our final model</th></tr></thead>
+          <tbody id="wi-body"></tbody>
+        </table>
+        <p class="muted small" id="wi-weights"></p>
+        <p class="small" id="wi-status" role="status"></p>
+        <p class="muted small">Browser runs use 10,000 simulations; the official entry above uses 20,000, so the two can differ by a seat or a point of probability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="bridge" aria-labelledby="bridge-title" hidden>
+    <div class="section-head">
+      <h2 id="bridge-title">From the course model to ours</h2>
+      <span class="muted">One change per step, same random draws throughout</span>
+    </div>
+    <p class="contest-intro" id="bridge-intro"></p>
+    <div class="table-wrap">
+      <table>
+        <thead id="bridge-head"></thead>
+        <tbody id="bridge-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="model-title">
+    <div class="section-head">
+      <h2 id="model-title">How this forecast is made</h2>
+      <a href="#method">Full method and sources</a>
+    </div>
+    <ol class="flow">
+      <li class="flow-step">
+        <h3>Three kinds of evidence for every race</h3>
+        <p data-m="flow-inputs"></p>
+      </li>
+      <li class="flow-step">
+        <h3>Weighted by what each source knows</h3>
+        <p data-m="flow-weights"></p>
+      </li>
+      <li class="flow-step">
+        <h3>20,000 simulated elections</h3>
+        <p data-m="flow-sims"></p>
+      </li>
+      <li class="flow-step">
+        <h3>Chances, seat ranges, deciding races</h3>
+        <p>The chance of control is the share of simulations a party wins. The seat ranges and the races that decide control come from the same simulations.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section" id="chambers" aria-labelledby="control-title">
+    <div class="section-head">
+      <h2 id="control-title">Who wins each chamber</h2>
+      <span class="muted" id="sims-note"></span>
+    </div>
+    <div class="grid-2">
+      <article class="card chamber" id="card-house">
+        <div class="chamber-head"><h3>House</h3><span class="muted">435 seats · 218 for a majority</span></div>
+        <div class="odds">
+          <div class="odds-side"><span class="odds-party">Democrats</span><span class="odds-value" data-field="p-d">–</span></div>
+          <div class="odds-side right"><span class="odds-party">Republicans</span><span class="odds-value" data-field="p-r">–</span></div>
+        </div>
+        <div class="split-bar" aria-hidden="true"><span class="d" style="width:0"></span><span class="r" style="width:0"></span></div>
+        <div class="facts">
+          <div><div class="fact-label">Median Dem seats</div><div class="fact-value" data-field="median">–</div></div>
+          <div><div class="fact-label">80% interval</div><div class="fact-value" data-field="ci80">–</div></div>
+          <div><div class="fact-label">95% interval</div><div class="fact-value" data-field="ci95">–</div></div>
+        </div>
+      </article>
+      <article class="card chamber" id="card-senate">
+        <div class="chamber-head"><h3>Senate</h3><span class="muted">35 seats up · Democrats need 51, Republicans 50</span></div>
+        <div class="odds">
+          <div class="odds-side"><span class="odds-party">Democrats</span><span class="odds-value" data-field="p-d">–</span></div>
+          <div class="odds-side right"><span class="odds-party">Republicans</span><span class="odds-value" data-field="p-r">–</span></div>
+        </div>
+        <div class="split-bar" aria-hidden="true"><span class="d" style="width:0"></span><span class="r" style="width:0"></span></div>
+        <div class="facts">
+          <div><div class="fact-label">Median Dem seats</div><div class="fact-value" data-field="median">–</div></div>
+          <div><div class="fact-label">80% interval</div><div class="fact-value" data-field="ci80">–</div></div>
+          <div><div class="fact-label">95% interval</div><div class="fact-value" data-field="ci95">–</div></div>
+        </div>
+      </article>
+    </div>
+    <div class="explainers">
+      <details>
+        <summary>Why 20,000 simulations, and how stable are these numbers?</summary>
+        <div class="explain" id="explain-sims"></div>
+      </details>
+      <details>
+        <summary>What do the intervals mean?</summary>
+        <div class="explain">
+          <p>Each simulation ends with a seat count. The 80% interval holds the middle 80% of those counts: in 8 of 10 simulated elections, Democrats end up inside it. The 95% interval holds the middle 95%. The median is the count in the middle, with half the simulations above and half below.</p>
+          <p>The Senate counts include the 34 Democratic and independent seats that are not on the ballot this year. Democrats need 51 seats because Vice President Vance breaks a 50–50 tie for Republicans.</p>
+        </div>
+      </details>
+    </div>
+    <article class="card section">
+      <h3>Control of Congress</h3>
+      <div class="joint-bar" id="joint-bar" aria-hidden="true"></div>
+      <div class="legend" id="joint-legend"></div>
+    </article>
+  </section>
+
+  <section class="section" aria-labelledby="tip-title">
+    <div class="section-head">
+      <h2 id="tip-title">Which races decide control</h2>
+      <span class="muted">How often each race is the tipping point, races ordered from most Democratic to most Republican</span>
+    </div>
+    <div class="grid-2">
+      <article class="card section"><h3>Senate</h3><p class="tip-summary" id="tip-sum-senate"></p><svg class="chart" id="tip-senate" role="img" aria-label="Senate tipping-point distribution"></svg></article>
+      <article class="card section"><h3>House</h3><p class="tip-summary" id="tip-sum-house"></p><svg class="chart" id="tip-house" role="img" aria-label="House tipping-point distribution"></svg></article>
+    </div>
+    <div class="explainers">
+      <details>
+        <summary>What is a tipping-point race?</summary>
+        <div class="explain" id="explain-tipping"></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="dist-title">
+    <div class="section-head">
+      <h2 id="dist-title">How many seats</h2>
+      <span class="muted">Share of simulations ending with each number of Democratic seats</span>
+    </div>
+    <div class="grid-2">
+      <article class="card"><h3>House: Democratic seats</h3><svg class="chart" id="dist-house" role="img" aria-label="House seat distribution"></svg></article>
+      <article class="card"><h3>Senate: Democratic seats after the election</h3><svg class="chart" id="dist-senate" role="img" aria-label="Senate seat distribution"></svg></article>
+    </div>
+  </section>
+
+  <section class="section" id="map" aria-labelledby="map-title">
+    <div class="section-head">
+      <h2 id="map-title">Races to watch and seat map</h2>
+      <span class="muted">Select a race or a state to list it below</span>
+    </div>
+    <div class="legend" id="map-legend"></div>
+    <div class="watch">
+      <div class="watch-block"><h3 id="watch-title-senate">Senate</h3><div class="watch-groups" id="watch-senate"></div></div>
+      <div class="watch-block"><h3 id="watch-title-house">House</h3><div class="watch-groups" id="watch-house"></div></div>
+    </div>
+    <div class="explainers">
+      <details>
+        <summary>What do safe, likely, lean and toss-up mean?</summary>
+        <div class="explain">
+          <p>The labels translate our chance of winning into words. They are the same for both parties:</p>
+          <div class="bands">
+            <span><strong>Toss-up</strong> · 45% to 55%</span>
+            <span><strong>Lean</strong> · 55% to 65%</span>
+            <span><strong>Likely</strong> · 65% to 95%</span>
+            <span><strong>Safe</strong> · 95% or more</span>
+          </div>
+          <p>These bands are narrower than most forecasters use. Split Ticket, for example, calls a race a toss-up until one side reaches 60%, lean up to 80% and likely up to 95%. Narrower bands give more races a direction. Even so, the favourite in a Lean race still loses 35% to 45% of the time.</p>
+          <p>The bands are fixed cutoffs on the chance of winning. They have nothing to do with how uncertain the polls are; that uncertainty only decides which band a race lands in.</p>
+        </div>
+      </details>
+    </div>
+    <div class="map-stack">
+      <article class="card section"><h3>Senate: 35 races</h3><div class="map-wrap"><svg class="chart map-senate" id="map-senate" role="img" aria-label="Senate tile map"></svg></div></article>
+      <article class="card section"><h3>House: 435 districts, one square each</h3><div class="map-wrap"><svg class="chart map-house" id="map-house" role="img" aria-label="House tile map, one square per district"></svg></div></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="gap-title">
+    <div class="section-head">
+      <h2 id="gap-title">Where polls and markets disagree</h2>
+      <span class="muted">Races where the poll average and the market price differ by 8 points or more</span>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span class="legend-item"><span class="mark mark-polls"></span>Polls</span>
+      <span class="legend-item"><span class="mark mark-market"></span>Markets</span>
+      <span class="legend-item"><span class="mark mark-model"></span>Our forecast</span>
+      <span class="legend-item muted">Scale: chance the non-Republican side wins</span>
+    </div>
+    <div class="card gap-card">
+      <div class="gap-axis" aria-hidden="true"><span></span><span class="gap-scale"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></span><span></span></div>
+      <div id="gap-rows" class="gap-rows"></div>
+      <button type="button" class="link-button" id="gap-more" hidden></button>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="nat-title">
+    <div class="section-head">
+      <h2 id="nat-title">National environment</h2>
+      <span class="muted">The national House margin the fundamentals start from, and the signals beside it</span>
+    </div>
+    <div class="grid-2">
+      <article class="card section" id="nat-env"></article>
+      <article class="card section" id="nat-signals"></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="scen-title">
+    <div class="section-head">
+      <h2 id="scen-title">If the polls miss</h2>
+      <span class="muted">Results grouped by the size and direction of the shared national error</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Scenario</th><th class="num">Chance</th><th class="num">Dem House</th><th class="num">Dem Senate</th><th class="num">Median House D</th><th class="num">Median Senate D</th></tr></thead>
+        <tbody id="scenario-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="races" aria-labelledby="race-title">
+    <div class="section-head">
+      <h2 id="race-title">Every race</h2>
+      <span class="muted" id="race-count"></span>
+    </div>
+    <div class="filters">
+      <label for="f-chamber">Chamber
+        <select id="f-chamber"><option value="all">Both</option><option value="senate">Senate</option><option value="house">House</option></select>
+      </label>
+      <label for="f-search">Search <input type="search" id="f-search" placeholder="State or district, e.g. PA or TX-28"></label>
+      <label for="f-sort">Sort
+        <select id="f-sort"><option value="close">Closest first</option><option value="state">By state</option><option value="gap">Biggest poll–market gap</option></select>
+      </label>
+      <label for="f-close"><input type="checkbox" id="f-close"> Hide safe races</label>
+      <button type="button" class="link-button" id="f-clear" hidden>Clear state filter</button>
+    </div>
+    <div class="table-wrap race-table-wrap">
+      <table>
+        <thead><tr><th>Race</th><th>Held by</th><th class="num">Chance Dem wins</th><th class="num">Polls</th><th class="num">Markets</th><th class="num">Fundamentals</th><th class="num">Dem margin, 80% range</th><th>Rating</th></tr></thead>
+        <tbody id="race-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="bench-title">
+    <div class="section-head">
+      <h2 id="bench-title">Other forecasts</h2>
+      <span class="muted">For comparison only. Other models are not inputs to this forecast.</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th class="num">Dem House</th><th class="num">Dem Senate</th><th>As of</th></tr></thead>
+        <tbody id="bench-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="method" aria-labelledby="method-title">
+    <div class="section-head">
+      <h2 id="method-title">How the forecast works</h2>
+      <span class="muted" id="method-version"></span>
+    </div>
+    <div class="method">
+      <p class="lede">We forecast each of the 470 races on the ballot, 435 House seats and 35 Senate seats, and then play the election out 20,000 times. Each race draws on three kinds of evidence: polls, prediction markets and fundamentals. No kind of evidence is favoured in advance. Each counts according to how much it knows about that particular race. Polling misses and national swings hit many races at once, so the simulation moves races together instead of treating them as independent coin flips.</p>
+
+      <ol class="steps">
+        <li><strong>Polls.</strong> <span data-m="polls"></span> Newer polls, larger samples and likely-voter samples count more. Polls paid for by a party or campaign count half. A pollster's older polls in the same race count less. Polls of hypothetical matchups with candidates who lost their primary are dropped.</li>
+        <li><strong>Prediction markets.</strong> <span data-m="markets"></span> Prices from both venues are averaged by trading volume. A market counts like a poll average: $20,000 traded is worth one poll, $1 million or more is worth ten, and never more than ten.</li>
+        <li><strong>Fundamentals.</strong> How each district voted for president in 2024 on the lines used this November, compared with the country as a whole. To that we add the national environment, <span data-m="env"></span>, from the polling average and the Kalshi market on the national House vote. An incumbent on the ballot adds 3 points.</li>
+        <li><strong>Combining.</strong> Each input becomes an expected margin with its own uncertainty. The three are averaged with weights inversely proportional to their variance. A race with many fresh polls leans on polls; a district with a liquid market but no polls leans on the market. Because the inputs overlap (markets read polls, for example), no race is treated as more certain than ±4 points. Hover over any race to see its weights.</li>
+        <li><strong>Simulation.</strong> In each of 20,000 simulated elections, every race moves with a shared national error of ±3 points, drawn with fat tails so that large misses stay possible. Each race also gets regional, state and race-specific errors. We then count seats. A win by an independent, such as Nebraska's Dan Osborn, is not counted as a Democratic seat.</li>
+        <li><strong>What we leave out.</strong> Other forecasters' models and expert ratings (Cook, Sabato, Inside Elections) are not inputs. We read them to learn, and show them under "Other forecasts" for comparison. Using them as data would count the same polls twice and pull our forecast toward the consensus.</li>
+      </ol>
+
+      <div class="section">
+        <h3>Process</h3>
+        <ul class="timeline">
+          <li><span class="when">26 Oct</span><span>The tournament opened. We researched data sources, the 2025–26 redistricting, and what is known about midterm polling errors.</span></li>
+          <li><span class="when">26 Oct</span><span>Ground rules set: no source type favoured in advance; neighbour and expectation polls kept as a national signal; large poll–market gaps reviewed by hand; other models used only for comparison.</span></li>
+          <li><span class="when">26 Oct</span><span>Data pipeline built (markets, polls, gap report, fundamentals) and the first model run. Two corrections along the way: markets were initially weighted above polls, and the national error was too small.</span></li>
+          <li><span class="when">27 Oct</span><span>Page redesigned; robustness check with four extra simulation runs; explanations added.</span></li>
+        </ul>
+        <p class="muted">Every step and choice is logged with its reasoning in the project's process document (PROCESS.md).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sources" aria-labelledby="src-title">
+    <div class="section-head"><h2 id="src-title">Sources</h2><span class="muted">With links</span></div>
+    <div class="source-groups" id="source-groups"></div>
+  </section>
+
+  <footer>
+    <p>A forecast for the HKS midterms forecasting tournament, made in API-232. Polls from VoteHub (CC BY 4.0); prices from Kalshi and Polymarket; 2024 results by district from The Downballot.</p>
+  </footer>
+</main>
+<div class="tooltip" id="tooltip" role="status" hidden></div>
+<script src="app.js"></script>
+<script src="whatif.js"></script>
+</body>
+</html>
