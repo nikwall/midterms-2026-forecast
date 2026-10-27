@@ -33,7 +33,9 @@ def cfg(**changes):
 
 # (group, name, description, config)
 VARIANTS = [
-    ("Baseline", "Model v1", "Polls, markets and fundamentals, weighted by information", cfg()),
+    ("Baseline", "Final model (v2)", "Polls, markets and fundamentals (House: DDHQ), weighted by information; calibrated error sizes", cfg()),
+    ("Which sources", "Our own House fundamentals", "Uniform swing from 2024 instead of DDHQ", cfg(house_fundamentals="ours")),
+    ("Which sources", "Model v1 settings", "Own fundamentals and the error sizes before the backtest", copy.deepcopy(model.V1_CFG)),
     ("Which sources", "Without markets", "Polls and fundamentals only", cfg(inputs=("polls", "fundamentals"))),
     ("Which sources", "Without polls", "Markets and fundamentals only", cfg(inputs=("market", "fundamentals"))),
     ("Which sources", "Without fundamentals", "Polls and markets only (fundamentals where neither exists)", cfg(inputs=("polls", "market"))),
@@ -45,19 +47,18 @@ VARIANTS = [
     ("How to weight", "Polls count double", "Poll precision x2", cfg(mult={"polls": 2, "market": 1, "fundamentals": 1})),
     ("How to weight", "Markets worth at most 3 polls", "Cap of poll-equivalents 3 instead of 10", cfg(market_max_polls=3)),
     ("How to weight", "Markets worth up to 30 polls", "Cap of poll-equivalents 30 instead of 10", cfg(market_max_polls=30)),
-    ("Uncertainty", "National error ±2", "Shared national error 2 points instead of 3", cfg(nat_sd=2.0)),
-    ("Uncertainty", "National error ±4", "Shared national error 4 points instead of 3", cfg(nat_sd=4.0)),
+    ("Uncertainty", "National error ±3", "Shared national error 3 points instead of 3.6", cfg(nat_sd=3.0)),
+    ("Uncertainty", "National error ±4.5", "Shared national error 4.5 points instead of 3.6", cfg(nat_sd=4.5)),
     ("Uncertainty", "Race floor ±3", "No race more certain than ±3 instead of ±4", cfg(floor_sd=3.0)),
     ("Uncertainty", "Race floor ±5", "No race more certain than ±5 instead of ±4", cfg(floor_sd=5.0)),
     ("Uncertainty", "More regional correlation", "Rest split 40% division / 30% state / 30% race", cfg(rest_shares={"division": 0.4, "state": 0.3, "race": 0.3})),
     ("Uncertainty", "Less regional correlation", "Rest split 10% division / 20% state / 70% race", cfg(rest_shares={"division": 0.1, "state": 0.2, "race": 0.7})),
-    ("Uncertainty", "Poll error floor 3.5", "Irreducible poll error 3.5 instead of 4.5", cfg(poll_base=3.5)),
-    ("Uncertainty", "Poll error floor 5.5", "Irreducible poll error 5.5 instead of 4.5", cfg(poll_base=5.5)),
-    ("Fundamentals", "Environment 2 pts more Republican", "National environment D+5.9 instead of D+7.9", cfg(env_shift=-2.0)),
-    ("Fundamentals", "Environment 2 pts more Democratic", "National environment D+9.9 instead of D+7.9", cfg(env_shift=2.0)),
-    ("Fundamentals", "No incumbency bonus", "0 instead of 3 points", cfg(incumbency=0.0)),
-    ("Fundamentals", "Incumbency bonus 5", "5 instead of 3 points", cfg(incumbency=5.0)),
-    ("Fundamentals", "Fundamentals 50% less certain", "Race error 9 (House) / 13.5 (Senate)", cfg(fund_race_sd={"house": 9.0, "senate": 13.5})),
+    ("Uncertainty", "Poll error floor 1.5", "Irreducible poll error 1.5 instead of 2.4", cfg(poll_base=1.5)),
+    ("Uncertainty", "Poll error floor 3.5", "Irreducible poll error 3.5 instead of 2.4", cfg(poll_base=3.5)),
+    ("Fundamentals", "Fundamentals 2 pts more Republican", "Every fundamentals margin shifted 2 pts toward Republicans", cfg(env_shift=-2.0)),
+    ("Fundamentals", "Fundamentals 2 pts more Democratic", "Every fundamentals margin shifted 2 pts toward Democrats", cfg(env_shift=2.0)),
+    ("Fundamentals", "Senate incumbency bonus 11", "11 instead of 3 points (backtest estimate)", cfg(incumbency=11.0)),
+    ("Fundamentals", "Fundamentals 50% less certain", "Race error 9 (House) / 24 (Senate)", cfg(fund_race_sd={"house": 9.0, "senate": 24.0})),
 ]
 
 

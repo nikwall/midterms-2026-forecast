@@ -1,62 +1,62 @@
 {
- "mean": 7.86,
- "sd": 3.0,
+ "mean": 8.01,
+ "sd": 3.6,
  "components": [
   {
-   "name": "Generic-ballot polls (VoteHub, weighted v1)",
+   "name": "Generic-ballot polls (VoteHub, weighted)",
    "mean": 7.36,
-   "sd": 3.0,
+   "sd": 3.6,
    "detail": "307 polls, latest ended 2026-10-04; no LV adjustment yet",
-   "weight": 0.691
+   "weight": 0.604
   },
   {
    "name": "Kalshi House popular-vote margin market",
-   "mean": 8.97,
-   "sd": 4.49,
-   "detail": "KXHOUSEPOPVOTEMARGIN-27NOV03, $3,399,119 traded; spread of the price distribution used as sd",
+   "mean": 9.0,
+   "sd": 4.45,
+   "detail": "KXHOUSEPOPVOTEMARGIN-27NOV03, $3,399,495 traded; spread of the price distribution used as sd",
    "brackets": [
     {
      "mid": -3.0,
-     "p": 0.0597
+     "p": 0.0569
     },
     {
      "mid": 1.0,
-     "p": 0.021
+     "p": 0.0211
     },
     {
      "mid": 3.0,
-     "p": 0.0279
+     "p": 0.028
     },
     {
      "mid": 5.0,
-     "p": 0.0641
+     "p": 0.0643
     },
     {
      "mid": 7.0,
-     "p": 0.1419
+     "p": 0.1424
     },
     {
      "mid": 9.0,
-     "p": 0.2594
+     "p": 0.2602
     },
     {
      "mid": 11.0,
-     "p": 0.2203
+     "p": 0.2209
     },
     {
      "mid": 13.0,
-     "p": 0.1126
+     "p": 0.1129
     },
     {
      "mid": 15.0,
-     "p": 0.0485
+     "p": 0.0486
     },
     {
      "mid": 17.5,
-     "p": 0.0445
+     "p": 0.0447
     }
    ],
-   "weight": 0.309
+   "weight": 0.396
   }
  ],
  "cross_checks": [

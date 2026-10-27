@@ -1,20 +1,18 @@
-"""From the course's Part 3 model to ours, one change at a time.
+"""From the course's Part 3 model to our final model, one change at a time.
 
-Starts from the assignment's setup (Decision Desk HQ district probabilities of 22 Oct, from the
-course workbook) and changes one thing per step until it reaches our model:
+Starts from the assignment's setup (Decision Desk HQ district probabilities of 22 Oct) and
+changes one thing per step until it reaches our final model (v2, option 4):
 
     A  Part 2: DDHQ probabilities, every district an independent coin flip
     B  Part 3: DDHQ probabilities, regional waves (Appendix B, Option 1), alpha = 0.4 as preset in the workbook
-    C  DDHQ probabilities with our correlation (national, division, state and race errors);
-       Alaska's Bill Hill no longer counts as a Democrat (contest rule)
-    D  our fundamentals instead of DDHQ's probabilities
-    E  + prediction markets, weighted by information
-    F  + polls = our model
-    G  alternative ("course path"): DDHQ in place of our fundamentals, + markets + polls
+    C  our correlation (national ±3.6, division, state, race errors); Alaska's Bill Hill no longer a Democrat
+    D  + prediction markets, weighted by information
+    E  + polls = our final model (v2)
+For reference:
+    R1 final model, but with our own uniform-swing fundamentals instead of DDHQ
+    R2 model v1 (own fundamentals, uncalibrated error sizes)
 
-The course workbook is course material and is not part of the repository. Put it at
-data/raw/course/assignment3_election2026.xlsx to run this script; without it the script stops.
-
+Needs data/ddhq_house_2026-10-22.csv (from pipeline/ddhq_import.py).
 Writes data/bridge.csv, app/data/bridge.json and research/bridge_report.md.
 
     python -I pipeline/bridge.py
@@ -25,7 +23,6 @@ import csv
 import json
 import sys
 from pathlib import Path
-from statistics import NormalDist
 
 import numpy as np
 
@@ -33,31 +30,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I leaves the script
 import model  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-WORKBOOK = ROOT / "data" / "raw" / "course" / "assignment3_election2026.xlsx"
-N = NormalDist()
 CONTEST = [rid for rid, _ in model.CONTEST_DISTRICTS]
 CHECK = ["H-TX-15"]   # the assignment's check district (DDHQ: 45%)
 ALPHA_COURSE = 0.4    # preset in the workbook's Part 3 tab
-DDHQ_SD = 6.7         # margin scale used to place DDHQ's probabilities into our simulation (step C)
-
-
-def ddhq(seats):
-    import openpyxl
-    wb = openpyxl.load_workbook(WORKBOOK, data_only=True, read_only=True)
-    rows = list(wb["DDHQ Data"].iter_rows(min_row=8, values_only=True))
-    hdr = {h: i for i, h in enumerate(rows[0]) if h}
-    at_large = {h["state"] for h in seats["house"] if h["district"] == 0}
-    out = {}
-    for r in rows[1:]:
-        if not r or not r[0] or not isinstance(r[1], (int, float)):
-            continue
-        st, d = r[0], int(r[1])
-        rid = f"H-{st}-AL" if st in at_large else f"H-{st}-{d:02d}"
-        out[rid] = {"p": float(r[hdr["P(Democrat wins)"]]), "rating": r[hdr["DDHQ rating"]],
-                    "w_polls": r[hdr["Weight: polls"]], "w_markets": r[hdr["Weight: markets"]],
-                    "w_fund": r[hdr["Weight: fundamentals"]]}
-    assert len(out) == 435, len(out)
-    return out
 
 
 def coin_flips(house, p, division, alpha, seed, n=model.N_SIMS):
@@ -68,8 +43,7 @@ def coin_flips(house, p, division, alpha, seed, n=model.N_SIMS):
     own = rng.random((n, len(house)))
     shared = rng.random((n, len(divs)))[:, d_idx]
     wave = (rng.random((n, len(divs))) < alpha)[:, d_idx]
-    u = np.where(wave, shared, own)
-    return u < p
+    return np.where(wave, shared, own) < p
 
 
 def summarise(name, what, wins, house_ids, counts_as_dem):
@@ -82,75 +56,63 @@ def summarise(name, what, wins, house_ids, counts_as_dem):
 
 
 def main():
-    if not WORKBOOK.exists():
-        sys.exit(f"Course workbook not found at {WORKBOOK}. It is course material and not in the repository.")
     data = model.load_data()
-    seats = data["seats"]
-    house = seats["house"]
+    if not data["ddhq"]:
+        sys.exit("DDHQ probabilities missing: run pipeline/ddhq_import.py (needs the course workbook).")
+    house = data["seats"]["house"]
     ids = [h["id"] for h in house]
-    division = data["division"]
-    dd = ddhq(seats)
-    p_dd = np.array([dd[i]["p"] for i in ids])
+    p_dd = np.array([data["ddhq"][i] for i in ids])
     all_dem = np.ones(len(ids), dtype=bool)  # assignment Parts 2-3: Hill counted as a Democrat
-    steps = []
+    steps = [
+        summarise("A", "Part 2: DDHQ probabilities, independent coin flips",
+                  coin_flips(house, p_dd, data["division"], 0.0, model.SEED), ids, all_dem),
+        summarise("B", f"Part 3: regional waves (Option 1), alpha = {ALPHA_COURSE}",
+                  coin_flips(house, p_dd, data["division"], ALPHA_COURSE, model.SEED), ids, all_dem),
+    ]
 
-    steps.append(summarise("A", "Part 2: DDHQ probabilities, independent coin flips",
-                           coin_flips(house, p_dd, division, 0.0, model.SEED), ids, all_dem))
-    steps.append(summarise("B", f"Part 3: regional waves (Option 1), alpha = {ALPHA_COURSE}",
-                           coin_flips(house, p_dd, division, ALPHA_COURSE, model.SEED), ids, all_dem))
+    def ours(d, cfg):
+        rs = model.build_races(d, cfg)
+        hidx = [i for i, r in enumerate(rs) if r["chamber"] == "house"]
+        dem_side = np.array([rs[i]["side"] == "D" for i in hidx])
+        _, _, wins, _, _ = model.simulate(rs, d, cfg, model.SEED)
+        return wins[:, hidx], dem_side
 
-    # C: DDHQ probabilities placed on a margin scale and run through our correlated simulation.
-    races = model.build_races(data)
-    hidx = [i for i, r in enumerate(races) if r["chamber"] == "house"]
-    ddhq_races = copy.deepcopy(races)
-    for r in ddhq_races:
-        if r["chamber"] == "house":
-            p = min(max(dd[r["id"]]["p"], 0.001), 0.999)
-            r["mean"], r["sd"] = DDHQ_SD * N.inv_cdf(p), DDHQ_SD
-    dem_side = np.array([races[i]["side"] == "D" for i in hidx])
+    def cfg(**kw):
+        c = copy.deepcopy(model.DEFAULT_CFG)
+        c.update(kw)
+        return c
 
-    def ours(rs, cfg):
-        _, _, wins, _, _ = model.simulate(rs, data, cfg, model.SEED)
-        return wins[:, hidx]
-
-    steps.append(summarise("C", "Our correlation (national ±3, division, state, race); Hill not a Democrat",
-                           ours(ddhq_races, model.DEFAULT_CFG), ids, dem_side))
-    for name, what, inputs in [("D", "Our fundamentals instead of DDHQ's probabilities", ("fundamentals",)),
-                               ("E", "+ prediction markets, weighted by information", ("market", "fundamentals")),
-                               ("F", "+ polls = our model", ("polls", "market", "fundamentals"))]:
-        cfg = copy.deepcopy(model.DEFAULT_CFG)
-        cfg["inputs"] = inputs
-        steps.append(summarise(name, what, ours(model.build_races(data, cfg), cfg), ids, dem_side))
-
-    # G (alternative, the "course path"): DDHQ takes the place of our fundamentals; markets and polls on top.
-    alt = copy.deepcopy(data)
-    for rid in ids:
-        p = min(max(dd[rid]["p"], 0.001), 0.999)
-        alt["funda"][rid] = dict(alt["funda"][rid], expected_margin=str(DDHQ_SD * N.inv_cdf(p)), incumbency_adj="0")
-    steps.append(summarise("G", "Alternative: DDHQ in place of our fundamentals, + markets + polls",
-                           ours(model.build_races(alt, model.DEFAULT_CFG), model.DEFAULT_CFG), ids, dem_side))
+    nat = float(data["env"]["sd"])
+    for name, what, c in [
+        ("C", f"Our correlation (national ±{nat:.1f}, division, state, race); Hill not a Democrat", cfg(inputs=("fundamentals",))),
+        ("D", "+ prediction markets, weighted by information", cfg(inputs=("market", "fundamentals"))),
+        ("E", "+ polls = our final model", cfg()),
+        ("R1", "For reference: final model with our own uniform-swing fundamentals instead of DDHQ", cfg(house_fundamentals="ours")),
+    ]:
+        wins, dem_side = ours(data, c)
+        steps.append(summarise(name, what, wins, ids, dem_side))
+    v1_data = copy.deepcopy(data)
+    v1_data["env"]["sd"] = 3.0  # v1's national environment uncertainty
+    wins, dem_side = ours(v1_data, copy.deepcopy(model.V1_CFG))
+    steps.append(summarise("R2", "For reference: model v1 (own fundamentals, error sizes before the backtest)", wins, ids, dem_side))
 
     with (ROOT / "data" / "bridge.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(steps[0]))
         w.writeheader()
         w.writerows(steps)
-    comp = [i for i in ids if 0.1 < dd[i]["p"] < 0.9]
-    ddhq_weights = {k: round(float(np.mean([dd[i][k] for i in comp])), 3) for k in ("w_polls", "w_markets", "w_fund")}
-    # DDHQ district probabilities for the dashboard's fundamentals switch. Course material: kept
-    # out of the repository (.gitignore) unless we decide to publish it.
-    (ROOT / "app" / "data" / "ddhq.json").write_text(json.dumps({
-        "source": "Decision Desk HQ, accessed 22 Oct 2026, via the API-232 course workbook",
-        "p": {i: dd[i]["p"] for i in ids}}), encoding="utf-8")
+    dd_rows = list(csv.DictReader(model.DDHQ_FILE.open(encoding="utf-8")))
+    comp = [r for r in dd_rows if 0.1 < float(r["p_dem"]) < 0.9]
+    ddhq_weights = {k: round(float(np.mean([float(r[k]) for r in comp])), 3) for k in ("w_polls", "w_markets", "w_fundamentals")}
     (ROOT / "app" / "data" / "bridge.json").write_text(json.dumps({
         "steps": steps, "contest": CONTEST, "check": CHECK, "ddhq_sum_p": round(float(p_dd.sum()), 1),
-        "ddhq_weights_competitive": ddhq_weights, "ddhq_contest": {i: dd[i]["p"] for i in CONTEST + CHECK},
+        "ddhq_weights_competitive": ddhq_weights, "final_step": "E",
     }, indent=1), encoding="utf-8")
 
     cols = CONTEST + CHECK
-    lines = ["# From the course's Part 3 model to ours", "",
+    lines = ["# From the course's Part 3 model to our final model", "",
              "Each step changes one thing. Seats are Democratic seats over 20,000 simulations (same random draws in every step).", "",
              f"DDHQ's probabilities add up to {p_dd.sum():.1f} expected Democratic seats. In competitive races (10–90%) DDHQ's own blend weights are "
-             f"polls {ddhq_weights['w_polls']:.0%}, markets {ddhq_weights['w_markets']:.0%}, fundamentals {ddhq_weights['w_fund']:.0%}.", "",
+             f"polls {ddhq_weights['w_polls']:.0%}, markets {ddhq_weights['w_markets']:.0%}, fundamentals {ddhq_weights['w_fundamentals']:.0%}.", "",
              "| Step | Change | Mean | Median | 80% range | P(majority) | " + " | ".join(c.replace("H-", "") for c in cols) + " |",
              "|---|---|---|---|---|---|" + "---|" * len(cols)]
     for s in steps:

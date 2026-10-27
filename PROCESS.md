@@ -235,6 +235,29 @@ The entry form (see README) settles the open questions:
 | C47 | Evidence on fundamentals | **Senate midterms:** fundamentals alone miss by 14.3 points (RMS) and polls alone by 6.6. A blend of 80% polls and 20% fundamentals is best (5.8); our inverse-variance rule lands close to it (0.87 poll weight, 5.9). **Senate fundamentals calibration:** incumbency bonus about 11 points and race error about 16 (v1: 3 and 9), so our Senate fundamentals are overconfident. **House fundamentals:** not calibrated (no results file). |
 | C48 | Candidate final settings and their answers (seats, P(majority), NC-01 / NC-11 / OH-07 / PA-08 / NY-17) | 1. v1: 238, 0.94, .89/.92/.82/.77/.79 · 2. v1 + DDHQ as fundamentals: 237, 0.93, .90/.92/.89/.83/.64 · 3. calibrated constants (poll error 2.4/9.7, national ±3.6, Senate fundamentals error 16): 238, 0.90, .87/.89/.82/.78/.77 · **4. calibrated + DDHQ as fundamentals: 236, 0.90, .88/.90/.88/.84/.63** · 5. as 4 with markets ×1.5: 236, 0.92, .88/.90/.89/.86/.63 |
 
+## 27 October 2026 (night): final model v2 (option 4)
+
+| # | Choice | Why |
+|---|---|---|
+| C49 | **Final model v2:** poll errors ±2.4 (irreducible) and ±9.7 (per poll); national error ±3.6; Senate fundamentals race error ±16; **House fundamentals = DDHQ's district probabilities (22 Oct)**, placed on the margin scale (±7.0). Incumbency stays 3 (Senate only now); the backtest's 11 is not adopted. Markets ×1. Our own House fundamentals remain available (panel switch, bridge row R1). | Your choice, option 4. **Error sizes:** from the backtest (C46–C48). **DDHQ:** the course's starting point, and better than our uniform swing in the House. **Incumbency 3:** kept as in the option you chose; the Senate is not scored. |
+| C50 | The page lists every assumption ("Our assumptions"): value, where it enters, how we derived it. The list is written by the model, so it always matches the code. | Your request. |
+| C51 | More compact page: base font 14 px, smaller headings, tables and explanations, tighter spacing. The contest answers stay large and are coloured. | Your request: see more at once, important numbers more prominent. |
+| C52 | DDHQ's district probabilities are stored in `data/ddhq_house_2026-10-22.csv`; `pipeline/ddhq_import.py` re-creates it from the workbook. | Needed so that everyone, including GitHub Actions, can run the final model. **Publishing them needs your OK** (they come from DDHQ via the course). |
+
+**Final model v2, contest answers on 27 Oct (fresh data):**
+
+| Question | Answer |
+|---|---|
+| (a) Democratic seats | **236** (80%: 218–263) |
+| (b) P(majority) | **0.91** |
+| NC-01 | 0.88 |
+| NC-11 | 0.90 |
+| OH-07 | 0.89 |
+| PA-08 | 0.84 |
+| NY-17 | 0.63 |
+
+Sensitivity (24 variants): House 0.87–0.94 for reasonable choices; v1 settings 0.94.
+
 **Entry as of 27 Oct (model v1, before calibration and the district review):**
 
 | Question | Answer |

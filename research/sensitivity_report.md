@@ -6,28 +6,29 @@ Each row changes one assumption of model v1 and keeps everything else. All rows 
 
 | Group | Variant | What changes | Dem House | Δ | Median House | Dem Senate | Δ | Median Senate |
 |---|---|---|---|---|---|---|---|---|
-| Baseline | Model v1 | Polls, markets and fundamentals, weighted by information | 93.6% | +0.0 | 238 | 64.6% | +0.0 | 51 |
-| Which sources | Without markets | Polls and fundamentals only | 91.8% | -1.7 | 237 | 62.4% | -2.2 | 51 |
-| Which sources | Without polls | Markets and fundamentals only | 93.5% | -0.0 | 236 | 59.2% | -5.5 | 51 |
-| Which sources | Without fundamentals | Polls and markets only (fundamentals where neither exists) | 89.3% | -4.3 | 244 | 67.2% | +2.6 | 52 |
-| Which sources | Polls alone | Fundamentals only where a race has no polls | 95.7% | +2.1 | 241 | 69.1% | +4.4 | 52 |
-| Which sources | Markets alone | Fundamentals only where a race has no market | 89.1% | -4.4 | 242 | 61.6% | -3.0 | 51 |
-| Which sources | Fundamentals alone | No polls, no markets | 91.5% | -2.1 | 233 | 38.3% | -26.3 | 50 |
-| How to weight | Equal weights | Plain average of the available inputs, ignoring information | 93.1% | -0.4 | 238 | 54.2% | -10.4 | 51 |
-| How to weight | Markets count double | Market precision x2 | 94.7% | +1.1 | 238 | 65.3% | +0.6 | 52 |
-| How to weight | Polls count double | Poll precision x2 | 93.6% | +0.1 | 239 | 66.0% | +1.4 | 52 |
-| How to weight | Markets worth at most 3 polls | Cap of poll-equivalents 3 instead of 10 | 93.9% | +0.3 | 238 | 65.8% | +1.2 | 51 |
-| How to weight | Markets worth up to 30 polls | Cap of poll-equivalents 30 instead of 10 | 93.6% | +0.0 | 238 | 64.1% | -0.5 | 51 |
-| Uncertainty | National error ±2 | Shared national error 2 points instead of 3 | 97.6% | +4.0 | 238 | 66.3% | +1.6 | 51 |
-| Uncertainty | National error ±4 | Shared national error 4 points instead of 3 | 89.3% | -4.2 | 238 | 64.4% | -0.2 | 52 |
-| Uncertainty | Race floor ±3 | No race more certain than ±3 instead of ±4 | 93.4% | -0.2 | 238 | 68.5% | +3.8 | 52 |
-| Uncertainty | Race floor ±5 | No race more certain than ±5 instead of ±4 | 94.0% | +0.5 | 238 | 61.6% | -3.0 | 51 |
-| Uncertainty | More regional correlation | Rest split 40% division / 30% state / 30% race | 93.5% | -0.1 | 238 | 64.5% | -0.1 | 51 |
-| Uncertainty | Less regional correlation | Rest split 10% division / 20% state / 70% race | 93.7% | +0.1 | 238 | 64.4% | -0.2 | 51 |
-| Uncertainty | Poll error floor 3.5 | Irreducible poll error 3.5 instead of 4.5 | 93.0% | -0.6 | 238 | 64.1% | -0.6 | 51 |
-| Uncertainty | Poll error floor 5.5 | Irreducible poll error 5.5 instead of 4.5 | 94.0% | +0.5 | 237 | 65.2% | +0.6 | 51 |
-| Fundamentals | Environment 2 pts more Republican | National environment D+5.9 instead of D+7.9 | 90.4% | -3.1 | 234 | 61.1% | -3.5 | 51 |
-| Fundamentals | Environment 2 pts more Democratic | National environment D+9.9 instead of D+7.9 | 95.6% | +2.0 | 242 | 67.8% | +3.2 | 52 |
-| Fundamentals | No incumbency bonus | 0 instead of 3 points | 94.3% | +0.8 | 241 | 67.3% | +2.7 | 52 |
-| Fundamentals | Incumbency bonus 5 | 5 instead of 3 points | 93.0% | -0.6 | 236 | 62.8% | -1.8 | 51 |
-| Fundamentals | Fundamentals 50% less certain | Race error 9 (House) / 13.5 (Senate) | 94.1% | +0.5 | 241 | 66.3% | +1.6 | 52 |
+| Baseline | Final model (v2) | Polls, markets and fundamentals (House: DDHQ), weighted by information; calibrated error sizes | 90.6% | +0.0 | 236 | 66.8% | +0.0 | 52 |
+| Which sources | Our own House fundamentals | Uniform swing from 2024 instead of DDHQ | 90.5% | -0.1 | 238 | 66.8% | +0.0 | 52 |
+| Which sources | Model v1 settings | Own fundamentals and the error sizes before the backtest | 94.0% | +3.4 | 239 | 66.4% | -0.4 | 52 |
+| Which sources | Without markets | Polls and fundamentals only | 84.4% | -6.2 | 237 | 70.2% | +3.4 | 52 |
+| Which sources | Without polls | Markets and fundamentals only | 90.0% | -0.6 | 235 | 62.7% | -4.2 | 52 |
+| Which sources | Without fundamentals | Polls and markets only (fundamentals where neither exists) | 87.3% | -3.3 | 245 | 67.1% | +0.2 | 52 |
+| Which sources | Polls alone | Fundamentals only where a race has no polls | 90.2% | -0.4 | 241 | 71.8% | +5.0 | 53 |
+| Which sources | Markets alone | Fundamentals only where a race has no market | 87.0% | -3.5 | 243 | 62.8% | -4.1 | 52 |
+| Which sources | Fundamentals alone | No polls, no markets | 82.5% | -8.1 | 233 | 42.1% | -24.7 | 50 |
+| How to weight | Equal weights | Plain average of the available inputs, ignoring information | 91.0% | +0.5 | 236 | 50.4% | -16.4 | 51 |
+| How to weight | Markets count double | Market precision x2 | 92.5% | +1.9 | 236 | 65.9% | -1.0 | 52 |
+| How to weight | Polls count double | Poll precision x2 | 90.8% | +0.2 | 238 | 67.9% | +1.0 | 52 |
+| How to weight | Markets worth at most 3 polls | Cap of poll-equivalents 3 instead of 10 | 91.6% | +1.0 | 237 | 71.5% | +4.7 | 52 |
+| How to weight | Markets worth up to 30 polls | Cap of poll-equivalents 30 instead of 10 | 90.5% | -0.1 | 236 | 63.4% | -3.4 | 52 |
+| Uncertainty | National error ±3 | Shared national error 3 points instead of 3.6 | 92.9% | +2.3 | 237 | 66.5% | -0.3 | 52 |
+| Uncertainty | National error ±4.5 | Shared national error 4.5 points instead of 3.6 | 87.4% | -3.2 | 235 | 68.7% | +1.8 | 52 |
+| Uncertainty | Race floor ±3 | No race more certain than ±3 instead of ±4 | 90.9% | +0.3 | 236 | 72.9% | +6.0 | 52 |
+| Uncertainty | Race floor ±5 | No race more certain than ±5 instead of ±4 | 90.5% | -0.0 | 237 | 62.8% | -4.0 | 52 |
+| Uncertainty | More regional correlation | Rest split 40% division / 30% state / 30% race | 90.5% | -0.0 | 236 | 67.0% | +0.1 | 52 |
+| Uncertainty | Less regional correlation | Rest split 10% division / 20% state / 70% race | 90.6% | +0.0 | 236 | 66.9% | +0.1 | 52 |
+| Uncertainty | Poll error floor 1.5 | Irreducible poll error 1.5 instead of 2.4 | 90.1% | -0.5 | 236 | 65.7% | -1.1 | 52 |
+| Uncertainty | Poll error floor 3.5 | Irreducible poll error 3.5 instead of 2.4 | 91.1% | +0.5 | 236 | 68.3% | +1.5 | 52 |
+| Fundamentals | Fundamentals 2 pts more Republican | Every fundamentals margin shifted 2 pts toward Republicans | 86.8% | -3.8 | 234 | 66.2% | -0.7 | 52 |
+| Fundamentals | Fundamentals 2 pts more Democratic | Every fundamentals margin shifted 2 pts toward Democrats | 93.2% | +2.6 | 240 | 67.6% | +0.8 | 52 |
+| Fundamentals | Senate incumbency bonus 11 | 11 instead of 3 points (backtest estimate) | 90.6% | +0.0 | 236 | 65.2% | -1.6 | 52 |
+| Fundamentals | Fundamentals 50% less certain | Race error 9 (House) / 24 (Senate) | 91.9% | +1.3 | 238 | 67.0% | +0.2 | 52 |

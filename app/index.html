@@ -53,7 +53,7 @@
       <div class="legend" aria-hidden="true">
         <span class="legend-item"><span class="mark mark-polls"></span>Polls</span>
         <span class="legend-item"><span class="mark mark-market"></span>Markets</span>
-        <span class="legend-item"><span class="mark mark-fund"></span>Fundamentals</span>
+        <span class="legend-item"><span class="mark mark-fund"></span>Fundamentals (DDHQ)</span>
         <span class="legend-item"><span class="mark mark-model"></span>Our answer</span>
       </div>
       <div class="contest-axis" aria-hidden="true"><span></span><span></span><span class="gap-scale"><span>0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1</span></span></div>
@@ -82,10 +82,9 @@
     <div class="whatif-grid">
       <div class="card whatif-controls">
         <fieldset>
-          <legend>Fundamentals</legend>
-          <label><input type="radio" name="wi-base" value="ours" checked> Ours: 2024 result on the 2026 lines + national swing + incumbency</label>
-          <label><input type="radio" name="wi-base" value="ddhq"> Decision Desk HQ's probabilities (22 Oct), as in the course</label>
-          <p class="muted small" id="wi-ddhq-note"></p>
+          <legend>House fundamentals</legend>
+          <label><input type="radio" name="wi-base" value="ddhq" checked> Decision Desk HQ's district probabilities (22 Oct), as in the course (our final model)</label>
+          <label><input type="radio" name="wi-base" value="ours"> Our own: 2024 result on the 2026 lines + national swing + incumbency</label>
         </fieldset>
         <fieldset>
           <legend>How much each source counts</legend>
@@ -118,6 +117,19 @@
       <table>
         <thead id="bridge-head"></thead>
         <tbody id="bridge-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="assumptions" aria-labelledby="assump-title">
+    <div class="section-head">
+      <h2 id="assump-title">Our assumptions</h2>
+      <span class="muted">Every number the model needs that the data does not give us: its value, where it enters, how we got it</span>
+    </div>
+    <div class="table-wrap">
+      <table class="assumptions">
+        <thead><tr><th>Assumption</th><th>Value</th><th>Where it enters the model</th><th>How we derived it</th></tr></thead>
+        <tbody id="assump-body"></tbody>
       </table>
     </div>
   </section>
@@ -350,10 +362,10 @@
       <ol class="steps">
         <li><strong>Polls.</strong> <span data-m="polls"></span> Newer polls, larger samples and likely-voter samples count more. Polls paid for by a party or campaign count half. A pollster's older polls in the same race count less. Polls of hypothetical matchups with candidates who lost their primary are dropped.</li>
         <li><strong>Prediction markets.</strong> <span data-m="markets"></span> Prices from both venues are averaged by trading volume. A market counts like a poll average: $20,000 traded is worth one poll, $1 million or more is worth ten, and never more than ten.</li>
-        <li><strong>Fundamentals.</strong> How each district voted for president in 2024 on the lines used this November, compared with the country as a whole. To that we add the national environment, <span data-m="env"></span>, from the polling average and the Kalshi market on the national House vote. An incumbent on the ballot adds 3 points.</li>
+        <li><strong>Fundamentals.</strong> For the House we use Decision Desk HQ's district probabilities of 22 October, the course's starting point. Our own version, the 2024 presidential result on this year's lines plus a uniform national swing, missed badly in places (see the bridge). For the Senate: the 2024 presidential result in the state compared with the nation, plus the national environment of <span data-m="env"></span> (polling average and Kalshi's market on the national House vote), plus 3 points for an incumbent.</li>
         <li><strong>Combining.</strong> Each input becomes an expected margin with its own uncertainty. The three are averaged with weights inversely proportional to their variance. A race with many fresh polls leans on polls; a district with a liquid market but no polls leans on the market. Because the inputs overlap (markets read polls, for example), no race is treated as more certain than ±4 points. Hover over any race to see its weights.</li>
-        <li><strong>Simulation.</strong> In each of 20,000 simulated elections, every race moves with a shared national error of ±3 points, drawn with fat tails so that large misses stay possible. Each race also gets regional, state and race-specific errors. We then count seats. A win by an independent, such as Nebraska's Dan Osborn, is not counted as a Democratic seat.</li>
-        <li><strong>What we leave out.</strong> Other forecasters' models and expert ratings (Cook, Sabato, Inside Elections) are not inputs. We read them to learn, and show them under "Other forecasts" for comparison. Using them as data would count the same polls twice and pull our forecast toward the consensus.</li>
+        <li><strong>Simulation.</strong> In each of 20,000 simulated elections, every race moves with a shared national error of ±3.6 points (the generic ballot's average miss in past midterms), drawn with fat tails so that large misses stay possible. Each race also gets regional, state and race-specific errors. We then count seats. A win by an independent, such as Nebraska's Dan Osborn, is not counted as a Democratic seat.</li>
+        <li><strong>What we leave out.</strong> Apart from DDHQ as the House fundamentals, other forecasters' models and expert ratings (Cook, Sabato, Inside Elections) are not inputs. We read them to learn and show them under "Other forecasts". DDHQ itself already contains some market information, so markets count slightly more than the weights show.</li>
       </ol>
 
       <div class="section">
@@ -363,6 +375,8 @@
           <li><span class="when">26 Oct</span><span>Ground rules set: no source type favoured in advance; neighbour and expectation polls kept as a national signal; large poll–market gaps reviewed by hand; other models used only for comparison.</span></li>
           <li><span class="when">26 Oct</span><span>Data pipeline built (markets, polls, gap report, fundamentals) and the first model run. Two corrections along the way: markets were initially weighted above polls, and the national error was too small.</span></li>
           <li><span class="when">27 Oct</span><span>Page redesigned; robustness check with four extra simulation runs; explanations added.</span></li>
+          <li><span class="when">27 Oct</span><span>Contest rules and assignment arrived. Missing markets found (NC-11 and ten others). Bridge built from the course's Part 3 model to ours. Backtest on the midterms 1998–2022 and the 2024 Senate markets.</span></li>
+          <li><span class="when">27 Oct</span><span>Final model v2 chosen: error sizes from the backtest, DDHQ's probabilities as the House fundamentals, all three sources weighted by information.</span></li>
         </ul>
         <p class="muted">Every step and choice is logged with its reasoning in the project's process document (PROCESS.md).</p>
       </div>

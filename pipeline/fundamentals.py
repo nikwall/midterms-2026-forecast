@@ -44,12 +44,13 @@ LEGISLATORS = "https://unitedstates.github.io/congress-legislators/legislators-c
 LEGISLATORS_FILE = RAW / "legislators" / "legislators-current.json"
 HEADERS = {"User-Agent": "api232-midterms-forecast/0.1 (course project)"}
 
-# Provisional constants, to be calibrated on 2018 and 2022 results (see PROCESS.md, C15-C18).
+# Constants (PROCESS.md C15-C18, calibration C49). The backtest puts the Senate incumbency bonus
+# near 11 points; we keep 3, as in the chosen option 4 (the Senate is not scored in the contest).
 INCUMBENCY = 3.0                         # margin points for an incumbent on the ballot
 # Race-level error around the uniform-swing estimate. Senate results stray much further from
 # presidential partisanship than House results (strong or weak nominees, e.g. Collins 2020).
-RACE_SD = {"house": 6.0, "senate": 9.0}
-POLL_ENV_SD = 3.0                        # error of the final generic-ballot average vs the House vote
+RACE_SD = {"house": 6.0, "senate": 16.0}  # Senate calibrated in the backtest (C49); House not calibrated
+POLL_ENV_SD = 3.6                         # error of the final generic-ballot average vs the House vote, RMS of 7 midterms (backtest)
 # Kalshi's open-ended brackets need a representative value: "Republicans win" and "16% and above".
 BRACKET_TAILS = {(-100, 0): -3.0, (16, 100): 17.5}
 
@@ -144,7 +145,7 @@ def kalshi_popular_vote():
 def national_environment():
     generic = next(r for r in csv.DictReader((DATA / "polls_races.csv").open(encoding="utf-8")) if r["race_id"] == "GENERIC")
     parts = [{
-        "name": "Generic-ballot polls (VoteHub, weighted v1)", "mean": float(generic["margin_nonrep"]), "sd": POLL_ENV_SD,
+        "name": "Generic-ballot polls (VoteHub, weighted)", "mean": float(generic["margin_nonrep"]), "sd": POLL_ENV_SD,
         "detail": f"{generic['n_polls']} polls, latest ended {generic['latest_end']}; no LV adjustment yet",
     }]
     market = kalshi_popular_vote()

@@ -17,12 +17,14 @@ A forecast of the 2026 US House (and Senate) elections, built for the HKS foreca
 
 ## How the model works, in one paragraph
 
-Every race gets three pieces of evidence:
+Final model (v2). Every race gets three pieces of evidence:
 - polls (VoteHub),
 - prediction-market prices (Kalshi, Polymarket),
-- fundamentals: the district's 2024 presidential result on the 2026 lines (The Downballot), shifted by the national environment, plus incumbency.
+- fundamentals:
+  - House: Decision Desk HQ's district probabilities of 22 Oct, the course's starting point;
+  - Senate: the 2024 presidential result in the state, shifted by the national environment, plus incumbency.
 
-Each piece becomes an expected margin with an uncertainty. They are averaged with weights inversely proportional to their variance. All races are then simulated together 20,000 times, with a shared national error, division and state errors, and a race-specific error.
+Each piece becomes an expected margin with an uncertainty. The uncertainties are calibrated on the midterms 1998–2022. The pieces are averaged with weights inversely proportional to their variance. All races are then simulated together 20,000 times, with a shared national error (±3.6), division and state errors, and a race-specific error. Every assumption is listed with its source on the dashboard ("Our assumptions").
 
 Details: [research/model_explained.md](research/model_explained.md). The step-by-step path from the course's Part 3 model to ours: [research/bridge_report.md](research/bridge_report.md).
 
@@ -52,7 +54,7 @@ and go to http://localhost:8770.
 
 **Data that is not in the repository:**
 - Raw downloads in `data/raw/`: the pipeline fetches them again.
-- The course workbook (Decision Desk HQ probabilities, needed only for `pipeline/bridge.py`): course material, so not published. Put it at `data/raw/course/assignment3_election2026.xlsx` to run the bridge.
+- The course workbook: course material, so not published. Its Decision Desk HQ district probabilities, which the model uses, are in `data/ddhq_house_2026-10-22.csv` (source: Decision Desk HQ, accessed 22 Oct 2026).
 - `pipeline/backtest.py` needs the FiveThirtyEight poll archive and MIT Election Lab results in `data/raw/backtest/` (sources listed in the script).
 
 ## Contest rules (summary)

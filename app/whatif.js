@@ -8,8 +8,8 @@
 
 const WI_SIMS = 10000;
 const WI_SEED = 2026;
-const WI_DEFAULT = { base: "ours", polls: 1, market: 1, fundamentals: 1 };
-const wi = { ddhq: null, settings: { ...WI_DEFAULT }, timer: null, baseline: null };
+const WI_DEFAULT = { base: "ddhq", polls: 1, market: 1, fundamentals: 1 };
+const wi = { settings: { ...WI_DEFAULT }, timer: null, baseline: null };
 
 // Seeded random numbers, so every run uses the same draws and differences come from the settings.
 function mulberry32(seed) {
@@ -52,11 +52,8 @@ function invNorm(p) {
 // One district: combine the inputs the settings keep, weighted by precision times multiplier.
 function combineInputs(id, s, params) {
   const rf = raceForecast(id);
-  let fund = rf.inputs.fundamentals;
-  if (s.base === "ddhq" && wi.ddhq?.[id] != null) {
-    const p = Math.min(Math.max(wi.ddhq[id], 0.001), 0.999);
-    fund = { margin: params.fund_sd_house * invNorm(p), sd: params.fund_sd_house };
-  }
+  // The final model's House fundamentals are DDHQ's; "ours" swaps in our uniform-swing version.
+  const fund = s.base === "ours" && rf.inputs.fundamentals_own ? rf.inputs.fundamentals_own : rf.inputs.fundamentals;
   const used = [];
   if (rf.inputs.polls && s.polls > 0) used.push(["polls", rf.inputs.polls, s.polls]);
   if (rf.inputs.market && s.market > 0) used.push(["market", rf.inputs.market, s.market]);
@@ -128,7 +125,7 @@ function simulateHouse(s) {
 
 function readSettings() {
   return {
-    base: document.querySelector('input[name="wi-base"]:checked')?.value ?? "ours",
+    base: document.querySelector('input[name="wi-base"]:checked')?.value ?? "ddhq",
     polls: +$("#wi-polls").value, market: +$("#wi-market").value, fundamentals: +$("#wi-fund").value,
   };
 }
@@ -178,16 +175,7 @@ function scheduleRun() {
   wi.timer = setTimeout(() => renderWhatIf(simulateHouse(wi.settings)), 120);
 }
 
-async function initWhatIf() {
-  try {
-    const d = await loadJSON("data/ddhq.json");
-    wi.ddhq = d.p;
-    $("#wi-ddhq-note").textContent = `Source: ${d.source}.`;
-  } catch {
-    const radio = document.querySelector('input[name="wi-base"][value="ddhq"]');
-    radio.disabled = true;
-    $("#wi-ddhq-note").textContent = "DDHQ's district probabilities come from the course workbook and are only available in the local version.";
-  }
+function initWhatIf() {
   if (!app.forecast?.meta?.sim_params) return;
   $("#whatif").hidden = false;
   wi.baseline = simulateHouse(WI_DEFAULT);

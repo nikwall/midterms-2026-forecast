@@ -45,8 +45,9 @@ HALF_LIFE_DAYS = 14
 POPULATION_WEIGHT = {"lv": 1.0, "rv": 0.8, "v": 0.8, "a": 0.6}
 PARTISAN_WEIGHT = 0.5
 # Poll-implied probability: race margin error = irreducible part + part that shrinks with more polls.
-BASE_ERROR = 4.5      # points of margin, systematic + race-level error of final midterm polls (provisional)
-SAMPLING_ERROR = 7.0  # points of margin for a single poll; divided by sqrt(effective number of polls)
+# Calibrated in the backtest on 213 Senate midterm poll averages, 1998-2022 (C49; v1 used 4.5 and 7.0).
+BASE_ERROR = 2.4      # points of margin that no number of polls removes
+SAMPLING_ERROR = 9.7  # points of margin for a single poll (incl. pollster lean); divided by sqrt(effective number of polls)
 
 
 def norm_name(s):

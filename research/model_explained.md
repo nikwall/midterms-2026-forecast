@@ -2,6 +2,12 @@
 
 Written 27 October 2026, for model v1. The numbers come from `pipeline/model.py` and `pipeline/sensitivity.py`.
 
+> **Update, final model v2 (27 Oct, PROCESS.md C49):** the structure below is unchanged. What changed:
+> - The error sizes are now calibrated in the backtest: poll errors ±2.4 / ±9.7, national error ±3.6, Senate fundamentals ±16.
+> - The House fundamentals are Decision Desk HQ's district probabilities instead of our uniform swing.
+>
+> The current assumptions are listed on the dashboard, and the current sensitivity table is in [sensitivity_report.md](sensitivity_report.md).
+
 ## In plain language
 
 There is no machine learning in the model: no trees, no forests, no neural network. There is also no regression fitted to past elections. The model has three steps:

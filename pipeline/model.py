@@ -40,8 +40,9 @@ REST_SHARES = {"division": 0.25, "state": 0.25, "race": 0.50}
 T_DF = 5  # fat tails for the national layer
 # Markets and polls on one scale (C19): a market's error is that of a poll average with n_equiv
 # polls, where $20k traded counts as 1 poll and $1M as 10 polls (log scale), capped at 10.
-# The poll error formula and constants are those of fetch_polls.py.
-POLL_BASE_ERROR, POLL_SAMPLING_ERROR = 4.5, 7.0
+# The poll error formula and constants are those of fetch_polls.py, calibrated in the backtest
+# (C49: 213 Senate midterm poll averages 1998-2022; v1 used 4.5 and 7.0).
+POLL_BASE_ERROR, POLL_SAMPLING_ERROR = 2.4, 9.7
 MARKET_VOL_ONE_POLL, MARKET_VOL_TEN_POLLS, MARKET_MAX_POLLS = 20_000, 1_000_000, 10
 WIDE_SPREAD, WIDE_SPREAD_PENALTY = 0.05, 1.0
 
@@ -63,18 +64,25 @@ def rating(p):
 # endorsed by Democrats; the contest instructions say his win does not count as a Democratic seat.
 SIDE_OVERRIDES = {"H-AK-AL": ("I", "Bill Hill")}
 
-# Every assumption the sensitivity analysis (sensitivity.py) varies. The defaults are model v1.
+# Every assumption the sensitivity analysis (sensitivity.py) varies. The defaults are model v2
+# (option 4, C49): calibrated error sizes, DDHQ's probabilities as the House fundamentals.
 DEFAULT_CFG = {
     "inputs": ("polls", "market", "fundamentals"),
     "mult": {"polls": 1.0, "market": 1.0, "fundamentals": 1.0},  # extra factor on each input's precision
     "floor_sd": FLOOR_SD,
-    "nat_sd": None,                                   # None: the national environment's own sd (3 points)
+    "nat_sd": None,                                   # None: the national environment's own sd (3.6 points)
     "incumbency": 3.0,                                # as in fundamentals.py
-    "fund_race_sd": {"house": 6.0, "senate": 9.0},    # as in fundamentals.py
+    "fund_race_sd": {"house": 6.0, "senate": 16.0},   # as in fundamentals.py
     "poll_base": POLL_BASE_ERROR,
+    "poll_sampling": POLL_SAMPLING_ERROR,
     "market_max_polls": MARKET_MAX_POLLS,
     "rest_shares": REST_SHARES,
+    "house_fundamentals": "ddhq",                     # "ddhq" (v2) or "ours" (uniform swing, v1)
 }
+# Model v1 for comparison (bridge, sensitivity): uncalibrated errors and our own House fundamentals.
+V1_CFG = dict(DEFAULT_CFG, nat_sd=3.0, fund_race_sd={"house": 6.0, "senate": 9.0}, poll_base=4.5, poll_sampling=7.0,
+              house_fundamentals="ours")
+DDHQ_FILE = DATA / "ddhq_house_2026-10-22.csv"
 
 
 def market_poll_equivalents(volume, max_polls=MARKET_MAX_POLLS):
@@ -83,8 +91,8 @@ def market_poll_equivalents(volume, max_polls=MARKET_MAX_POLLS):
     return min(max_polls, 10 ** frac)
 
 
-def market_sd(volume, spread, max_polls=MARKET_MAX_POLLS, base=POLL_BASE_ERROR):
-    sd = (base ** 2 + POLL_SAMPLING_ERROR ** 2 / market_poll_equivalents(volume, max_polls)) ** 0.5
+def market_sd(volume, spread, max_polls=MARKET_MAX_POLLS, base=POLL_BASE_ERROR, sampling=POLL_SAMPLING_ERROR):
+    sd = (base ** 2 + sampling ** 2 / market_poll_equivalents(volume, max_polls)) ** 0.5
     return sd + (WIDE_SPREAD_PENALTY if spread is not None and spread > WIDE_SPREAD else 0.0)
 
 
@@ -133,6 +141,8 @@ def load_data():
         "polls": {r["race_id"]: r for r in read("polls_races.csv")},
         "funda": {r["race_id"]: r for r in read("fundamentals_races.csv")},
         "mkts": market_consensus(),
+        "ddhq": {r["race_id"]: float(r["p_dem"]) for r in csv.DictReader(DDHQ_FILE.open(encoding="utf-8"))}
+                if DDHQ_FILE.exists() else {},
         "division": {s["abbr"]: s["division"] for s in seats["states"]},
         "not_up_d": seats["chambers"]["senate"]["not_up"]["D"],
     }
@@ -150,16 +160,23 @@ def build_races(data, cfg=DEFAULT_CFG):
         fm = (float(f["expected_margin"]) - inc_old + (math.copysign(cfg["incumbency"], inc_old) if inc_old else 0.0)
               + cfg.get("env_shift", 0.0))
         fsd = (env_sd ** 2 + cfg["fund_race_sd"][r["chamber"]] ** 2) ** 0.5
-        inputs["fundamentals"] = {"margin": fm, "sd": fsd, "p": NORM.cdf(fm / fsd)}
+        own = {"margin": fm, "sd": fsd, "p": NORM.cdf(fm / fsd), "source": "ours"}
+        inputs["fundamentals"] = own
+        # House fundamentals from DDHQ (v2): its probability placed on the same margin scale.
+        if r["chamber"] == "house" and cfg["house_fundamentals"] == "ddhq" and rid in data["ddhq"]:
+            pd = min(max(data["ddhq"][rid], 0.001), 0.999)
+            dm = fsd * NORM.inv_cdf(pd) + cfg.get("env_shift", 0.0)
+            inputs["fundamentals"] = {"margin": dm, "sd": fsd, "p": NORM.cdf(dm / fsd), "source": "ddhq"}
+            inputs["fundamentals_own"] = own  # kept for the dashboard's switch
         if rid in polls:
             p = polls[rid]
-            psd = (cfg["poll_base"] ** 2 + POLL_SAMPLING_ERROR ** 2 / float(p["n_eff"])) ** 0.5
+            psd = (cfg["poll_base"] ** 2 + cfg["poll_sampling"] ** 2 / float(p["n_eff"])) ** 0.5
             pm = float(p["margin_nonrep"])
             inputs["polls"] = {"margin": pm, "sd": psd, "p": NORM.cdf(pm / psd),
                                "n_polls": int(p["n_polls"]), "n_polls_45d": int(p["n_polls_45d"]), "latest": p["latest_end"]}
         if rid in mkts:
             m = mkts[rid]
-            sd = market_sd(m["volume"], m["max_spread"], cfg["market_max_polls"], cfg["poll_base"])
+            sd = market_sd(m["volume"], m["max_spread"], cfg["market_max_polls"], cfg["poll_base"], cfg["poll_sampling"])
             pm = min(max(m["p_nonrep"], 0.005), 0.995)
             inputs["market"] = {"margin": sd * NORM.inv_cdf(pm), "sd": sd, "p": m["p_nonrep"], "volume": round(m["volume"]),
                                 "poll_equivalents": round(market_poll_equivalents(m["volume"], cfg["market_max_polls"]), 1),
@@ -177,7 +194,7 @@ def build_races(data, cfg=DEFAULT_CFG):
         if rid in SIDE_OVERRIDES:
             side, side_name = SIDE_OVERRIDES[rid]
         r.update(mean=mean, sd=sd, weights=weights, inputs=inputs, side=side, side_name=side_name)
-        ps = [v["p"] for v in inputs.values()]
+        ps = [v["p"] for k, v in inputs.items() if k != "fundamentals_own"]
         r["spread"] = max(ps) - min(ps)
     return races
 
@@ -302,9 +319,9 @@ def main():
     forecast = json.loads((APP / "forecast.json").read_text(encoding="utf-8"))
     forecast.update({
         "meta": {"status": "live", "updated": datetime.now(timezone.utc).isoformat(timespec="minutes"),
-                 "model_version": "v1", "n_sims": N_SIMS,
-                 "note": "Polls, markets and fundamentals combined per race by inverse-variance weights; correlated simulation.",
-                 "robustness": robustness, "inputs": input_summary(races, env),
+                 "model_version": "v2", "n_sims": N_SIMS,
+                 "note": "Polls, markets and fundamentals (House: DDHQ) combined per race by inverse-variance weights; correlated simulation.",
+                 "robustness": robustness, "inputs": input_summary(races, env), "assumptions": assumptions(env),
                  # What the dashboard needs to re-run the House model in the browser (app/whatif.js).
                  "sim_params": {"nat_sd": nat_sd, "floor_sd": FLOOR_SD, "rest_shares": REST_SHARES, "t_df": T_DF,
                                 "fund_sd_house": round(math.sqrt(nat_sd ** 2 + DEFAULT_CFG["fund_race_sd"]["house"] ** 2), 3)}},
@@ -331,6 +348,52 @@ def main():
         print(f"  {r['id']:6} P {p_win[i]:.2f} margin {r['mean']:+5.1f} sd {r['sd']:.1f} weights {r['weights']}")
 
 
+def assumptions(env):
+    """Every assumption the model needs: value, where it enters, how we got it. Shown on the dashboard."""
+    house_fsd = math.sqrt(float(env["sd"]) ** 2 + DEFAULT_CFG["fund_race_sd"]["house"] ** 2)
+    return [
+        {"group": "Polls", "name": "Error no number of polls removes", "value": f"±{POLL_BASE_ERROR} pts",
+         "where": "Uncertainty of each race's poll average, hence its weight",
+         "how": "Backtest: 213 Senate poll averages in the midterms 1998–2022 (FiveThirtyEight archive), one week before the election."},
+        {"group": "Polls", "name": "Noise of a single poll", "value": f"±{POLL_SAMPLING_ERROR} pts",
+         "where": "Same; shrinks with the effective number of polls (√n)",
+         "how": "Same backtest, fitted together with the line above."},
+        {"group": "Polls", "name": "Weighting of individual polls",
+         "value": "half-life 14 days; √sample size (cap 2,400); likely voters 1, registered 0.8, adults 0.6; partisan sponsor 0.5; older polls by the same pollster halved",
+         "where": "Poll average per race", "how": "Common practice of poll aggregators; judgement, not calibrated."},
+        {"group": "Markets", "name": "Exchange rate between money and polls",
+         "value": f"$20k traded = 1 poll, $1M = 10 polls, at most {MARKET_MAX_POLLS}",
+         "where": "Uncertainty of each race's market price, hence its weight",
+         "how": "Judgement, chosen so that a liquid market counts like a well-polled average (C19). Check: in the 2024 Senate races, markets one week out missed close races by 3.4 pts on average, polls in past midterms by 5.5."},
+        {"group": "Markets", "name": "Penalty for a wide bid-ask spread", "value": f"+{WIDE_SPREAD_PENALTY} pt if over {int(WIDE_SPREAD * 100)}¢",
+         "where": "Market uncertainty", "how": "Judgement: a wide quote says little about the price."},
+        {"group": "Fundamentals", "name": "House fundamentals", "value": "Decision Desk HQ's district probabilities of 22 Oct",
+         "where": f"Fundamentals input of each House race, placed on a margin scale with ±{house_fsd:.1f} pts",
+         "how": "The course's starting point. Our own uniform-swing version missed badly in places (TX-15: 5% vs. DDHQ 45%, market 82%); see the bridge."},
+        {"group": "Fundamentals", "name": "Senate fundamentals", "value": "2024 presidential margin in the state vs. the nation + national environment + 3 pts incumbency; race error ±16 pts",
+         "where": "Fundamentals input of each Senate race",
+         "how": "Race error from the backtest (Senate midterms 1998–2022). The backtest puts incumbency near 11 pts; we keep 3 as chosen (the Senate is not scored)."},
+        {"group": "National", "name": "National environment", "value": f"D{float(env['mean']):+.1f}",
+         "where": "Senate fundamentals; cross-check for the House",
+         "how": "Generic-ballot polls (D+7.4) and Kalshi's House popular-vote market (D+9.0), weighted by their uncertainty."},
+        {"group": "National", "name": "Shared national error", "value": f"±{float(env['sd']):.1f} pts, fat-tailed (t, 5 df)",
+         "where": "Simulation: moves every race together",
+         "how": "Backtest: the generic-ballot average missed the national House vote by 3.6 pts (RMS) in the midterms 1998–2022. Fat tails: judgement."},
+        {"group": "Simulation", "name": "Split of the remaining error", "value": "25% Census division, 25% state, 50% race",
+         "where": "Simulation: how strongly neighbouring races move together",
+         "how": "Judgement after Silver Bulletin's layers; the sensitivity analysis shows little effect."},
+        {"group": "Simulation", "name": "Least uncertainty per race", "value": f"±{FLOOR_SD} pts",
+         "where": "Combined uncertainty of each race",
+         "how": "Judgement: the inputs overlap (markets read polls), so their precisions cannot simply be added."},
+        {"group": "Simulation", "name": "Number of simulations", "value": f"{N_SIMS:,}",
+         "where": "All chances and ranges", "how": "Simulation noise ±0.4 pts or less; four re-runs with other seeds agree."},
+        {"group": "Rules", "name": "Seat forecast (a)", "value": "median of the simulated seat counts",
+         "where": "Contest answer (a)", "how": "Teams are ranked by distance to the true count; the median minimises the expected distance."},
+        {"group": "Rules", "name": "Independents", "value": "Alaska's Bill Hill and Nebraska's Dan Osborn are not counted as Democrats",
+         "where": "Seat counts and majorities", "how": "Contest instructions (Hill); Osborn says he will not caucus with either party."},
+    ]
+
+
 # HKS contest entry (README): House seats, P(majority) and five districts, due 7:00 AM ET on 3 Nov.
 CONTEST_DISTRICTS = [("H-NC-01", "North Carolina 1st"), ("H-NC-11", "North Carolina 11th"), ("H-OH-07", "Ohio 7th"),
                      ("H-PA-08", "Pennsylvania 8th"), ("H-NY-17", "New York 17th")]
@@ -349,8 +412,8 @@ def contest_hints(r):
     if "polls" in inp and "market" in inp and abs(inp["polls"]["p"] - inp["market"]["p"]) >= 0.15:
         hints.append(f"Polls and markets differ by {abs(inp['polls']['p'] - inp['market']['p']) * 100:.0f} points.")
     if "market" in inp and abs(inp["fundamentals"]["p"] - inp["market"]["p"]) >= 0.25:
-        hints.append(f"Fundamentals differ from the market by {abs(inp['fundamentals']['p'] - inp['market']['p']) * 100:.0f} points, "
-                     "a sign of candidate effects the fundamentals cannot see.")
+        src = "DDHQ" if inp["fundamentals"].get("source") == "ddhq" else "Fundamentals"
+        hints.append(f"{src} differs from the market by {abs(inp['fundamentals']['p'] - inp['market']['p']) * 100:.0f} points.")
     if "market" in inp and inp["market"]["volume"] < 100_000:
         hints.append("Thin market (under $100k traded).")
     return hints
@@ -453,6 +516,10 @@ SOURCES = [
      "role": "Calculated on the district lines used in November 2026"},
     {"group": "Data we use", "name": "unitedstates/congress-legislators", "url": "https://unitedstates.github.io/congress-legislators/legislators-current.json",
      "role": "Current members of Congress, for Senate incumbents"},
+    {"group": "Data we use", "name": "Decision Desk HQ district probabilities (22 Oct)", "url": "https://votes.decisiondeskhq.com/forecast/2026/house",
+     "role": "House fundamentals since model v2; supplied in the API-232 course workbook"},
+    {"group": "Data we use", "name": "FiveThirtyEight poll archive; MIT Election Data + Science Lab", "url": "https://github.com/fivethirtyeight/data/tree/master/pollster-ratings",
+     "role": "Backtest of poll and fundamentals errors, 1998–2024"},
     {"group": "National signals, cross-checks only", "name": "Pew Research Center: who Americans expect to win", "url": "https://www.pewresearch.org/short-reads/2026/10/15/majority-of-americans-expect-democrats-to-win-control-of-house-public-is-split-on-senate/",
      "role": "Expectation poll, 28 Sep – 4 Oct"},
     {"group": "National signals, cross-checks only", "name": "Citizen forecasting (Verasight, LSE USAPP)", "url": "https://blogs.lse.ac.uk/usappblog/2026/10/23/citizen-forecasting-us-midterm-elections/",

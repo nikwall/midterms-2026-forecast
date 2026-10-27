@@ -3,10 +3,9 @@
     python run_all.py            refresh data, rebuild the forecast and the dashboard data
     python run_all.py --full     also the sensitivity analysis (about 2 minutes more)
 
-Steps: seat list, market prices (Kalshi, Polymarket), polls (VoteHub), poll-market gaps,
-fundamentals, model. The bridge from the course model (pipeline/bridge.py) runs only if the
-course workbook is present at data/raw/course/assignment3_election2026.xlsx; it is course
-material and not part of the repository.
+Steps: DDHQ import (only if the course workbook is present), seat list, market prices
+(Kalshi, Polymarket), polls (VoteHub), poll-market gaps, fundamentals, model, bridge from
+the course model. The House fundamentals come from data/ddhq_house_2026-10-22.csv.
 """
 
 import subprocess
@@ -24,14 +23,13 @@ def run(script):
 
 
 def main():
+    if (ROOT / "data" / "raw" / "course" / "assignment3_election2026.xlsx").exists():
+        run("ddhq_import.py")  # otherwise the committed data/ddhq_house_2026-10-22.csv is used
     for script in STEPS:
         run(script)
     if "--full" in sys.argv:
         run("sensitivity.py")
-    if (ROOT / "data" / "raw" / "course" / "assignment3_election2026.xlsx").exists():
-        run("bridge.py")
-    else:
-        print("\n=== bridge.py skipped: course workbook not found (app/data/bridge.json keeps its last version)")
+    run("bridge.py")
     print("\nDone. Serve the dashboard with: python -m http.server 8770 --directory app")
 
 

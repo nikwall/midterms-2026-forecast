@@ -198,7 +198,7 @@ function renderContest(f) {
     else parts.push("no polls");
     if (inp.market) parts.push(`markets ${prob2(inp.market.p)} (${money(inp.market.volume)} traded, weight ${wt(w.market)})`);
     else parts.push("no market");
-    parts.push(`fundamentals ${prob2(inp.fundamentals.p)} (weight ${wt(w.fundamentals)})`);
+    parts.push(`${inp.fundamentals.source === "ddhq" ? "DDHQ" : "fundamentals"} ${prob2(inp.fundamentals.p)} (weight ${wt(w.fundamentals)})`);
     const label = app.byId[d.race_id].label;
     const row = html("div", { class: "contest-row" }, [
       html("div", { class: "contest-row-main" }, [
@@ -360,7 +360,7 @@ function renderModelSummary(f) {
   const m = f.meta.inputs;
   if (!m) return;
   const set = (k, text) => { const el = document.querySelector(`[data-m="${k}"]`); if (el) el.textContent = text; };
-  set("flow-inputs", `Polls (${m.race_polls} polls in ${m.senate_with_polls + m.house_with_polls} races), prediction markets (Kalshi and Polymarket, ${m.senate_with_market + m.house_with_market} races, ${money(m.market_volume_usd)} traded) and fundamentals (how each district voted in 2024 on this year's lines, plus a national environment of ${margin(m.environment)}).`);
+  set("flow-inputs", `Polls (${m.race_polls} polls in ${m.senate_with_polls + m.house_with_polls} races), prediction markets (Kalshi and Polymarket, ${m.senate_with_market + m.house_with_market} races, ${money(m.market_volume_usd)} traded) and fundamentals (House: Decision Desk HQ's district probabilities of 22 Oct; Senate: the 2024 result in the state plus a national environment of ${margin(m.environment)}).`);
   const ws = m.weights_senate_polled, wu = m.weights_house_unpolled;
   set("flow-weights", ws && wu
     ? `No source is favoured in advance; each counts by how much it knows about that race. In polled Senate races the average weights are polls ${pct(ws.polls)}, markets ${pct(ws.market)} and fundamentals ${pct(ws.fundamentals)}. In House districts without polls, fundamentals carry ${pct(wu.fundamentals)} and markets ${pct(wu.market)}.`
@@ -767,6 +767,25 @@ function renderBenchmarks(f) {
   if (!body.children.length) body.append(emptyRow(4, "Appears after the first model run."));
 }
 
+// ---------- assumptions ----------
+
+function renderAssumptions(list) {
+  const body = $("#assump-body");
+  body.replaceChildren();
+  if (!list?.length) { $("#assumptions").hidden = true; return; }
+  let group = null;
+  for (const a of list) {
+    if (a.group !== group) {
+      group = a.group;
+      body.append(html("tr", { class: "group-row" }, html("td", { colspan: 4, text: group })));
+    }
+    body.append(html("tr", {}, [
+      html("td", { text: a.name }), html("td", { class: "value", text: a.value }),
+      html("td", { text: a.where }), html("td", { class: "muted", text: a.how }),
+    ]));
+  }
+}
+
 // ---------- bridge from the course model ----------
 
 function renderBridge(b) {
@@ -775,9 +794,9 @@ function renderBridge(b) {
   const w = b.ddhq_weights_competitive;
   $("#bridge-intro").textContent =
     `The course starts from Decision Desk HQ's district probabilities of 22 October (expected ${b.ddhq_sum_p} Democratic seats). ` +
-    `In competitive races DDHQ weighs fundamentals ${pct(w.w_fund)}, markets ${pct(w.w_markets)} and polls ${pct(w.w_polls)}. ` +
-    "Steps A and B are Parts 2 and 3 of the assignment; each later step changes one thing on the way to our model (F). " +
-    "Step G is an alternative that keeps DDHQ in place of our fundamentals.";
+    `In competitive races DDHQ weighs fundamentals ${pct(w.w_fundamentals)}, markets ${pct(w.w_markets)} and polls ${pct(w.w_polls)}. ` +
+    `Steps A and B are Parts 2 and 3 of the assignment; each later step changes one thing on the way to our final model (${b.final_step}). ` +
+    "The last two rows are for reference: our own fundamentals instead of DDHQ, and model v1 before the backtest.";
   const cols = b.contest.concat(b.check);
   const label = (id) => app.byId[id]?.label ?? id;
   $("#bridge-head").replaceChildren(html("tr", {}, [
@@ -788,7 +807,7 @@ function renderBridge(b) {
   const body = $("#bridge-body");
   body.replaceChildren();
   for (const s of b.steps) {
-    const tr = html("tr", s.step === "F" ? { class: "highlight" } : {}, [
+    const tr = html("tr", s.step === b.final_step ? { class: "final" } : s.step.startsWith("R") ? { class: "reference" } : {}, [
       html("td", { text: s.step }), html("td", { text: s.change }),
       html("td", { class: "num", text: s.median }), html("td", { class: "num", text: `${s.p10}–${s.p90}` }),
       html("td", { class: "num", text: s.p_majority.toFixed(2) }),
@@ -834,6 +853,7 @@ function render() {
   const f = app.forecast;
   renderHeader(f);
   renderContest(f);
+  renderAssumptions(f.meta.assumptions);
   renderChamber("house", f.house);
   renderChamber("senate", f.senate);
   renderModelSummary(f);
