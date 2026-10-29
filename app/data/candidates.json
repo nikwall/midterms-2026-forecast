@@ -1,0 +1,545 @@
+{
+ "source": "Kalshi listing; photos from Wikipedia",
+ "races": {
+  "H-NC-01": {
+   "dem": {
+    "name": "Don Davis",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Don_Davis_%28North_Carolina_politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Portrait_of_Congressman_Don_Davis.jpg/250px-Portrait_of_Congressman_Don_Davis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1971)"
+   },
+   "rep": {
+    "name": "Laurie Buckhout",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Laurie_Buckhout",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Laurie_Buckhout.jpg/250px-Laurie_Buckhout.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1961)"
+   }
+  },
+  "H-NC-11": {
+   "dem": {
+    "name": "Jamie Ager",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Jamie_Ager",
+    "photo": null,
+    "description": "American farmer and political candidate"
+   },
+   "rep": {
+    "name": "Jennifer Balkcom",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Jennifer_Balkcom",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Rep._Jennifer_Balkcom.jpg/250px-Rep._Jennifer_Balkcom.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician"
+   }
+  },
+  "H-OH-07": {
+   "dem": {
+    "name": "Brian Poindexter",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Max Miller",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Max_Miller_%28politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Max_Miller%2C_official_portrait_%28119th_Congress%29.jpg/250px-Max_Miller%2C_official_portrait_%28119th_Congress%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1988)"
+   }
+  },
+  "H-PA-08": {
+   "dem": {
+    "name": "Paige Cognetti",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Paige_Cognetti",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Paige_Cognetti_%2852165104986%29_%283x4a%29.jpg/250px-Paige_Cognetti_%2852165104986%29_%283x4a%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician"
+   },
+   "rep": {
+    "name": "Rob Bresnahan",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Rob_Bresnahan",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Rep._Rob_Bresnahan_official_photo%2C_119th_Congress.jpg/250px-Rep._Rob_Bresnahan_official_photo%2C_119th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1990)"
+   }
+  },
+  "H-NY-17": {
+   "dem": {
+    "name": "Cait Conley",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Cait_Conley",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Cait_Conley.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "American politician"
+   },
+   "rep": {
+    "name": "Mike Lawler",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Mike_Lawler",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Rep._Mike_Lawler_official_photo.jpg/250px-Rep._Mike_Lawler_official_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1986)"
+   }
+  },
+  "H-MI-07": {
+   "dem": {
+    "name": "William Lawrence",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Tom Barrett",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Tom_Barrett_%28Michigan_politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Tom_Barrett%2C_official_portrait_%28119th_Congress%29.jpg/250px-Tom_Barrett%2C_official_portrait_%28119th_Congress%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1981)"
+   }
+  },
+  "H-TX-15": {
+   "dem": {
+    "name": "Bobby Pulido",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Monica De La Cruz",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Monica_De_La_Cruz",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/MDLC_Official_Portrait_2025.jpg/250px-MDLC_Official_Portrait_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1974)"
+   }
+  },
+  "H-PA-07": {
+   "dem": {
+    "name": "Bob Brooks",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Ryan Mackenzie",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Ryan_Mackenzie",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Rep._Ryan_Mackenzie_official_photo%2C_119th_Congress.jpg/250px-Rep._Ryan_Mackenzie_official_photo%2C_119th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1982)"
+   }
+  },
+  "H-WI-03": {
+   "dem": {
+    "name": "Rebecca Cooke",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Rebecca_Cooke_%28politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Rebecca_Cooke_on_UpNorthNews_March_2025_%28cropped%29.jpg/250px-Rebecca_Cooke_on_UpNorthNews_March_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American political candidate (born 1987)"
+   },
+   "rep": {
+    "name": "Derrick Van Orden",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Derrick_Van_Orden",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Congressman_dvo_%281%29.jpg/250px-Congressman_dvo_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1969)"
+   }
+  },
+  "H-AZ-01": {
+   "dem": {
+    "name": "Amish Shah",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Amish_Shah",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Amish_Shah_by_Gage_Skidmore_2.jpg/250px-Amish_Shah_by_Gage_Skidmore_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1977)"
+   },
+   "rep": {
+    "name": "Jay Feely",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-FL-25": {
+   "dem": {
+    "name": "Jared Moskowitz",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Jared_Moskowitz",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/JEM_New_Headshot_2.jpg/250px-JEM_New_Headshot_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1980)"
+   },
+   "rep": {
+    "name": "Scott Singer",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-WA-03": {
+   "dem": {
+    "name": "Marie Gluesenkamp Perez",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Marie_Gluesenkamp_Perez",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Rep._Marie_Gluesenkamp_Perez_-_118th_Congress.jpg/250px-Rep._Marie_Gluesenkamp_Perez_-_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1988)"
+   },
+   "rep": {
+    "name": "John Braun",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/John_Braun",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/JohnBraun.png/250px-JohnBraun.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician from Washington"
+   }
+  },
+  "H-VA-02": {
+   "dem": {
+    "name": "Elaine Luria",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Elaine_Luria",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Rep._Elaine_Luria_official_photo%2C_117th_Congress.jpg/250px-Rep._Elaine_Luria_official_photo%2C_117th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1975)"
+   },
+   "rep": {
+    "name": "Jen Kiggans",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Jen_Kiggans",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Kiggans_Jen_118th_Congress.jpg/250px-Kiggans_Jen_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician and nurse (born 1971)"
+   }
+  },
+  "H-OH-09": {
+   "dem": {
+    "name": "Marcy Kaptur",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Marcy_Kaptur",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Marcy_Kaptur_Wikipedia.jpg/250px-Marcy_Kaptur_Wikipedia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1946)"
+   },
+   "rep": {
+    "name": "Derek Merrin",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Derek_Merrin",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Derek_Merrin_jpeg_%28cropped%29.jpg/250px-Derek_Merrin_jpeg_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1986)"
+   }
+  },
+  "H-CA-22": {
+   "dem": {
+    "name": "Randy Villegas",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "David Valadao",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/David_Valadao",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/David_Valadao_117th_U.S_Congress.jpg/250px-David_Valadao_117th_U.S_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician and farmer (born 1977)"
+   }
+  },
+  "H-IA-01": {
+   "dem": {
+    "name": "Christina Bohannan",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Christina_Bohannan",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/ChristinaBohannan.jpg/250px-ChristinaBohannan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician, legal scholar and engineer (born 1971)"
+   },
+   "rep": {
+    "name": "Mariannette Miller-Meeks",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Mariannette_Miller-Meeks",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Mariannette_Miller-Meeks_117th_U.S_Congress.jpg/250px-Mariannette_Miller-Meeks_117th_U.S_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American physician and politician (born 1955)"
+   }
+  },
+  "H-FL-14": {
+   "dem": {
+    "name": "Kathy Castor",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Kathy_Castor",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Kathy_Castor.jpg/250px-Kathy_Castor.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American lawyer & politician (born 1966)"
+   },
+   "rep": {
+    "name": "Mike Beltran",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Mike_Beltran",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mike_Beltran.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "American politician from Florida"
+   }
+  },
+  "H-PA-10": {
+   "dem": {
+    "name": "Janelle Stelson",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Scott Perry",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Scott_Perry",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Rep._Scott_Perry%2C_official_portrait%2C_118th_Congress.jpg/250px-Rep._Scott_Perry%2C_official_portrait%2C_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1962)"
+   }
+  },
+  "H-TX-34": {
+   "dem": {
+    "name": "Vicente Gonzalez",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Vicente_Gonzalez_%28American_politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Rep._Vicente_Gonzalez%2C_118th_Congress.jpg/250px-Rep._Vicente_Gonzalez%2C_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1967)"
+   },
+   "rep": {
+    "name": "Eric Flores",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-IA-03": {
+   "dem": {
+    "name": "Sarah Trone Garriott",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Sarah_Trone_Garriott",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Sarah_Trone_Garriott_2023_%28cropped_2%29.jpg/250px-Sarah_Trone_Garriott_2023_%28cropped_2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Iowa politician"
+   },
+   "rep": {
+    "name": "Zach Nunn",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Zach_Nunn",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Official_Portrait_of_Rep._Zach_Lunn_119th_Congress.jpg/250px-Official_Portrait_of_Rep._Zach_Lunn_119th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1979)"
+   }
+  },
+  "H-AZ-06": {
+   "dem": {
+    "name": "JoAnna Mendoza",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Juan Ciscomani",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Juan_Ciscomani",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Rep._Juan_Ciscomani_official_photo%2C_118th_Congress.jpg/250px-Rep._Juan_Ciscomani_official_photo%2C_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1982)"
+   }
+  },
+  "H-MI-10": {
+   "dem": {
+    "name": "Christina Hines",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Michael Bouchard Jr.",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-CO-08": {
+   "dem": {
+    "name": "Manny Rutinel",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Manny_Rutinel",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Manny_Rutinel_at_2024_YIMBY_Denver_Legislative_Kickoff_%28cropped%29.jpg/250px-Manny_Rutinel_at_2024_YIMBY_Denver_Legislative_Kickoff_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1994)"
+   },
+   "rep": {
+    "name": "Gabe Evans",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Gabe_Evans",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Rep._Gabe_Evans_official_photo%2C_119th_Congress.jpg/250px-Rep._Gabe_Evans_official_photo%2C_119th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1986)"
+   }
+  },
+  "H-NJ-07": {
+   "dem": {
+    "name": "Rebecca Bennett",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Thomas Kean Jr.",
+    "party": "R",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Thomas_Kean_Jr.",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Rep._Tom_Kean_official_photo%2C_118th_Congress.jpg/250px-Rep._Tom_Kean_official_photo%2C_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1968)"
+   }
+  },
+  "H-IA-02": {
+   "dem": {
+    "name": "Lindsay James",
+    "party": "D",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Lindsay_James_%28politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Member_of_the_Iowa_House_of_Representatives_Lindsay_James.jpg/250px-Member_of_the_Iowa_House_of_Representatives_Lindsay_James.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1980)"
+   },
+   "rep": {
+    "name": "Joe Mitchell",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Joe_Mitchell_%28politician%29",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Joe_Mitchell.jpg/250px-Joe_Mitchell.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician"
+   }
+  },
+  "H-NM-02": {
+   "dem": {
+    "name": "Gabe Vasquez",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Gabe_Vasquez",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Rep_Gabriel_Vasquez_Official_Portrait.jpg/250px-Rep_Gabriel_Vasquez_Official_Portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1984)"
+   },
+   "rep": {
+    "name": "Greg Cunningham",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-OH-01": {
+   "dem": {
+    "name": "Greg Landsman",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Greg_Landsman",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Greg_Landsman_Official_Portrait_118th_Congress.jpg/250px-Greg_Landsman_Official_Portrait_118th_Congress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1976)"
+   },
+   "rep": {
+    "name": "Eric Conroy",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-TX-35": {
+   "dem": {
+    "name": "Johnny C. Garcia",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Carlos De La Cruz",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-NY-03": {
+   "dem": {
+    "name": "Tom Suozzi",
+    "party": "D",
+    "incumbent": true,
+    "wiki": "https://en.wikipedia.org/wiki/Tom_Suozzi",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/TomSuozzi118thCongress.jpg/250px-TomSuozzi118thCongress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American politician (born 1962)"
+   },
+   "rep": {
+    "name": "Mike LiPetri",
+    "party": "R",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   }
+  },
+  "H-KY-06": {
+   "dem": {
+    "name": "Zach Dembo",
+    "party": "D",
+    "incumbent": false,
+    "wiki": null,
+    "photo": null,
+    "description": null
+   },
+   "rep": {
+    "name": "Ralph Alvarado",
+    "party": "R",
+    "incumbent": false,
+    "wiki": "https://en.wikipedia.org/wiki/Ralph_Alvarado",
+    "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Ralph_Alvarado_by_Gage_Skidmore.jpg/250px-Ralph_Alvarado_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "American physician and politician"
+   }
+  }
+ }
+}

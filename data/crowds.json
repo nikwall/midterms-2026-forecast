@@ -1,0 +1,97 @@
+{
+ "fetched": "2026-10-29T20:06+00:00",
+ "control": [
+  {
+   "source": "Metaculus",
+   "kind": "forecasting community",
+   "url": "https://www.metaculus.com/midterms-2026/",
+   "p_dem_house": 0.959,
+   "p_dem_senate": 0.676,
+   "dem_seats_median": 230,
+   "as_of": "2026-10-29",
+   "note": "median House seat advantage D+25, so about 230 Democratic seats"
+  },
+  {
+   "source": "PredictIt",
+   "kind": "real-money market, $850 cap",
+   "url": "https://www.predictit.org/markets/5/Congress",
+   "p_dem_house": 0.887,
+   "p_dem_senate": 0.646,
+   "dem_seats_range": [
+    238,
+    242
+   ],
+   "as_of": "2026-10-29"
+  },
+  {
+   "source": "Manifold",
+   "kind": "play-money market",
+   "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn",
+   "p_dem_house": 0.94,
+   "p_dem_senate": 0.668,
+   "dem_seats_median": 237,
+   "bettors_house": 123,
+   "as_of": "2026-10-29"
+  }
+ ],
+ "districts": {
+  "H-NC-01": [
+   {
+    "source": "PredictIt",
+    "p": 0.8,
+    "url": "https://www.predictit.org/markets/detail/8184",
+    "note": null
+   },
+   {
+    "source": "Manifold",
+    "p": 0.82,
+    "url": "https://manifold.markets/Robincvgr/will-a-democrat-win-these-us-house",
+    "note": "112 traders in the market"
+   }
+  ],
+  "H-NC-11": [
+   {
+    "source": "PredictIt",
+    "p": 0.845,
+    "url": "https://www.predictit.org/markets/detail/8909",
+    "note": null
+   }
+  ],
+  "H-OH-07": [
+   {
+    "source": "PredictIt",
+    "p": null,
+    "url": "https://www.predictit.org/markets/detail/8992",
+    "note": "no tight quote (spread over 15\u00a2)"
+   }
+  ],
+  "H-PA-08": [
+   {
+    "source": "PredictIt",
+    "p": null,
+    "url": "https://www.predictit.org/markets/detail/8978",
+    "note": "no tight quote (spread over 15\u00a2)"
+   },
+   {
+    "source": "Manifold",
+    "p": 0.9,
+    "url": "https://manifold.markets/Robincvgr/will-a-democrat-win-these-us-house",
+    "note": "112 traders in the market"
+   }
+  ],
+  "H-NY-17": [
+   {
+    "source": "PredictIt",
+    "p": 0.66,
+    "url": "https://www.predictit.org/markets/detail/8187",
+    "note": null
+   },
+   {
+    "source": "Manifold",
+    "p": 0.61,
+    "url": "https://manifold.markets/Robincvgr/will-a-democrat-win-these-us-house",
+    "note": "112 traders in the market"
+   }
+  ]
+ }
+}

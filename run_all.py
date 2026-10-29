@@ -1,11 +1,12 @@
 """Run the whole forecast pipeline, in order, with one command.
 
     python run_all.py            refresh data, rebuild the forecast and the dashboard data
-    python run_all.py --full     also the sensitivity analysis (about 2 minutes more)
+    python run_all.py --full     also the sensitivity analysis and the 2022/2024 House backtest
 
 Steps: DDHQ import (only if the course workbook is present), seat list, market prices
-(Kalshi, Polymarket), polls (VoteHub), poll-market gaps, fundamentals, model, bridge from
-the course model. The House fundamentals come from data/ddhq_house_2026-10-22.csv.
+(Kalshi, Polymarket), polls (VoteHub, plus data/polls_manual.csv), poll-market gaps,
+fundamentals, crowd forecasts for comparison (Metaculus, Manifold, PredictIt), model,
+candidates and photos for the key races, bridge from the course model. The House fundamentals come from data/ddhq_house_2026-10-22.csv.
 """
 
 import subprocess
@@ -14,7 +15,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PIPE = ROOT / "pipeline"
-STEPS = ["build_seats.py", "fetch_markets.py", "fetch_polls.py", "gaps.py", "fundamentals.py", "model.py"]
+STEPS = ["build_seats.py", "fetch_markets.py", "fetch_polls.py", "gaps.py", "fundamentals.py", "fetch_crowds.py", "model.py",
+         "fetch_candidates.py"]
 
 
 def run(script):
@@ -29,6 +31,7 @@ def main():
         run(script)
     if "--full" in sys.argv:
         run("sensitivity.py")
+        run("backtest_house.py")
     run("bridge.py")
     print("\nDone. Serve the dashboard with: python -m http.server 8770 --directory app")
 

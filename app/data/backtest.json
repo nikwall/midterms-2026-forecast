@@ -1,0 +1,570 @@
+{
+ "2022": {
+  "year": "2022",
+  "election": "2022-11-08",
+  "as_of": "2022-11-01",
+  "lean_source": "FiveThirtyEight partisan lean, 2022 lines",
+  "environment": -0.6,
+  "generic_polls": 139,
+  "districts": 435,
+  "districts_missing_lean": [],
+  "districts_with_polls": 70,
+  "district_polls": 120,
+  "actual_d_seats": 213,
+  "actual_majority": false,
+  "variants": {
+   "model": {
+    "median": 210,
+    "mean": 209.4,
+    "ci80": [
+     190,
+     228
+    ],
+    "seat_error": -3,
+    "p_majority": 0.303,
+    "brier_majority": 0.092,
+    "brier_all": 0.031,
+    "brier_competitive": 0.1551,
+    "n_competitive": 81,
+    "brier_polled": 0.1235,
+    "n_polled": 70,
+    "favourites_won": 0.765,
+    "calls_wrong": 20,
+    "closest_five": [
+     {
+      "race_id": "H-NV-01",
+      "p": 0.5,
+      "won": 1,
+      "actual_margin": 5.6
+     },
+     {
+      "race_id": "H-NH-01",
+      "p": 0.52,
+      "won": 1,
+      "actual_margin": 8.1
+     },
+     {
+      "race_id": "H-TX-15",
+      "p": 0.47,
+      "won": 0,
+      "actual_margin": -8.5
+     },
+     {
+      "race_id": "H-MI-08",
+      "p": 0.53,
+      "won": 1,
+      "actual_margin": 10.1
+     },
+     {
+      "race_id": "H-AK-AL",
+      "p": 0.46,
+      "won": 1,
+      "actual_margin": 9.9
+     }
+    ],
+    "brier_closest_five": 0.2406,
+    "calibration": [
+     {
+      "bin": "Safe R (<5%)",
+      "n": 190,
+      "mean_p": 0.003,
+      "d_won": 0.005
+     },
+     {
+      "bin": "Likely R (5\u201335%)",
+      "n": 23,
+      "mean_p": 0.162,
+      "d_won": 0.13
+     },
+     {
+      "bin": "Toss-up and lean (35\u201365%)",
+      "n": 18,
+      "mean_p": 0.496,
+      "d_won": 0.722
+     },
+     {
+      "bin": "Likely D (65\u201395%)",
+      "n": 40,
+      "mean_p": 0.82,
+      "d_won": 0.8
+     },
+     {
+      "bin": "Safe D (95%+)",
+      "n": 164,
+      "mean_p": 0.997,
+      "d_won": 1.0
+     }
+    ]
+   },
+   "fundamentals_only": {
+    "median": 208,
+    "mean": 207.6,
+    "ci80": [
+     191,
+     224
+    ],
+    "seat_error": -5,
+    "p_majority": 0.216,
+    "brier_majority": 0.047,
+    "brier_all": 0.035,
+    "brier_competitive": 0.1669,
+    "n_competitive": 80,
+    "brier_polled": 0.148,
+    "n_polled": 70,
+    "favourites_won": 0.75,
+    "calls_wrong": 22,
+    "closest_five": [
+     {
+      "race_id": "H-PA-17",
+      "p": 0.51,
+      "won": 1,
+      "actual_margin": 6.8
+     },
+     {
+      "race_id": "H-IA-03",
+      "p": 0.51,
+      "won": 0,
+      "actual_margin": -0.7
+     },
+     {
+      "race_id": "H-NM-02",
+      "p": 0.52,
+      "won": 1,
+      "actual_margin": 0.7
+     },
+     {
+      "race_id": "H-OH-01",
+      "p": 0.47,
+      "won": 1,
+      "actual_margin": 5.5
+     },
+     {
+      "race_id": "H-TX-15",
+      "p": 0.46,
+      "won": 0,
+      "actual_margin": -8.5
+     }
+    ],
+    "brier_closest_five": 0.2447,
+    "calibration": [
+     {
+      "bin": "Safe R (<5%)",
+      "n": 192,
+      "mean_p": 0.003,
+      "d_won": 0.01
+     },
+     {
+      "bin": "Likely R (5\u201335%)",
+      "n": 24,
+      "mean_p": 0.171,
+      "d_won": 0.208
+     },
+     {
+      "bin": "Toss-up and lean (35\u201365%)",
+      "n": 17,
+      "mean_p": 0.497,
+      "d_won": 0.647
+     },
+     {
+      "bin": "Likely D (65\u201395%)",
+      "n": 39,
+      "mean_p": 0.822,
+      "d_won": 0.821
+     },
+     {
+      "bin": "Safe D (95%+)",
+      "n": 163,
+      "mean_p": 0.997,
+      "d_won": 1.0
+     }
+    ]
+   }
+  },
+  "misses": [
+   {
+    "race_id": "H-WA-03",
+    "p": 0.05,
+    "won": 1,
+    "actual_margin": 0.8,
+    "polls": true
+   },
+   {
+    "race_id": "H-NY-04",
+    "p": 0.92,
+    "won": 0,
+    "actual_margin": -3.5,
+    "polls": false
+   },
+   {
+    "race_id": "H-CA-13",
+    "p": 0.84,
+    "won": 0,
+    "actual_margin": -0.4,
+    "polls": false
+   },
+   {
+    "race_id": "H-CA-22",
+    "p": 0.84,
+    "won": 0,
+    "actual_margin": -3.0,
+    "polls": false
+   },
+   {
+    "race_id": "H-CA-27",
+    "p": 0.81,
+    "won": 0,
+    "actual_margin": -6.5,
+    "polls": true
+   },
+   {
+    "race_id": "H-NY-17",
+    "p": 0.77,
+    "won": 0,
+    "actual_margin": -0.6,
+    "polls": true
+   },
+   {
+    "race_id": "H-OH-09",
+    "p": 0.29,
+    "won": 1,
+    "actual_margin": 13.3,
+    "polls": false
+   },
+   {
+    "race_id": "H-CO-08",
+    "p": 0.31,
+    "won": 1,
+    "actual_margin": 0.7,
+    "polls": true
+   },
+   {
+    "race_id": "H-NY-03",
+    "p": 0.69,
+    "won": 0,
+    "actual_margin": -7.3,
+    "polls": false
+   },
+   {
+    "race_id": "H-NY-22",
+    "p": 0.68,
+    "won": 0,
+    "actual_margin": -1.0,
+    "polls": true
+   },
+   {
+    "race_id": "H-ME-02",
+    "p": 0.32,
+    "won": 1,
+    "actual_margin": 6.1,
+    "polls": true
+   },
+   {
+    "race_id": "H-OR-05",
+    "p": 0.65,
+    "won": 0,
+    "actual_margin": -2.1,
+    "polls": false
+   },
+   {
+    "race_id": "H-NM-02",
+    "p": 0.37,
+    "won": 1,
+    "actual_margin": 0.7,
+    "polls": true
+   },
+   {
+    "race_id": "H-NC-13",
+    "p": 0.39,
+    "won": 1,
+    "actual_margin": 3.2,
+    "polls": true
+   },
+   {
+    "race_id": "H-PA-08",
+    "p": 0.39,
+    "won": 1,
+    "actual_margin": 2.4,
+    "polls": true
+   },
+   {
+    "race_id": "H-OH-13",
+    "p": 0.43,
+    "won": 1,
+    "actual_margin": 5.4,
+    "polls": true
+   },
+   {
+    "race_id": "H-CA-45",
+    "p": 0.57,
+    "won": 0,
+    "actual_margin": -4.8,
+    "polls": false
+   },
+   {
+    "race_id": "H-PA-07",
+    "p": 0.44,
+    "won": 1,
+    "actual_margin": 2.0,
+    "polls": true
+   },
+   {
+    "race_id": "H-NY-19",
+    "p": 0.55,
+    "won": 0,
+    "actual_margin": -1.5,
+    "polls": true
+   },
+   {
+    "race_id": "H-AK-AL",
+    "p": 0.46,
+    "won": 1,
+    "actual_margin": 9.9,
+    "polls": true
+   }
+  ]
+ },
+ "2024": {
+  "year": "2024",
+  "election": "2024-11-05",
+  "as_of": "2024-10-29",
+  "lean_source": "2020 presidential margin on the 2024 lines (The Downballot) minus D+4.45",
+  "environment": -0.3,
+  "generic_polls": 721,
+  "districts": 435,
+  "districts_missing_lean": [
+   "H-GU-01",
+   "H-PR-01",
+   "H-VI-01"
+  ],
+  "districts_with_polls": 84,
+  "district_polls": 232,
+  "actual_d_seats": 215,
+  "actual_majority": false,
+  "variants": {
+   "model": {
+    "median": 212,
+    "mean": 211.7,
+    "ci80": [
+     195,
+     228
+    ],
+    "seat_error": -3,
+    "p_majority": 0.334,
+    "brier_majority": 0.112,
+    "brier_all": 0.0152,
+    "brier_competitive": 0.0913,
+    "n_competitive": 72,
+    "brier_polled": 0.0727,
+    "n_polled": 84,
+    "favourites_won": 0.889,
+    "calls_wrong": 8,
+    "closest_five": [
+     {
+      "race_id": "H-OH-09",
+      "p": 0.51,
+      "won": 1,
+      "actual_margin": 0.6
+     },
+     {
+      "race_id": "H-NY-19",
+      "p": 0.51,
+      "won": 1,
+      "actual_margin": 2.1
+     },
+     {
+      "race_id": "H-CA-45",
+      "p": 0.48,
+      "won": 1,
+      "actual_margin": 0.2
+     },
+     {
+      "race_id": "H-OH-13",
+      "p": 0.52,
+      "won": 1,
+      "actual_margin": 2.2
+     },
+     {
+      "race_id": "H-ME-02",
+      "p": 0.48,
+      "won": 1,
+      "actual_margin": 0.7
+     }
+    ],
+    "brier_closest_five": 0.2505,
+    "calibration": [
+     {
+      "bin": "Safe R (<5%)",
+      "n": 193,
+      "mean_p": 0.003,
+      "d_won": 0.0
+     },
+     {
+      "bin": "Likely R (5\u201335%)",
+      "n": 23,
+      "mean_p": 0.162,
+      "d_won": 0.087
+     },
+     {
+      "bin": "Toss-up and lean (35\u201365%)",
+      "n": 11,
+      "mean_p": 0.541,
+      "d_won": 0.727
+     },
+     {
+      "bin": "Likely D (65\u201395%)",
+      "n": 38,
+      "mean_p": 0.842,
+      "d_won": 0.921
+     },
+     {
+      "bin": "Safe D (95%+)",
+      "n": 170,
+      "mean_p": 0.996,
+      "d_won": 1.0
+     }
+    ]
+   },
+   "fundamentals_only": {
+    "median": 209,
+    "mean": 208.3,
+    "ci80": [
+     194,
+     222
+    ],
+    "seat_error": -6,
+    "p_majority": 0.195,
+    "brier_majority": 0.038,
+    "brier_all": 0.0177,
+    "brier_competitive": 0.1038,
+    "n_competitive": 74,
+    "brier_polled": 0.0859,
+    "n_polled": 84,
+    "favourites_won": 0.865,
+    "calls_wrong": 10,
+    "closest_five": [
+     {
+      "race_id": "H-NC-01",
+      "p": 0.49,
+      "won": 1,
+      "actual_margin": 1.7
+     },
+     {
+      "race_id": "H-OH-13",
+      "p": 0.55,
+      "won": 1,
+      "actual_margin": 2.2
+     },
+     {
+      "race_id": "H-OR-05",
+      "p": 0.56,
+      "won": 1,
+      "actual_margin": 2.7
+     },
+     {
+      "race_id": "H-PA-07",
+      "p": 0.43,
+      "won": 0,
+      "actual_margin": -1.0
+     },
+     {
+      "race_id": "H-NE-02",
+      "p": 0.42,
+      "won": 0,
+      "actual_margin": -1.9
+     }
+    ],
+    "brier_closest_five": 0.2024,
+    "calibration": [
+     {
+      "bin": "Safe R (<5%)",
+      "n": 195,
+      "mean_p": 0.004,
+      "d_won": 0.0
+     },
+     {
+      "bin": "Likely R (5\u201335%)",
+      "n": 25,
+      "mean_p": 0.161,
+      "d_won": 0.2
+     },
+     {
+      "bin": "Toss-up and lean (35\u201365%)",
+      "n": 9,
+      "mean_p": 0.53,
+      "d_won": 0.667
+     },
+     {
+      "bin": "Likely D (65\u201395%)",
+      "n": 40,
+      "mean_p": 0.834,
+      "d_won": 0.95
+     },
+     {
+      "bin": "Safe D (95%+)",
+      "n": 166,
+      "mean_p": 0.996,
+      "d_won": 1.0
+     }
+    ]
+   }
+  },
+  "misses": [
+   {
+    "race_id": "H-CA-22",
+    "p": 0.77,
+    "won": 0,
+    "actual_margin": -6.8,
+    "polls": true
+   },
+   {
+    "race_id": "H-WA-03",
+    "p": 0.23,
+    "won": 1,
+    "actual_margin": 3.9,
+    "polls": true
+   },
+   {
+    "race_id": "H-CO-08",
+    "p": 0.68,
+    "won": 0,
+    "actual_margin": -0.7,
+    "polls": true
+   },
+   {
+    "race_id": "H-MI-08",
+    "p": 0.35,
+    "won": 1,
+    "actual_margin": 6.6,
+    "polls": true
+   },
+   {
+    "race_id": "H-NE-02",
+    "p": 0.65,
+    "won": 0,
+    "actual_margin": -1.9,
+    "polls": true
+   },
+   {
+    "race_id": "H-PA-07",
+    "p": 0.64,
+    "won": 0,
+    "actual_margin": -1.0,
+    "polls": true
+   },
+   {
+    "race_id": "H-CA-45",
+    "p": 0.48,
+    "won": 1,
+    "actual_margin": 0.2,
+    "polls": true
+   },
+   {
+    "race_id": "H-ME-02",
+    "p": 0.48,
+    "won": 1,
+    "actual_margin": 0.7,
+    "polls": true
+   }
+  ]
+ }
+}

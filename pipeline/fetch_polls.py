@@ -36,6 +36,7 @@ RAW = ROOT / "data" / "raw"
 OUT = ROOT / "data"
 SEATS = ROOT / "app" / "data" / "seats.json"
 MARKETS = OUT / "markets_races.csv"
+MANUAL = OUT / "polls_manual.csv"  # polls from the news check that VoteHub does not have (PROCESS.md, C53)
 
 VOTEHUB = "https://api.votehub.com/polls"
 HEADERS = {"User-Agent": "api232-midterms-forecast/0.1 (course project)"}
@@ -160,6 +161,27 @@ def main():
             "sample_size": p.get("sample_size"), "start_date": p["start_date"], "end_date": p["end_date"], "age_days": age,
             "dem_pct": shares.get("D"), "rep_pct": shares["R"], "nonrep_pct": non_r,
             "margin_nonrep": round(non_r - shares["R"], 2), "weight": weight, "answers": "; ".join(named), "url": p.get("url"),
+        })
+
+    # Polls found in the news check that VoteHub lacks (data/polls_manual.csv), same weighting rules.
+    # A manual poll is skipped once VoteHub has it: same race, end date within two days, same shares
+    # within a point (pollster names differ between sources, e.g. "NYT/Siena" and "Siena College").
+    for k, m in enumerate(csv.DictReader(MANUAL.open(encoding="utf-8"))):
+        end = date.fromisoformat(m["end_date"])
+        dem, rep = float(m["dem_pct"]), float(m["rep_pct"])
+        if any(r["race_id"] == m["race_id"] and abs((date.fromisoformat(r["end_date"]) - end).days) <= 2
+               and abs((r["dem_pct"] or 0) - dem) < 1 and abs(r["rep_pct"] - rep) < 1 for r in clean):
+            continue
+        age = (today - end).days
+        n = int(m["sample_size"]) if m["sample_size"] else None
+        weight = (0.5 ** (age / HALF_LIFE_DAYS) * math.sqrt(min(n or 600, 2400) / 600)
+                  * POPULATION_WEIGHT.get(m["population"], 0.6) * (PARTISAN_WEIGHT if m["partisan"] else 1.0))
+        clean.append({
+            "race_id": m["race_id"], "poll_id": f"manual-{k + 1}", "pollster": m["pollster"], "sponsors": m["sponsors"],
+            "partisan": m["partisan"], "internal": False, "population": m["population"], "sample_size": n,
+            "start_date": m["start_date"], "end_date": m["end_date"], "age_days": age, "dem_pct": dem, "rep_pct": rep,
+            "nonrep_pct": dem, "margin_nonrep": round(dem - rep, 2), "weight": weight,
+            "answers": f"{m['dem_name']} [D] {dem}; {m['rep_name']} [R] {rep}", "url": m["source"],
         })
 
     # Older polls by the same pollster in the same race count half as much each step back.

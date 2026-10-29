@@ -1,5 +1,5 @@
 {
- "mean": 8.01,
+ "mean": 8.07,
  "sd": 3.6,
  "components": [
   {
@@ -7,56 +7,56 @@
    "mean": 7.36,
    "sd": 3.6,
    "detail": "307 polls, latest ended 2026-10-04; no LV adjustment yet",
-   "weight": 0.604
+   "weight": 0.582
   },
   {
    "name": "Kalshi House popular-vote margin market",
-   "mean": 9.0,
-   "sd": 4.45,
-   "detail": "KXHOUSEPOPVOTEMARGIN-27NOV03, $3,399,495 traded; spread of the price distribution used as sd",
+   "mean": 9.06,
+   "sd": 4.25,
+   "detail": "KXHOUSEPOPVOTEMARGIN-27NOV03, $3,721,944 traded; spread of the price distribution used as sd",
    "brackets": [
     {
      "mid": -3.0,
-     "p": 0.0569
+     "p": 0.051
     },
     {
      "mid": 1.0,
-     "p": 0.0211
+     "p": 0.019
     },
     {
      "mid": 3.0,
-     "p": 0.028
+     "p": 0.0287
     },
     {
      "mid": 5.0,
-     "p": 0.0643
+     "p": 0.0627
     },
     {
      "mid": 7.0,
-     "p": 0.1424
+     "p": 0.1409
     },
     {
      "mid": 9.0,
-     "p": 0.2602
+     "p": 0.2575
     },
     {
      "mid": 11.0,
-     "p": 0.2209
+     "p": 0.2284
     },
     {
      "mid": 13.0,
-     "p": 0.1129
+     "p": 0.1409
     },
     {
      "mid": 15.0,
-     "p": 0.0486
+     "p": 0.0384
     },
     {
      "mid": 17.5,
-     "p": 0.0447
+     "p": 0.0326
     }
    ],
-   "weight": 0.396
+   "weight": 0.418
   }
  ],
  "cross_checks": [
@@ -65,5 +65,5 @@
   "Other poll averages: RCP D+8.3 (8-23 Oct), FiftyPlusOne 52.2-43.0 (25 Oct)"
  ],
  "national_pres_margin_2024": -1.65,
- "computed": "2026-10-27"
+ "computed": "2026-10-29"
 }

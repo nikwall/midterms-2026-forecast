@@ -1,0 +1,33 @@
+{
+ "date": "2026-10-29",
+ "summary": "We searched the news for each contest district and compared the polls we found with VoteHub. Polls VoteHub lacks were added by hand (data/polls_manual.csv) and weighted like every other poll. Effect on our answers: NC-01 0.88 → 0.84, OH-07 0.88 → 0.83, PA-08 0.88 → 0.88, NY-17 0.66 → 0.65, NC-11 unchanged at 0.88.",
+ "districts": [
+  {"race_id": "H-NC-01", "items": [
+   "New, more Republican lines since 2025. Incumbent Don Davis (D) against Laurie Buckhout (R).",
+   "Added: RedBox Research (D) of 23 Oct, Davis 45–44; GQR (D) of 29 Sep – 4 Oct, 47–39; GBAO for House Majority PAC (D) of 9–11 Sep, 50–43.",
+   "Not added: a co/efficient (R) poll of 6–8 Oct that one tracker reports as Buckhout 43–42 and another as a generic ballot.",
+   "Inside Elections moved the race toward Democrats; RealClearPolitics calls it a toss-up."],
+   "links": [["WITN", "https://www.witn.com/2026/09/15/poll-don-davis-leading-laurie-buckhout-by-7-points-first-district-race/"], ["Call the Map", "https://www.callthemap.com/polls/HOU-NC-01"], ["Carolina Journal", "https://www.carolinajournal.com/exclusive-nrcc-polling-puts-buckhout-davis-in-dead-heat/"]]},
+  {"race_id": "H-NC-11", "items": [
+   "Chuck Edwards (R) withdrew in August after a House Ethics Committee report. The party picked state Rep. Jennifer Balkcom; Trump endorsed her.",
+   "Jamie Ager (D) raised $2.3 million in the third quarter against $0.36 million for Balkcom.",
+   "The only poll of the real matchup is Emerson (12–14 Oct), Ager 56–43, already in our data. RedBox tested Ager against a generic Republican and is not used.",
+   "This explains the gap between DDHQ's 22 Oct probability (0.52) and the markets (0.85)."],
+   "links": [["BPR", "https://www.bpr.org/politics-government/2026-08-10/state-rep-jennifer-balkcom-to-replace-rep-chuck-edwards-on-nc-11-ballot"], ["Carolina Journal", "https://www.carolinajournal.com/ager-well-outpaces-balkcom-in-nc-11-fundraising/"], ["WUNC", "https://wunc.org/politics/2026-10-27/nc-republican-congressmen-buy-tv-ads-in-deep-red-districts-as-election-looms"]]},
+  {"race_id": "H-OH-07", "items": [
+   "Incumbent Max Miller (R) against Brian Poindexter (D). No independent poll since August.",
+   "Added: RedBox Research (D) of 23 Oct, Poindexter 46–42; co/efficient (R) of 6 Aug, 47–33; GBAO (D) of 20 Jun, Miller 44–43. The newest poll now carries most of the weight, so our poll average fell.",
+   "DDHQ's live model moved to 51% Poindexter on 27 Oct (we use its 22 Oct value, 0.48). Inside Elections rates it a toss-up."],
+   "links": [["The Hill", "https://thehill.com/homenews/campaign/6015633-poindexter-leads-max-miller-poll/"], ["Inside Elections", "https://insideelections.com/ohio-7-miller-makes-a-toss-up/"], ["Call the Map", "https://www.callthemap.com/polls/HOU-OH-07"]]},
+  {"race_id": "H-PA-08", "items": [
+   "Incumbent Rob Bresnahan (R) against Scranton mayor Paige Cognetti (D).",
+   "Added: The New York Times/Siena College (402 likely voters, released 25 Oct), Cognetti 51–46, the only independent high-quality poll in any contest district; RedBox Research (D) of 23 Oct, 49–46.",
+   "Cook rates it a toss-up; PredictIt has no tight quote."],
+   "links": [["Siena College", "https://sri.siena.edu/2026/10/25/nytimes-philadelphia-inquirer-siena-poll-of-likely-pennsylvania-congressional-district-voters/"], ["Philadelphia Inquirer", "https://www.inquirer.com/politics/pennsylvania/brooks-cognetti-mackenzie-bresnahan-pennsylvania-swing-seats-midterms-20261025.html"]]},
+  {"race_id": "H-NY-17", "items": [
+   "Incumbent Mike Lawler (R) against Cait Conley (D). The second and last debate was described as a dead heat.",
+   "Added: McLaughlin & Associates for the Lawler campaign (28–30 Sep), Lawler 50–47; RedBox Research (D) of 23 Oct, Conley 48–46. Emerson (27–29 Sep, Conley 48–46) was already in.",
+   "Cook and The New York Times list it among about 18 toss-ups."],
+   "links": [["Emerson", "https://emersoncollegepolling.com/ny-17-2026-poll/"], ["Lawler campaign", "https://www.lawlerforcongress.com/2026/10/02/lawler-leads-cait-conley-50-47-in-new-poll-of-ny-17/"], ["City & State", "https://www.cityandstateny.com/politics/2026/10/more-confident-conley-takes-lawler-second-ny-17-debate/416605/"]]}
+ ]
+}

@@ -361,6 +361,9 @@ def assumptions(env):
         {"group": "Polls", "name": "Weighting of individual polls",
          "value": "half-life 14 days; √sample size (cap 2,400); likely voters 1, registered 0.8, adults 0.6; partisan sponsor 0.5; older polls by the same pollster halved",
          "where": "Poll average per race", "how": "Common practice of poll aggregators; judgement, not calibrated."},
+        {"group": "Polls", "name": "Polls from the news check", "value": "added by hand where VoteHub lacks them (data/polls_manual.csv)",
+         "where": "Poll average of the contest districts; same weighting as every other poll",
+         "how": "News check of 29 Oct: NYT/Siena in PA-08 and nine partisan polls in NC-01, NY-17, PA-08 and OH-07, each checked against a second source."},
         {"group": "Markets", "name": "Exchange rate between money and polls",
          "value": f"$20k traded = 1 poll, $1M = 10 polls, at most {MARKET_MAX_POLLS}",
          "where": "Uncertainty of each race's market price, hence its weight",
@@ -419,14 +422,22 @@ def contest_hints(r):
     return hints
 
 
+def crowds():
+    """Metaculus, Manifold and PredictIt (fetch_crowds.py): shown beside our numbers, never inputs."""
+    path = DATA / "crowds.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"control": [], "districts": {}}
+
+
 def contest_block(house, out_races):
     dist = house["distribution"]
+    crowd = crowds()["districts"]
     return {
         "deadline": "Tuesday 3 Nov 2026, 7:00 AM ET",
         "seats": {"answer": house["dem_seats"]["median"], "rule": "median", "mean": house["dem_seats"]["mean"],
                   "mode": max(dist, key=lambda d: d["p"])["seats"], "ci80": house["dem_seats"]["ci80"]},
         "p_majority": house["p_dem_control"],
-        "districts": [{"race_id": rid, "name": name, "p": out_races[rid]["p_dem"], "hints": contest_hints(out_races[rid])}
+        "districts": [{"race_id": rid, "name": name, "p": out_races[rid]["p_dem"], "hints": contest_hints(out_races[rid]),
+                       "crowds": crowd.get(rid, [])}
                       for rid, name in CONTEST_DISTRICTS],
     }
 
@@ -495,6 +506,10 @@ def benchmarks():
             d = ctrl[venue]
             rows.append({"source": f"{venue.capitalize()} (market)", "url": url, "p_dem_house": d.get("house"),
                          "p_dem_senate": d.get("senate"), "as_of": f"{d['as_of'][:4]}-{d['as_of'][4:6]}-{d['as_of'][6:]}"})
+    for c in crowds()["control"]:
+        seats = c.get("dem_seats_median") or (f"{c['dem_seats_range'][0]}–{c['dem_seats_range'][1]}" if c.get("dem_seats_range") else None)
+        rows.append({"source": f"{c['source']} ({c['kind']})", "url": c["url"], "p_dem_house": c["p_dem_house"],
+                     "p_dem_senate": c["p_dem_senate"], "dem_seats": seats, "as_of": c["as_of"], "crowd": True})
     # Other models, as reported in the press; shown to learn from, never used as inputs.
     rows += [
         {"source": "Decision Desk HQ (model)", "url": "https://votes.decisiondeskhq.com/forecast/2026", "p_dem_house": 0.79, "p_dem_senate": 0.56, "as_of": "2026-10-25"},
@@ -526,6 +541,18 @@ SOURCES = [
      "role": "Expectation poll, September 2026"},
     {"group": "National signals, cross-checks only", "name": "Inside Elections: special elections", "url": "https://www.insideelections.com/news/article/special-elections-point-to-house-flip-in-november/ie17",
      "role": "Democratic overperformance in special elections"},
+    {"group": "Data we use", "name": "Call the Map poll pages; NYT/Siena; campaign and press releases", "url": "https://www.callthemap.com/polls/HOU-PA-08",
+     "role": "District polls VoteHub lacks, added in the news check (data/polls_manual.csv)"},
+    {"group": "Data we use", "name": "Wikipedia", "url": "https://en.wikipedia.org", "role": "Candidate photos, linked to each page"},
+    {"group": "For comparison, not used as data", "name": "Metaculus: 2026 US midterms", "url": "https://www.metaculus.com/midterms-2026/", "role": "Forecasting community"},
+    {"group": "For comparison, not used as data", "name": "Manifold", "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn", "role": "Play-money market"},
+    {"group": "For comparison, not used as data", "name": "PredictIt", "url": "https://www.predictit.org/markets/5/Congress", "role": "Real-money market with an $850 cap per contract"},
+    {"group": "Track record (backtest)", "name": "FiveThirtyEight election results and partisan lean", "url": "https://github.com/fivethirtyeight/election-results",
+     "role": "House results 2022 and 2024; district lean on the 2022 lines"},
+    {"group": "Track record (backtest)", "name": "FiveThirtyEight polls page, Wayback Machine copy", "url": "https://web.archive.org/web/20241129175737/https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv",
+     "role": "2024 House and generic-ballot polls"},
+    {"group": "Track record (backtest)", "name": "The Downballot: results by district on the 2024 lines", "url": "https://the-db.co/presbycd",
+     "role": "2020 presidential margin on the 2024 lines"},
     {"group": "For comparison, not used as data", "name": "Decision Desk HQ forecast", "url": "https://votes.decisiondeskhq.com/forecast/2026", "role": "Model"},
     {"group": "For comparison, not used as data", "name": "Silver Bulletin forecast", "url": "https://www.natesilver.net/p/nate-silver-2026-midterm-election-polls-model", "role": "Model"},
     {"group": "For comparison, not used as data", "name": "Poliwave projection", "url": "https://www.poliwave.com/us/fed/projection", "role": "Model"},

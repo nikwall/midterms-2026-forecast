@@ -23,8 +23,11 @@ const JOINT = [
   { key: "rep_house_rep_senate", label: "Republicans win both", color: "var(--r3)" },
 ];
 
-const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {} };
+const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null };
 const $ = (sel) => document.querySelector(sel);
+const TABS = ["contest", "congress", "maps", "weights", "record", "method"];
+// Source icons (sprite in index.html): polls ring a phone, markets pay in bills, DDHQ rings the desk bell.
+const ICON = { polls: "i-phone", market: "i-bill", fundamentals: "i-bell", crowd: "i-crowd", us: "i-team" };
 
 // ---------- helpers ----------
 
@@ -44,6 +47,12 @@ function html(tag, attrs = {}, children = []) {
     else node.setAttribute(k, v);
   }
   for (const c of [].concat(children)) if (c != null) node.append(c);
+  return node;
+}
+
+function icon(kind, cls = "ico") {
+  const node = svg("svg", { class: cls, "aria-hidden": "true" });
+  svg("use", { href: "#" + ICON[kind] }, node);
   return node;
 }
 
@@ -126,6 +135,7 @@ function raceTip(seat, chamber) {
   const title = chamber === "senate" ? `${app.stateByAbbr[seat.state].name} Senate${seat.special ? " (special)" : ""}` : seat.label;
   const rows = [];
   if (chamber === "senate") rows.push(["Held by", seat.holder === "D" ? "Democrats" : "Republicans"]);
+  if (chamber === "house" && matchup(seat.id)) rows.push(["Candidates", matchup(seat.id)]);
   if (chamber === "house" && seat.new_map_2026) rows.push(["Lines", "new in 2026"]);
   if (rf) {
     const side = rf.side ?? "D";
@@ -143,24 +153,57 @@ function raceTip(seat, chamber) {
   return tipRows(title, rows);
 }
 
-// ---------- header, lede and chamber cards ----------
+// ---------- header and tabs ----------
 
 function renderHeader(f) {
   $("#updated").textContent = f.meta.updated
-    ? "Updated " + new Date(f.meta.updated).toLocaleString("en-US", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" })
+    ? "Updated " + new Date(f.meta.updated).toLocaleString("en-US", { timeZone: "America/New_York", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }) + " ET"
     : "No model run yet";
-  $("#sims-note").textContent = f.meta.n_sims ? `${f.meta.n_sims.toLocaleString("en-US")} simulated elections` : "";
+  $("#sims-note").textContent = f.meta.n_sims ? `Share of ${f.meta.n_sims.toLocaleString("en-US")} simulated elections with each number of Democratic seats` : "";
   $("#method-version").textContent = f.meta.model_version ? `Model ${f.meta.model_version}` : "";
-  const h = f.house?.p_dem_control, s = f.senate?.p_dem_control;
-  if (h == null) {
-    $("#lede").textContent = "The forecast appears here after the first model run.";
-    return;
-  }
-  const c = f.contest;
-  $("#lede").textContent = c
-    ? `Our forecast for the HKS House contest: Democrats win ${c.seats.answer} House seats, with a ${pct(c.p_majority)} chance of a majority. ` +
-      `In the Senate, which the contest does not score, Democrats have a ${pct(s)} chance.`
-    : `Democrats have a ${pct(h)} chance of winning the House and a ${pct(s)} chance of winning the Senate.`;
+}
+
+function showTab(name) {
+  if (!TABS.includes(name)) name = "contest";
+  for (const p of document.querySelectorAll("[data-panel]")) p.hidden = p.dataset.panel !== name;
+  for (const a of document.querySelectorAll("[data-tab]")) a.setAttribute("aria-selected", String(a.dataset.tab === name));
+  tip.hidden = true;
+}
+
+// ---------- faces ----------
+
+function initials(name) {
+  return name.split(/\s+/).filter((t) => /^[A-Z]/.test(t) && !/^(Jr|Sr|II|III)\.?$/.test(t)).map((t) => t[0]).slice(0, 2).join("");
+}
+
+// A candidate's Wikipedia photo, or their initials; the ring shows the party.
+function face(c, size = "") {
+  const cls = `face ${c.party === "D" ? "dem" : "rep"} ${size}`;
+  const inner = c.photo
+    ? html("img", { src: c.photo, alt: c.name, loading: "lazy", referrerpolicy: "no-referrer" })
+    : html("span", { class: "ini", text: initials(c.name) });
+  return c.wiki ? html("a", { class: cls, href: c.wiki, target: "_blank", rel: "noopener", title: `${c.name} on Wikipedia` }, inner)
+    : html("span", { class: cls, title: c.name }, inner);
+}
+
+// Everything after the first name, without initials and suffixes: "De La Cruz", "Gluesenkamp Perez".
+function surname(name) {
+  const t = name.replace(/,?\s+(Jr|Sr|II|III)\.?$/, "").trim().split(/\s+/).slice(1).filter((x) => !/^[A-Z]\.$/.test(x));
+  return t.join(" ") || name;
+}
+
+// "Davis (D, inc.) vs Buckhout (R)"
+function matchup(id) {
+  const r = app.cands[id];
+  if (!r) return null;
+  const one = (c) => c ? `${surname(c.name)} (${c.party}${c.incumbent ? ", inc." : ""})` : "";
+  return [one(r.dem), one(r.rep)].filter(Boolean).join(" vs ");
+}
+
+function faces(id, size) {
+  const r = app.cands[id];
+  if (!r) return html("span", { class: "faces" });
+  return html("span", { class: "faces" }, [r.dem ? face(r.dem, size) : null, r.rep ? face(r.rep, size) : null]);
 }
 
 // ---------- contest entry ----------
@@ -169,49 +212,88 @@ function prob2(p) {
   return p == null ? "–" : p.toFixed(2);
 }
 
+// The icons on a 0–1 track. Evidence sits above the line, in up to three lanes so that icons
+// close together do not cover each other; our answer sits below the line with a tick.
+const LANE = 17, LANE_GAP = 0.055;
+
+function iconTrack(evidence, ours) {
+  const lanes = [];
+  const placed = evidence.filter((e) => e.p != null).sort((a, b) => a.p - b.p).map((e) => {
+    let lane = 0;
+    while (lanes[lane] != null && e.p - lanes[lane] < LANE_GAP) lane++;
+    lanes[lane] = e.p;
+    return { ...e, lane };
+  });
+  const nLanes = Math.max(1, lanes.length);
+  const axis = nLanes * LANE + 3;
+  const ps = placed.map((e) => e.p).concat(ours.p);
+  const lo = Math.min(...ps), hi = Math.max(...ps);
+  const track = html("div", { class: "icon-track", style: `height:${axis + 24}px;--axis:${axis}px` }, [
+    html("span", { class: "spread", style: `left:${lo * 100}%;width:${(hi - lo) * 100}%` }),
+  ]);
+  for (const e of placed) {
+    const node = html("span", { class: "pin", style: `left:${e.p * 100}%;top:${axis - 2 - (e.lane + 1) * LANE}px` }, icon(e.kind));
+    bindTip(node, () => tipRows(e.title, e.rows));
+    track.append(node);
+  }
+  const us = html("span", { class: "pin us", style: `left:${ours.p * 100}%;top:${axis}px` }, [html("span", { class: "tick" }), icon("us")]);
+  bindTip(us, () => tipRows(ours.title, ours.rows));
+  track.append(us);
+  return track;
+}
+
 function renderContest(f) {
   const c = f.contest;
   const rowsBox = $("#contest-rows");
   rowsBox.replaceChildren();
   if (!c) return;
-  $("#contest-due").textContent = `Due ${c.deadline}`;
+  $("#contest-due").textContent = c.deadline;
   $("#ans-seats").textContent = c.seats.answer;
-  $("#ans-seats-sub").textContent = `Median of ${f.meta.n_sims.toLocaleString("en-US")} simulations · 80% range ${c.seats.ci80[0]}–${c.seats.ci80[1]} · mean ${c.seats.mean}, most frequent ${c.seats.mode}`;
+  $("#ans-seats-sub").textContent = `80% range ${c.seats.ci80[0]}–${c.seats.ci80[1]}`;
   $("#ans-majority").textContent = prob2(c.p_majority);
-  $("#ans-majority-sub").textContent = `Share of simulations with 218 or more Democratic seats (${pct1(c.p_majority)})`;
+  $("#ans-majority-sub").textContent = `218+ in ${pct1(c.p_majority)} of runs`;
+  const crowdRows = (f.benchmarks ?? []).filter((b) => b.crowd && b.p_dem_house != null);
+  $("#contest-crowds").textContent = crowdRows.length
+    ? "Crowds on (b): " + crowdRows.map((b) => `${b.source.split(" (")[0]} ${prob2(b.p_dem_house)}`).join(" · ") : "";
 
+  const wt = (x) => `${Math.round((x ?? 0) * 100)}%`;
   for (const d of c.districts) {
     const rf = raceForecast(d.race_id);
     const inp = rf.inputs ?? {}, w = rf.weights ?? {};
-    const marks = [];
-    if (inp.polls) marks.push(html("span", { class: "mark mark-polls", style: `left:${inp.polls.p * 100}%` }));
-    if (inp.market) marks.push(html("span", { class: "mark mark-market", style: `left:${inp.market.p * 100}%` }));
-    marks.push(html("span", { class: "mark mark-fund", style: `left:${inp.fundamentals.p * 100}%` }));
-    marks.push(html("span", { class: "mark mark-model", style: `left:${d.p * 100}%` }));
-    const ps = [inp.polls?.p, inp.market?.p, inp.fundamentals.p, d.p].filter((x) => x != null);
-    const lo = Math.min(...ps), hi = Math.max(...ps);
-    const track = html("div", { class: "gap-track" }, [html("span", { class: "span", style: `left:${lo * 100}%;width:${(hi - lo) * 100}%` }), ...marks]);
-    const b = band(d.p);
-    const wt = (x) => `${Math.round((x ?? 0) * 100)}%`;
+    const crowds = (d.crowds ?? []).filter((x) => x.p != null);
+    const crowdP = crowds.length ? crowds.reduce((s, x) => s + x.p, 0) / crowds.length : null;
+    const evidence = [
+      inp.polls && { kind: "polls", p: inp.polls.p, title: "Polls", rows: [["P(D)", prob2(inp.polls.p)], ["Polls", `${inp.polls.n_polls}, latest ${inp.polls.latest}`], ["Weight", wt(w.polls)]] },
+      inp.market && { kind: "market", p: inp.market.p, title: "Markets", rows: [["P(D)", prob2(inp.market.p)], ["Traded", money(inp.market.volume)], ["Weight", wt(w.market)]] },
+      { kind: "fundamentals", p: inp.fundamentals.p, title: inp.fundamentals.source === "ddhq" ? "DDHQ, 22 Oct" : "Fundamentals", rows: [["P(D)", prob2(inp.fundamentals.p)], ["Weight", wt(w.fundamentals)]] },
+      crowdP != null && { kind: "crowd", p: crowdP, title: "Crowds (not used)", rows: crowds.map((x) => [x.source, prob2(x.p)]) },
+    ].filter(Boolean);
+    const track = iconTrack(evidence, { p: d.p, title: "Our answer", rows: [["P(D)", prob2(d.p)], ["Expected margin", margin(rf.margin.mean)],
+      ["80% range", `${margin(rf.margin.ci80[0])} to ${margin(rf.margin.ci80[1])}`]] });
+
     const parts = [];
-    if (inp.polls) parts.push(`polls ${prob2(inp.polls.p)} (${inp.polls.n_polls} ${inp.polls.n_polls === 1 ? "poll" : "polls"}, latest ${inp.polls.latest}, weight ${wt(w.polls)})`);
-    else parts.push("no polls");
-    if (inp.market) parts.push(`markets ${prob2(inp.market.p)} (${money(inp.market.volume)} traded, weight ${wt(w.market)})`);
-    else parts.push("no market");
+    parts.push(inp.polls ? `polls ${prob2(inp.polls.p)} (${inp.polls.n_polls} ${inp.polls.n_polls === 1 ? "poll" : "polls"}, latest ${inp.polls.latest}, weight ${wt(w.polls)})` : "no polls");
+    parts.push(inp.market ? `markets ${prob2(inp.market.p)} (${money(inp.market.volume)} traded, weight ${wt(w.market)})` : "no market");
     parts.push(`${inp.fundamentals.source === "ddhq" ? "DDHQ" : "fundamentals"} ${prob2(inp.fundamentals.p)} (weight ${wt(w.fundamentals)})`);
-    const label = app.byId[d.race_id].label;
-    const row = html("div", { class: "contest-row" }, [
-      html("div", { class: "contest-row-main" }, [
-        html("div", { class: "contest-name" }, [html("strong", { text: label }), html("span", { text: `${d.name} · ${b.label}` })]),
-        html("span", { class: "contest-p", text: prob2(d.p) }),
+    const crowdText = (d.crowds ?? []).map((x) => `${x.source} ${x.p != null ? prob2(x.p) : "–"}${x.note && x.p == null ? ` (${x.note})` : ""}`).join(" · ");
+    const b = band(d.p);
+    const seat = app.byId[d.race_id];
+    const row = html("div", { class: "c-row" }, [
+      html("div", { class: "c-main" }, [
+        faces(d.race_id),
+        html("div", { class: "c-name" }, [html("strong", { text: seat.label }), html("span", { text: matchup(d.race_id) ?? d.name })]),
+        html("span", { class: "c-p", style: `color:var(--${d.p >= 0.65 ? "d3" : d.p <= 0.35 ? "r3" : "ink"})`, text: prob2(d.p) }),
         track,
       ]),
-      html("div", { class: "contest-detail" }, [
-        html("span", { text: `Inputs: ${parts.join(" · ")}. Expected margin ${margin(rf.margin.mean)} (80% range ${margin(rf.margin.ci80[0])} to ${margin(rf.margin.ci80[1])}).` }),
-        ...d.hints.map((h) => html("span", { class: "check", text: `Check: ${h}` })),
+      html("details", { class: "c-detail" }, [
+        html("summary", { text: `${b.label} · inputs${d.hints.length ? " and checks" : ""}` }),
+        html("div", {}, [
+          html("p", { text: `Inputs: ${parts.join(" · ")}. Expected margin ${margin(rf.margin.mean)} (80% range ${margin(rf.margin.ci80[0])} to ${margin(rf.margin.ci80[1])}).` }),
+          crowdText ? html("p", { class: "muted", text: `Crowds, not used: ${crowdText}.` }) : null,
+          ...d.hints.map((h) => html("p", { class: "check", text: `Check: ${h}` })),
+        ]),
       ]),
     ]);
-    bindTip(track, () => raceTip(app.byId[d.race_id], "house"));
     rowsBox.append(row);
   }
 
@@ -219,6 +301,153 @@ function renderContest(f) {
   ex.replaceChildren(
     html("p", { text: "The contest ranks teams by how close their seat number is to the actual count. For that kind of scoring the median is the best single number: half of our simulations end above it and half below, which keeps the expected distance to the true result smallest." }),
     html("p", { text: `The mean (${c.seats.mean}) would be best if large misses were punished more than proportionally. The most frequent count (${c.seats.mode}) is a poor choice: with the simulations spread over many seat counts, even the most common one occurs in only about ${pct1(Math.max(...f.house.distribution.map((x) => x.p)))} of them.` }),
+  );
+}
+
+// ---------- the races that decide the majority ----------
+
+const MORE_DECIDERS = 17;
+
+function renderDeciders(f) {
+  const shares = f.house?.tipping_shares ?? [];
+  const box = $("#deciders"), more = $("#deciders-more");
+  box.replaceChildren();
+  more.replaceChildren();
+  if (!shares.length) return;
+  const { set, cum } = halfSet(shares);
+  const contest = new Set(f.contest.districts.map((d) => d.race_id));
+  const nContest = [...set].filter((id) => contest.has(id)).length;
+  $("#deciders-note").textContent = `${set.size} districts deliver the 218th seat in ${pct(cum)} of simulations` +
+    (nContest ? `; ${nContest} of them are contest districts` : "");
+  for (const id of set) {
+    const t = shares.find((s) => s.race_id === id);
+    const rf = raceForecast(id), b = band(rf.p_dem), r = app.cands[id] ?? {};
+    const person = (c) => c ? html("span", { class: "who" }, [face(c),
+      html("span", { class: "who-name", text: c.name }), html("span", { class: "muted", text: c.incumbent ? `${c.party}, inc.` : c.party })]) : null;
+    const card = html("article", { class: "decider" + (contest.has(id) ? " in-contest" : ""), tabindex: 0 }, [
+      html("div", { class: "decider-head" }, [
+        html("strong", { text: app.byId[id].label }),
+        contest.has(id) ? html("span", { class: "badge", text: "contest" }) : null,
+        html("span", { class: "decider-p", style: `background:var(--${b.key});color:var(--on-${b.key})`, text: pct(rf.p_dem) }),
+      ]),
+      html("div", { class: "decider-people" }, [person(r.dem), person(r.rep)]),
+      html("div", { class: "decider-foot muted", text: `${b.label} · decides control in ${pct1(t.share)} of simulations` }),
+    ]);
+    bindTip(card, () => raceTip(app.byId[id], "house"));
+    card.addEventListener("click", (e) => { if (!e.target.closest("a")) setStateFilter(app.byId[id].state, id); });
+    box.append(card);
+  }
+  const next = shares.filter((s) => !set.has(s.race_id)).slice(0, MORE_DECIDERS);
+  const nextCum = next.reduce((s, t) => s + t.share, 0);
+  $("#deciders-more-label").textContent = `The next ${next.length} districts (together another ${pct(nextCum)} of simulations)`;
+  for (const t of next) {
+    const rf = raceForecast(t.race_id), b = band(rf.p_dem);
+    const row = html("div", { class: "decider-row", tabindex: 0 }, [
+      faces(t.race_id, "sm"),
+      html("strong", { text: app.byId[t.race_id].label }),
+      html("span", { class: "muted", text: matchup(t.race_id) ?? "" }),
+      html("span", { class: "num", text: `${pct(rf.p_dem)} D` }),
+      html("span", { class: "chip" }, [html("span", { class: "swatch", style: `background:var(--${b.key})` }), b.label]),
+      html("span", { class: "num muted", text: pct1(t.share) }),
+    ]);
+    bindTip(row, () => raceTip(app.byId[t.race_id], "house"));
+    row.addEventListener("click", (e) => { if (!e.target.closest("a")) setStateFilter(app.byId[t.race_id].state, t.race_id); });
+    more.append(row);
+  }
+}
+
+// ---------- us and the crowds ----------
+
+function renderCompare(f) {
+  const body = $("#compare-body");
+  body.replaceChildren();
+  const c = f.contest;
+  if (!c) return;
+  body.append(html("tr", { class: "us" }, [
+    html("td", {}, [icon("us"), html("strong", { text: " Us (model v2)" })]),
+    html("td", { class: "num", text: c.seats.answer }), html("td", { class: "num", text: prob2(c.p_majority) }),
+    html("td", { text: f.meta.updated.slice(0, 10) }),
+  ]));
+  for (const b of f.benchmarks ?? []) {
+    if (b.p_dem_house == null) continue;
+    body.append(html("tr", {}, [
+      html("td", {}, [b.crowd ? icon("crowd") : /market/.test(b.source) ? icon("market") : null, " ",
+        b.url ? html("a", { href: b.url, target: "_blank", rel: "noopener", text: b.source }) : b.source]),
+      html("td", { class: "num", text: b.dem_seats ?? "–" }),
+      html("td", { class: "num", text: prob2(b.p_dem_house) }),
+      html("td", { text: b.as_of ?? "–" }),
+    ]));
+  }
+}
+
+function renderNews(n) {
+  const box = $("#news-check");
+  box.replaceChildren();
+  if (!n) return;
+  box.append(html("p", { text: `As of ${n.date}. ${n.summary}` }));
+  for (const d of n.districts) {
+    box.append(html("div", { class: "news-district" }, [
+      html("strong", { text: `${app.byId[d.race_id]?.label ?? d.race_id}${matchup(d.race_id) ? " · " + matchup(d.race_id) : ""}` }),
+      html("ul", {}, d.items.map((t) => html("li", { text: t }))),
+      html("p", { class: "small" }, ["Sources: ", ...d.links.flatMap(([name, url], i) => [i ? " · " : "", html("a", { href: url, target: "_blank", rel: "noopener", text: name })])]),
+    ]));
+  }
+}
+
+// ---------- track record: the House model in 2022 and 2024 ----------
+
+function renderBacktest(bt) {
+  const intro = $("#record-intro"), box = $("#record-years");
+  box.replaceChildren();
+  if (!bt) { intro.textContent = "The backtest appears after pipeline/backtest_house.py has run."; return; }
+  const years = Object.values(bt);
+  const both = years.map((y) => y.variants.model);
+  intro.textContent = `What our House model would have entered one week before Election Day in ${years.map((y) => y.year).join(" and ")}, ` +
+    `with the polls and fundamentals available then. Both times it made Republicans the favourites for the majority ` +
+    `(P(Democratic majority) ${both.map((m) => prob2(m.p_majority)).join(" and ")}), and Republicans won. ` +
+    `The seat count was off by ${both.map((m) => Math.abs(m.seat_error)).join(" and ")} seats.`;
+  for (const y of years) {
+    const m = y.variants.model, fo = y.variants.fundamentals_only;
+    const won = y.actual_majority ? "Democrats won" : "Republicans won";
+    const card = html("article", { class: "card record" }, [
+      html("div", { class: "record-head" }, [html("h3", { text: y.year }),
+        html("span", { class: "muted small", text: `as of ${y.as_of} · ${y.district_polls} district polls in ${y.districts_with_polls} districts · generic ballot D${y.environment >= 0 ? "+" : ""}${y.environment}` })]),
+      html("div", { class: "answers mini" }, [
+        html("div", { class: "answer" }, [html("span", { class: "q", text: "(a) Dem seats" }), html("span", { class: "a", text: m.median }),
+          html("span", { class: "sub", text: `actual ${y.actual_d_seats} · off by ${Math.abs(m.seat_error)}` })]),
+        html("div", { class: "answer" }, [html("span", { class: "q", text: "(b) P(majority)" }), html("span", { class: "a", text: prob2(m.p_majority) }),
+          html("span", { class: "sub", text: `${won} · Brier ${m.brier_majority.toFixed(3)}` })]),
+        html("div", { class: "answer" }, [html("span", { class: "q", text: "(c) Brier, 5 closest" }), html("span", { class: "a", text: m.brier_closest_five.toFixed(2) }),
+          html("span", { class: "sub", text: "0.25 = a coin flip" })]),
+      ]),
+      html("table", { class: "small-table" }, [
+        html("thead", {}, html("tr", {}, [html("th", { text: "Five closest districts" }), html("th", { class: "num", text: "P(D)" }), html("th", { text: "Winner" }), html("th", { class: "num", text: "D margin" })])),
+        html("tbody", {}, m.closest_five.map((d) => html("tr", {}, [
+          html("td", { text: d.race_id.slice(2) }), html("td", { class: "num", text: prob2(d.p) }),
+          html("td", { text: d.won ? "D" : "R" }), html("td", { class: "num", text: margin(d.actual_margin) }),
+        ]))),
+      ]),
+      html("table", { class: "small-table" }, [
+        html("thead", {}, html("tr", {}, [html("th", { text: "Calibration" }), html("th", { class: "num", text: "Districts" }), html("th", { class: "num", text: "Our mean P(D)" }), html("th", { class: "num", text: "D won" })])),
+        html("tbody", {}, m.calibration.map((c) => html("tr", {}, [
+          html("td", { text: c.bin }), html("td", { class: "num", text: c.n }), html("td", { class: "num", text: prob2(c.mean_p) }), html("td", { class: "num", text: prob2(c.d_won) }),
+        ]))),
+      ]),
+      html("p", { class: "small", text: `Brier over the ${m.n_competitive} districts we gave 5–95%: ${m.brier_competitive.toFixed(3)}. Districts called wrong: ${m.calls_wrong} of ${y.districts}. ` +
+        `Fundamentals alone would have said ${fo.median} seats and ${prob2(fo.p_majority)}.` }),
+      html("details", { class: "more" }, [html("summary", { text: `The ${y.misses.length} districts we called wrong` }),
+        html("p", { class: "small", text: y.misses.map((x) => `${x.race_id.slice(2)} (${prob2(x.p)}; ${x.won ? "D" : "R"} won by ${Math.abs(x.actual_margin).toFixed(1)})`).join(", ") })]),
+    ]);
+    box.append(card);
+  }
+  $("#record-method").replaceChildren(
+    html("p", { text: "Each year is run with the 2026 model's formulas and error sizes: poll errors ±2.4 and ±9.7, a shared national error of ±3.6 with fat tails, the same weighting of polls and the same simulation with 20,000 runs." }),
+    html("p", { text: `Inputs: district polls of the actual matchup and our own fundamentals (district lean + generic-ballot average + 3 points for an incumbent). Lean: ${years.map((y) => `${y.year}: ${y.lean_source}`).join("; ")}.` }),
+    html("p", { text: "Left out: prediction markets and DDHQ's district probabilities, which carry most of the weight in our 2026 contest districts but have no archive for those years. So this tests the skeleton of the model, not the full 2026 version." }),
+    html("p", { text: "The contest's part (c) names five districts in advance. As a stand-in we score the five districts our model rated closest to 50%; races that close are near coin flips for any model, so a Brier score near 0.25 is expected." }),
+    html("p", { class: "small" }, ["Data: ", html("a", { href: "https://github.com/fivethirtyeight/election-results", target: "_blank", rel: "noopener", text: "FiveThirtyEight election results" }),
+      ", FiveThirtyEight poll archive and polls page (", html("a", { href: "https://web.archive.org/web/20241129175737/https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv", target: "_blank", rel: "noopener", text: "Wayback copy" }),
+      "), ", html("a", { href: "https://the-db.co/presbycd", target: "_blank", rel: "noopener", text: "The Downballot" }), ". Code: pipeline/backtest_house.py."]),
   );
 }
 
@@ -578,9 +807,9 @@ function renderGaps(list, showAll) {
     const lo = Math.min(g.p_polls, g.p_market), hi = Math.max(g.p_polls, g.p_market);
     const track = html("div", { class: "gap-track" }, [
       html("span", { class: "span", style: `left:${lo * 100}%;width:${(hi - lo) * 100}%` }),
-      html("span", { class: "mark mark-polls", style: `left:${g.p_polls * 100}%` }),
-      html("span", { class: "mark mark-market", style: `left:${g.p_market * 100}%` }),
       html("span", { class: "mark mark-model", style: `left:${g.p_model * 100}%` }),
+      html("span", { class: "gap-icon", style: `left:${g.p_polls * 100}%` }, icon("polls")),
+      html("span", { class: "gap-icon", style: `left:${g.p_market * 100}%` }, icon("market")),
     ]);
     const short = g.race_id.startsWith("S-") ? `${app.byId[g.race_id].state} Senate` : app.byId[g.race_id].label;
     const row = html("div", { class: "gap-row", tabindex: 0 }, [
@@ -740,6 +969,8 @@ function renderRaces(focusId) {
 function setStateFilter(abbr, focusId) {
   tip.hidden = true;
   app.stateFilter = abbr;
+  if (location.hash !== "#maps") history.pushState(null, "", "#maps");
+  showTab("maps");
   renderRaces(focusId);
   const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
   $("#race-title").scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
@@ -853,6 +1084,9 @@ function render() {
   const f = app.forecast;
   renderHeader(f);
   renderContest(f);
+  renderDeciders(f);
+  renderCompare(f);
+  renderNews(app.news);
   renderAssumptions(f.meta.assumptions);
   renderChamber("house", f.house);
   renderChamber("senate", f.senate);
@@ -895,11 +1129,20 @@ async function init() {
   for (const s of app.seats.senate.concat(app.seats.house)) app.byId[s.id] = s;
   for (const st of app.seats.states) app.stateByAbbr[st.abbr] = st;
   try { renderBridge(await loadJSON("data/bridge.json")); } catch { /* bridge is optional (needs the course workbook) */ }
+  // Optional extras: candidates and photos, the news check, the 2022/2024 backtest.
+  const [cands, news, backtest] = await Promise.all(["data/candidates.json", "data/news.json", "data/backtest.json"]
+    .map((p) => loadJSON(p).catch(() => null)));
+  app.cands = cands?.races ?? {};
+  app.news = news;
+  renderBacktest(backtest);
 
   for (const id of ["f-chamber", "f-close", "f-sort"]) $("#" + id).addEventListener("change", () => renderRaces());
   $("#f-search").addEventListener("input", () => renderRaces());
   $("#f-clear").addEventListener("click", () => { app.stateFilter = null; renderRaces(); });
   addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });
+  addEventListener("hashchange", () => { showTab(location.hash.slice(1)); if (!app.stateFilter) scrollTo(0, 0); });
+  for (const a of document.querySelectorAll("[data-tab]")) a.addEventListener("click", () => { app.stateFilter = null; renderRaces(); });
+  showTab(location.hash.slice(1));
   render();
   if (typeof initWhatIf === "function") initWhatIf();  // whatif.js: the weights panel
 }

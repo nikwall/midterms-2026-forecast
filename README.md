@@ -13,7 +13,8 @@ A forecast of the 2026 US House (and Senate) elections, built for the HKS foreca
 | [run_all.py](run_all.py) | runs the whole pipeline with one command |
 | [PROCESS.md](PROCESS.md) | dated log of every step and choice, with reasons |
 | [MODEL_PROPOSAL.md](MODEL_PROPOSAL.md) | the model design |
-| [research/](research/) | sources, polling corrections, backtest, sensitivity, bridge from the course model, comparisons |
+| [research/](research/) | sources, polling corrections, backtests (Senate 1998–2022; House 2022 and 2024), sensitivity, bridge from the course model, comparisons |
+| [data/polls_manual.csv](data/polls_manual.csv) | polls from the news check that VoteHub lacks, with sources |
 
 ## How the model works, in one paragraph
 
@@ -23,6 +24,8 @@ Final model (v2). Every race gets three pieces of evidence:
 - fundamentals:
   - House: Decision Desk HQ's district probabilities of 22 Oct, the course's starting point;
   - Senate: the 2024 presidential result in the state, shifted by the national environment, plus incumbency.
+
+Polls VoteHub lacks are added by hand after a news check of the contest districts. Crowd forecasts (Metaculus, Manifold, PredictIt) are shown for comparison, not used.
 
 Each piece becomes an expected margin with an uncertainty. The uncertainties are calibrated on the midterms 1998–2022. The pieces are averaged with weights inversely proportional to their variance. All races are then simulated together 20,000 times, with a shared national error (±3.6), division and state errors, and a race-specific error. Every assumption is listed with its source on the dashboard ("Our assumptions").
 
@@ -42,7 +45,7 @@ Fetch fresh data and rebuild the forecast (about one minute):
 python run_all.py
 ```
 
-Add `--full` to also run the sensitivity analysis. Then open the dashboard:
+Add `--full` to also run the sensitivity analysis and the 2022/2024 House backtest (downloads about 10 MB on the first run). Then open the dashboard:
 
 ```bash
 python -m http.server 8770 --directory app
@@ -55,7 +58,8 @@ and go to http://localhost:8770.
 **Data that is not in the repository:**
 - Raw downloads in `data/raw/`: the pipeline fetches them again.
 - The course workbook: course material, so not published. Its Decision Desk HQ district probabilities, which the model uses, are in `data/ddhq_house_2026-10-22.csv` (source: Decision Desk HQ, accessed 22 Oct 2026).
-- `pipeline/backtest.py` needs the FiveThirtyEight poll archive and MIT Election Lab results in `data/raw/backtest/` (sources listed in the script).
+- `pipeline/backtest.py` needs the FiveThirtyEight poll archive and MIT Election Lab results in `data/raw/backtest/` (sources listed in the script). `pipeline/backtest_house.py` downloads its own files on the first run.
+- Candidate photos are linked from Wikipedia, not copied.
 
 ## Contest rules (summary)
 

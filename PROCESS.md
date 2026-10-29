@@ -269,3 +269,38 @@ Sensitivity (24 variants): House 0.87–0.94 for reasonable choices; v1 settings
 | OH-07 | 0.83 |
 | PA-08 | 0.75 |
 | NY-17 | 0.79 |
+
+## 29 October 2026: news check, crowds, track record, redesign
+
+**News check of the five contest districts.** We searched the news for each district and compared the polls we found with VoteHub. Details with links are on the dashboard (Contest entry → News check) and in `app/data/news.json`.
+
+| District | What we found |
+|---|---|
+| NC-01 | Three Democratic-sponsored polls VoteHub lacks: RedBox (23 Oct) Davis 45–44, GQR (29 Sep – 4 Oct) 47–39, GBAO for House Majority PAC (9–11 Sep) 50–43. A co/efficient (R) poll is reported as a head-to-head by one tracker and as a generic ballot by another, so it is left out. |
+| NC-11 | Chuck Edwards (R) withdrew in August after a House Ethics report; Jennifer Balkcom replaced him. Ager outraised her $2.3M to $0.36M in Q3. The only real-matchup poll (Emerson, Ager 56–43) was already in. This explains DDHQ 0.52 vs. markets 0.85. |
+| OH-07 | No independent poll since August. Added RedBox (D, 23 Oct) Poindexter 46–42, co/efficient (R, 6 Aug) 47–33, GBAO (D, 20 Jun) 43–44. DDHQ's live model moved to 51% Poindexter on 27 Oct; we keep its 22 Oct value. |
+| PA-08 | NYT/Siena (402 LV, released 25 Oct) Cognetti 51–46, the only independent high-quality poll in any contest district; RedBox (D) 49–46. |
+| NY-17 | McLaughlin for the Lawler campaign (28–30 Sep) Lawler 50–47; RedBox (D, 23 Oct) Conley 48–46. |
+
+| # | Choice | Why |
+|---|---|---|
+| C53 | Polls found in the news check that VoteHub lacks go into `data/polls_manual.csv` (with source and check date). `fetch_polls.py` adds them with the same weights as every other poll and skips one as soon as VoteHub has it (same race, end date within two days, same shares within a point). | The contest scores these five districts directly; VoteHub missed the only NYT/Siena poll among them. Same rules for every poll keeps the hand step from becoming a judgement call. |
+| | Effect: NC-01 0.88 → 0.84, OH-07 0.88 → 0.83, PA-08 0.88 → 0.88, NY-17 0.66 → 0.65, NC-11 unchanged. | The newest polls carry most of the weight (14-day half-life), and the new ones are closer than the old ones. |
+| C54 | Crowd forecasts (Metaculus, Manifold, PredictIt) are fetched by `pipeline/fetch_crowds.py` and shown beside our numbers, **not used as inputs**. Metaculus is read by hand (its API needs a login). PredictIt counts only with a bid-ask spread of 15 cents or less. | Metaculus and Manifold read the same polls and markets we do (C8: no herding, no double counting). PredictIt's district markets are capped at $850 and mostly untraded (PA-08 and OH-07 have no tight quote). On 29 Oct the crowds agree with us: House 0.89–0.96, seats 230–242; NC-01 0.80–0.82, NY-17 0.61–0.66, PA-08 0.90 (Manifold). |
+| C55 | "The races that decide the majority": the smallest set of districts that delivers the 218th seat in at least half of the simulations (13 districts on 29 Oct, four of them contest districts), with candidates and photos. The next 17 are collapsed. Candidates come from the Kalshi listing, photos from Wikipedia (`pipeline/fetch_candidates.py`); a page about a namesake (other state, or deceased) is rejected, and a candidate without a page gets initials. | Your request to make the races that matter salient. The tipping-point share measures exactly what moves (b). |
+| C56 | Backtest of the House model on 2022 and 2024 (`pipeline/backtest_house.py`, report in [research/backtest_house_report.md](research/backtest_house_report.md)): as of 7 days out, with polls (FiveThirtyEight archive; 2024 from a Wayback copy of the 538 polls page) and our own fundamentals (2022: 538 partisan lean; 2024: 2020 presidential margin on the 2024 lines from The Downballot). No markets or DDHQ exist for those years. | Your request to show how the model would have fared. |
+| | Result: 2022: 210 seats (actual 213), P(majority) 0.30 (Republicans won); 2024: 212 (actual 215), 0.33 (Republicans won). Brier 0.155 (2022) and 0.091 (2024) over the districts rated 5–95%; 20 and 8 districts called wrong. Fundamentals alone: 208/0.22 and 209/0.20. | The model got the majority right both times and missed the seat count by 3 both times, low both times. The five closest districts score about 0.25, as coin flips should. |
+| C57 | Page reorganised into six tabs: Contest entry · House, Senate & Congress · Maps & all races · Try your own weights · Track record 2022/24 · Method & code. One-line header with team logo and update time (ET). The two explanatory paragraphs at the top are gone; (a), (b), (c) are compact; assumptions, bridge and method are collapsed; a button downloads the code (GitHub zip). | Your feedback of 29 Oct: too much space for too little information. |
+| C58 | Icons: polls are a telephone, markets a dollar bill, DDHQ a desk bell (the decision desk), crowds a crystal ball, and our team logo a person next to a terminal ("One + Claude Code is a group"). On the (c) tracks the evidence sits above the line in lanes so close icons do not overlap; our answer sits below it. | Your request for more entertaining visuals. |
+
+**Contest answers on 29 Oct (fresh data and news-check polls):**
+
+| Question | Answer |
+|---|---|
+| (a) Democratic seats | **237** (80%: 219–264) |
+| (b) P(majority) | **0.91** |
+| NC-01 | 0.84 |
+| NC-11 | 0.88 |
+| OH-07 | 0.83 |
+| PA-08 | 0.88 |
+| NY-17 | 0.65 |

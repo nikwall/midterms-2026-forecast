@@ -1,0 +1,13 @@
+race_id,pollster,sponsors,partisan,population,sample_size,start_date,end_date,dem_name,dem_pct,rep_name,rep_pct,source,checked
+H-NC-01,RedBox Research,,DEM,lv,1468,2026-10-23,2026-10-23,Don Davis,45,Laurie Buckhout,44,https://www.callthemap.com/polls/HOU-NC-01,2026-10-29
+H-NC-01,GQR,,DEM,lv,500,2026-09-29,2026-10-04,Don Davis,47,Laurie Buckhout,39,https://www.callthemap.com/polls/HOU-NC-01,2026-10-29
+H-NC-01,GBAO,House Majority PAC,DEM,lv,500,2026-09-09,2026-09-11,Don Davis,50,Laurie Buckhout,43,https://www.witn.com/2026/09/15/poll-don-davis-leading-laurie-buckhout-by-7-points-first-district-race/,2026-10-29
+H-NC-01,GQR,,DEM,lv,500,2026-06-28,2026-06-28,Don Davis,45,Laurie Buckhout,41,https://www.callthemap.com/polls/HOU-NC-01,2026-10-29
+H-NY-17,RedBox Research,,DEM,lv,726,2026-10-23,2026-10-23,Cait Conley,48,Mike Lawler,46,https://www.callthemap.com/polls/HOU-NY-17,2026-10-29
+H-NY-17,McLaughlin & Associates,Lawler for Congress,REP,lv,400,2026-09-28,2026-09-30,Cait Conley,47,Mike Lawler,50,https://www.lawlerforcongress.com/2026/10/02/lawler-leads-cait-conley-50-47-in-new-poll-of-ny-17/,2026-10-29
+H-PA-08,The New York Times/Siena College,The Philadelphia Inquirer,,lv,402,2026-10-22,2026-10-22,Paige Cognetti,50.53,Rob Bresnahan,46.48,https://sri.siena.edu/2026/10/25/nytimes-philadelphia-inquirer-siena-poll-of-likely-pennsylvania-congressional-district-voters/,2026-10-29
+H-PA-08,RedBox Research,,DEM,lv,696,2026-10-23,2026-10-23,Paige Cognetti,49,Rob Bresnahan,46,https://www.callthemap.com/polls/HOU-PA-08,2026-10-29
+H-PA-08,Impact Research,,DEM,lv,500,2026-06-11,2026-06-11,Paige Cognetti,46,Rob Bresnahan,45,https://www.callthemap.com/polls/HOU-PA-08,2026-10-29
+H-OH-07,RedBox Research,,DEM,lv,875,2026-10-23,2026-10-23,Brian Poindexter,46,Max Miller,42,https://www.callthemap.com/polls/HOU-OH-07,2026-10-29
+H-OH-07,co/efficient,,REP,lv,615,2026-08-06,2026-08-06,Brian Poindexter,47,Max Miller,33,https://thehill.com/homenews/campaign/6015633-poindexter-leads-max-miller-poll/,2026-10-29
+H-OH-07,GBAO,,DEM,lv,500,2026-06-20,2026-06-20,Brian Poindexter,43,Max Miller,44,https://www.callthemap.com/polls/HOU-OH-07,2026-10-29
