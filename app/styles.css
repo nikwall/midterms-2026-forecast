@@ -59,6 +59,8 @@ h3 { font-size: 0.95rem; line-height: 1.3; font-weight: 400; }
 .tabs a { color: var(--ink-2); border-bottom: 2px solid transparent; padding: 4px 0 6px; white-space: nowrap; }
 .tabs a:hover { color: var(--accent); }
 .tabs a[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 400; }
+.tabs a.tab-ext { color: #bb2649; font-weight: 500; margin-left: auto; }
+.tabs a.tab-ext:hover { border-bottom-color: #bb2649; }
 
 .page { padding-block: 16px 48px; display: grid; gap: 28px; }
 .panel { display: grid; gap: 22px; min-width: 0; }

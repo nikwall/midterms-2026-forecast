@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>America 2030 Future Atlas</title>
+<meta name="description" content="Two open questions decide what kind of country the US will be in 2030: whether checks and balances hold, and how fast AI changes the economy. Eight forecast signals show which way it goes; the first two resolve on 3 November 2026.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="America 2030 Future Atlas">
+<meta property="og:description" content="Two open questions decide what kind of country the US will be in 2030: whether checks and balances hold, and how fast AI changes the economy. Eight forecast signals show which way it goes; the first two resolve on 3 November 2026.">
+<meta property="og:url" content="https://nikwall.github.io/midterms-2026-forecast/atlas/">
+<meta property="og:image" content="https://nikwall.github.io/midterms-2026-forecast/atlas/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="arq_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700&family=Roboto:wght@300;400;500&display=swap">
+<style>
+/* Layout: arq Zukunftsatlas, one column; the Landkarte (branching paths) as hero, then a sticky field map beside the signal cards. */
+:root {
+  --bg: #fbfcfa;
+  --surface: #ffffff;
+  --tint: #f1f5f0;
+  --tint-2: #e3ece1;
+  --cone: #eef3ed;
+  --line: #d7e1d2;
+  --ink: #2f3639;
+  --muted: #5c7062;
+  --green: #135b49;
+  --brand: #135b49;
+  --green-2: #91a596;
+  --sage: #9dc09f;
+  --crimson: #bb2649;
+  --crimson-fill: #bb2649;
+  --rose: #d79ba5;
+  --hl-bg: #faf09b;
+  --hl-fg: #2f3639;
+  --on-fill: #ffffff;
+  --cond: "Roboto Condensed", "Roboto", "Arial Narrow", Arial, sans-serif;
+  --body: "Roboto", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1714; --surface: #15201c; --tint: #18241f; --tint-2: #1f2e28; --cone: #142019; --line: #2b3b35;
+    --ink: #e4ebe5; --muted: #a2b5a9; --green: #8fc9ae; --brand: #1d6d58; --green-2: #6c8778; --sage: #9dc09f;
+    --crimson: #ec6f8e; --crimson-fill: #bb2649; --rose: #7d3b4b; --hl-bg: #4d4718; --hl-fg: #faf09b; --on-fill: #ffffff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1714; --surface: #15201c; --tint: #18241f; --tint-2: #1f2e28; --cone: #142019; --line: #2b3b35;
+  --ink: #e4ebe5; --muted: #a2b5a9; --green: #8fc9ae; --brand: #1d6d58; --green-2: #6c8778; --sage: #9dc09f;
+  --crimson: #ec6f8e; --crimson-fill: #bb2649; --rose: #7d3b4b; --hl-bg: #4d4718; --hl-fg: #faf09b; --on-fill: #ffffff;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+.back { display: inline-block; margin-top: 18px; font-size: 14.5px; font-weight: 500; color: var(--green); text-decoration: none; border-bottom: 1px solid var(--sage); }
+.back:hover { border-bottom-color: var(--green); }
+.sig .src a.who { text-decoration: none; border-bottom: 1px solid var(--sage); }
+.sig .resolved { grid-column: 2; align-self: end; font-size: 12.5px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--on-fill); background: var(--brand); border-radius: 14px; padding: 4px 11px; white-space: nowrap; }
+.sig.done .pv { color: var(--crimson); }
+footer.ft a { color: var(--green); }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-weight: 300; font-size: 16px; line-height: 1.5; }
+b, strong { font-weight: 500; }
+p { margin: 0; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+a { color: var(--green); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--crimson); outline-offset: 2px; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding-block: 0 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); position: relative; }
+.topbar { height: 8px; width: min(60%, 640px); margin: 0 auto; background: var(--crimson-fill); }
+
+/* ---------- Kopf ---------- */
+.meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.overline { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 12.5px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.prod { background: var(--brand); color: var(--on-fill); border-radius: 40px; padding: 4px 13px; font-weight: 700; letter-spacing: .12em; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { font-size: 11.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+.chip.real { background: var(--tint); color: var(--green); border: 1px solid var(--sage); }
+.chip.judg { background: var(--hl-bg); color: var(--hl-fg); }
+.kick { margin-top: 30px; font-family: var(--cond); font-weight: 500; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--green-2); }
+h1 { margin-top: 6px; font-family: var(--cond); font-weight: 700; color: var(--crimson); font-size: clamp(32px, 4.6vw, 56px); line-height: 1.06; max-width: 22ch; }
+.lead { margin-top: 14px; max-width: 64ch; font-size: 18px; line-height: 1.5; }
+
+/* ---------- Abschnitte ---------- */
+section { margin-top: 44px; }
+.section-label { display: flex; align-items: center; gap: 12px; font-family: var(--cond); font-weight: 700; font-size: 15px;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+.section-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* ---------- Landkarte: Pfade ---------- */
+.paths-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.paths { display: block; width: 100%; min-width: 720px; height: auto; }
+.paths .cone1 { fill: var(--cone); } .paths .cone2 { fill: var(--tint-2); }
+.paths .seg { fill: none; stroke: var(--green-2); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 1 13; transition: stroke .3s; }
+.paths .seg.hot { stroke: var(--crimson); stroke-width: 6; }
+.paths .node { fill: var(--brand); }
+.paths .node-in { fill: var(--bg); }
+.paths .end { fill: var(--green-2); transition: fill .3s; }
+.paths .end.hot { fill: var(--crimson); }
+.paths .q { font-family: var(--cond); font-weight: 700; font-size: 19px; fill: var(--green); }
+.paths .today { font-family: var(--body); font-weight: 500; font-size: 13px; letter-spacing: .14em; fill: var(--muted); }
+.paths .pill rect { fill: var(--bg); stroke: var(--sage); stroke-width: 2; transition: fill .3s, stroke .3s; }
+.paths .pill text { font-family: var(--cond); font-weight: 700; font-size: 17px; fill: var(--green); }
+.paths .pill.hot rect { fill: var(--crimson-fill); stroke: var(--crimson-fill); }
+.paths .pill.hot text { fill: var(--on-fill); }
+.paths .ename { font-family: var(--cond); font-weight: 700; font-size: 25px; fill: var(--green); }
+.paths .ename.hot { fill: var(--crimson); }
+.paths .eprob { font-family: var(--body); font-weight: 500; font-size: 14px; letter-spacing: .1em; fill: var(--muted); }
+.paths .eprob.hot { fill: var(--crimson); }
+.reading { margin-top: 12px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; font-size: 17px; }
+.reading .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--crimson-fill); flex: none; align-self: center; }
+.reading b { color: var(--crimson); font-weight: 500; }
+.reading .note { color: var(--muted); font-size: 14px; }
+
+/* ---------- Karte und Signale ---------- */
+.board { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.mapcol { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); }
+.fmap { display: flex; flex-direction: column; gap: 6px; }
+.axkey { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 6px; }
+.axkey span.k { display: inline-flex; align-items: center; font-family: var(--cond); font-weight: 700; font-size: 15px; color: var(--green); }
+.axkey em { font-style: normal; font-family: var(--body); font-weight: 400; font-size: 13px; color: var(--muted); margin-left: 6px; }
+.poles { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.poles.top { justify-content: center; }
+.n { display: inline-flex; width: 20px; height: 20px; border-radius: 50%; background: var(--crimson-fill); color: var(--on-fill);
+  font-family: var(--cond); font-weight: 700; font-size: 12.5px; align-items: center; justify-content: center; margin-right: 6px; flex: none; }
+.grid4 { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 6px; width: 100%; aspect-ratio: 1 / 1; }
+.qd { background: var(--tint); border-top: 4px solid transparent; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; transition: border-color .3s, background .3s; }
+.qd.tl { border-radius: 12px 0 0 0; } .qd.tr { border-radius: 0 12px 0 0; } .qd.bl { border-radius: 0 0 0 12px; } .qd.br { border-radius: 0 0 12px 0; }
+.qd h3 { font-family: var(--cond); font-weight: 700; font-size: clamp(17px, 2vw, 22px); line-height: 1.1; color: var(--green); }
+.qd .p { font-family: var(--cond); font-weight: 700; font-size: clamp(22px, 2.6vw, 30px); line-height: 1; color: var(--green); font-variant-numeric: tabular-nums; }
+.qd .d { font-size: 13.5px; line-height: 1.38; color: var(--muted); }
+.qd.bl, .qd.br { justify-content: flex-end; }
+.qd.top { border-top-color: var(--crimson-fill); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.qd.top h3, .qd.top .p { color: var(--crimson); }
+.overlay { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.overlay line { stroke: var(--crimson); stroke-width: 2; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
+.marker, .ghost { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; pointer-events: none;
+  transition: left .45s cubic-bezier(.3,.7,.3,1), top .45s cubic-bezier(.3,.7,.3,1), opacity .2s; }
+.marker { background: var(--crimson-fill); box-shadow: 0 0 0 3px var(--bg), 0 1px 6px rgba(0,0,0,.25); z-index: 2; }
+.marker span { position: absolute; left: 50%; top: 28px; transform: translateX(-50%); white-space: nowrap; font-size: 12px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); background: var(--bg); padding: 1px 6px; border-radius: 10px; }
+.marker.flip span { top: auto; bottom: 28px; }
+.ghost { border: 2.5px dashed var(--crimson); background: transparent; opacity: 0; z-index: 1; }
+.ghost.on { opacity: 1; }
+.mapnote { margin-top: 14px; display: flex; gap: 10px; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
+.reset { font: inherit; font-size: 13px; font-weight: 500; color: var(--green); background: var(--surface); border: 1px solid var(--sage);
+  border-radius: 20px; padding: 5px 14px; cursor: pointer; }
+.reset:hover { background: var(--tint); }
+.reset[disabled] { opacity: .45; cursor: default; }
+
+.grp { display: flex; align-items: center; font-family: var(--cond); font-weight: 700; font-size: 19px; color: var(--green); margin: 4px 0 10px; }
+.grp + .sig { margin-top: 0; }
+.sigs { display: flex; flex-direction: column; gap: 12px; }
+.sigs .grp:not(:first-child) { margin-top: 18px; }
+.sig { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px 12px; display: grid;
+  grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; transition: border-color .2s, box-shadow .2s; }
+.sig:hover, .sig:focus-within { border-color: var(--sage); box-shadow: 0 2px 12px rgba(19,91,73,.08); }
+.sig .qt { font-weight: 400; font-size: 15.5px; line-height: 1.38; }
+.sig .pv { font-family: var(--cond); font-weight: 700; font-size: 32px; line-height: 1; color: var(--green); text-align: right; font-variant-numeric: tabular-nums; }
+.sig .pv small { font-size: 18px; }
+.sig .bar { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--tint-2); position: relative; }
+.sig .bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--brand); }
+.sig .bar.lean i { background: var(--crimson-fill); }
+.sig .src { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--muted); }
+.sig .src .who { font-weight: 500; color: var(--green); }
+.sig .src .who.est { color: var(--hl-fg); background: var(--hl-bg); padding: 0 7px; border-radius: 9px; }
+.sig .why { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+.sig .then { grid-column: 1; display: flex; gap: 9px; align-items: flex-start; font-size: 14px; line-height: 1.38; }
+.sig .then b { color: var(--crimson); font-weight: 500; }
+.mm { width: 22px; height: 22px; flex: none; margin-top: 1px; }
+.mm rect { fill: var(--tint-2); } .mm rect.on { fill: var(--crimson-fill); }
+.seg3 { grid-column: 2; align-self: end; display: inline-flex; border: 1px solid var(--sage); border-radius: 18px; overflow: hidden; }
+.seg3 button { font: inherit; font-size: 12.5px; font-weight: 500; color: var(--green); background: transparent; border: 0; padding: 5px 11px; cursor: pointer; }
+.seg3 button + button { border-left: 1px solid var(--sage); }
+.seg3 button[aria-pressed="true"] { background: var(--brand); color: var(--on-fill); }
+.seg3 button[data-v="yes"][aria-pressed="true"] { background: var(--crimson-fill); }
+.sig.set { border-color: var(--crimson); }
+
+/* ---------- Vier Felder ---------- */
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.field { background: var(--tint); border-top: 4px solid var(--crimson-fill); border-radius: 0 0 12px 12px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; }
+.field .h { display: flex; align-items: center; gap: 10px; }
+.field h3 { font-family: var(--cond); font-weight: 700; font-size: 23px; color: var(--green); line-height: 1.1; flex: 1; }
+.field .fp { font-family: var(--cond); font-weight: 700; font-size: 23px; color: var(--green); font-variant-numeric: tabular-nums; }
+.field .scene { font-size: 15px; line-height: 1.5; }
+.field ul { margin: 2px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: var(--muted); }
+.field li { padding-left: 16px; position: relative; }
+.field li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--green-2); }
+.field .em { font-family: var(--body); font-size: 11.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--on-fill);
+  background: var(--crimson-fill); border-radius: 12px; padding: 2px 9px; }
+
+/* ---------- Zeitstrahl ---------- */
+.tl-scroll { overflow-x: auto; }
+.tline { display: block; width: 100%; min-width: 680px; height: auto; }
+.tline .axis { stroke: var(--line); stroke-width: 2; }
+.tline .tick { stroke: var(--line); stroke-width: 2; }
+.tline .yr { font-family: var(--cond); font-weight: 700; font-size: 16px; fill: var(--green-2); }
+.tline .dot { fill: var(--crimson-fill); } .tline .dot.ax { fill: var(--brand); }
+.tline .lbl { font-family: var(--body); font-size: 16px; fill: var(--ink); }
+.tline .dt { font-family: var(--cond); font-weight: 700; font-size: 16px; fill: var(--green); }
+.tline .stem { stroke: var(--green-2); stroke-width: 1.2; }
+
+/* ---------- Methode ---------- */
+.method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.mcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 14px; line-height: 1.45; display: flex; flex-direction: column; gap: 6px; }
+.mcard h4 { font-family: var(--cond); font-weight: 700; font-size: 16px; color: var(--green); }
+.mcard p + p { margin-top: 2px; }
+.axdef { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.axdef div { background: var(--tint); border-radius: 12px; padding: 12px 16px; font-size: 14px; line-height: 1.45; }
+.axdef b.fc { display: inline; font-family: inherit; font-size: inherit; color: var(--crimson); font-weight: 500; margin: 0; }
+.axdef b:not(.fc) { display: block; font-family: var(--cond); font-weight: 700; font-size: 16px; color: var(--green); margin-bottom: 2px; }
+
+footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 14px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.logo { height: 34px; width: auto; display: block; }
+.logo.neg { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo.pos { display: none; } :root:not([data-theme="light"]) .logo.neg { display: block; } }
+:root[data-theme="dark"] .logo.pos { display: none; } :root[data-theme="dark"] .logo.neg { display: block; }
+
+@media (max-width: 900px) {
+  .board { grid-template-columns: minmax(0, 1fr); }
+  .mapcol { position: static; }
+  .method { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  .sig .resolved { grid-column: 1; justify-self: start; }
+  .poles { font-size: 11px; letter-spacing: .05em; }
+  .fields, .axdef { grid-template-columns: minmax(0, 1fr); }
+  .qd { padding: 9px 10px; } .qd .d { display: none; }
+  .lead { font-size: 16.5px; }
+  .sig { grid-template-columns: minmax(0, 1fr); }
+  .sig .pv { text-align: left; grid-row: 2; }
+  .sig .seg3 { grid-column: 1; justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="topbar"></div>
+  <a class="back" href="../">← 2026 Midterms Forecast: the model behind the first two signals</a>
+
+  <div class="meta">
+    <div class="overline"><span class="prod">Perspektiv</span>Future Atlas · United States 2030</div>
+    <div class="chips"><span class="chip real" id="stamp">Real forecasts · 31 Oct 2026</span><span class="chip judg">Scenario text and what-if: our judgment</span></div>
+  </div>
+
+  <p class="kick">The guiding question</p>
+  <h1>What kind of country will the United States be in&nbsp;2030?</h1>
+  <p class="lead">Two open questions decide it: whether checks and balances hold, and how fast AI changes the economy. Eight signals show early which way the country is heading. The first two resolve on Tuesday, 3&nbsp;November.</p>
+
+  <!-- ================= Landkarte ================= -->
+  <section aria-labelledby="l-map">
+    <div class="section-label" id="l-map">The map: from question marks to probabilities</div>
+    <div class="paths-scroll">
+      <svg class="paths" viewBox="0 0 1280 470" role="img" aria-label="Branching paths from today through two uncertainties to four futures, each branch with a probability">
+        <polygon class="cone1" points="48,235 1280,0 1280,470"/>
+        <polygon class="cone2" points="48,235 1280,110 1280,360"/>
+        <path class="seg" id="s0" d="M48,235 H330"/>
+        <path class="seg" id="sH" d="M330,235 C480,235 560,120 720,120"/>
+        <path class="seg" id="sC" d="M330,235 C480,235 560,350 720,350"/>
+        <path class="seg" id="sHF" d="M720,120 C860,120 900,50 1010,50"/>
+        <path class="seg" id="sHG" d="M720,120 C860,120 900,185 1010,185"/>
+        <path class="seg" id="sCF" d="M720,350 C860,350 900,285 1010,285"/>
+        <path class="seg" id="sCG" d="M720,350 C860,350 900,420 1010,420"/>
+        <circle class="node" cx="48" cy="235" r="16"/><circle class="node-in" cx="48" cy="235" r="6"/>
+        <circle class="node" cx="330" cy="235" r="22"/>
+        <circle class="node" cx="720" cy="120" r="19"/>
+        <circle class="node" cx="720" cy="350" r="19"/>
+        <circle class="end" id="eHF" cx="1010" cy="50" r="12"/>
+        <circle class="end" id="eHG" cx="1010" cy="185" r="12"/>
+        <circle class="end" id="eCF" cx="1010" cy="285" r="12"/>
+        <circle class="end" id="eCG" cx="1010" cy="420" r="12"/>
+        <text class="today" x="20" y="282">TODAY</text>
+        <text class="q" x="318" y="166" text-anchor="middle">Do checks and</text>
+        <text class="q" x="318" y="189" text-anchor="middle">balances hold?</text>
+        <text class="q" x="700" y="58" text-anchor="middle">How fast does AI</text>
+        <text class="q" x="700" y="81" text-anchor="middle">change the economy?</text>
+        <text class="q" x="700" y="402" text-anchor="middle">How fast does AI</text>
+        <text class="q" x="700" y="425" text-anchor="middle">change the economy?</text>
+        <g class="pill" id="pH"><rect x="452" y="158" width="138" height="36" rx="18"/><text x="521" y="182" text-anchor="middle"></text></g>
+        <g class="pill" id="pC"><rect x="432" y="274" width="178" height="36" rx="18"/><text x="521" y="298" text-anchor="middle"></text></g>
+        <g class="pill" id="pHF"><rect x="808" y="66" width="136" height="34" rx="17"/><text x="876" y="89" text-anchor="middle"></text></g>
+        <g class="pill" id="pHG"><rect x="808" y="135" width="136" height="34" rx="17"/><text x="876" y="158" text-anchor="middle"></text></g>
+        <g class="pill" id="pCF"><rect x="808" y="300" width="136" height="34" rx="17"/><text x="876" y="323" text-anchor="middle"></text></g>
+        <g class="pill" id="pCG"><rect x="808" y="368" width="136" height="34" rx="17"/><text x="876" y="391" text-anchor="middle"></text></g>
+        <text class="ename" id="nHF" x="1034" y="52">The Managed Boom</text><text class="eprob" id="qHF" x="1034" y="74"></text>
+        <text class="ename" id="nHG" x="1034" y="187">The Long Repair</text><text class="eprob" id="qHG" x="1034" y="209"></text>
+        <text class="ename" id="nCF" x="1034" y="287">The Command Cloud</text><text class="eprob" id="qCF" x="1034" y="309"></text>
+        <text class="ename" id="nCG" x="1034" y="422">The Hollow Republic</text><text class="eprob" id="qCG" x="1034" y="444"></text>
+      </svg>
+    </div>
+    <p class="reading" id="reading"></p>
+  </section>
+
+  <!-- ================= Karte und Signale ================= -->
+  <section aria-labelledby="l-sig">
+    <div class="section-label" id="l-sig">Where the signals point</div>
+    <div class="board">
+      <div class="mapcol">
+        <div class="fmap">
+          <div class="axkey"><span class="k"><span class="n">1</span>Do checks and balances hold?<em>up and down</em></span><span class="k"><span class="n">2</span>How fast does AI change the economy?<em>left and right</em></span></div>
+          <div class="poles top"><span>↑ checks hold</span></div>
+          <div class="grid4" id="grid4">
+            <div class="qd tl" id="qdHG"><h3>The Long Repair</h3><span class="p"></span><p class="d">Institutions bend and hold. AI is a strong tool; growth stays near trend.</p></div>
+            <div class="qd tr" id="qdHF"><h3>The Managed Boom</h3><span class="p"></span><p class="d">AI remakes work fast. Congress, courts and states keep setting the rules.</p></div>
+            <div class="qd bl" id="qdCG"><p class="d">The build-out disappoints. Elections remain, but nothing binds the executive.</p><span class="p"></span><h3>The Hollow Republic</h3></div>
+            <div class="qd br" id="qdCF"><p class="d">AI remakes work fast, and the levers of compute and data sit with the executive.</p><span class="p"></span><h3>The Command Cloud</h3></div>
+            <svg class="overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line id="arrow" x1="0" y1="0" x2="0" y2="0" opacity="0"/></svg>
+            <div class="ghost" id="ghost"></div>
+            <div class="marker" id="marker"><span>Today</span></div>
+          </div>
+          <div class="poles"><span>← gradual</span><span>↓ power concentrates</span><span>transformative →</span></div>
+        </div>
+        <div class="mapnote"><span id="mapnote">Hover over a signal to see where a “yes” would move the marker.</span><button class="reset" id="reset" type="button" disabled>Back to today’s forecasts</button></div>
+      </div>
+
+      <div class="sigs" id="sigs"></div>
+    </div>
+  </section>
+
+  <!-- ================= Vier Felder ================= -->
+  <section aria-labelledby="l-fields">
+    <div class="section-label" id="l-fields">The four fields in 2030</div>
+    <div class="fields" id="fields"></div>
+  </section>
+
+  <!-- ================= Zeitstrahl ================= -->
+  <section aria-labelledby="l-tl">
+    <div class="section-label" id="l-tl">When the signals resolve</div>
+    <div class="tl-scroll"><svg class="tline" id="tl" viewBox="0 0 1200 240" role="img" aria-label="Timeline of resolution dates from November 2026 to March 2031"></svg></div>
+  </section>
+
+  <!-- ================= Methode ================= -->
+  <section aria-labelledby="l-meth">
+    <div class="section-label" id="l-meth">How the numbers come about</div>
+    <div class="method">
+      <div class="mcard"><h4>Midterms signals</h4>
+        <p>From our midterms model (v2, 29 Oct 2026): polls, prediction markets and fundamentals per race, combined by inverse-variance weights and run through 20,000 correlated simulations. Markets are a benchmark there, not an input weighted above polls.</p>
+        <p><a href="../">Open the midterms dashboard</a></p></div>
+      <div class="mcard"><h4>AI forecasts</h4>
+        <p>Five questions, the two axis questions among them, were researched and forecast on 31 Oct 2026 by a forecasting system that leads public tournaments and scores above the median human superforecaster on open benchmarks. Quick runs, one per question.</p></div>
+      <div class="mcard"><h4>Our estimates and the what-if</h4>
+        <p>Three signals carry our own estimate, with the arithmetic shown. Field probabilities multiply the two axis probabilities; the axes were chosen to be independent, so this is an approximation.</p>
+        <p>The what-if shifts reflect our judgment of how much each signal tells. They are combined as independent evidence on the log-odds scale and keep the average forecast unchanged.</p></div>
+    </div>
+    <div class="axdef">
+      <div><b>Axis 1 · Do checks and balances hold?</b>Measured as: V-Dem still rates the US a democracy (electoral or liberal) for 2030, in its Democracy Report 2031. In March 2026 V-Dem moved the US from liberal to electoral democracy, the first downgrade since 1969. <b class="fc">AI forecast: 12&nbsp;% for an autocracy rating</b>, with the 2028 election as the main risk; so checks hold with 88&nbsp;%.</div>
+      <div><b>Axis 2 · How fast does AI change the economy?</b>Measured as: US labor productivity (BLS, nonfarm business) grows by at least 2.5&nbsp;% a year on average from 2025 to 2030. It has grown 2.1&nbsp;% a year since late 2019, about 3&nbsp;% in 1995–2004 and about 1.5&nbsp;% in 2007–2019. <b class="fc">AI forecast: 34&nbsp;%.</b> Investment and adoption make a bull case, but gains usually take years to spread beyond tech.</div>
+    </div>
+  </section>
+
+  <footer class="ft">
+    <span>Future Atlas · United States 2030 · as of 1 Nov 2026 · Method: Perspektiv by <a href="https://www.arqdecisions.com">arq decisions</a> · Eifflerstraße 43 · 22769 Hamburg</span>
+    <span><img class="logo pos" alt="arq decisions" src="arq_logo.png"><img class="logo neg" alt="arq decisions" src="arq_logo_neg.png"></span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  // Axis questions (fork probabilities). ax: 'checks' positive pole = hold; 'ai' positive pole = transformative.
+  const AXES = {
+    checks: { prior: 0.88, name: "Do checks and balances hold?", pos: "checks hold", neg: "power concentrates" },
+    ai:     { prior: 0.34, name: "How fast does AI change the economy?", pos: "transformative", neg: "gradual" }
+  };
+
+  // ifYes = P(positive pole of the axis | signal resolves yes), our judgment. ifNo follows from the prior.
+  const SIGNALS = [
+    { id: "S1", href: "../#congress", axis: "checks", dir: "pos", p: 0.91, ifYes: 0.898, date: "2026-11-03", short: "Democrats win the House",
+      q: "Democrats win a majority in the House on 3 November 2026.",
+      who: "Our midterms model", extra: "Markets 92 % · resolves Nov 2026",
+      why: "D+8 national environment; 237 seats in the median simulation, 80 % range 219–264.",
+      then: "Subpoenas, the budget and oversight hearings go to the opposition in January." },
+    { id: "S2", href: "../#congress", axis: "checks", dir: "pos", p: 0.70, ifYes: 0.906, date: "2026-11-03", short: "Democrats win the Senate",
+      q: "Democrats win a majority in the Senate on 3 November 2026.",
+      who: "Our midterms model", extra: "Markets 67.5 % · resolves Nov 2026",
+      why: "52 seats in the median simulation; Alaska is the tipping-point race.",
+      then: "Cabinet nominees and judges need Democratic votes." },
+    { id: "S3", axis: "checks", dir: "pos", p: 0.62, ifYes: 0.90, date: "2027-12-31", short: "House contempt vote",
+      q: "By 31 December 2027, the full House holds a sitting Cabinet-level official in contempt of Congress.",
+      who: "Our estimate", est: true, extra: "resolves Dec 2027",
+      why: "91 % Democratic House × 68 % if Democrats lead it + 9 % × 2 % otherwise. Precedents: Barr and Ross in 2019, Garland in 2024.",
+      then: "Oversight meets refusal, and the dispute moves to the courts." },
+    { id: "S4", axis: "checks", dir: "neg", p: 0.05, ifYes: 0.35, date: "2028-03-31", short: "V-Dem: electoral autocracy",
+      q: "V-Dem’s Democracy Report 2028 rates the United States an electoral autocracy.",
+      who: "AI forecast", extra: "resolves Mar 2028",
+      why: "A downgrade within one year needs elections or legislative constraints to collapse. 2027 has no federal election, and a Democratic House is likely to check the executive.",
+      then: "The map tips toward concentrated power before the 2028 election." },
+    { id: "S5", axis: "ai", dir: "pos", p: 0.82, ifYes: 0.37, date: "2028-01-31", short: "Census: 30 % of firms use AI",
+      q: "By the end of 2027, at least 30 % of US businesses report using AI in the Census Bureau’s biweekly survey (BTOS).",
+      who: "AI forecast", extra: "resolves Jan 2028",
+      why: "19.8 % in May 2026 (Census); secondary reports put autumn 2026 at about 24 %. At the pace since November 2025, 30 % arrives during 2027. A plateau among small firms is the main risk.",
+      then: "AI has reached the typical firm, beyond the early adopters." },
+    { id: "S6", axis: "ai", dir: "pos", p: 0.35, ifYes: 0.55, date: "2028-02-10", short: "Productivity +2.5 % in 2027",
+      q: "US labor productivity grows by at least 2.5 % in 2027 (BLS, nonfarm business, annual average).",
+      who: "Our estimate", est: true, extra: "resolves Feb 2028",
+      why: "2.2 % over the year to Q2 2026 and 2.1 % a year since late 2019; one year above 2.5 % needs a step up.",
+      then: "AI shows up in the national statistics as well as in earnings calls." },
+    { id: "S7", axis: "ai", dir: "pos", p: 0.73, ifYes: 0.38, date: "2028-03-01", short: "Big Tech capex above $1 trillion",
+      q: "Microsoft, Alphabet, Amazon and Meta together spend more than $1 trillion on capital expenditure in 2027.",
+      who: "AI forecast", extra: "resolves Feb 2028",
+      why: "About $740 billion planned for 2026; the Q3 2026 run rate is already above $850 billion a year. Power-grid limits and falling free cash flow are the main risks.",
+      then: "The build-out keeps accelerating through 2027." },
+    { id: "S8", axis: "ai", dir: "pos", p: 0.12, ifYes: 0.42, date: "2027-12-30", short: "Federal law preempts state AI rules",
+      q: "By 31 December 2027, a federal law preempts state laws on developing or deploying AI models.",
+      who: "Our estimate", est: true, extra: "resolves Dec 2027",
+      why: "About 8 % in the lame-duck session, when Republicans still hold both chambers; afterwards a likely Democratic House makes it harder. The Senate struck a moratorium 99–1 in 2025.",
+      then: "One national rulebook, so firms roll out AI faster across states." }
+  ];
+
+  const FIELDS = {
+    HF: { name: "The Managed Boom", mm: [1,0,0,0],
+      scene: "AI agents do a large share of office work, and output per hour grows faster than in any stretch since the early 2000s. The fights are loud, but they run through Congress, courts and elections: who pays for retraining, what the state may do with AI, which rules apply.",
+      see: ["Productivity above 2.5 % a year", "AI rules passed by Congress and tested in court"] },
+    HG: { name: "The Long Repair", mm: [0,1,0,0],
+      scene: "AI is a strong tool in many firms, and the economy grows near its trend. Courts, states and a divided Congress slow the executive down; norms lost since 2025 return slowly, through elections and lawsuits.",
+      see: ["Divided government after 2026 or 2028", "Productivity near 2 % a year"] },
+    CF: { name: "The Command Cloud", mm: [0,0,1,0],
+      scene: "AI changes the economy fast, and the executive holds its levers: compute contracts, data access, export licences. Growth is strong, and who gains from it depends on closeness to power.",
+      see: ["AI policy set by executive order", "V-Dem rates the US an electoral autocracy"] },
+    CG: { name: "The Hollow Republic", mm: [0,0,0,1],
+      scene: "The AI build-out disappoints and growth stalls. Elections still take place, but courts and Congress no longer constrain the executive, and politics turns to grievance.",
+      see: ["Capex cut back after 2027", "Oversight hearings without consequences"] }
+  };
+  // mm order: [top-left, top-right, bottom-left, bottom-right] on the 2x2 (left = gradual, top = hold)
+  FIELDS.HF.mm = [0,1,0,0]; FIELDS.HG.mm = [1,0,0,0]; FIELDS.CF.mm = [0,0,0,1]; FIELDS.CG.mm = [0,0,1,0];
+
+  // Set a signal to "yes" or "no" once it is called; it then counts as evidence for "today".
+  const RESOLVED = { S1: null, S2: null };
+  const RESOLVED_ON = { S1: "", S2: "" };   // e.g. "4 Nov 2026"
+
+  const STATES = { AK: "Alaska", AL: "Alabama", AR: "Arkansas", AZ: "Arizona", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia",
+    HI: "Hawaii", IA: "Iowa", ID: "Idaho", IL: "Illinois", IN: "Indiana", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", MA: "Massachusetts", MD: "Maryland", ME: "Maine",
+    MI: "Michigan", MN: "Minnesota", MO: "Missouri", MS: "Mississippi", MT: "Montana", NC: "North Carolina", ND: "North Dakota", NE: "Nebraska", NH: "New Hampshire",
+    NJ: "New Jersey", NM: "New Mexico", NV: "Nevada", NY: "New York", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina",
+    SD: "South Dakota", TN: "Tennessee", TX: "Texas", UT: "Utah", VA: "Virginia", VT: "Vermont", WA: "Washington", WI: "Wisconsin", WV: "West Virginia", WY: "Wyoming" };
+
+  // The House and Senate signals, and the two estimates built on the House, come live from the midterms model.
+  function applyForecast(fc) {
+    const get = id => SIGNALS.find(s => s.id === id), p0 = v => Math.round(v * 100) + "\u202f%";
+    const market = key => { const v = (fc.benchmarks || []).filter(b => /Kalshi|Polymarket/.test(b.source)).map(b => b[key]).filter(x => typeof x === "number");
+      return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
+    const h = fc.house, se = fc.senate, env = fc.national && fc.national.environment;
+    if (h && typeof h.p_dem_control === "number") {
+      const s = get("S1"), m = market("p_dem_house"); s.p = h.p_dem_control;
+      s.extra = (m ? "Markets " + p0(m) + " · " : "") + "resolves Nov 2026";
+      if (h.dem_seats && h.dem_seats.ci80) s.why = (typeof env === "number" ? (env >= 0 ? "D+" : "R+") + Math.abs(Math.round(env)) + " national environment; " : "") +
+        h.dem_seats.median + " seats in the median simulation, 80\u202f% range " + h.dem_seats.ci80[0] + "–" + h.dem_seats.ci80[1] + ".";
+      const pH = h.p_dem_control, s3 = get("S3"), s8 = get("S8");
+      s3.p = pH * 0.68 + (1 - pH) * 0.02;
+      s3.why = p0(pH) + " Democratic House × 68\u202f% if Democrats lead it + " + p0(1 - pH) + " × 2\u202f% otherwise. Precedents: Barr and Ross in 2019, Garland in 2024.";
+      s8.p = 0.08 + 0.92 * (pH * 0.04 + (1 - pH) * 0.20);
+    }
+    if (se && typeof se.p_dem_control === "number") {
+      const s = get("S2"), m = market("p_dem_senate"); s.p = se.p_dem_control;
+      s.extra = (m ? "Markets " + p0(m) + " · " : "") + "resolves Nov 2026";
+      const tp = (se.tipping_point || "").replace(/^S-/, "");
+      if (se.dem_seats) s.why = se.dem_seats.median + " seats in the median simulation" + (STATES[tp] ? "; " + STATES[tp] + " is the tipping-point race." : ".");
+    }
+    if (fc.meta && fc.meta.updated) {
+      const d = new Date(fc.meta.updated.length <= 16 ? fc.meta.updated + "Z" : fc.meta.updated);
+      if (!isNaN(d)) document.getElementById("stamp").textContent = "Live from our midterms model · " +
+        d.toLocaleDateString("en-US", { day: "numeric", month: "short", year: "numeric" });
+    }
+  }
+
+  fetch("../data/forecast.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).catch(() => null)
+    .then(fc => { try { if (fc) applyForecast(fc); } catch (e) { console.warn("forecast.json not applied", e); } boot(); });
+
+  function boot() {
+  SIGNALS.forEach(s => { s.resolved = RESOLVED[s.id] || null; s.resolvedOn = RESOLVED_ON[s.id] || ""; });
+  const state = {}; SIGNALS.forEach(s => state[s.id] = s.resolved || "open");
+  const logit = p => Math.log(p / (1 - p)), sig = x => 1 / (1 + Math.exp(-x));
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  SIGNALS.forEach(s => { const pr = AXES[s.axis].prior; s.ifNo = clamp((pr - s.p * s.ifYes) / (1 - s.p), 0.02, 0.98); });
+
+  function axisP(axis, st) {
+    const pr = AXES[axis].prior; let lo = logit(pr);
+    SIGNALS.forEach(s => { if (s.axis !== axis || st[s.id] === "open") return;
+      lo += logit(st[s.id] === "yes" ? s.ifYes : s.ifNo) - logit(pr); });
+    return sig(lo);
+  }
+  function fieldsP(h, f) { return { HF: h * f, HG: h * (1 - f), CF: (1 - h) * f, CG: (1 - h) * (1 - f) }; }
+  const pct = v => Math.round(v * 100) + " %";
+  const top = fp => Object.keys(fp).reduce((a, b) => fp[a] >= fp[b] ? a : b);
+
+  function mm(cells) {
+    const pos = [[0,0],[14,0],[0,14],[14,14]];
+    return '<svg class="mm" viewBox="0 0 26 26" aria-hidden="true">' + pos.map((p, i) =>
+      '<rect' + (cells[i] ? ' class="on"' : '') + ' x="' + p[0] + '" y="' + p[1] + '" width="12" height="12" rx="2"/>').join("") + "</svg>";
+  }
+  function dirCells(s) {
+    const pole = s.dir;  // pos/neg of its axis
+    if (s.axis === "checks") return pole === "pos" ? [1,1,0,0] : [0,0,1,1];
+    return pole === "pos" ? [0,1,0,1] : [1,0,1,0];
+  }
+  function poleName(s) { const a = AXES[s.axis]; return s.dir === "pos" ? a.pos : a.neg; }
+
+  // ---------- render signals ----------
+  const sigsEl = document.getElementById("sigs");
+  let html = "";
+  ["checks", "ai"].forEach((ax, k) => {
+    html += '<div class="grp"><span class="n">' + (k + 1) + "</span>" + AXES[ax].name + "</div>";
+    SIGNALS.filter(s => s.axis === ax).forEach(s => {
+      html += '<article class="sig' + (s.resolved ? " done" : "") + '" id="c' + s.id + '" data-id="' + s.id + '" tabindex="-1">' +
+        '<p class="qt">' + s.q + "</p>" +
+        '<p class="pv">' + (s.resolved ? (s.resolved === "yes" ? "Yes" : "No") : Math.round(s.p * 100) + "<small> %</small>") + "</p>" +
+        '<div class="bar' + (s.dir === "neg" ? " lean" : "") + '"><i style="width:' + (s.p * 100) + '%"></i></div>' +
+        '<p class="src">' + (s.href ? '<a class="who" href="' + s.href + '">' + s.who + "</a>" : '<span class="who' + (s.est ? " est" : "") + '">' + s.who + "</span>") +
+          "<span>" + (s.resolved ? "Forecast " + Math.round(s.p * 100) + " % · resolved " + s.resolvedOn : s.extra) + "</span></p>" +
+        '<p class="why">' + s.why + "</p>" +
+        '<p class="then">' + mm(dirCells(s)) + "<span><b>If yes, toward " + poleName(s) + ":</b> " + s.then + "</span></p>" +
+        (s.resolved ? '<span class="resolved">Resolved: ' + s.resolved + "</span>" :
+        '<div class="seg3" role="group" aria-label="What-if for: ' + s.short + '">' +
+          '<button type="button" data-v="open" aria-pressed="true">Open</button>' +
+          '<button type="button" data-v="yes" aria-pressed="false">Yes</button>' +
+          '<button type="button" data-v="no" aria-pressed="false">No</button></div>') +
+        "</article>";
+    });
+  });
+  sigsEl.innerHTML = html;
+
+  // ---------- render fields ----------
+  const fieldsEl = document.getElementById("fields");
+  fieldsEl.innerHTML = ["HG", "HF", "CG", "CF"].map(k => { const f = FIELDS[k];
+    return '<div class="field" id="f' + k + '"><div class="h">' + mm(f.mm) + "<h3>" + f.name + '</h3><span class="fp"></span></div>' +
+      '<p class="scene">' + f.scene + "</p><ul>" + f.see.map(x => "<li>" + x + "</li>").join("") + "</ul></div>"; }).join("");
+
+  // ---------- timeline ----------
+  (function timeline() {
+    const svg = document.getElementById("tl");
+    const t0 = Date.UTC(2026, 9, 1), t1 = Date.UTC(2031, 5, 1), X0 = 40, X1 = 1160, Y = 130;
+    const x = d => X0 + (X1 - X0) * (Date.parse(d) - t0) / (t1 - t0);
+    let s = '<line class="axis" x1="' + X0 + '" y1="' + Y + '" x2="' + X1 + '" y2="' + Y + '"/>';
+    for (let y = 2027; y <= 2031; y++) { const xx = x(y + "-01-01");
+      s += '<line class="tick" x1="' + xx + '" y1="' + (Y - 6) + '" x2="' + xx + '" y2="' + (Y + 6) + '"/><text class="yr" x="' + xx + '" y="' + (Y + 26) + '" text-anchor="middle">' + y + "</text>"; }
+    const items = [
+      { d: "2026-11-03", dt: "3 Nov 2026", l: ["House and Senate"], up: true },
+      { d: "2027-12-31", dt: "Dec 2027", l: ["Contempt vote", "AI preemption law"], up: true, anchor: "end", dx: -10 },
+      { d: "2028-01-31", dt: "Jan 2028", l: ["Census AI use"], up: false, anchor: "end", dx: -8 },
+      { d: "2028-02-20", dt: "Feb 2028", l: ["Productivity 2027", "Big Tech capex 2027"], up: true, dx: 12 },
+      { d: "2028-03-31", dt: "Mar 2028", l: ["V-Dem report 2028"], up: false, dx: 8 },
+      { d: "2031-03-31", dt: "Mar 2031", l: ["Both axis questions:", "V-Dem 2031, productivity 2025–30"], up: true, ax: true, anchor: "end" }
+    ];
+    items.forEach(it => { const xx = x(it.d), a = it.anchor || "start", tx = xx + (it.dx || 0) + (a === "end" ? 8 : -6);
+      const yTop = it.up ? Y - 40 - 20 * it.l.length : Y + 62;
+      s += '<line class="stem" x1="' + xx + '" y1="' + Y + '" x2="' + (xx + (it.dx || 0)) + '" y2="' + (it.up ? Y - 34 : Y + 44) + '"/>';
+      s += '<circle class="dot' + (it.ax ? " ax" : "") + '" cx="' + xx + '" cy="' + Y + '" r="7"/>';
+      s += '<text class="dt" x="' + tx + '" y="' + yTop + '" text-anchor="' + a + '">' + it.dt + "</text>";
+      it.l.forEach((t, i) => s += '<text class="lbl" x="' + tx + '" y="' + (yTop + 20 * (i + 1)) + '" text-anchor="' + a + '">' + t + "</text>");
+    });
+    svg.innerHTML = s;
+  })();
+
+  // ---------- update ----------
+  const $ = id => document.getElementById(id);
+  function setPill(id, txt, hot) { const g = $(id); g.querySelector("text").textContent = txt; g.classList.toggle("hot", hot); }
+  function place(el, h, f) { el.style.left = clamp(f, 0.04, 0.96) * 100 + "%"; el.style.top = clamp(1 - h, 0.04, 0.96) * 100 + "%"; }
+
+  function update() {
+    const h = axisP("checks", state), f = axisP("ai", state), fp = fieldsP(h, f), t = top(fp);
+    const hotH = t[0] === "H";
+    setPill("pH", "hold · " + pct(h), hotH);
+    setPill("pC", "concentrate · " + pct(1 - h), !hotH);
+    setPill("pHF", "fast · " + pct(f), t === "HF"); setPill("pHG", "gradual · " + pct(1 - f), t === "HG");
+    setPill("pCF", "fast · " + pct(f), t === "CF"); setPill("pCG", "gradual · " + pct(1 - f), t === "CG");
+    ["s0"].forEach(id => $(id).classList.add("hot"));
+    $("sH").classList.toggle("hot", hotH); $("sC").classList.toggle("hot", !hotH);
+    ["HF", "HG", "CF", "CG"].forEach(k => {
+      $("s" + k).classList.toggle("hot", t === k); $("e" + k).classList.toggle("hot", t === k);
+      $("n" + k).classList.toggle("hot", t === k); $("q" + k).classList.toggle("hot", t === k);
+      $("q" + k).textContent = pct(fp[k]) + (t === k ? " · MOST LIKELY" : "");
+      const qd = $("qd" + k); qd.querySelector(".p").textContent = pct(fp[k]); qd.classList.toggle("top", t === k);
+      const fe = $("f" + k); fe.querySelector(".fp").textContent = pct(fp[k]);
+      const old = fe.querySelector(".em"); if (old) old.remove();
+      if (t === k) fe.querySelector(".h").insertAdjacentHTML("beforeend", '<span class="em">most likely</span>');
+    });
+    const m = $("marker"); place(m, h, f); m.classList.toggle("flip", h < 0.16);
+    const set = SIGNALS.filter(s => !s.resolved && state[s.id] !== "open");
+    m.querySelector("span").textContent = set.length ? "What-if" : "Today";
+    $("reading").innerHTML = '<span class="dot"></span><span>' + (set.length ? "With your " + set.length + " what-if " + (set.length > 1 ? "answers" : "answer") + ", the most likely path" : "Today the most likely path") +
+      " leads to <b>" + FIELDS[t].name + " (" + pct(fp[t]) + ")</b>: checks and balances hold with " + pct(h) + ", AI changes the economy fast with " + pct(f) + '.</span><span class="note">' +
+      (set.length ? "Reset in the map below." : "Field probabilities multiply the two axes.") + "</span>";
+    $("reset").disabled = !set.length;
+    SIGNALS.forEach(s => {
+      const c = $("c" + s.id); c.classList.toggle("set", !s.resolved && state[s.id] !== "open");
+      c.querySelectorAll(".seg3 button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === state[s.id])));
+    });
+    window.__atlas = { h, f, fp };
+  }
+
+  function preview(id) {
+    const s = SIGNALS.find(x => x.id === id), g = $("ghost"), a = $("arrow");
+    if (!s) { g.classList.remove("on"); a.setAttribute("opacity", "0"); $("mapnote").textContent = "Hover over a signal to see where a “yes” would move the marker."; return; }
+    const st = Object.assign({}, state, { [id]: "yes" }), h0 = axisP("checks", state), f0 = axisP("ai", state), h = axisP("checks", st), f = axisP("ai", st);
+    place(g, h, f); g.classList.add("on");
+    a.setAttribute("x1", clamp(f0, .04, .96) * 100); a.setAttribute("y1", clamp(1 - h0, .04, .96) * 100);
+    a.setAttribute("x2", clamp(f, .04, .96) * 100); a.setAttribute("y2", clamp(1 - h, .04, .96) * 100); a.setAttribute("opacity", "1");
+    const fp = fieldsP(h, f), t = top(fp);
+    const t0 = top(fieldsP(h0, f0));
+    $("mapnote").innerHTML = "A yes on <b>" + s.short + "</b> " + (t === t0 ? "keeps " : "makes ") + FIELDS[t].name + " most likely (" + pct(fp[t]) + ").";
+  }
+
+  sigsEl.addEventListener("click", e => { const b = e.target.closest(".seg3 button"); if (!b) return;
+    const id = b.closest(".sig").dataset.id; state[id] = b.dataset.v; update(); preview(state[id] === "open" ? id : null); });
+  sigsEl.addEventListener("mouseover", e => { const c = e.target.closest(".sig"); if (c && !c.classList.contains("done") && state[c.dataset.id] === "open") preview(c.dataset.id); });
+  sigsEl.addEventListener("mouseleave", () => preview(null));
+  sigsEl.addEventListener("focusin", e => { const c = e.target.closest(".sig"); if (c && !c.classList.contains("done") && state[c.dataset.id] === "open") preview(c.dataset.id); });
+  $("reset").addEventListener("click", () => { SIGNALS.forEach(s => state[s.id] = s.resolved || "open"); update(); preview(null); });
+
+  update();
+  }
+})();
+</script>
+
+</body>
+</html>

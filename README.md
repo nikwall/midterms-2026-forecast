@@ -3,12 +3,14 @@
 A forecast of the 2026 US House (and Senate) elections, built for the HKS forecasting contest in API-232: Computational Policy Analysis. Election Day is Tuesday, 3 November 2026.
 
 **Dashboard:** https://nikwall.github.io/midterms-2026-forecast/
+**2030 map:** https://nikwall.github.io/midterms-2026-forecast/atlas/
 
 ## What is here
 
 | Path | Contents |
 |---|---|
 | [app/](app/) | the dashboard (static HTML/JS), published on GitHub Pages |
+| [app/atlas/](app/atlas/) | America 2030 Future Atlas: what the midterms mean for 2030, with eight forecast signals; House and Senate are read live from the model |
 | [pipeline/](pipeline/) | the Python scripts: data, model, checks |
 | [run_all.py](run_all.py) | runs the whole pipeline with one command |
 | [PROCESS.md](PROCESS.md) | dated log of every step and choice, with reasons |

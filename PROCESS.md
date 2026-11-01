@@ -324,3 +324,19 @@ Fresh market prices (Kalshi, Polymarket), polls (VoteHub, latest fieldwork 30 Oc
 | NY-17 | 0.65 | **0.65** |
 
 Senate: 0.73 (was 0.70). Crowds on the House: Metaculus 0.96, Manifold 0.95, PredictIt 0.91.
+
+## 1 November 2026: a map of what the midterms mean for 2030
+
+**What.** A second page, [app/atlas/](app/atlas/), reached through "2030 map" in the tab bar. It follows the Zukunftsatlas method of arq decisions:
+- the guiding question "What kind of country will the US be in 2030?";
+- two uncertainties as axes, which give four fields;
+- eight signals, each a forecasting question with a date and a resolution criterion. The House and the Senate are the first two.
+
+It is not part of the contest entry. The choices are numbered M (map) to stay apart from the model's C numbers.
+
+| # | Choice | Why |
+|---|---|---|
+| M1 | **Axis 1:** "Do checks and balances hold?" Measured as: V-Dem still rates the US a democracy for 2030. **Axis 2:** "How fast does AI change the economy?" Measured as: labor productivity grows by at least 2.5 % a year on average over 2025–2030. Polarization is left out. | Both questions are open and high-impact, and largely independent of each other, so the field probabilities can be multiplied. Polarization stays high in every field, which makes it a trend rather than an uncertainty. |
+| M2 | The page reads `app/data/forecast.json`. **S1 (House)** and **S2 (Senate)** are the model's probabilities. **S3 (House contempt vote)** and **S8 (federal AI preemption law)** are our estimates built on P(D House). Once a race is called, S1 or S2 is set to resolved in `RESOLVED` at the top of the page's script. | One source of truth: every model run also updates the map. |
+| M3 | The two axis questions and three signals (V-Dem 2028, Census AI use, Big Tech capex 2027) are quick AI forecasts from 31 Oct. S6 (productivity 2027) is our estimate. The what-if shifts are our judgment, combined as independent evidence on the log-odds scale. | Every number is labelled on the page with its source. None of them feeds the contest model. |
+| M4 | Link previews: `app/og.png` and `app/atlas/og.png` (1200 × 627), drawn from the forecast at the time of drawing. | For sharing the two pages. |
