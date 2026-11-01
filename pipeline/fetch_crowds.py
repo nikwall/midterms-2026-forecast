@@ -26,8 +26,8 @@ MAX_SPREAD = 0.15
 
 # Read by hand on the date given; update before the final entry.
 METACULUS = {"source": "Metaculus", "kind": "forecasting community", "url": "https://www.metaculus.com/midterms-2026/",
-             "p_dem_house": 0.959, "p_dem_senate": 0.676, "dem_seats_median": 230, "as_of": "2026-10-29",
-             "note": "median House seat advantage D+25, so about 230 Democratic seats"}
+             "p_dem_house": 0.957, "p_dem_senate": 0.685, "dem_seats_median": 231, "as_of": "2026-11-01",
+             "note": "median House seat advantage D+27, so about 231 Democratic seats"}
 
 PREDICTIT_CONTROL = {"house": 8157, "senate": 8155}
 PREDICTIT_REP_SEATS = 7589

@@ -304,3 +304,23 @@ Sensitivity (24 variants): House 0.87–0.94 for reasonable choices; v1 settings
 | OH-07 | 0.83 |
 | PA-08 | 0.88 |
 | NY-17 | 0.65 |
+
+## 1 November 2026: data update
+
+Fresh market prices (Kalshi, Polymarket), polls (VoteHub, latest fieldwork 30 Oct), crowds and DDHQ-based model run; Metaculus read by hand again (House 0.957, Senate 0.685, median D+27 seats ≈ 231).
+
+**News check.** One new usable poll: RedBox Research for the super PAC A Fight Worth Having (D) in NC-11, 20–23 Oct, Ager 50–44 against Balkcom by name (Call the Map had listed it as a generic ballot, so it was left out on 29 Oct). The RedBox polls in NC-01, NY-17 and OH-07 now carry the sponsor's exact figures; NYT/Siena's PA-08 fieldwork is 16–22 Oct. No other new poll in the five districts since 23 Oct. DDHQ's live model moved to 58% Ager in NC-11 (30 Oct); we keep its 22 Oct values (C49).
+
+**Contest answers on 1 Nov:**
+
+| Question | 29 Oct | 1 Nov |
+|---|---|---|
+| (a) Democratic seats | 237 (80%: 219–264) | **238** (80%: 219–265) |
+| (b) P(majority) | 0.91 | **0.91** |
+| NC-01 | 0.84 | **0.87** |
+| NC-11 | 0.88 | **0.88** |
+| OH-07 | 0.83 | **0.83** |
+| PA-08 | 0.88 | **0.85** |
+| NY-17 | 0.65 | **0.65** |
+
+Senate: 0.73 (was 0.70). Crowds on the House: Metaculus 0.96, Manifold 0.95, PredictIt 0.91.
