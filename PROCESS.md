@@ -340,3 +340,12 @@ It is not part of the contest entry. The choices are numbered M (map) to stay ap
 | M2 | The page reads `app/data/forecast.json`. **S1 (House)** and **S2 (Senate)** are the model's probabilities. **S3 (House contempt vote)** and **S8 (federal AI preemption law)** are our estimates built on P(D House). Once a race is called, S1 or S2 is set to resolved in `RESOLVED` at the top of the page's script. | One source of truth: every model run also updates the map. |
 | M3 | The two axis questions and three signals (V-Dem 2028, Census AI use, Big Tech capex 2027) are quick AI forecasts from 31 Oct. S6 (productivity 2027) is our estimate. The what-if shifts are our judgment, combined as independent evidence on the log-odds scale. | Every number is labelled on the page with its source. None of them feeds the contest model. |
 | M4 | Link previews: `app/og.png` and `app/atlas/og.png` (1200 × 627), drawn from the forecast at the time of drawing. | For sharing the two pages. |
+
+## 2 November 2026: team name, logo, tab order, 2030 banner
+
+| # | Choice | Why |
+|---|---|---|
+| C59 | Team name "The Right Question and Claude Code is a group". The team logo pairs the arq mark (arrows and question mark, without the lettering; cut from the small-size arq logo into `app/arq_mark.png`) with the terminal. | Your request. |
+| C60 | "House, Senate & Congress" is the first tab and opens by default. | Your request. |
+| C61 | A full-width banner below the tabs, on every tab, leads to the 2030 future map: its guiding question, the two open questions, today's House and Senate chances (live from the forecast) and a preview of the map. It replaces the small "2030 map →" link in the tab bar; the footer line stays. On phones the explanatory line is hidden. | Your request to make the map more salient. |
+| | Script and stylesheet links carry a version tag (`?v=2026-11-02`). | Browsers kept the old script, so returning visitors would have seen the old tab order. |

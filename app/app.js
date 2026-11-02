@@ -25,7 +25,7 @@ const JOINT = [
 
 const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null };
 const $ = (sel) => document.querySelector(sel);
-const TABS = ["contest", "congress", "maps", "weights", "record", "method"];
+const TABS = ["congress", "contest", "maps", "weights", "record", "method"];  // the first opens by default
 // Source icons (sprite in index.html): polls ring a phone, markets pay in bills, DDHQ rings the desk bell.
 const ICON = { polls: "i-phone", market: "i-bill", fundamentals: "i-bell", crowd: "i-crowd", us: "i-team" };
 
@@ -161,10 +161,12 @@ function renderHeader(f) {
     : "No model run yet";
   $("#sims-note").textContent = f.meta.n_sims ? `Share of ${f.meta.n_sims.toLocaleString("en-US")} simulated elections with each number of Democratic seats` : "";
   $("#method-version").textContent = f.meta.model_version ? `Model ${f.meta.model_version}` : "";
+  const h = f.house?.p_dem_control, s = f.senate?.p_dem_control;
+  $("#atlas-signals").textContent = h != null ? `: Democrats win the House (${pct(h)} today) and the Senate (${pct(s)})` : "";
 }
 
 function showTab(name) {
-  if (!TABS.includes(name)) name = "contest";
+  if (!TABS.includes(name)) name = TABS[0];
   for (const p of document.querySelectorAll("[data-panel]")) p.hidden = p.dataset.panel !== name;
   for (const a of document.querySelectorAll("[data-tab]")) a.setAttribute("aria-selected", String(a.dataset.tab === name));
   tip.hidden = true;

@@ -17,10 +17,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2026-11-02">
 </head>
 <body>
-<!-- Icons: polls ring a phone, markets pay in dollar bills, DDHQ rings the desk bell, and we are a group of two. -->
+<!-- Icons: polls ring a phone, markets pay in dollar bills, DDHQ rings the desk bell, and our team mark is the arq
+     question mark next to a terminal: The Right Question and Claude Code. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-phone" viewBox="0 0 24 24">
     <path fill="#2f3639" d="M2.5 9.2C2.5 5.6 6.6 4 12 4s9.5 1.6 9.5 5.2v.6a.9.9 0 0 1-.9.9h-3.1a.9.9 0 0 1-.9-.8l-.2-1.6c-1.4-.5-2.8-.7-4.4-.7s-3 .2-4.4.7l-.2 1.6a.9.9 0 0 1-.9.8H3.4a.9.9 0 0 1-.9-.9z"/>
@@ -41,8 +42,7 @@
     <rect x="2" y="16.6" width="20" height="3.2" rx="1.2" fill="#8a6a1f"/>
   </symbol>
   <symbol id="i-team" viewBox="0 0 24 24">
-    <circle cx="7.4" cy="7.6" r="3.5" fill="#2f3639"/>
-    <path fill="#2f3639" d="M1.3 20.5c0-3.9 2.7-6.6 6.1-6.6s6.1 2.7 6.1 6.6z"/>
+    <image href="arq_mark.png" x="-2" y="2.6" width="15" height="15"/>
     <rect x="12.6" y="3.4" width="9.6" height="8" rx="1.6" fill="#c8643b"/>
     <path d="M14.6 5.9l1.8 1.5-1.8 1.5M17.4 9.1h2.6" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
     <path fill="#c8643b" d="M11.3 20.5c0-3.9 2.3-6.6 6.1-6.6s6.1 2.7 6.1 6.6z"/>
@@ -58,24 +58,37 @@
   <div class="topbar-inner">
     <p class="headline">
       <svg class="ico logo" aria-hidden="true"><use href="#i-team"/></svg>
-      <strong>2026 Midterms Forecast</strong><span class="sep">·</span><span>HKS API-232</span><span class="sep">·</span><span>Team “One + Claude Code is a group”</span><span class="sep">·</span><span id="updated"></span>
+      <strong>2026 Midterms Forecast</strong><span class="sep">·</span><span>HKS API-232</span><span class="sep">·</span><span>Team “The Right Question and Claude Code is a group”</span><span class="sep">·</span><span id="updated"></span>
     </p>
     <nav class="tabs" role="tablist" aria-label="Sections">
-      <a role="tab" href="#contest" data-tab="contest">Contest entry</a>
       <a role="tab" href="#congress" data-tab="congress">House, Senate &amp; Congress</a>
+      <a role="tab" href="#contest" data-tab="contest">Contest entry</a>
       <a role="tab" href="#maps" data-tab="maps">Maps &amp; all races</a>
       <a role="tab" href="#weights" data-tab="weights">Try your own weights</a>
       <a role="tab" href="#record" data-tab="record">Track record 2022/24</a>
       <a role="tab" href="#method" data-tab="method">Method &amp; code</a>
-      <a class="tab-ext" href="atlas/">2030 map →</a>
     </nav>
   </div>
 </header>
 
+<!-- The 2030 future map: what the House and Senate results mean beyond Tuesday. Numbers filled by app.js. -->
+<a class="atlas-banner" href="atlas/" aria-label="Open the America 2030 Future Atlas">
+  <span class="atlas-inner">
+    <span class="atlas-text">
+      <span class="atlas-over">Future Atlas · United States 2030</span>
+      <span class="atlas-head">What kind of country will the United States be in 2030?</span>
+      <span class="atlas-lead">Two open questions decide it: do checks and balances hold, and how fast does AI change the economy?
+        Tuesday's results are the first two signals<span id="atlas-signals"></span>.</span>
+    </span>
+    <span class="atlas-cta">Open the 2030 map <span aria-hidden="true">→</span></span>
+    <img class="atlas-thumb" src="atlas/og.png" alt="" loading="lazy">
+  </span>
+</a>
+
 <main class="page">
 
   <!-- ===================== Contest entry ===================== -->
-  <section class="panel" id="panel-contest" data-panel="contest" aria-label="Contest entry">
+  <section class="panel" id="panel-contest" data-panel="contest" aria-label="Contest entry" hidden>
     <div class="answers">
       <div class="answer"><span class="q">(a) Democratic seats</span><span class="a" id="ans-seats">–</span><span class="sub" id="ans-seats-sub"></span></div>
       <div class="answer"><span class="q">(b) P(Dem majority)</span><span class="a" id="ans-majority">–</span><span class="sub" id="ans-majority-sub"></span></div>
@@ -143,7 +156,7 @@
   </section>
 
   <!-- ===================== House, Senate & Congress ===================== -->
-  <section class="panel" id="panel-congress" data-panel="congress" aria-label="House, Senate and Congress" hidden>
+  <section class="panel" id="panel-congress" data-panel="congress" aria-label="House, Senate and Congress">
     <div class="grid-2">
       <article class="card chamber" id="card-house">
         <div class="chamber-head"><h3>House</h3><span class="muted">435 seats · 218 for a majority</span></div>
@@ -417,7 +430,7 @@
   </footer>
 </main>
 <div class="tooltip" id="tooltip" role="status" hidden></div>
-<script src="app.js"></script>
-<script src="whatif.js"></script>
+<script src="app.js?v=2026-11-02"></script>
+<script src="whatif.js?v=2026-11-02"></script>
 </body>
 </html>
