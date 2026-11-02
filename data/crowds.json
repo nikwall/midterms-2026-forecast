@@ -1,52 +1,52 @@
 {
- "fetched": "2026-11-01T20:39+00:00",
+ "fetched": "2026-11-02T21:02+00:00",
  "control": [
   {
    "source": "Metaculus",
    "kind": "forecasting community",
    "url": "https://www.metaculus.com/midterms-2026/",
    "p_dem_house": 0.957,
-   "p_dem_senate": 0.685,
+   "p_dem_senate": 0.704,
    "dem_seats_median": 231,
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-02",
    "note": "median House seat advantage D+27, so about 231 Democratic seats"
   },
   {
    "source": "PredictIt",
    "kind": "real-money market, $850 cap",
    "url": "https://www.predictit.org/markets/5/Congress",
-   "p_dem_house": 0.906,
-   "p_dem_senate": 0.695,
+   "p_dem_house": 0.926,
+   "p_dem_senate": 0.748,
    "dem_seats_range": [
     238,
     242
    ],
-   "as_of": "2026-11-01"
+   "as_of": "2026-11-02"
   },
   {
    "source": "Manifold",
    "kind": "play-money market",
    "url": "https://manifold.markets/HillaryClinton/will-the-democrats-win-a-majority-i-ClQ6g6lntn",
-   "p_dem_house": 0.951,
-   "p_dem_senate": 0.668,
-   "dem_seats_median": 241,
-   "bettors_house": 125,
-   "as_of": "2026-11-01"
+   "p_dem_house": 0.98,
+   "p_dem_senate": 0.446,
+   "dem_seats_median": 242,
+   "bettors_house": 127,
+   "as_of": "2026-11-02"
   }
  ],
  "districts": {
   "H-NC-01": [
    {
     "source": "PredictIt",
-    "p": 0.79,
+    "p": 0.795,
     "url": "https://www.predictit.org/markets/detail/8184",
     "note": null
    },
    {
     "source": "Manifold",
-    "p": 0.88,
+    "p": 0.89,
     "url": "https://manifold.markets/Robincvgr/will-a-democrat-win-these-us-house",
-    "note": "114 traders in the market"
+    "note": "116 traders in the market"
    }
   ],
   "H-NC-11": [
@@ -74,9 +74,9 @@
    },
    {
     "source": "Manifold",
-    "p": 0.88,
+    "p": 0.87,
     "url": "https://manifold.markets/Robincvgr/will-a-democrat-win-these-us-house",
-    "note": "114 traders in the market"
+    "note": "116 traders in the market"
    }
   ],
   "H-NY-17": [
@@ -88,9 +88,9 @@
    },
    {
     "source": "Manifold",
-    "p": 0.62,
+    "p": 0.618,
     "url": "https://manifold.markets/Robincvgr/will-a-democrat-win-these-us-house",
-    "note": "114 traders in the market"
+    "note": "116 traders in the market"
    }
   ]
  }

@@ -349,3 +349,28 @@ It is not part of the contest entry. The choices are numbered M (map) to stay ap
 | C60 | "House, Senate & Congress" is the first tab and opens by default. | Your request. |
 | C61 | A full-width banner below the tabs, on every tab, leads to the 2030 future map: its guiding question, the two open questions, today's House and Senate chances (live from the forecast) and a preview of the map. It replaces the small "2030 map →" link in the tab bar; the footer line stays. On phones the explanatory line is hidden. | Your request to make the map more salient. |
 | | Script and stylesheet links carry a version tag (`?v=2026-11-02`). | Browsers kept the old script, so returning visitors would have seen the old tab order. |
+
+## 2 November 2026 (evening): final data update and frozen contest version
+
+Last run before the entry (2 Nov, 21:02 UTC, `python run_all.py --full`): fresh market prices (Kalshi, Polymarket), polls (VoteHub, 845 polls of real matchups, latest fieldwork 1 Nov), crowds; Metaculus read by hand again (House 0.957, Senate 0.704, median D+27 seats ≈ 231). Sensitivity analysis and the 2022/24 backtest were re-run on the same data.
+
+**News check.** No new poll in the five contest districts since 23 Oct (checked Call the Map and the news on 2 Nov). The only change there comes from the markets: Kalshi NY-17 fell from 0.62 to 0.575, OH-07 rose from 0.85 to 0.87, NC-11 from 0.85 to 0.86.
+
+**Contest answers, final (2 Nov):**
+
+| Question | 1 Nov | 2 Nov (final) |
+|---|---|---|
+| (a) Democratic seats | 238 (80%: 219–265) | **238** (median; mean 240.3, 80%: 219–265) |
+| (b) P(majority) | 0.91 | **0.91** |
+| NC-01 | 0.87 | **0.86** |
+| NC-11 | 0.88 | **0.89** |
+| OH-07 | 0.83 | **0.84** |
+| PA-08 | 0.85 | **0.84** |
+| NY-17 | 0.65 | **0.62** |
+
+Senate: 0.78 (was 0.73). Crowds on the House: Metaculus 0.96, Manifold 0.98, PredictIt 0.93.
+
+| # | Choice | Why |
+|---|---|---|
+| C62 | The code and data that produced the entry are frozen under the Git tag `contest-entry`. The dashboard (Method & code) and the README link its zip. `python -I pipeline/model.py` on that version re-runs the model on the stored inputs (seed 2026) and gives exactly the entry; checked on 2 Nov (identical `forecast.json` apart from the time stamp). | Reproducibility: `main` keeps changing after the election (results, the 2030 map), and `run_all.py` fetches new data, so neither reproduces the entry. |
+| C63 | The written answers to Part 4 (a)–(e) are in `submission/answer.tex` (PDF built with LaTeX, not published in the repository). | Your request: an answer document with the link to the app and the reproducible model. |

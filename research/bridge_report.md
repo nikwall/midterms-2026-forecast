@@ -9,7 +9,7 @@ DDHQ's probabilities add up to 235.6 expected Democratic seats. In competitive r
 | A | Part 2: DDHQ probabilities, independent coin flips | 235.6 | 236 | 230–242 | 1.00 | 0.59 | 0.52 | 0.47 | 0.54 | 0.59 | 0.45 |
 | B | Part 3: regional waves (Option 1), alpha = 0.4 | 235.4 | 234 | 223–249 | 0.96 | 0.59 | 0.51 | 0.47 | 0.54 | 0.59 | 0.46 |
 | C | Our correlation (national ±3.6, division, state, race); Hill not a Democrat | 234.9 | 233 | 211–262 | 0.82 | 0.59 | 0.52 | 0.48 | 0.53 | 0.59 | 0.45 |
-| D | + prediction markets, weighted by information | 239.2 | 237 | 219–263 | 0.91 | 0.85 | 0.82 | 0.81 | 0.85 | 0.65 | 0.82 |
-| E | + polls = our final model | 240.2 | 238 | 219–265 | 0.91 | 0.87 | 0.88 | 0.83 | 0.85 | 0.65 | 0.86 |
-| R1 | For reference: final model with our own uniform-swing fundamentals instead of DDHQ | 241.0 | 240 | 219–264 | 0.91 | 0.86 | 0.88 | 0.74 | 0.81 | 0.76 | 0.70 |
-| R2 | For reference: model v1 (own fundamentals, error sizes before the backtest) | 240.8 | 240 | 223–259 | 0.95 | 0.87 | 0.90 | 0.72 | 0.80 | 0.80 | 0.67 |
+| D | + prediction markets, weighted by information | 239.1 | 237 | 219–263 | 0.91 | 0.85 | 0.83 | 0.83 | 0.84 | 0.61 | 0.81 |
+| E | + polls = our final model | 240.3 | 238 | 219–265 | 0.91 | 0.86 | 0.89 | 0.84 | 0.84 | 0.62 | 0.85 |
+| R1 | For reference: final model with our own uniform-swing fundamentals instead of DDHQ | 241.2 | 240 | 219–264 | 0.91 | 0.86 | 0.89 | 0.77 | 0.81 | 0.73 | 0.69 |
+| R2 | For reference: model v1 (own fundamentals, error sizes before the backtest) | 241.0 | 240 | 223–259 | 0.95 | 0.87 | 0.91 | 0.74 | 0.79 | 0.77 | 0.66 |

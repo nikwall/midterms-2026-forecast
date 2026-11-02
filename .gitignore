@@ -5,3 +5,6 @@ data/raw/
 
 __pycache__/
 .DS_Store
+
+# Answer document for the course (kept locally)
+submission/

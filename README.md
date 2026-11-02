@@ -33,6 +33,17 @@ Each piece becomes an expected margin with an uncertainty. The uncertainties are
 
 Details: [research/model_explained.md](research/model_explained.md). The step-by-step path from the course's Part 3 model to ours: [research/bridge_report.md](research/bridge_report.md).
 
+## Reproduce the contest entry exactly
+
+The version that produced the entry of 2 Nov 2026 is frozen under the tag [`contest-entry`](https://github.com/nikwall/midterms-2026-forecast/tree/contest-entry). Download it as a zip: https://github.com/nikwall/midterms-2026-forecast/archive/refs/tags/contest-entry.zip
+
+```bash
+pip install -r requirements.txt
+python -I pipeline/model.py
+```
+
+`model.py` re-runs the model on the stored inputs in `data/` (fixed random seed 2026) and rewrites `app/data/forecast.json` with exactly the entry: 238 seats, P(majority) 0.91, NC-01 0.86, NC-11 0.89, OH-07 0.84, PA-08 0.84, NY-17 0.62. `run_all.py` (below) fetches new data first, so its numbers move with the data.
+
 ## Run it yourself
 
 You need Python 3.11 or newer. Install the two packages once:
