@@ -11,10 +11,12 @@ candidates and photos for the key races, bridge from the course model. The House
 
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PIPE = ROOT / "pipeline"
+ELECTION_DAY = date(2026, 11, 3)
 STEPS = ["build_seats.py", "fetch_markets.py", "fetch_polls.py", "gaps.py", "fundamentals.py", "fetch_crowds.py", "model.py",
          "fetch_candidates.py"]
 
@@ -25,6 +27,10 @@ def run(script):
 
 
 def main():
+    # After the election, market prices contain the results: a refresh would overwrite the frozen
+    # forecast that calibration.py scores. Results update with fetch_results.py instead.
+    if date.today() >= ELECTION_DAY and "--after-election" not in sys.argv:
+        sys.exit("The forecast is frozen under the tag contest-entry. Use --after-election to run this anyway.")
     if (ROOT / "data" / "raw" / "course" / "assignment3_election2026.xlsx").exists():
         run("ddhq_import.py")  # otherwise the committed data/ddhq_house_2026-10-22.csv is used
     for script in STEPS:

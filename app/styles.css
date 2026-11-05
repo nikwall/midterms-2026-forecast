@@ -405,3 +405,25 @@ footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--li
   .split-bar span, .joint-bar span { transition: width 400ms ease; }
 }
 .block-head h2, #races { scroll-margin-top: 100px; }
+
+/* Results and calibration */
+.cal-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.cal-side { display: grid; gap: 12px; min-width: 0; }
+.verdict { margin: 0; padding-left: 1.05rem; display: grid; gap: 6px; font-size: 0.86rem; }
+.region-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.card.region { display: grid; gap: 3px; align-content: start; padding: 10px 11px; }
+.chart .cal-band { fill: #e7ebee; }
+.chart .cal-ideal { stroke: var(--ink-2); stroke-width: 1; }
+.chart .cal-wave { fill: none; stroke: #c8643b; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .cal-dot { fill: var(--d3); stroke: var(--bg); stroke-width: 2; }
+.chart .cal-whisker { stroke: var(--d2); stroke-width: 2; stroke-linecap: round; }
+.chart .cal-mean { stroke: var(--ink-2); stroke-width: 1; }
+.chart text.cal-corner { fill: var(--muted); font-size: 11px; font-weight: 300; }
+.chart text.row-label { fill: var(--ink); }
+.key-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--d3); flex: none; }
+.key-line { width: 16px; height: 2px; flex: none; }
+.key-line.ideal { background: var(--ink-2); height: 1px; }
+.key-line.wave { background: #c8643b; }
+.key-band { width: 16px; height: 10px; background: #e7ebee; flex: none; }
+@media (max-width: 860px) { .cal-grid { grid-template-columns: minmax(0, 1fr); } .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cal-side th, .cal-side td { white-space: normal; }

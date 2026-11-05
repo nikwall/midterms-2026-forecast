@@ -1,0 +1,49 @@
+# Collects the election results every three hours, re-scores the frozen forecast, commits the new
+# data and republishes the dashboard. A run that finds nothing new commits nothing.
+# Also starts by hand under Actions > Update results > Run workflow.
+name: Update results
+
+on:
+  schedule:
+    - cron: "5 */3 * * *"   # every three hours, at five past (UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -I pipeline/fetch_results.py
+      - run: python -I pipeline/calibration.py
+      - name: Commit the new results
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/data/results.json app/data/calibration.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Update results"
+            git pull --rebase
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml

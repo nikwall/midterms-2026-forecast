@@ -23,9 +23,9 @@ const JOINT = [
   { key: "rep_house_rep_senate", label: "Republicans win both", color: "var(--r3)" },
 ];
 
-const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null };
+const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null, results: null, cal: null };
 const $ = (sel) => document.querySelector(sel);
-const TABS = ["congress", "contest", "maps", "weights", "record", "method"];  // the first opens by default
+const TABS = ["results", "congress", "contest", "maps", "weights", "record", "method"];  // the first opens by default
 // Source icons (sprite in index.html): polls ring a phone, markets pay in bills, DDHQ rings the desk bell.
 const ICON = { polls: "i-phone", market: "i-bill", fundamentals: "i-bell", crowd: "i-crowd", us: "i-team" };
 
@@ -137,6 +137,8 @@ function raceTip(seat, chamber) {
   if (chamber === "senate") rows.push(["Held by", seat.holder === "D" ? "Democrats" : "Republicans"]);
   if (chamber === "house" && matchup(seat.id)) rows.push(["Candidates", matchup(seat.id)]);
   if (chamber === "house" && seat.new_map_2026) rows.push(["Lines", "new in 2026"]);
+  const res = resultText(seat.id);
+  if (res) rows.push(["Result", res]);
   if (rf) {
     const side = rf.side ?? "D";
     rows.push([side === "I" ? `Chance ${rf.side_name ?? "independent"} wins` : "Chance Dem wins", pct(rf.p_dem)]);
@@ -156,13 +158,17 @@ function raceTip(seat, chamber) {
 // ---------- header and tabs ----------
 
 function renderHeader(f) {
-  $("#updated").textContent = f.meta.updated
-    ? "Updated " + new Date(f.meta.updated).toLocaleString("en-US", { timeZone: "America/New_York", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }) + " ET"
-    : "No model run yet";
+  const when = (t) => new Date(t).toLocaleString("en-US", { timeZone: "America/New_York", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" }) + " ET";
+  $("#updated").textContent = app.results
+    ? `Results as of ${when(app.results.updated)}`
+    : f.meta.updated ? "Updated " + when(f.meta.updated) : "No model run yet";
   $("#sims-note").textContent = f.meta.n_sims ? `Share of ${f.meta.n_sims.toLocaleString("en-US")} simulated elections with each number of Democratic seats` : "";
   $("#method-version").textContent = f.meta.model_version ? `Model ${f.meta.model_version}` : "";
   const h = f.house?.p_dem_control, s = f.senate?.p_dem_control;
-  $("#atlas-signals").textContent = h != null ? `: Democrats win the House (${pct(h)} today) and the Senate (${pct(s)})` : "";
+  const ctl = app.results?.control ?? {};
+  $("#atlas-signals").textContent = ctl.house?.DEM && ctl.senate?.DEM
+    ? "The first two signals are in: Democrats won the House and the Senate."
+    : h != null ? `Tuesday's results are the first two signals: Democrats win the House (${pct(h)} today) and the Senate (${pct(s)}).` : "";
 }
 
 function showTab(name) {
@@ -451,6 +457,211 @@ function renderBacktest(bt) {
       ", FiveThirtyEight poll archive and polls page (", html("a", { href: "https://web.archive.org/web/20241129175737/https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv", target: "_blank", rel: "noopener", text: "Wayback copy" }),
       "), ", html("a", { href: "https://the-db.co/presbycd", target: "_blank", rel: "noopener", text: "The Downballot" }), ". Code: pipeline/backtest_house.py."]),
   );
+}
+
+// ---------- results and calibration ----------
+
+// Short text for a race's result: "D won by 3.3", "D leads, 99% counted", "Runoff".
+function resultText(id) {
+  const x = app.results?.races?.[id];
+  if (!x) return null;
+  if (x.status === "called") return `${x.winner === "O" ? "I" : x.winner} won` + (x.margin == null ? "" : ` by ${Math.abs(x.margin).toFixed(1)}`);
+  if (x.status === "counting") return x.leader ? `${x.leader} leads, ${x.reporting}% counted` : "Counting";
+  return x.status === "runoff" ? "Runoff" : "Sources disagree";
+}
+
+function statusText(x) {
+  if (x.status === "called") return x.called_by.length > 1 ? "Called" : `Called by ${x.called_by[0]}`;
+  if (x.status === "counting") return `Not called, ${x.reporting}% counted`;
+  return x.status === "runoff" ? "Runoff" : "Sources disagree";
+}
+
+function who(c) {
+  return `${surname(c.name)} (${c.party === "O" ? "I" : c.party}${c.incumbent ? ", inc." : ""})`;
+}
+
+const pct0 = (p) => `${Math.round(p * 100)}%`;
+
+// Our chance (x) against the share the non-Republican side won (y), one dot per bracket.
+function calPlot(root, rows, { size, big }) {
+  root.replaceChildren();
+  const m = big ? { l: 46, r: 12, t: 12, b: 42 } : { l: 32, r: 8, t: 8, b: 24 };
+  const W = size, H = size;
+  root.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const x = (p) => m.l + (W - m.l - m.r) * p;
+  const y = (p) => H - m.b - (H - m.t - m.b) * p;
+  for (const v of big ? [0, .25, .5, .75, 1] : [0, .5, 1]) {
+    svg("line", { class: v === 0 ? "axis" : "gridline", x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, root);
+    svg("line", { class: v === 0 ? "axis" : "gridline", x1: x(v), x2: x(v), y1: m.t, y2: H - m.b }, root);
+    svg("text", { x: m.l - 6, y: y(v) + 4, "text-anchor": "end" }, root).textContent = pct0(v);
+    svg("text", { x: x(v), y: H - m.b + 15, "text-anchor": "middle" }, root).textContent = pct0(v);
+  }
+  if (big) {
+    svg("text", { x: (m.l + W - m.r) / 2, y: H - 6, "text-anchor": "middle" }, root).textContent = "Our chance for the Democratic side";
+    svg("text", { x: 12, y: (m.t + H - m.b) / 2, "text-anchor": "middle", transform: `rotate(-90 12 ${(m.t + H - m.b) / 2})` }, root).textContent = "Share they actually won";
+  }
+  const band = rows.map((r) => `${x(r.mean_p)},${y(r.band[1])}`).concat(rows.slice().reverse().map((r) => `${x(r.mean_p)},${y(r.band[0])}`));
+  svg("polygon", { class: "cal-band", points: band.join(" ") }, root);
+  svg("line", { class: "cal-ideal", x1: x(0), y1: y(0), x2: x(1), y2: y(1) }, root);
+  svg("polyline", { class: "cal-wave", points: rows.map((r) => `${x(r.mean_p)},${y(r.wave)}`).join(" ") }, root);
+  if (big) {
+    svg("text", { class: "cal-corner", x: m.l + 8, y: m.t + 14 }, root).textContent = "Above the line: Democrats did better than we said";
+    svg("text", { class: "cal-corner", x: W - m.r - 8, y: H - m.b - 8, "text-anchor": "end" }, root).textContent = "Below the line: worse";
+  }
+  const most = Math.max(...rows.map((r) => r.n));
+  for (const r of rows) {
+    const rad = (big ? 4.5 : 3.5) + (big ? 5 : 3) * Math.sqrt(r.n / most);
+    svg("circle", { class: "cal-dot", cx: x(r.mean_p), cy: y(r.freq), r: rad }, root);
+    const hit = svg("circle", { cx: x(r.mean_p), cy: y(r.freq), r: rad + 8, fill: "transparent", tabindex: 0 }, root);
+    bindTip(hit, () => tipRows(`${r.bracket}: ${r.n} ${r.n === 1 ? "race" : "races"}`, [
+      ["They won", `${r.wins} of ${r.n} (${pct0(r.freq)})`], ["We said", pct1(r.mean_p)],
+      ["90% range", `${pct(r.band[0])} to ${pct(r.band[1])}`], ["Given this wave", pct(r.wave)],
+    ]));
+  }
+}
+
+function missPlot(root, v) {
+  root.replaceChildren();
+  const rows = v.divisions;
+  const absent = [...new Set(app.seats.states.map((s) => s.division))].filter((d) => !rows.some((x) => x.division === d));
+  $("#cal-miss-note").textContent = rows.length
+    ? `Actual margin minus our expected margin, in the ${v.n_miss} non-safe races with at least 90% of the vote counted. The vertical line is the average (${margin(v.mean_miss)}); whiskers show ±1.64 standard errors. Safe seats are left out, because our margins there are not to scale.` +
+      (absent.length ? ` No such race yet in: ${absent.join(", ")}.` : "")
+    : "No non-safe race with at least 90% counted in this selection.";
+  if (!rows.length) return;
+  const W = 760, row = 26, m = { l: 150, r: 92, t: 18, b: 6 };
+  const H = m.t + rows.length * row + m.b;
+  root.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const ends = rows.flatMap((d) => [d.miss - 1.64 * (d.se ?? 0), d.miss + 1.64 * (d.se ?? 0)]).concat(0);
+  const lo = Math.floor(Math.min(...ends) / 5) * 5, hi = Math.ceil(Math.max(...ends) / 5) * 5;
+  const x = (val) => m.l + (W - m.l - m.r) * (val - lo) / (hi - lo);
+  for (let t = lo; t <= hi; t += 5) {
+    svg("line", { class: t === 0 ? "axis" : "gridline", x1: x(t), x2: x(t), y1: m.t, y2: H - m.b }, root);
+    svg("text", { x: x(t), y: m.t - 6, "text-anchor": "middle" }, root).textContent = t === 0 ? "0" : `${t > 0 ? "+" : "−"}${Math.abs(t)}`;
+  }
+  svg("line", { class: "cal-mean", x1: x(v.mean_miss), x2: x(v.mean_miss), y1: m.t, y2: H - m.b }, root);
+  rows.forEach((d, i) => {
+    const cy = m.t + row * i + row / 2;
+    svg("text", { class: "row-label", x: m.l - 10, y: cy + 4, "text-anchor": "end" }, root).textContent = d.division;
+    svg("text", { x: W - m.r + 10, y: cy + 4 }, root).textContent = `${margin(d.miss)} · ${d.n} ${d.n === 1 ? "race" : "races"}`;
+    if (d.se != null) svg("line", { class: "cal-whisker", x1: x(d.miss - 1.64 * d.se), x2: x(d.miss + 1.64 * d.se), y1: cy, y2: cy }, root);
+    svg("circle", { class: "cal-dot", cx: x(d.miss), cy, r: 5 }, root);
+    const hit = svg("rect", { x: m.l, y: cy - row / 2, width: W - m.l - m.r, height: row, fill: "transparent", tabindex: 0 }, root);
+    bindTip(hit, () => tipRows(d.division, [["Margins above ours", margin(d.miss)], ["Races", d.n], ["Census region", d.region]]));
+  });
+}
+
+function reading(f) {
+  const gap = f.won - f.chance;
+  return Math.abs(gap) < 0.03 ? "About right" : gap < 0 ? "We were overconfident" : "We were underconfident";
+}
+
+function renderCalibration() {
+  const c = app.cal, r = app.results;
+  if (!c || !r) {
+    $("#cal-verdict").replaceChildren(html("li", { text: "Results appear here once pipeline/fetch_results.py and calibration.py have run." }));
+    return;
+  }
+  const name = $("#cal-view").value, basis = $("#cal-basis").value;
+  const v = c.views[`${name}|${basis}`], called = c.views[`${name}|called`];
+  const h = r.house;
+  $("#res-tally").textContent = `House: Democrats ${h.called.D} called, ${h.leading.D} ahead · Republicans ${h.called.R} called, ${h.leading.R} ahead` +
+    (h.runoff ? ` · ${h.runoff} ${h.runoff === 1 ? "runoff" : "runoffs"}` : "");
+  const total = name === "all" ? 470 : name === "house" ? 435 : 35;
+  $("#cal-count").textContent = basis === "leaders" && v.n > called.n
+    ? `${v.n} of ${total} races: ${called.n} called, ${v.n - called.n} counted with the current leader`
+    : `${called.n} of ${total} races called.` + (basis === "called" && called.n < total ? " The rest are mostly close, so leaving them out flatters us." : "");
+  calPlot($("#cal-main"), v.brackets, { size: 520, big: true });
+
+  const fav = (scope, p) => v.favourites.find((f) => f.scope === scope && f.party === p);
+  const fd = fav("all", "D"), fr = fav("all", "R");
+  const upD = v.regions.reduce((s, x) => s + x.upsets_d, 0), upR = v.regions.reduce((s, x) => s + x.upsets_r, 0);
+  const gap = v.actual - v.expected;
+  const items = [
+    `The Democratic side ${gap >= 0 ? "beat" : "fell short of"} our forecast: ${v.actual} wins in these ${v.n} races against the ${Math.round(v.expected)} we expected.`,
+  ];
+  if (fd && fr) {
+    items.push(`Our favourite won ${pct0(v.favourite_won)} of the time. ${upD + upR === 0 ? "No race went against it."
+      : upR === 0 ? `All ${upD} misses went one way, to the Democratic side.` : upD === 0 ? `All ${upR} misses went one way, to Republicans.`
+      : `${upD} misses went to the Democratic side, ${upR} to Republicans.`}`);
+  }
+  const miss = c.national?.margin != null ? c.national.margin - c.environment : null;
+  if (miss != null && Math.abs(miss) >= 1) items.push(`The errors share a cause: the national House vote so far is ${margin(c.national.margin)} (${Math.round(c.national.share_counted)}% counted) against the ${margin(c.environment)} we expected. One shared error moves every bracket together, which is why the 90% range is so wide in the middle.`);
+  if (name !== "senate") {
+    const s = c.contest.seats, inside = s.with_leaders >= s.ci80[0] && s.with_leaders <= s.ci80[1];
+    items.push(`The total ${inside ? "stayed inside" : "went outside"} our 80% range of ${s.ci80[0]}–${s.ci80[1]}: ${s.with_leaders} Democratic House seats, counting leaders, is the ${Math.round(s.share_sims_below * 100)}th percentile of our simulations.`);
+  }
+  $("#cal-verdict").replaceChildren(...items.map((t) => html("li", { text: t })));
+
+  const label = { D: "Democrats", R: "Republicans" };
+  $("#cal-fav").replaceChildren(...v.favourites.map((f) => html("tr", {}, [
+    html("td", { text: `${label[f.party]}${f.scope === "all" ? ", all races" : ", non-safe"}` }), html("td", { class: "num", text: f.n }),
+    html("td", { class: "num", text: pct(f.chance) }), html("td", { class: "num", text: `${pct0(f.won)} (${f.actual})` }), html("td", { text: reading(f) }),
+  ])));
+  const src = v.sources, sourceRows = [];
+  if (src.market_set) {
+    sourceRows.push(["Against the markets", src.market_set.n, src.market_set.us, src.market_set.markets],
+      [name === "senate" ? "Against fundamentals" : "Against DDHQ / fundamentals", src.market_set.n, src.market_set.us, src.market_set.fundamentals]);
+  }
+  if (src.poll_set) sourceRows.push(["Against the polls", src.poll_set.n, src.poll_set.us, src.poll_set.polls]);
+  $("#cal-sources").replaceChildren(...sourceRows.map(([a, n, us, o]) => html("tr", {}, [
+    html("td", { text: a }), html("td", { class: "num", text: n }), html("td", { class: "num", text: us.toFixed(3) }), html("td", { class: "num", text: o.toFixed(3) }),
+  ])));
+  $("#cal-table").replaceChildren(...v.brackets.map((b) => html("tr", {}, [
+    html("td", { text: b.bracket }), html("td", { class: "num", text: b.n }), html("td", { class: "num", text: pct1(b.mean_p) }), html("td", { class: "num", text: b.wins }),
+    html("td", { class: "num", text: pct1(b.freq) }), html("td", { class: "num", text: `${pct(b.band[0])}–${pct(b.band[1])}` }), html("td", { class: "num", text: pct(b.wave) }),
+  ])));
+
+  $("#cal-regions").replaceChildren(...v.regions.map((x) => {
+    const plot = svg("svg", { class: "chart", role: "img", "aria-label": `Calibration in the ${x.region}` });
+    calPlot(plot, x.brackets, { size: 250, big: false });
+    return html("article", { class: "card region" }, [
+      html("h3", { text: x.region }),
+      html("p", { class: "muted small", text: `Non-safe: ${x.actual_non_safe} of ${x.n_non_safe} won, ${Math.round(x.expected_non_safe)} expected · ${x.upsets_d + x.upsets_r} ${x.upsets_d + x.upsets_r === 1 ? "miss" : "misses"}` }),
+      plot,
+    ]);
+  }));
+  missPlot($("#cal-miss"), v);
+
+  $("#cal-surprises").replaceChildren(...v.surprises.map((s) => {
+    const x = r.races[s.race_id];
+    const [a, b] = s.top;
+    const lead = x.status === "called" ? "beat" : "leads";
+    const by = s.margin != null ? (s.lead_votes != null && s.lead_votes < 2000 ? `by ${s.lead_votes.toLocaleString("en-US")} votes` : `by ${Math.abs(s.margin).toFixed(1)}`) : "";
+    return html("tr", {}, [
+      html("td", { text: raceName(s.race_id) }),
+      html("td", { text: b ? `${who(a)} ${lead} ${who(b)} ${by}` : who(a) }),
+      html("td", { class: "num", text: pct(s.won ? s.p : 1 - s.p) }),
+      html("td", { text: statusText(x) }),
+    ]);
+  }));
+
+  $("#cal-method").replaceChildren(
+    html("p", { text: "Every race we forecast goes into a bracket by the chance we gave it on 2 November, in the frozen contest entry. Perfectly calibrated forecasts put the dots on the diagonal: of the races we gave about 30%, about 30% are won. A dot above the diagonal means Democrats did better than we said; a dot below, worse." }),
+    html("p", { text: "“Democratic side” is what each probability refers to: the Democrat, or the independent where one is the main challenger (Alaska's Bill Hill; the Senate races in Nebraska, Montana, Idaho and South Dakota)." }),
+    html("p", { text: "Races are not independent coin flips. The grey band is the 90% range of each bracket's share across our own 20,000 simulations, with the shared national error included. In the middle brackets it is nearly the full height, because one national swing can turn all of those races at once. So a wide band does not mean we did well; it says that a single election cannot settle the calibration of the middle brackets." }),
+    html("p", { text: "The orange line asks a sharper question: in the simulations whose total comes closest to the actual total, what did each bracket do? If the dots follow it, the miss is the size of the wave. If they stray from it, we also ordered the races wrongly." }),
+    html("p", { text: "Not-yet-called races are close by nature, so leaving them out would hide most of the action; the default counts the current leader, which can still change, and “Called races only” shows the safe facts. Runoffs are left out until they are decided." }),
+    html("p", { class: "small" }, ["Results: ", ...r.sources.flatMap((s, i) => [i ? " and " : "", html("a", { href: s.url, target: "_blank", rel: "noopener", text: s.name })]),
+      ". Refreshed every three hours by GitHub Actions; the forecast itself stays frozen under the tag contest-entry. Code: pipeline/fetch_results.py, pipeline/calibration.py."]),
+  );
+}
+
+function renderScore() {
+  const c = app.cal?.contest;
+  if (!c) return;
+  const s = c.seats;
+  $("#score-note").textContent = `Brier score over the ${c.n_scored} probabilities so far: ${c.brier.toFixed(3)}`;
+  const tile = (q, a, sub) => html("div", { class: "answer" }, [html("span", { class: "q", text: q }), html("span", { class: "a", text: a }), html("span", { class: "sub", text: sub })]);
+  $("#score-top").replaceChildren(
+    tile("(a) We entered", s.answer, `Democrats ${s.called} called, ${s.with_leaders} with leaders · off by ${Math.abs(s.off_by)} so far`),
+    tile("(b) P(Dem majority)", prob2(c.p_majority), c.dem_majority == null ? "Control not called yet" : c.dem_majority ? "Democrats won the House" : "Republicans held the House"),
+  );
+  $("#score-districts").replaceChildren(...c.districts.map((d) => html("tr", {}, [
+    html("td", { text: app.byId[d.race_id].label }), html("td", { class: "num", text: prob2(d.p) }),
+    html("td", { text: d.top.map(who).join(" vs ") }), html("td", { class: "num", text: margin(d.margin) }),
+    html("td", { text: statusText(app.results.races[d.race_id]) }), html("td", { class: "num", text: d.sq_error == null ? "–" : d.sq_error.toFixed(3) }),
+  ])));
 }
 
 function renderChamber(name, c) {
@@ -952,11 +1163,12 @@ function renderRaces(focusId) {
       marketCell,
       html("td", { class: "num input-cell", text: inp.fundamentals ? pct(inp.fundamentals.p) : "–" }),
       html("td", { class: "num", text: range }), html("td", {}, chip),
+      html("td", { text: resultText(seat.id) ?? "–" }),
     ]);
     if (rf) bindTip(tr, () => raceTip(seat, c));
     frag.append(tr);
   }
-  if (!rows.length) frag.append(emptyRow(8, "No races match these filters."));
+  if (!rows.length) frag.append(emptyRow(9, "No races match these filters."));
   body.append(frag);
   $("#race-count").textContent = `${rows.length} of 470 races`;
   const clear = $("#f-clear");
@@ -1086,6 +1298,8 @@ function render() {
   const f = app.forecast;
   renderHeader(f);
   renderContest(f);
+  renderCalibration();
+  renderScore();
   renderDeciders(f);
   renderCompare(f);
   renderNews(app.news);
@@ -1132,13 +1346,16 @@ async function init() {
   for (const st of app.seats.states) app.stateByAbbr[st.abbr] = st;
   try { renderBridge(await loadJSON("data/bridge.json")); } catch { /* bridge is optional (needs the course workbook) */ }
   // Optional extras: candidates and photos, the news check, the 2022/2024 backtest.
-  const [cands, news, backtest] = await Promise.all(["data/candidates.json", "data/news.json", "data/backtest.json"]
+  const [cands, news, backtest, results, cal] = await Promise.all(["data/candidates.json", "data/news.json", "data/backtest.json", "data/results.json", "data/calibration.json"]
     .map((p) => loadJSON(p).catch(() => null)));
   app.cands = cands?.races ?? {};
   app.news = news;
+  app.results = results;
+  app.cal = cal;
   renderBacktest(backtest);
 
   for (const id of ["f-chamber", "f-close", "f-sort"]) $("#" + id).addEventListener("change", () => renderRaces());
+  for (const id of ["cal-view", "cal-basis"]) $("#" + id).addEventListener("change", renderCalibration);
   $("#f-search").addEventListener("input", () => renderRaces());
   $("#f-clear").addEventListener("click", () => { app.stateFilter = null; renderRaces(); });
   addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });

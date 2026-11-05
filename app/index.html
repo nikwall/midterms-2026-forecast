@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-11-02">
+<link rel="stylesheet" href="styles.css?v=2026-11-05c">
 </head>
 <body>
 <!-- Icons: polls ring a phone, markets pay in dollar bills, DDHQ rings the desk bell, and our team mark is the arq
@@ -61,6 +61,7 @@
       <strong>2026 Midterms Forecast</strong><span class="sep">·</span><span>HKS API-232</span><span class="sep">·</span><span>Team “The Right Question and Claude Code is a group”</span><span class="sep">·</span><span id="updated"></span>
     </p>
     <nav class="tabs" role="tablist" aria-label="Sections">
+      <a role="tab" href="#results" data-tab="results">Results &amp; calibration</a>
       <a role="tab" href="#congress" data-tab="congress">House, Senate &amp; Congress</a>
       <a role="tab" href="#contest" data-tab="contest">Contest entry</a>
       <a role="tab" href="#maps" data-tab="maps">Maps &amp; all races</a>
@@ -78,7 +79,7 @@
       <span class="atlas-over">Future Atlas · United States 2030</span>
       <span class="atlas-head">What kind of country will the United States be in 2030?</span>
       <span class="atlas-lead">Two open questions decide it: do checks and balances hold, and how fast does AI change the economy?
-        Tuesday's results are the first two signals<span id="atlas-signals"></span>.</span>
+        <span id="atlas-signals"></span></span>
     </span>
     <span class="atlas-cta">Open the 2030 map <span aria-hidden="true">→</span></span>
     <img class="atlas-thumb" src="atlas/og.png" alt="" loading="lazy">
@@ -86,6 +87,92 @@
 </a>
 
 <main class="page">
+
+  <!-- ===================== Results & calibration ===================== -->
+  <section class="panel" id="panel-results" data-panel="results" aria-label="Results and calibration">
+    <div class="block">
+      <div class="block-head">
+        <h2>Did we do well? Our chances against what happened</h2>
+        <span class="muted" id="res-tally"></span>
+      </div>
+      <div class="filters">
+        <label for="cal-view">Races
+          <select id="cal-view"><option value="all">House and Senate</option><option value="house">House</option><option value="senate">Senate</option></select>
+        </label>
+        <label for="cal-basis">Count
+          <select id="cal-basis"><option value="leaders">Called, plus current leaders</option><option value="called">Called races only</option></select>
+        </label>
+        <span class="muted small" id="cal-count"></span>
+      </div>
+      <div class="cal-grid">
+        <article class="card">
+          <svg class="chart" id="cal-main" role="img" aria-label="Calibration chart: our chance for each bracket of races against the share the Democratic side won"></svg>
+          <div class="legend" aria-hidden="true">
+            <span class="legend-item"><span class="key-dot"></span>What happened (bigger dot, more races)</span>
+            <span class="legend-item"><span class="key-line ideal"></span>Perfect calibration</span>
+            <span class="legend-item"><span class="key-band"></span>90% range of our simulations</span>
+            <span class="legend-item"><span class="key-line wave"></span>Our model, given a wave this big</span>
+          </div>
+        </article>
+        <div class="cal-side">
+          <ul class="verdict" id="cal-verdict"></ul>
+          <table class="small-table">
+            <thead><tr><th>Where we favoured</th><th class="num">Races</th><th class="num">We said</th><th class="num">They won</th><th>Reading</th></tr></thead>
+            <tbody id="cal-fav"></tbody>
+          </table>
+          <table class="small-table">
+            <thead><tr><th>Brier score, same races (lower is better)</th><th class="num">Races</th><th class="num">Us</th><th class="num">Other</th></tr></thead>
+            <tbody id="cal-sources"></tbody>
+          </table>
+        </div>
+      </div>
+      <details class="more">
+        <summary>The numbers behind the chart</summary>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Our chance</th><th class="num">Races</th><th class="num">Mean chance</th><th class="num">Democratic side won</th><th class="num">Share</th><th class="num">90% range</th><th class="num">Given this wave</th></tr></thead>
+            <tbody id="cal-table"></tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><h2>Are there different regions?</h2><span class="muted">Census regions, same axes, coarser brackets</span></div>
+      <div class="region-grid" id="cal-regions"></div>
+      <article class="card">
+        <h3>How far margins ended above ours, by Census division</h3>
+        <p class="muted small" id="cal-miss-note"></p>
+        <svg class="chart" id="cal-miss" role="img" aria-label="Average margin miss by Census division"></svg>
+      </article>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><h2>Our contest entry</h2><span class="muted" id="score-note"></span></div>
+      <div class="answers" id="score-top"></div>
+      <div class="table-wrap">
+        <table class="small-table">
+          <thead><tr><th>(c) District</th><th class="num">We said</th><th>Result</th><th class="num">Margin</th><th>Status</th><th class="num">Squared error</th></tr></thead>
+          <tbody id="score-districts"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><h2>Biggest surprises</h2><span class="muted">The races where the outcome got the lowest chance from us</span></div>
+      <div class="table-wrap">
+        <table class="small-table">
+          <thead><tr><th>Race</th><th>Result</th><th class="num">Chance we gave the winner</th><th>Status</th></tr></thead>
+          <tbody id="cal-surprises"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <details class="more">
+      <summary>How to read this, and what it leaves out</summary>
+      <div class="explain" id="cal-method"></div>
+    </details>
+  </section>
 
   <!-- ===================== Contest entry ===================== -->
   <section class="panel" id="panel-contest" data-panel="contest" aria-label="Contest entry" hidden>
@@ -156,7 +243,7 @@
   </section>
 
   <!-- ===================== House, Senate & Congress ===================== -->
-  <section class="panel" id="panel-congress" data-panel="congress" aria-label="House, Senate and Congress">
+  <section class="panel" id="panel-congress" data-panel="congress" aria-label="House, Senate and Congress" hidden>
     <div class="grid-2">
       <article class="card chamber" id="card-house">
         <div class="chamber-head"><h3>House</h3><span class="muted">435 seats · 218 for a majority</span></div>
@@ -305,7 +392,7 @@
       </div>
       <div class="table-wrap race-table-wrap">
         <table>
-          <thead><tr><th>Race</th><th>Held by</th><th class="num">Chance Dem wins</th><th class="num">Polls</th><th class="num">Markets</th><th class="num">Fundamentals</th><th class="num">Dem margin, 80% range</th><th>Rating</th></tr></thead>
+          <thead><tr><th>Race</th><th>Held by</th><th class="num">Chance Dem wins</th><th class="num">Polls</th><th class="num">Markets</th><th class="num">Fundamentals</th><th class="num">Dem margin, 80% range</th><th>Rating</th><th>Result</th></tr></thead>
           <tbody id="race-body"></tbody>
         </table>
       </div>
@@ -427,12 +514,12 @@
   </section>
 
   <footer>
-    <p>A forecast for the HKS midterms forecasting tournament, made in API-232 by Niklas Wallmeier with Claude Code. Polls from VoteHub (CC BY 4.0); prices from Kalshi and Polymarket; 2024 results by district from The Downballot; photos from Wikipedia.</p>
+    <p>A forecast for the HKS midterms forecasting tournament, made in API-232 by Niklas Wallmeier with Claude Code. Polls from VoteHub (CC BY 4.0); prices from Kalshi and Polymarket; 2024 results by district from The Downballot; photos from Wikipedia. Results from CNN and The New York Times (calls by the Associated Press), refreshed every three hours.</p>
     <p>What the House and Senate mean for 2030: <a href="atlas/">America 2030 Future Atlas</a>, two uncertainties and eight forecast signals, the first two decided on 3 November.</p>
   </footer>
 </main>
 <div class="tooltip" id="tooltip" role="status" hidden></div>
-<script src="app.js?v=2026-11-02"></script>
-<script src="whatif.js?v=2026-11-02"></script>
+<script src="app.js?v=2026-11-05d"></script>
+<script src="whatif.js?v=2026-11-05"></script>
 </body>
 </html>

@@ -374,3 +374,26 @@ Senate: 0.78 (was 0.73). Crowds on the House: Metaculus 0.96, Manifold 0.98, Pre
 |---|---|---|
 | C62 | The code and data that produced the entry are frozen under the Git tag `contest-entry`. The dashboard (Method & code) and the README link its zip. `python -I pipeline/model.py` on that version re-runs the model on the stored inputs (seed 2026) and gives exactly the entry; checked on 2 Nov (identical `forecast.json` apart from the time stamp). | Reproducibility: `main` keeps changing after the election (results, the 2030 map), and `run_all.py` fetches new data, so neither reproduces the entry. |
 | C63 | The written answers to Part 4 (a)–(e) are in `submission/answer.tex` (PDF built with LaTeX, not published in the repository). | Your request: an answer document with the link to the app and the reproducible model. |
+
+## 5 November 2026: results, calibration, updates every three hours
+
+The entry stands as frozen on 2 Nov. From now on only results change.
+
+| # | Choice | Why |
+|---|---|---|
+| C64 | Results come from the public JSON behind CNN's and The New York Times' results pages (`pipeline/fetch_results.py`, `app/data/results.json`). The NYT shows AP calls. A race counts as called once either source names a winner, and as disputed if they name different parties. Votes come from the source that has counted more. Louisiana's open races without a majority count as runoffs. | Two sources cover for each other: on 5 Nov CNN had called five races the AP had not, and they disagreed on none. |
+| C65 | GitHub Actions runs `update-results.yml` every three hours: new results, new calibration, commit, redeploy. A run that finds nothing new commits nothing. | Your request. It runs without any computer switched on and stops committing by itself when the count ends. |
+| C66 | The forecast stays frozen. `calibration.py` stops unless `forecast.json` is the contest entry and its simulation reproduces the frozen chances. `run_all.py` refuses to run after Election Day without `--after-election`, which also blocks the "Update forecast" workflow. | Market prices now contain the results, so a refresh would overwrite the predictions with hindsight. |
+| C67 | Calibration chart, first on the page. 11 symmetric brackets of our chance (0–2, 2–5, 5–10, 10–20, 20–35, 35–65, 65–80, 80–90, 90–95, 95–98, 98–100%), so that each holds about ten races or more; all 470 races, or House or Senate alone. The outcome is "the non-Republican side won", which is what every probability refers to. | Your request for an eye test. Fine brackets at the ends because most races sit there and the big surprises came from them. |
+| C68 | Two reference marks beside the diagonal. The grey band is the 90% range of each bracket across our own 20,000 simulations, shared national error included. The orange line is the same share in the 400 simulations whose total comes closest to the actual total. | Races are not independent, so a coin-flip interval would be far too narrow. The band shows how little one election can say about the middle brackets; the line separates the size of the wave from the ordering of the races. |
+| C69 | By default, races not yet called count with the current leader; "Called races only" is one click away. Runoffs stay out. | The races still open are the close ones. Leaving them out would hide most of the surprises. |
+| C70 | Regions: the same chart for the four Census regions with coarser brackets, and the average margin miss by Census division in non-safe races with at least 90% counted. | Your question about regions. Margins are compared in non-safe races only, because market-based margins are not to scale in safe seats. |
+
+**Findings on 5 Nov, 13:00 UTC (they will move with the count; the page always shows the current ones):**
+
+- **Seats:** Democrats 240 called and 19 ahead, Republicans 146 and 28, two runoffs. We entered 238; with leaders that is 21 too low, but 259 is inside our 80% range (219–265), at the 85th percentile.
+- **Contest:** Democrats won the House, and all five contest districts. Brier over the six probabilities: 0.038.
+- **Direction:** we were too low on Democrats, not too confident in general. Where we favoured Democrats they won all 255 (we said 97%). Where we favoured Republicans they won 88% (we said 95%); in non-safe races 54% (we said 80%). All 26 misses went to the Democratic side.
+- **Cause:** one shared national error. The House vote so far is D+11.5, against the D+8.2 we expected.
+- **Regions:** the miss was largest in the South (13 of the 26) and Midwest (8). By division, West South Central came in 11 points above us, against 4.5 on average. Non-safe seats won against expected: South 23 vs 14, Midwest 20 vs 13, West 10 vs 7, Northeast 7 vs 5.
+- **Sources:** Brier on the same 458 races: markets 0.035, us 0.040, fundamentals 0.056. On the 104 polled races: us 0.112, polls 0.119.

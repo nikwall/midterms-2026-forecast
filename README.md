@@ -14,6 +14,7 @@ A forecast of the 2026 US House (and Senate) elections, built for the HKS foreca
 | [pipeline/](pipeline/) | the Python scripts: data, model, checks |
 | [run_all.py](run_all.py) | runs the whole pipeline with one command |
 | [PROCESS.md](PROCESS.md) | dated log of every step and choice, with reasons |
+| [.github/workflows/update-results.yml](.github/workflows/update-results.yml) | collects the results every three hours and republishes the dashboard |
 | [MODEL_PROPOSAL.md](MODEL_PROPOSAL.md) | the model design |
 | [research/](research/) | sources, polling corrections, backtests (Senate 1998–2022; House 2022 and 2024), sensitivity, bridge from the course model, comparisons |
 | [data/polls_manual.csv](data/polls_manual.csv) | polls from the news check that VoteHub lacks, with sources |
@@ -73,6 +74,15 @@ and go to http://localhost:8770.
 - The course workbook: course material, so not published. Its Decision Desk HQ district probabilities, which the model uses, are in `data/ddhq_house_2026-10-22.csv` (source: Decision Desk HQ, accessed 22 Oct 2026).
 - `pipeline/backtest.py` needs the FiveThirtyEight poll archive and MIT Election Lab results in `data/raw/backtest/` (sources listed in the script). `pipeline/backtest_house.py` downloads its own files on the first run.
 - Candidate photos are linked from Wikipedia, not copied.
+
+## After the election
+
+The forecast is frozen; only the results change.
+
+- `pipeline/fetch_results.py` collects the results (CNN; The New York Times with AP calls) into `app/data/results.json`.
+- `pipeline/calibration.py` scores the frozen forecast against them and writes `app/data/calibration.json`, which feeds the "Results & calibration" tab.
+- GitHub runs both every three hours (**Actions → Update results**) and republishes the dashboard if anything changed.
+- `run_all.py` refuses to run after Election Day: market prices now contain the results, so a refresh would overwrite the predictions. `--after-election` overrides this.
 
 ## Contest rules (summary)
 
