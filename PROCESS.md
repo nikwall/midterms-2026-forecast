@@ -397,3 +397,11 @@ The entry stands as frozen on 2 Nov. From now on only results change.
 - **Cause:** one shared national error. The House vote so far is D+11.5, against the D+8.2 we expected.
 - **Regions:** the miss was largest in the South (13 of the 26) and Midwest (8). By division, West South Central came in 11 points above us, against 4.5 on average. Non-safe seats won against expected: South 23 vs 14, Midwest 20 vs 13, West 10 vs 7, Northeast 7 vs 5.
 - **Sources:** Brier on the same 458 races: markets 0.035, us 0.040, fundamentals 0.056. On the 104 polled races: us 0.112, polls 0.119.
+
+## 5 November 2026: the first two atlas signals resolved
+
+| # | Choice | Why |
+|---|---|---|
+| M5 | S1 (House) and S2 (Senate) are marked resolved: yes. Dates are the AP calls in US Eastern time: Senate 3 Nov (11:34 PM), House 4 Nov (2:13 AM). Both cards now show the count from `results.json`, beside the forecast, and link to the results tab. | The calls are in. The marker moves by the page rule: checks hold 88 % to 92 %, The Long Repair 58 % to 61 %. |
+| M6 | S3 (contempt vote) and S8 (AI preemption law) were built on P(D House). They now start from the result: S3 68 % (was 62 %), S8 stays at 12 %. | Otherwise the page would still use a 91 % chance for something that has happened. |
+| M7 | The link-preview image `app/atlas/og.png` is redrawn with the new numbers. `gen_cards.py` now leaves `post1_map.png` alone by default, because that is the image as posted on 2 Nov. | The old image still said the signals resolve on 3 November. |

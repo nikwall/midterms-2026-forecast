@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>America 2030 Future Atlas</title>
-<meta name="description" content="Two open questions decide what kind of country the US will be in 2030: whether checks and balances hold, and how fast AI changes the economy. Eight forecast signals show which way it goes; the first two resolve on 3 November 2026.">
+<meta name="description" content="Two open questions decide what kind of country the US will be in 2030: whether checks and balances hold, and how fast AI changes the economy. Eight forecast signals show which way it goes; the first two resolved on 3 November 2026: Democrats won the House and the Senate.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="America 2030 Future Atlas">
-<meta property="og:description" content="Two open questions decide what kind of country the US will be in 2030: whether checks and balances hold, and how fast AI changes the economy. Eight forecast signals show which way it goes; the first two resolve on 3 November 2026.">
+<meta property="og:description" content="Two open questions decide what kind of country the US will be in 2030: whether checks and balances hold, and how fast AI changes the economy. Eight forecast signals show which way it goes; the first two resolved on 3 November 2026: Democrats won the House and the Senate.">
 <meta property="og:url" content="https://nikwall.github.io/midterms-2026-forecast/atlas/">
 <meta property="og:image" content="https://nikwall.github.io/midterms-2026-forecast/atlas/og.png">
 <meta property="og:image:width" content="1200">
@@ -255,7 +255,7 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
 
   <p class="kick">The guiding question</p>
   <h1>What kind of country will the United States be in&nbsp;2030?</h1>
-  <p class="lead">Two open questions decide it: whether checks and balances hold, and how fast AI changes the economy. Eight signals show early which way the country is heading. The first two resolve on Tuesday, 3&nbsp;November.</p>
+  <p class="lead">Two open questions decide it: whether checks and balances hold, and how fast AI changes the economy. Eight signals show early which way the country is heading. The first two resolved on 3&nbsp;November: Democrats won the House and the Senate.</p>
 
   <!-- ================= Landkarte ================= -->
   <section aria-labelledby="l-map">
@@ -374,12 +374,12 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
 
   // ifYes = P(positive pole of the axis | signal resolves yes), our judgment. ifNo follows from the prior.
   const SIGNALS = [
-    { id: "S1", href: "../#congress", axis: "checks", dir: "pos", p: 0.91, ifYes: 0.898, date: "2026-11-03", short: "Democrats win the House",
+    { id: "S1", href: "../#results", axis: "checks", dir: "pos", p: 0.91, ifYes: 0.898, date: "2026-11-03", short: "Democrats win the House",
       q: "Democrats win a majority in the House on 3 November 2026.",
       who: "Our midterms model", extra: "Markets 92 % · resolves Nov 2026",
       why: "D+8 national environment; 237 seats in the median simulation, 80 % range 219–264.",
       then: "Subpoenas, the budget and oversight hearings go to the opposition in January." },
-    { id: "S2", href: "../#congress", axis: "checks", dir: "pos", p: 0.70, ifYes: 0.906, date: "2026-11-03", short: "Democrats win the Senate",
+    { id: "S2", href: "../#results", axis: "checks", dir: "pos", p: 0.70, ifYes: 0.906, date: "2026-11-03", short: "Democrats win the Senate",
       q: "Democrats win a majority in the Senate on 3 November 2026.",
       who: "Our midterms model", extra: "Markets 67.5 % · resolves Nov 2026",
       why: "52 seats in the median simulation; Alaska is the tipping-point race.",
@@ -434,8 +434,8 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
   FIELDS.HF.mm = [0,1,0,0]; FIELDS.HG.mm = [1,0,0,0]; FIELDS.CF.mm = [0,0,0,1]; FIELDS.CG.mm = [0,0,1,0];
 
   // Set a signal to "yes" or "no" once it is called; it then counts as evidence for "today".
-  const RESOLVED = { S1: null, S2: null };
-  const RESOLVED_ON = { S1: "", S2: "" };   // e.g. "4 Nov 2026"
+  const RESOLVED = { S1: "yes", S2: "yes" };
+  const RESOLVED_ON = { S1: "4 Nov 2026", S2: "3 Nov 2026" };   // when AP called control, US Eastern time
 
   const STATES = { AK: "Alaska", AL: "Alabama", AR: "Arkansas", AZ: "Arizona", CA: "California", CO: "Colorado", CT: "Connecticut", DE: "Delaware", FL: "Florida", GA: "Georgia",
     HI: "Hawaii", IA: "Iowa", ID: "Idaho", IL: "Illinois", IN: "Indiana", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", MA: "Massachusetts", MD: "Maryland", ME: "Maine",
@@ -454,10 +454,12 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
       s.extra = (m ? "Markets " + p0(m) + " · " : "") + "resolves Nov 2026";
       if (h.dem_seats && h.dem_seats.ci80) s.why = (typeof env === "number" ? (env >= 0 ? "D+" : "R+") + Math.abs(Math.round(env)) + " national environment; " : "") +
         h.dem_seats.median + " seats in the median simulation, 80\u202f% range " + h.dem_seats.ci80[0] + "–" + h.dem_seats.ci80[1] + ".";
-      const pH = h.p_dem_control, s3 = get("S3"), s8 = get("S8");
+      const pH = RESOLVED.S1 ? (RESOLVED.S1 === "yes" ? 1 : 0) : h.p_dem_control, s3 = get("S3"), s8 = get("S8");
       s3.p = pH * 0.68 + (1 - pH) * 0.02;
-      s3.why = p0(pH) + " Democratic House × 68\u202f% if Democrats lead it + " + p0(1 - pH) + " × 2\u202f% otherwise. Precedents: Barr and Ross in 2019, Garland in 2024.";
+      s3.why = (RESOLVED.S1 === "yes" ? "Democrats lead the House from January: 68\u202f% with them in charge."
+        : p0(pH) + " Democratic House × 68\u202f% if Democrats lead it + " + p0(1 - pH) + " × 2\u202f% otherwise.") + " Precedents: Barr and Ross in 2019, Garland in 2024.";
       s8.p = 0.08 + 0.92 * (pH * 0.04 + (1 - pH) * 0.20);
+      if (RESOLVED.S1 === "yes") s8.why = s8.why.replace("a likely Democratic House", "the Democratic House");
     }
     if (se && typeof se.p_dem_control === "number") {
       const s = get("S2"), m = market("p_dem_senate"); s.p = se.p_dem_control;
@@ -472,8 +474,21 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
     }
   }
 
-  fetch("../data/forecast.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).catch(() => null)
-    .then(fc => { try { if (fc) applyForecast(fc); } catch (e) { console.warn("forecast.json not applied", e); } boot(); });
+  // Resolved signals show the count so far; results.json refreshes every three hours.
+  function applyResults(r, fc) {
+    const get = id => SIGNALS.find(s => s.id === id), day = t => new Date(t).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+    const ahead = n => n ? " and lead in " + n + " more" : "", ci = fc.house.dem_seats.ci80;
+    if (RESOLVED.S1) get("S1").why = "Democrats have " + r.house.called.D + " seats called" + ahead(r.house.leading.D) + ". We forecast " + fc.house.dem_seats.median +
+      " (80\u202f% range " + ci[0] + "–" + ci[1] + ").";
+    if (RESOLVED.S2) get("S2").why = "Democrats hold " + (r.not_up.D + r.senate.called.D) + " seats" + ahead(r.senate.leading.D) + ". We forecast " + fc.senate.dem_seats.median + ".";
+    document.getElementById("stamp").textContent = "Forecast of " + day(fc.meta.updated) + " · results as of " + day(r.updated);
+  }
+
+  const load = path => fetch(path, { cache: "no-cache" }).then(r => r.ok ? r.json() : null).catch(() => null);
+  Promise.all([load("../data/forecast.json"), load("../data/results.json")]).then(([fc, res]) => {
+    try { if (fc) applyForecast(fc); if (fc && res) applyResults(res, fc); } catch (e) { console.warn("forecast.json not applied", e); }
+    boot();
+  });
 
   function boot() {
   SIGNALS.forEach(s => { s.resolved = RESOLVED[s.id] || null; s.resolvedOn = RESOLVED_ON[s.id] || ""; });
@@ -517,7 +532,7 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
         '<p class="src">' + (s.href ? '<a class="who" href="' + s.href + '">' + s.who + "</a>" : '<span class="who' + (s.est ? " est" : "") + '">' + s.who + "</span>") +
           "<span>" + (s.resolved ? "Forecast " + Math.round(s.p * 100) + " % · resolved " + s.resolvedOn : s.extra) + "</span></p>" +
         '<p class="why">' + s.why + "</p>" +
-        '<p class="then">' + mm(dirCells(s)) + "<span><b>If yes, toward " + poleName(s) + ":</b> " + s.then + "</span></p>" +
+        '<p class="then">' + mm(dirCells(s)) + "<span><b>" + (s.resolved === "yes" ? "Yes, so toward " : "If yes, toward ") + poleName(s) + ":</b> " + s.then + "</span></p>" +
         (s.resolved ? '<span class="resolved">Resolved: ' + s.resolved + "</span>" :
         '<div class="seg3" role="group" aria-label="What-if for: ' + s.short + '">' +
           '<button type="button" data-v="open" aria-pressed="true">Open</button>' +
