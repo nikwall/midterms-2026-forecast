@@ -30,9 +30,9 @@
   "not_called": 2
  },
  "national": {
-  "dem": 62098723,
-  "rep": 48273685,
-  "total": 112017401,
+  "dem": 62099088,
+  "rep": 48273874,
+  "total": 112017978,
   "share_counted": 92.08,
   "margin": 12.3
  },
@@ -2377,8 +2377,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 33.06,
-   "lead_votes": 79331,
+   "margin": 33.08,
+   "lead_votes": 79429,
    "reporting": 98,
    "top": [
     {
@@ -2461,14 +2461,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -26.95,
-   "lead_votes": 78294,
+   "margin": -26.89,
+   "lead_votes": 78221,
    "reporting": 99,
    "top": [
     {
      "name": "Jimmy Patronis",
      "party": "R",
-     "pct": 62.6,
+     "pct": 62.5,
      "incumbent": true
     },
     {
@@ -3788,7 +3788,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -35.52,
-   "lead_votes": 134655,
+   "lead_votes": 134650,
    "reporting": 99,
    "top": [
     {
@@ -12260,7 +12260,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -2.88,
-   "lead_votes": 238504,
+   "lead_votes": 238435,
    "reporting": 99,
    "top": [
     {
@@ -12343,7 +12343,7 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -23.0,
+   "margin": -22.99,
    "lead_votes": 163436,
    "reporting": 99,
    "top": [
@@ -13097,5 +13097,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-06T05:50+00:00"
+ "updated": "2026-11-06T13:58+00:00"
 }
