@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T02:33+00:00",
+ "updated": "2026-11-06T05:50+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -575,16 +575,16 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 8,
-     "miss": 5.1,
-     "se": 1.4
+     "n": 10,
+     "miss": 5.0,
+     "se": 1.1
     },
     {
      "division": "Middle Atlantic",
      "region": "Northeast",
-     "n": 8,
+     "n": 9,
      "miss": 4.4,
-     "se": 0.9
+     "se": 0.8
     },
     {
      "division": "East North Central",
@@ -623,7 +623,7 @@
     }
    ],
    "mean_miss": 4.5,
-   "n_miss": 82,
+   "n_miss": 85,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -2653,9 +2653,9 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 8,
-     "miss": 5.1,
-     "se": 1.4
+     "n": 10,
+     "miss": 5.0,
+     "se": 1.1
     },
     {
      "division": "East North Central",
@@ -2667,9 +2667,9 @@
     {
      "division": "Middle Atlantic",
      "region": "Northeast",
-     "n": 8,
+     "n": 9,
      "miss": 4.4,
-     "se": 0.9
+     "se": 0.8
     },
     {
      "division": "South Atlantic",
@@ -2701,7 +2701,7 @@
     }
    ],
    "mean_miss": 4.6,
-   "n_miss": 71,
+   "n_miss": 74,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -2961,14 +2961,14 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.78,
-     "lead_votes": 17991,
+     "margin": 5.69,
+     "lead_votes": 17794,
      "reporting": 96,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.2,
+       "pct": 50.1,
        "incumbent": false
       },
       {
@@ -6546,16 +6546,16 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 5,
-     "miss": 7.1,
+     "n": 6,
+     "miss": 6.4,
      "se": 1.4
     },
     {
      "division": "Middle Atlantic",
      "region": "Northeast",
-     "n": 7,
+     "n": 8,
      "miss": 4.9,
-     "se": 0.8
+     "se": 0.7
     },
     {
      "division": "East North Central",
@@ -6594,7 +6594,7 @@
     }
    ],
    "mean_miss": 4.7,
-   "n_miss": 67,
+   "n_miss": 69,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -6785,14 +6785,14 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.78,
-     "lead_votes": 17991,
+     "margin": 5.69,
+     "lead_votes": 17794,
      "reporting": 96,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.2,
+       "pct": 50.1,
        "incumbent": false
       },
       {
@@ -8611,16 +8611,16 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 5,
-     "miss": 7.1,
+     "n": 6,
+     "miss": 6.4,
      "se": 1.4
     },
     {
      "division": "Middle Atlantic",
      "region": "Northeast",
-     "n": 7,
+     "n": 8,
      "miss": 4.9,
-     "se": 0.8
+     "se": 0.7
     },
     {
      "division": "East North Central",
@@ -8658,8 +8658,8 @@
      "se": null
     }
    ],
-   "mean_miss": 5.0,
-   "n_miss": 57,
+   "mean_miss": 4.9,
+   "n_miss": 59,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -8850,14 +8850,14 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.78,
-     "lead_votes": 17991,
+     "margin": 5.69,
+     "lead_votes": 17794,
      "reporting": 96,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.2,
+       "pct": 50.1,
        "incumbent": false
       },
       {
@@ -12121,23 +12121,23 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 4.42,
+    "margin": 5.68,
     "called_by": [
      "CNN",
      "NYT"
     ],
-    "reporting": 88,
+    "reporting": 98,
     "top": [
      {
       "name": "Cait Conley",
       "party": "D",
-      "pct": 52.2,
+      "pct": 52.8,
       "incumbent": false
      },
      {
       "name": "Mike Lawler",
       "party": "R",
-      "pct": 47.7,
+      "pct": 47.1,
       "incumbent": true
      }
     ],
@@ -12149,10 +12149,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 61984344,
-  "rep": 48188217,
-  "total": 111810491,
-  "share_counted": 91.99,
+  "dem": 62098723,
+  "rep": 48273685,
+  "total": 112017401,
+  "share_counted": 92.08,
   "margin": 12.3
  },
  "senate": {
