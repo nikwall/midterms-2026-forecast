@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T21:24+00:00",
+ "updated": "2026-11-06T02:33+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -575,8 +575,8 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 7,
-     "miss": 5.5,
+     "n": 8,
+     "miss": 5.1,
      "se": 1.4
     },
     {
@@ -601,6 +601,13 @@
      "se": 0.5
     },
     {
+     "division": "Pacific",
+     "region": "West",
+     "n": 1,
+     "miss": 2.3,
+     "se": null
+    },
+    {
      "division": "West North Central",
      "region": "Midwest",
      "n": 12,
@@ -616,7 +623,7 @@
     }
    ],
    "mean_miss": 4.5,
-   "n_miss": 80,
+   "n_miss": 82,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -761,8 +768,8 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.18,
-     "lead_votes": 1724,
+     "margin": 0.19,
+     "lead_votes": 1813,
      "reporting": 96,
      "top": [
       {
@@ -807,20 +814,20 @@
      "p": 0.128,
      "won": 1,
      "status": "counting",
-     "margin": 0.65,
-     "lead_votes": 2376,
-     "reporting": 93,
+     "margin": 0.8,
+     "lead_votes": 3024,
+     "reporting": 97,
      "top": [
       {
        "name": "Eileen Laubacher",
        "party": "D",
-       "pct": 48.7,
+       "pct": 48.8,
        "incumbent": false
       },
       {
        "name": "Lauren Boebert",
        "party": "R",
-       "pct": 48.1,
+       "pct": 47.9,
        "incumbent": true
       }
      ]
@@ -895,17 +902,1184 @@
      ]
     }
    ],
-   "sources": {
-    "market_set": {
-     "n": 458,
-     "us": 0.04,
-     "markets": 0.035,
-     "fundamentals": 0.0557
+   "series": {
+    "us": {
+     "n": 468,
+     "brier": 0.0392,
+     "us": 0.0392,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 139,
+       "mean_p": 0.005,
+       "wins": 1,
+       "freq": 0.0072
+      },
+      {
+       "bracket": "2–5%",
+       "n": 22,
+       "mean_p": 0.0347,
+       "wins": 1,
+       "freq": 0.0455
+      },
+      {
+       "bracket": "5–10%",
+       "n": 17,
+       "mean_p": 0.068,
+       "wins": 4,
+       "freq": 0.2353
+      },
+      {
+       "bracket": "10–20%",
+       "n": 12,
+       "mean_p": 0.1505,
+       "wins": 7,
+       "freq": 0.5833
+      },
+      {
+       "bracket": "20–35%",
+       "n": 16,
+       "mean_p": 0.2692,
+       "wins": 6,
+       "freq": 0.375
+      },
+      {
+       "bracket": "35–65%",
+       "n": 10,
+       "mean_p": 0.4743,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 9,
+       "mean_p": 0.7124,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 14,
+       "mean_p": 0.8577,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 10,
+       "mean_p": 0.9331,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 10,
+       "mean_p": 0.9695,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 209,
+       "mean_p": 0.9968,
+       "wins": 209,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.113,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "lo": 0,
+       "hi": 0.02,
+       "n": 10,
+       "mean_p": 0.0064,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.001
+      },
+      {
+       "bracket": "2–5%",
+       "lo": 0.02,
+       "hi": 0.05,
+       "n": 3,
+       "mean_p": 0.0365,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.3333
+       ],
+       "wave": 0.025
+      },
+      {
+       "bracket": "5–10%",
+       "lo": 0.05,
+       "hi": 0.1,
+       "n": 4,
+       "mean_p": 0.0877,
+       "wins": 1,
+       "freq": 0.25,
+       "band": [
+        0.0,
+        0.75
+       ],
+       "wave": 0.1663
+      },
+      {
+       "bracket": "10–20%",
+       "lo": 0.1,
+       "hi": 0.2,
+       "n": 7,
+       "mean_p": 0.1478,
+       "wins": 6,
+       "freq": 0.8571,
+       "band": [
+        0.0,
+        0.8571
+       ],
+       "wave": 0.3771
+      },
+      {
+       "bracket": "20–35%",
+       "lo": 0.2,
+       "hi": 0.35,
+       "n": 13,
+       "mean_p": 0.2652,
+       "wins": 4,
+       "freq": 0.3077,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.7196
+      },
+      {
+       "bracket": "35–65%",
+       "lo": 0.35,
+       "hi": 0.65,
+       "n": 9,
+       "mean_p": 0.4732,
+       "wins": 9,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9444
+      },
+      {
+       "bracket": "65–80%",
+       "lo": 0.65,
+       "hi": 0.8,
+       "n": 9,
+       "mean_p": 0.7124,
+       "wins": 9,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9986
+      },
+      {
+       "bracket": "80–90%",
+       "lo": 0.8,
+       "hi": 0.9,
+       "n": 13,
+       "mean_p": 0.8558,
+       "wins": 13,
+       "freq": 1.0,
+       "band": [
+        0.1538,
+        1.0
+       ],
+       "wave": 0.9998
+      },
+      {
+       "bracket": "90–95%",
+       "lo": 0.9,
+       "hi": 0.95,
+       "n": 9,
+       "mean_p": 0.9335,
+       "wins": 9,
+       "freq": 1.0,
+       "band": [
+        0.5556,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "lo": 0.95,
+       "hi": 0.98,
+       "n": 4,
+       "mean_p": 0.9647,
+       "wins": 4,
+       "freq": 1.0,
+       "band": [
+        0.75,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "lo": 0.98,
+       "hi": 1,
+       "n": 22,
+       "mean_p": 0.9947,
+       "wins": 22,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      }
+     ]
     },
-    "poll_set": {
+    "market": {
+     "n": 458,
+     "brier": 0.035,
+     "us": 0.04,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 58,
+       "mean_p": 0.0151,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 64,
+       "mean_p": 0.0311,
+       "wins": 1,
+       "freq": 0.0156
+      },
+      {
+       "bracket": "5–10%",
+       "n": 29,
+       "mean_p": 0.0678,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 24,
+       "mean_p": 0.1378,
+       "wins": 4,
+       "freq": 0.1667
+      },
+      {
+       "bracket": "20–35%",
+       "n": 14,
+       "mean_p": 0.2763,
+       "wins": 6,
+       "freq": 0.4286
+      },
+      {
+       "bracket": "35–65%",
+       "n": 27,
+       "mean_p": 0.4569,
+       "wins": 20,
+       "freq": 0.7407
+      },
+      {
+       "bracket": "65–80%",
+       "n": 11,
+       "mean_p": 0.7401,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8551,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 19,
+       "mean_p": 0.9299,
+       "wins": 19,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 46,
+       "mean_p": 0.9723,
+       "wins": 46,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 151,
+       "mean_p": 0.9871,
+       "wins": 151,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0991,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0162,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0392,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 4,
+       "mean_p": 0.0692,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 4,
+       "mean_p": 0.16,
+       "wins": 2,
+       "freq": 0.5
+      },
+      {
+       "bracket": "20–35%",
+       "n": 10,
+       "mean_p": 0.2949,
+       "wins": 4,
+       "freq": 0.4
+      },
+      {
+       "bracket": "35–65%",
+       "n": 22,
+       "mean_p": 0.4595,
+       "wins": 16,
+       "freq": 0.7273
+      },
+      {
+       "bracket": "65–80%",
+       "n": 11,
+       "mean_p": 0.7401,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 13,
+       "mean_p": 0.8546,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 13,
+       "mean_p": 0.9278,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 8,
+       "mean_p": 0.9686,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 10,
+       "mean_p": 0.9885,
+       "wins": 10,
+       "freq": 1.0
+      }
+     ]
+    },
+    "polls": {
      "n": 104,
+     "brier": 0.1195,
      "us": 0.1122,
-     "polls": 0.1195
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.0084,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 4,
+       "mean_p": 0.0276,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 11,
+       "mean_p": 0.3226,
+       "wins": 3,
+       "freq": 0.2727
+      },
+      {
+       "bracket": "35–65%",
+       "n": 35,
+       "mean_p": 0.523,
+       "wins": 26,
+       "freq": 0.7429
+      },
+      {
+       "bracket": "65–80%",
+       "n": 14,
+       "mean_p": 0.7049,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 11,
+       "mean_p": 0.8496,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 7,
+       "mean_p": 0.9198,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9699,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 9,
+       "mean_p": 0.9936,
+       "wins": 9,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1201,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.0084,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 4,
+       "mean_p": 0.0276,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 10,
+       "mean_p": 0.3293,
+       "wins": 3,
+       "freq": 0.3
+      },
+      {
+       "bracket": "35–65%",
+       "n": 35,
+       "mean_p": 0.523,
+       "wins": 26,
+       "freq": 0.7429
+      },
+      {
+       "bracket": "65–80%",
+       "n": 14,
+       "mean_p": 0.7049,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 11,
+       "mean_p": 0.8496,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 7,
+       "mean_p": 0.9198,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9699,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 9,
+       "mean_p": 0.9936,
+       "wins": 9,
+       "freq": 1.0
+      }
+     ]
+    },
+    "fundamentals": {
+     "n": 468,
+     "brier": 0.0536,
+     "us": 0.0392,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 113,
+       "mean_p": 0.0034,
+       "wins": 1,
+       "freq": 0.0088
+      },
+      {
+       "bracket": "2–5%",
+       "n": 21,
+       "mean_p": 0.0312,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 28,
+       "mean_p": 0.0723,
+       "wins": 7,
+       "freq": 0.25
+      },
+      {
+       "bracket": "10–20%",
+       "n": 22,
+       "mean_p": 0.1418,
+       "wins": 3,
+       "freq": 0.1364
+      },
+      {
+       "bracket": "20–35%",
+       "n": 22,
+       "mean_p": 0.2609,
+       "wins": 11,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 29,
+       "mean_p": 0.491,
+       "wins": 26,
+       "freq": 0.8966
+      },
+      {
+       "bracket": "65–80%",
+       "n": 11,
+       "mean_p": 0.7294,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 12,
+       "mean_p": 0.8494,
+       "wins": 12,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 6,
+       "mean_p": 0.9339,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 9,
+       "mean_p": 0.9628,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 195,
+       "mean_p": 0.9987,
+       "wins": 195,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.172,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 6,
+       "mean_p": 0.0019,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0355,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 8,
+       "mean_p": 0.0683,
+       "wins": 3,
+       "freq": 0.375
+      },
+      {
+       "bracket": "10–20%",
+       "n": 8,
+       "mean_p": 0.138,
+       "wins": 2,
+       "freq": 0.25
+      },
+      {
+       "bracket": "20–35%",
+       "n": 15,
+       "mean_p": 0.2659,
+       "wins": 10,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "35–65%",
+       "n": 26,
+       "mean_p": 0.4864,
+       "wins": 23,
+       "freq": 0.8846
+      },
+      {
+       "bracket": "65–80%",
+       "n": 10,
+       "mean_p": 0.7259,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 10,
+       "mean_p": 0.8428,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 5,
+       "mean_p": 0.9326,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9631,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 12,
+       "mean_p": 0.9959,
+       "wins": 12,
+       "freq": 1.0
+      }
+     ]
+    },
+    "ddhq": {
+     "n": 433,
+     "brier": 0.0497,
+     "us": 0.0377,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 79,
+       "mean_p": 0.0097,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 36,
+       "mean_p": 0.0297,
+       "wins": 1,
+       "freq": 0.0278
+      },
+      {
+       "bracket": "5–10%",
+       "n": 25,
+       "mean_p": 0.0628,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 30,
+       "mean_p": 0.134,
+       "wins": 11,
+       "freq": 0.3667
+      },
+      {
+       "bracket": "20–35%",
+       "n": 25,
+       "mean_p": 0.2544,
+       "wins": 11,
+       "freq": 0.44
+      },
+      {
+       "bracket": "35–65%",
+       "n": 15,
+       "mean_p": 0.4613,
+       "wins": 13,
+       "freq": 0.8667
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7269,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 8,
+       "mean_p": 0.8375,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 15,
+       "mean_p": 0.9147,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 21,
+       "mean_p": 0.9671,
+       "wins": 21,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 166,
+       "mean_p": 0.9918,
+       "wins": 166,
+       "freq": 1.0
+      }
+     ],
+     "shared": null,
+     "shared_brackets": null
+    },
+    "mix": {
+     "n": 468,
+     "brier": 0.0342,
+     "us": 0.0392,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 56,
+       "mean_p": 0.0149,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 67,
+       "mean_p": 0.0308,
+       "wins": 1,
+       "freq": 0.0149
+      },
+      {
+       "bracket": "5–10%",
+       "n": 28,
+       "mean_p": 0.0686,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 24,
+       "mean_p": 0.1363,
+       "wins": 3,
+       "freq": 0.125
+      },
+      {
+       "bracket": "20–35%",
+       "n": 14,
+       "mean_p": 0.2727,
+       "wins": 7,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 27,
+       "mean_p": 0.4522,
+       "wins": 18,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "65–80%",
+       "n": 16,
+       "mean_p": 0.7325,
+       "wins": 16,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 17,
+       "mean_p": 0.8577,
+       "wins": 17,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 14,
+       "mean_p": 0.9293,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 44,
+       "mean_p": 0.9718,
+       "wins": 44,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 161,
+       "mean_p": 0.9877,
+       "wins": 161,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.098,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0117,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 6,
+       "mean_p": 0.0315,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0765,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 4,
+       "mean_p": 0.151,
+       "wins": 1,
+       "freq": 0.25
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.2936,
+       "wins": 5,
+       "freq": 0.5556
+      },
+      {
+       "bracket": "35–65%",
+       "n": 22,
+       "mean_p": 0.4536,
+       "wins": 14,
+       "freq": 0.6364
+      },
+      {
+       "bracket": "65–80%",
+       "n": 16,
+       "mean_p": 0.7325,
+       "wins": 16,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8576,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 8,
+       "mean_p": 0.9255,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9635,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 12,
+       "mean_p": 0.9883,
+       "wins": 12,
+       "freq": 1.0
+      }
+     ]
+    },
+    "hindsight": {
+     "n": 468,
+     "brier": 0.0259,
+     "us": 0.0392,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 123,
+       "mean_p": 0.0053,
+       "wins": 1,
+       "freq": 0.0081
+      },
+      {
+       "bracket": "2–5%",
+       "n": 26,
+       "mean_p": 0.0318,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 10,
+       "mean_p": 0.079,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 14,
+       "mean_p": 0.1322,
+       "wins": 3,
+       "freq": 0.2143
+      },
+      {
+       "bracket": "20–35%",
+       "n": 8,
+       "mean_p": 0.2668,
+       "wins": 2,
+       "freq": 0.25
+      },
+      {
+       "bracket": "35–65%",
+       "n": 19,
+       "mean_p": 0.5413,
+       "wins": 11,
+       "freq": 0.5789
+      },
+      {
+       "bracket": "65–80%",
+       "n": 8,
+       "mean_p": 0.7209,
+       "wins": 4,
+       "freq": 0.5
+      },
+      {
+       "bracket": "80–90%",
+       "n": 7,
+       "mean_p": 0.8478,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.9152,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 11,
+       "mean_p": 0.9672,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 239,
+       "mean_p": 0.9992,
+       "wins": 239,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0692,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 8,
+       "mean_p": 0.006,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.028,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0619,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1483,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 3,
+       "mean_p": 0.2744,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "35–65%",
+       "n": 15,
+       "mean_p": 0.5547,
+       "wins": 8,
+       "freq": 0.5333
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7131,
+       "wins": 3,
+       "freq": 0.5
+      },
+      {
+       "bracket": "80–90%",
+       "n": 7,
+       "mean_p": 0.8478,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9211,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 11,
+       "mean_p": 0.9672,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 44,
+       "mean_p": 0.9966,
+       "wins": 44,
+       "freq": 1.0
+      }
+     ]
+    }
+   },
+   "n_shared": 103,
+   "mix": {
+    "weights": {
+     "market": 0.78,
+     "polls": 0.22,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "hindsight": {
+     "weights": {
+      "market": 1.0,
+      "polls": 0.0,
+      "fundamentals": 0.0,
+      "ddhq": 0.0
+     },
+     "shift": 1.47,
+     "slope": 1.84,
+     "tossup": 0.813
+    },
+    "market": 0.0344,
+    "states": {
+     "mix": 0.0348,
+     "hindsight": 0.0291,
+     "lookup": 0.0577
+    },
+    "senate_2024": {
+     "n": 33,
+     "market": 0.0341,
+     "hindsight": 0.0472
     }
    }
   },
@@ -1479,8 +2653,8 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 7,
-     "miss": 5.5,
+     "n": 8,
+     "miss": 5.1,
      "se": 1.4
     },
     {
@@ -1505,6 +2679,13 @@
      "se": 0.6
     },
     {
+     "division": "Pacific",
+     "region": "West",
+     "n": 1,
+     "miss": 2.3,
+     "se": null
+    },
+    {
      "division": "West North Central",
      "region": "Midwest",
      "n": 8,
@@ -1519,8 +2700,8 @@
      "se": null
     }
    ],
-   "mean_miss": 4.7,
-   "n_miss": 69,
+   "mean_miss": 4.6,
+   "n_miss": 71,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -1688,20 +2869,20 @@
      "p": 0.128,
      "won": 1,
      "status": "counting",
-     "margin": 0.65,
-     "lead_votes": 2376,
-     "reporting": 93,
+     "margin": 0.8,
+     "lead_votes": 3024,
+     "reporting": 97,
      "top": [
       {
        "name": "Eileen Laubacher",
        "party": "D",
-       "pct": 48.7,
+       "pct": 48.8,
        "incumbent": false
       },
       {
        "name": "Lauren Boebert",
        "party": "R",
-       "pct": 48.1,
+       "pct": 47.9,
        "incumbent": true
       }
      ]
@@ -1780,36 +2961,1253 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.36,
-     "lead_votes": 16317,
-     "reporting": 94,
+     "margin": 5.78,
+     "lead_votes": 17991,
+     "reporting": 96,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.0,
+       "pct": 50.2,
        "incumbent": false
       },
       {
        "name": "David Flippo",
        "party": "R",
-       "pct": 44.6,
+       "pct": 44.4,
        "incumbent": false
       }
      ]
     }
    ],
-   "sources": {
-    "market_set": {
-     "n": 423,
-     "us": 0.0386,
-     "markets": 0.0331,
-     "fundamentals": 0.0508
+   "series": {
+    "us": {
+     "n": 433,
+     "brier": 0.0377,
+     "us": 0.0377,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 131,
+       "mean_p": 0.0048,
+       "wins": 1,
+       "freq": 0.0076
+      },
+      {
+       "bracket": "2–5%",
+       "n": 19,
+       "mean_p": 0.0343,
+       "wins": 1,
+       "freq": 0.0526
+      },
+      {
+       "bracket": "5–10%",
+       "n": 16,
+       "mean_p": 0.0663,
+       "wins": 4,
+       "freq": 0.25
+      },
+      {
+       "bracket": "10–20%",
+       "n": 11,
+       "mean_p": 0.1544,
+       "wins": 6,
+       "freq": 0.5455
+      },
+      {
+       "bracket": "20–35%",
+       "n": 14,
+       "mean_p": 0.2724,
+       "wins": 5,
+       "freq": 0.3571
+      },
+      {
+       "bracket": "35–65%",
+       "n": 9,
+       "mean_p": 0.4742,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 5,
+       "mean_p": 0.6942,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 12,
+       "mean_p": 0.8577,
+       "wins": 12,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 9,
+       "mean_p": 0.9346,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 9,
+       "mean_p": 0.9697,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 198,
+       "mean_p": 0.997,
+       "wins": 198,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1264,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "lo": 0,
+       "hi": 0.02,
+       "n": 6,
+       "mean_p": 0.0047,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0017
+      },
+      {
+       "bracket": "2–5%",
+       "lo": 0.02,
+       "hi": 0.05,
+       "n": 1,
+       "mean_p": 0.0428,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.045
+      },
+      {
+       "bracket": "5–10%",
+       "lo": 0.05,
+       "hi": 0.1,
+       "n": 3,
+       "mean_p": 0.0852,
+       "wins": 1,
+       "freq": 0.3333,
+       "band": [
+        0.0,
+        0.6667
+       ],
+       "wave": 0.1667
+      },
+      {
+       "bracket": "10–20%",
+       "lo": 0.1,
+       "hi": 0.2,
+       "n": 6,
+       "mean_p": 0.1545,
+       "wins": 5,
+       "freq": 0.8333,
+       "band": [
+        0.0,
+        0.8333
+       ],
+       "wave": 0.3808
+      },
+      {
+       "bracket": "20–35%",
+       "lo": 0.2,
+       "hi": 0.35,
+       "n": 11,
+       "mean_p": 0.2686,
+       "wins": 3,
+       "freq": 0.2727,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.7191
+      },
+      {
+       "bracket": "35–65%",
+       "lo": 0.35,
+       "hi": 0.65,
+       "n": 8,
+       "mean_p": 0.4729,
+       "wins": 8,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9331
+      },
+      {
+       "bracket": "65–80%",
+       "lo": 0.65,
+       "hi": 0.8,
+       "n": 5,
+       "mean_p": 0.6942,
+       "wins": 5,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.997
+      },
+      {
+       "bracket": "80–90%",
+       "lo": 0.8,
+       "hi": 0.9,
+       "n": 11,
+       "mean_p": 0.8554,
+       "wins": 11,
+       "freq": 1.0,
+       "band": [
+        0.1818,
+        1.0
+       ],
+       "wave": 0.9998
+      },
+      {
+       "bracket": "90–95%",
+       "lo": 0.9,
+       "hi": 0.95,
+       "n": 8,
+       "mean_p": 0.9352,
+       "wins": 8,
+       "freq": 1.0,
+       "band": [
+        0.5,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "lo": 0.95,
+       "hi": 0.98,
+       "n": 3,
+       "mean_p": 0.9639,
+       "wins": 3,
+       "freq": 1.0,
+       "band": [
+        0.6667,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "lo": 0.98,
+       "hi": 1,
+       "n": 14,
+       "mean_p": 0.9949,
+       "wins": 14,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      }
+     ]
     },
-    "poll_set": {
+    "market": {
+     "n": 423,
+     "brier": 0.0331,
+     "us": 0.0386,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 53,
+       "mean_p": 0.015,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 61,
+       "mean_p": 0.0306,
+       "wins": 1,
+       "freq": 0.0164
+      },
+      {
+       "bracket": "5–10%",
+       "n": 26,
+       "mean_p": 0.0673,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 22,
+       "mean_p": 0.1367,
+       "wins": 3,
+       "freq": 0.1364
+      },
+      {
+       "bracket": "20–35%",
+       "n": 12,
+       "mean_p": 0.2703,
+       "wins": 5,
+       "freq": 0.4167
+      },
+      {
+       "bracket": "35–65%",
+       "n": 25,
+       "mean_p": 0.4482,
+       "wins": 18,
+       "freq": 0.72
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7447,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8551,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 17,
+       "mean_p": 0.9297,
+       "wins": 17,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 44,
+       "mean_p": 0.9724,
+       "wins": 44,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 142,
+       "mean_p": 0.9869,
+       "wins": 142,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1074,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.0152,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0302,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.0642,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.17,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "20–35%",
+       "n": 8,
+       "mean_p": 0.2904,
+       "wins": 3,
+       "freq": 0.375
+      },
+      {
+       "bracket": "35–65%",
+       "n": 20,
+       "mean_p": 0.4488,
+       "wins": 14,
+       "freq": 0.7
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7447,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 13,
+       "mean_p": 0.8546,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 11,
+       "mean_p": 0.9271,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9679,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 4,
+       "mean_p": 0.9846,
+       "wins": 4,
+       "freq": 1.0
+      }
+     ]
+    },
+    "polls": {
      "n": 77,
+     "brier": 0.1383,
      "us": 0.1251,
-     "polls": 0.1383
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 1,
+       "mean_p": 0.0025,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.035,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.3185,
+       "wins": 2,
+       "freq": 0.2222
+      },
+      {
+       "bracket": "35–65%",
+       "n": 31,
+       "mean_p": 0.5318,
+       "wins": 23,
+       "freq": 0.7419
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7063,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 7,
+       "mean_p": 0.8613,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 4,
+       "mean_p": 0.9122,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 4,
+       "mean_p": 0.9717,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 4,
+       "mean_p": 0.9959,
+       "wins": 4,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1392,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 1,
+       "mean_p": 0.0025,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.035,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 8,
+       "mean_p": 0.3265,
+       "wins": 2,
+       "freq": 0.25
+      },
+      {
+       "bracket": "35–65%",
+       "n": 31,
+       "mean_p": 0.5318,
+       "wins": 23,
+       "freq": 0.7419
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7063,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 7,
+       "mean_p": 0.8613,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 4,
+       "mean_p": 0.9122,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 4,
+       "mean_p": 0.9717,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 4,
+       "mean_p": 0.9959,
+       "wins": 4,
+       "freq": 1.0
+      }
+     ]
+    },
+    "fundamentals": {
+     "n": 433,
+     "brier": 0.0485,
+     "us": 0.0377,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 111,
+       "mean_p": 0.0032,
+       "wins": 1,
+       "freq": 0.009
+      },
+      {
+       "bracket": "2–5%",
+       "n": 20,
+       "mean_p": 0.031,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 24,
+       "mean_p": 0.0713,
+       "wins": 7,
+       "freq": 0.2917
+      },
+      {
+       "bracket": "10–20%",
+       "n": 19,
+       "mean_p": 0.1446,
+       "wins": 2,
+       "freq": 0.1053
+      },
+      {
+       "bracket": "20–35%",
+       "n": 17,
+       "mean_p": 0.2647,
+       "wins": 9,
+       "freq": 0.5294
+      },
+      {
+       "bracket": "35–65%",
+       "n": 24,
+       "mean_p": 0.513,
+       "wins": 22,
+       "freq": 0.9167
+      },
+      {
+       "bracket": "65–80%",
+       "n": 7,
+       "mean_p": 0.7351,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 6,
+       "mean_p": 0.8444,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 4,
+       "mean_p": 0.9319,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 7,
+       "mean_p": 0.9656,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 194,
+       "mean_p": 0.9987,
+       "wins": 194,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.181,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 6,
+       "mean_p": 0.0019,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 5,
+       "mean_p": 0.0608,
+       "wins": 3,
+       "freq": 0.6
+      },
+      {
+       "bracket": "10–20%",
+       "n": 6,
+       "mean_p": 0.1394,
+       "wins": 1,
+       "freq": 0.1667
+      },
+      {
+       "bracket": "20–35%",
+       "n": 11,
+       "mean_p": 0.2708,
+       "wins": 8,
+       "freq": 0.7273
+      },
+      {
+       "bracket": "35–65%",
+       "n": 21,
+       "mean_p": 0.5105,
+       "wins": 19,
+       "freq": 0.9048
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7302,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8352,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.929,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9631,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 11,
+       "mean_p": 0.9964,
+       "wins": 11,
+       "freq": 1.0
+      }
+     ]
+    },
+    "ddhq": {
+     "n": 433,
+     "brier": 0.0497,
+     "us": 0.0377,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 79,
+       "mean_p": 0.0097,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 36,
+       "mean_p": 0.0297,
+       "wins": 1,
+       "freq": 0.0278
+      },
+      {
+       "bracket": "5–10%",
+       "n": 25,
+       "mean_p": 0.0628,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 30,
+       "mean_p": 0.134,
+       "wins": 11,
+       "freq": 0.3667
+      },
+      {
+       "bracket": "20–35%",
+       "n": 25,
+       "mean_p": 0.2544,
+       "wins": 11,
+       "freq": 0.44
+      },
+      {
+       "bracket": "35–65%",
+       "n": 15,
+       "mean_p": 0.4613,
+       "wins": 13,
+       "freq": 0.8667
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7269,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 8,
+       "mean_p": 0.8375,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 15,
+       "mean_p": 0.9147,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 21,
+       "mean_p": 0.9671,
+       "wins": 21,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 166,
+       "mean_p": 0.9918,
+       "wins": 166,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1864,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.01,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0233,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.08,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 8,
+       "mean_p": 0.1437,
+       "wins": 5,
+       "freq": 0.625
+      },
+      {
+       "bracket": "20–35%",
+       "n": 17,
+       "mean_p": 0.2635,
+       "wins": 11,
+       "freq": 0.6471
+      },
+      {
+       "bracket": "35–65%",
+       "n": 13,
+       "mean_p": 0.4769,
+       "wins": 11,
+       "freq": 0.8462
+      },
+      {
+       "bracket": "65–80%",
+       "n": 12,
+       "mean_p": 0.7283,
+       "wins": 12,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8275,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 6,
+       "mean_p": 0.9117,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.965,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 7,
+       "mean_p": 0.9913,
+       "wins": 7,
+       "freq": 1.0
+      }
+     ]
+    },
+    "mix": {
+     "n": 433,
+     "brier": 0.0324,
+     "us": 0.0377,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 53,
+       "mean_p": 0.0149,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 62,
+       "mean_p": 0.0306,
+       "wins": 1,
+       "freq": 0.0161
+      },
+      {
+       "bracket": "5–10%",
+       "n": 26,
+       "mean_p": 0.0682,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 21,
+       "mean_p": 0.1346,
+       "wins": 2,
+       "freq": 0.0952
+      },
+      {
+       "bracket": "20–35%",
+       "n": 14,
+       "mean_p": 0.271,
+       "wins": 7,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 25,
+       "mean_p": 0.4558,
+       "wins": 17,
+       "freq": 0.68
+      },
+      {
+       "bracket": "65–80%",
+       "n": 8,
+       "mean_p": 0.7472,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8587,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 15,
+       "mean_p": 0.9287,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 43,
+       "mean_p": 0.972,
+       "wins": 43,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 151,
+       "mean_p": 0.9876,
+       "wins": 151,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1072,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0142,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 2,
+       "mean_p": 0.0284,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.077,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1596,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.291,
+       "wins": 5,
+       "freq": 0.5556
+      },
+      {
+       "bracket": "35–65%",
+       "n": 20,
+       "mean_p": 0.4583,
+       "wins": 13,
+       "freq": 0.65
+      },
+      {
+       "bracket": "65–80%",
+       "n": 8,
+       "mean_p": 0.7472,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 13,
+       "mean_p": 0.8588,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 9,
+       "mean_p": 0.9249,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 5,
+       "mean_p": 0.9635,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.986,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ]
+    },
+    "hindsight": {
+     "n": 433,
+     "brier": 0.0252,
+     "us": 0.0377,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 116,
+       "mean_p": 0.0046,
+       "wins": 1,
+       "freq": 0.0086
+      },
+      {
+       "bracket": "2–5%",
+       "n": 25,
+       "mean_p": 0.0304,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 10,
+       "mean_p": 0.0862,
+       "wins": 1,
+       "freq": 0.1
+      },
+      {
+       "bracket": "10–20%",
+       "n": 9,
+       "mean_p": 0.1254,
+       "wins": 1,
+       "freq": 0.1111
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.2604,
+       "wins": 3,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "35–65%",
+       "n": 16,
+       "mean_p": 0.5418,
+       "wins": 9,
+       "freq": 0.5625
+      },
+      {
+       "bracket": "65–80%",
+       "n": 9,
+       "mean_p": 0.7192,
+       "wins": 5,
+       "freq": 0.5556
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8574,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9109,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9682,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 226,
+       "mean_p": 0.9991,
+       "wins": 226,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0774,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 4,
+       "mean_p": 0.0029,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 2,
+       "mean_p": 0.0274,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1308,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 3,
+       "mean_p": 0.2582,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "35–65%",
+       "n": 13,
+       "mean_p": 0.5465,
+       "wins": 7,
+       "freq": 0.5385
+      },
+      {
+       "bracket": "65–80%",
+       "n": 7,
+       "mean_p": 0.715,
+       "wins": 4,
+       "freq": 0.5714
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8574,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 1,
+       "mean_p": 0.9214,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9682,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 34,
+       "mean_p": 0.9957,
+       "wins": 34,
+       "freq": 1.0
+      }
+     ]
+    }
+   },
+   "n_shared": 76,
+   "mix": {
+    "weights": {
+     "market": 0.9,
+     "polls": 0.1,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "hindsight": {
+     "weights": {
+      "market": 1.0,
+      "polls": 0.0,
+      "fundamentals": 0.0,
+      "ddhq": 0.0
+     },
+     "shift": 1.43,
+     "slope": 1.87,
+     "tossup": 0.806
+    },
+    "market": 0.0325,
+    "states": {
+     "mix": 0.0333,
+     "hindsight": 0.0283,
+     "lookup": 0.0531
+    },
+    "senate_2024": {
+     "n": 33,
+     "market": 0.0341,
+     "hindsight": 0.0459
     }
    }
   },
@@ -2327,8 +4725,8 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.18,
-     "lead_votes": 1724,
+     "margin": 0.19,
+     "lead_votes": 1813,
      "reporting": 96,
      "top": [
       {
@@ -2511,8 +4909,8 @@
      "p": 0.835,
      "won": 1,
      "status": "called",
-     "margin": 6.42,
-     "lead_votes": 45211,
+     "margin": 6.39,
+     "lead_votes": 45054,
      "reporting": 93,
      "top": [
       {
@@ -2534,8 +4932,8 @@
      "p": 0.881,
      "won": 1,
      "status": "called",
-     "margin": 7.01,
-     "lead_votes": 334802,
+     "margin": 7.0,
+     "lead_votes": 334311,
      "reporting": 98,
      "top": [
       {
@@ -2557,8 +4955,8 @@
      "p": 0.096,
      "won": 0,
      "status": "called",
-     "margin": -2.89,
-     "lead_votes": 238709,
+     "margin": -2.88,
+     "lead_votes": 238504,
      "reporting": 99,
      "top": [
       {
@@ -2599,29 +4997,998 @@
      ]
     }
    ],
-   "sources": {
-    "market_set": {
+   "series": {
+    "us": {
      "n": 35,
+     "brier": 0.0581,
      "us": 0.0581,
-     "markets": 0.0587,
-     "fundamentals": 0.1157
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 8,
+       "mean_p": 0.0079,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0373,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0955,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1076,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.2467,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 1,
+       "mean_p": 0.4754,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7353,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 2,
+       "mean_p": 0.8579,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 1,
+       "mean_p": 0.9197,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 1,
+       "mean_p": 0.9671,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 11,
+       "mean_p": 0.9939,
+       "wins": 11,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0752,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "lo": 0,
+       "hi": 0.02,
+       "n": 4,
+       "mean_p": 0.009,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "lo": 0.02,
+       "hi": 0.05,
+       "n": 2,
+       "mean_p": 0.0333,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0112
+      },
+      {
+       "bracket": "5–10%",
+       "lo": 0.05,
+       "hi": 0.1,
+       "n": 1,
+       "mean_p": 0.0955,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.11
+      },
+      {
+       "bracket": "10–20%",
+       "lo": 0.1,
+       "hi": 0.2,
+       "n": 1,
+       "mean_p": 0.1076,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.1975
+      },
+      {
+       "bracket": "20–35%",
+       "lo": 0.2,
+       "hi": 0.35,
+       "n": 2,
+       "mean_p": 0.2467,
+       "wins": 1,
+       "freq": 0.5,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.8287
+      },
+      {
+       "bracket": "35–65%",
+       "lo": 0.35,
+       "hi": 0.65,
+       "n": 1,
+       "mean_p": 0.4754,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9725
+      },
+      {
+       "bracket": "65–80%",
+       "lo": 0.65,
+       "hi": 0.8,
+       "n": 4,
+       "mean_p": 0.7353,
+       "wins": 4,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9994
+      },
+      {
+       "bracket": "80–90%",
+       "lo": 0.8,
+       "hi": 0.9,
+       "n": 2,
+       "mean_p": 0.8579,
+       "wins": 2,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "lo": 0.9,
+       "hi": 0.95,
+       "n": 1,
+       "mean_p": 0.9197,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "lo": 0.95,
+       "hi": 0.98,
+       "n": 1,
+       "mean_p": 0.9671,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "lo": 0.98,
+       "hi": 1,
+       "n": 8,
+       "mean_p": 0.9943,
+       "wins": 8,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      }
+     ]
     },
-    "poll_set": {
+    "market": {
+     "n": 35,
+     "brier": 0.0587,
+     "us": 0.0581,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0162,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.041,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0728,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.15,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3126,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 2,
+       "mean_p": 0.5662,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 5,
+       "mean_p": 0.7345,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9317,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9705,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 9,
+       "mean_p": 0.9893,
+       "wins": 9,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0758,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0175,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 2,
+       "mean_p": 0.0437,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.0742,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.15,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3126,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 2,
+       "mean_p": 0.5662,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 5,
+       "mean_p": 0.7345,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9317,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9705,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 6,
+       "mean_p": 0.991,
+       "wins": 6,
+       "freq": 1.0
+      }
+     ]
+    },
+    "polls": {
      "n": 27,
+     "brier": 0.0661,
      "us": 0.0752,
-     "polls": 0.0661
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0113,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0252,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3408,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.4549,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "65–80%",
+       "n": 1,
+       "mean_p": 0.687,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8293,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.93,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9664,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9918,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0661,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0113,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0252,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3408,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.4549,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "65–80%",
+       "n": 1,
+       "mean_p": 0.687,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8293,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.93,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9664,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9918,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ]
+    },
+    "fundamentals": {
+     "n": 35,
+     "brier": 0.1157,
+     "us": 0.0581,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0149,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0355,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 4,
+       "mean_p": 0.0778,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1239,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 5,
+       "mean_p": 0.248,
+       "wins": 2,
+       "freq": 0.4
+      },
+      {
+       "bracket": "35–65%",
+       "n": 5,
+       "mean_p": 0.3852,
+       "wins": 4,
+       "freq": 0.8
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7195,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 6,
+       "mean_p": 0.8544,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9379,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9529,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 1,
+       "mean_p": 0.9901,
+       "wins": 1,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1467,
+     "shared_brackets": [
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0355,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0809,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.1339,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "20–35%",
+       "n": 4,
+       "mean_p": 0.2526,
+       "wins": 2,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 5,
+       "mean_p": 0.3852,
+       "wins": 4,
+       "freq": 0.8
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7195,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8505,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9379,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 1,
+       "mean_p": 0.9901,
+       "wins": 1,
+       "freq": 1.0
+      }
+     ]
+    },
+    "mix": {
+     "n": 35,
+     "brier": 0.0503,
+     "us": 0.0581,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0148,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 4,
+       "mean_p": 0.0303,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.0846,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.2691,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.4563,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "65–80%",
+       "n": 3,
+       "mean_p": 0.7741,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 2,
+       "mean_p": 0.8316,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.9333,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9719,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 8,
+       "mean_p": 0.9893,
+       "wins": 8,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0649,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0139,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0286,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0994,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.2691,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.4563,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "65–80%",
+       "n": 3,
+       "mean_p": 0.7741,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 2,
+       "mean_p": 0.8316,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.9333,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9719,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9913,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ]
+    },
+    "hindsight": {
+     "n": 35,
+     "brier": 0.0246,
+     "us": 0.0581,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 9,
+       "mean_p": 0.001,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0414,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.1396,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "35–65%",
+       "n": 1,
+       "mean_p": 0.4973,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 2,
+       "mean_p": 0.7128,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "95–98%",
+       "n": 1,
+       "mean_p": 0.9558,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 19,
+       "mean_p": 0.9991,
+       "wins": 19,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0312,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0003,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0414,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1366,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "35–65%",
+       "n": 1,
+       "mean_p": 0.4973,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 2,
+       "mean_p": 0.7128,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "95–98%",
+       "n": 1,
+       "mean_p": 0.9558,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 16,
+       "mean_p": 0.9989,
+       "wins": 16,
+       "freq": 1.0
+      }
+     ]
+    }
+   },
+   "n_shared": 27,
+   "mix": {
+    "weights": {
+     "market": 0.2,
+     "polls": 0.8,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "hindsight": {
+     "weights": {
+      "market": 0.06,
+      "polls": 0.68,
+      "fundamentals": 0.26,
+      "ddhq": 0.0
+     },
+     "shift": 3.61,
+     "slope": 3.68,
+     "tossup": 0.974
+    },
+    "market": 0.0587,
+    "states": {
+     "mix": 0.0548,
+     "hindsight": 0.0696,
+     "lookup": 0.1143
+    },
+    "senate_2024": {
+     "n": 33,
+     "market": 0.0341,
+     "hindsight": 0.0585
     }
    }
   },
   "all|called": {
-   "n": 436,
-   "actual": 269,
-   "expected": 250.7,
-   "share_sims_below": 0.8723,
-   "brier": 0.0297,
-   "n_non_safe": 69,
-   "brier_non_safe": 0.1739,
-   "favourite_won": 0.9564,
+   "n": 444,
+   "actual": 273,
+   "expected": 255.0,
+   "share_sims_below": 0.8636,
+   "brier": 0.0294,
+   "n_non_safe": 70,
+   "brier_non_safe": 0.1729,
+   "favourite_won": 0.9572,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -2648,15 +6015,15 @@
      "bracket": "0–2%",
      "lo": 0,
      "hi": 0.02,
-     "n": 134,
-     "mean_p": 0.0049,
+     "n": 137,
+     "mean_p": 0.005,
      "wins": 0,
      "freq": 0.0,
      "band": [
       0.0,
-      0.0224
+      0.0219
      ],
-     "wave": 0.0046
+     "wave": 0.0044
     },
     {
      "bracket": "2–5%",
@@ -2670,7 +6037,7 @@
       0.0,
       0.2222
      ],
-     "wave": 0.0594
+     "wave": 0.0554
     },
     {
      "bracket": "5–10%",
@@ -2684,7 +6051,7 @@
       0.0,
       0.4615
      ],
-     "wave": 0.1765
+     "wave": 0.1569
     },
     {
      "bracket": "10–20%",
@@ -2698,21 +6065,21 @@
       0.0,
       0.875
      ],
-     "wave": 0.5122
+     "wave": 0.4744
     },
     {
      "bracket": "20–35%",
      "lo": 0.2,
      "hi": 0.35,
-     "n": 8,
-     "mean_p": 0.2608,
+     "n": 9,
+     "mean_p": 0.268,
      "wins": 5,
-     "freq": 0.625,
+     "freq": 0.5556,
      "band": [
       0.0,
       1.0
      ],
-     "wave": 0.7806
+     "wave": 0.7672
     },
     {
      "bracket": "35–65%",
@@ -2726,7 +6093,7 @@
       0.0,
       1.0
      ],
-     "wave": 0.9666
+     "wave": 0.9603
     },
     {
      "bracket": "65–80%",
@@ -2788,12 +6155,12 @@
      "bracket": "98–100%",
      "lo": 0.98,
      "hi": 1,
-     "n": 205,
+     "n": 209,
      "mean_p": 0.9968,
-     "wins": 205,
+     "wins": 209,
      "freq": 1.0,
      "band": [
-      0.9902,
+      0.9904,
       1.0
      ],
      "wave": 1.0
@@ -2803,20 +6170,20 @@
     {
      "scope": "all",
      "party": "D",
-     "n": 250,
-     "chance": 0.9717,
+     "n": 254,
+     "chance": 0.9721,
      "won": 1.0,
-     "expected": 242.9,
-     "actual": 250
+     "expected": 246.9,
+     "actual": 254
     },
     {
      "scope": "all",
      "party": "R",
-     "n": 186,
-     "chance": 0.9582,
-     "won": 0.8978,
-     "expected": 178.2,
-     "actual": 167
+     "n": 190,
+     "chance": 0.9572,
+     "won": 0.9,
+     "expected": 181.9,
+     "actual": 171
     },
     {
      "scope": "non-safe",
@@ -2830,22 +6197,22 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 34,
-     "chance": 0.8096,
-     "won": 0.4706,
-     "expected": 27.5,
-     "actual": 16
+     "n": 35,
+     "chance": 0.8057,
+     "won": 0.4857,
+     "expected": 28.2,
+     "actual": 17
     }
    ],
    "regions": [
     {
      "region": "Northeast",
-     "n": 79,
-     "expected": 64.6,
+     "n": 80,
+     "expected": 65.0,
      "actual": 67,
-     "brier": 0.0168,
-     "n_non_safe": 9,
-     "expected_non_safe": 4.9,
+     "brier": 0.0179,
+     "n_non_safe": 10,
+     "expected_non_safe": 5.2,
      "actual_non_safe": 7,
      "upsets_d": 2,
      "upsets_r": 0,
@@ -2862,21 +6229,21 @@
         0.0,
         0.0
        ],
-       "wave": 0.0057
+       "wave": 0.005
       },
       {
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 3,
-       "mean_p": 0.1142,
+       "n": 4,
+       "mean_p": 0.1671,
        "wins": 1,
-       "freq": 0.3333,
+       "freq": 0.25,
        "band": [
         0.0,
-        0.6667
+        0.75
        ],
-       "wave": 0.34
+       "wave": 0.4462
       },
       {
        "bracket": "35–65%",
@@ -2890,7 +6257,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9825
+       "wave": 0.9762
       },
       {
        "bracket": "65–95%",
@@ -2946,7 +6313,7 @@
         0.0,
         0.027
        ],
-       "wave": 0.0082
+       "wave": 0.0075
       },
       {
        "bracket": "5–35%",
@@ -2960,7 +6327,7 @@
         0.0,
         0.625
        ],
-       "wave": 0.3503
+       "wave": 0.3266
       },
       {
        "bracket": "35–65%",
@@ -2974,7 +6341,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9437
+       "wave": 0.9337
       },
       {
        "bracket": "65–95%",
@@ -3030,7 +6397,7 @@
         0.0,
         0.0435
        ],
-       "wave": 0.0135
+       "wave": 0.0125
       },
       {
        "bracket": "5–35%",
@@ -3044,7 +6411,7 @@
         0.0,
         0.75
        ],
-       "wave": 0.4706
+       "wave": 0.4453
       },
       {
        "bracket": "35–65%",
@@ -3058,7 +6425,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9962
+       "wave": 0.9975
       },
       {
        "bracket": "65–95%",
@@ -3072,7 +6439,7 @@
         0.1,
         1.0
        ],
-       "wave": 0.9995
+       "wave": 0.9998
       },
       {
        "bracket": "95–100%",
@@ -3092,10 +6459,10 @@
     },
     {
      "region": "West",
-     "n": 95,
-     "expected": 79.5,
-     "actual": 82,
-     "brier": 0.0142,
+     "n": 102,
+     "expected": 83.6,
+     "actual": 86,
+     "brier": 0.0133,
      "n_non_safe": 8,
      "expected_non_safe": 5.8,
      "actual_non_safe": 8,
@@ -3106,15 +6473,15 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 13,
-       "mean_p": 0.0093,
+       "n": 16,
+       "mean_p": 0.009,
        "wins": 0,
        "freq": 0.0,
        "band": [
         0.0,
-        0.0769
+        0.0625
        ],
-       "wave": 0.0073
+       "wave": 0.0078
       },
       {
        "bracket": "5–35%",
@@ -3128,7 +6495,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.6425
+       "wave": 0.6088
       },
       {
        "bracket": "65–95%",
@@ -3142,18 +6509,18 @@
         0.3333,
         1.0
        ],
-       "wave": 1.0
+       "wave": 0.9996
       },
       {
        "bracket": "95–100%",
        "lo": 0.95,
        "hi": 1,
-       "n": 74,
-       "mean_p": 0.9954,
-       "wins": 74,
+       "n": 78,
+       "mean_p": 0.9956,
+       "wins": 78,
        "freq": 1.0,
        "band": [
-        0.973,
+        0.9744,
         1.0
        ],
        "wave": 1.0
@@ -3180,7 +6547,7 @@
      "division": "Mountain",
      "region": "West",
      "n": 5,
-     "miss": 6.8,
+     "miss": 7.1,
      "se": 1.4
     },
     {
@@ -3205,22 +6572,29 @@
      "se": 0.7
     },
     {
-     "division": "New England",
-     "region": "Northeast",
-     "n": 1,
-     "miss": 2.8,
-     "se": null
-    },
-    {
      "division": "West North Central",
      "region": "Midwest",
      "n": 11,
      "miss": 2.3,
      "se": 0.8
+    },
+    {
+     "division": "Pacific",
+     "region": "West",
+     "n": 1,
+     "miss": 2.3,
+     "se": null
+    },
+    {
+     "division": "New England",
+     "region": "Northeast",
+     "n": 2,
+     "miss": 1.4,
+     "se": 1.4
     }
    ],
-   "mean_miss": 4.8,
-   "n_miss": 65,
+   "mean_miss": 4.7,
+   "n_miss": 67,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -3411,20 +6785,20 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.36,
-     "lead_votes": 16317,
-     "reporting": 94,
+     "margin": 5.78,
+     "lead_votes": 17991,
+     "reporting": 96,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.0,
+       "pct": 50.2,
        "incumbent": false
       },
       {
        "name": "David Flippo",
        "party": "R",
-       "pct": 44.6,
+       "pct": 44.4,
        "incumbent": false
       }
      ]
@@ -3457,20 +6831,20 @@
      "p": 0.246,
      "won": 1,
      "status": "called",
-     "margin": 4.59,
-     "lead_votes": 12767,
-     "reporting": 94,
+     "margin": 4.72,
+     "lead_votes": 14524,
+     "reporting": 99,
      "top": [
       {
        "name": "Jessica Killin",
        "party": "D",
-       "pct": 50.6,
+       "pct": 50.5,
        "incumbent": false
       },
       {
        "name": "Jeff Crank",
        "party": "R",
-       "pct": 46.0,
+       "pct": 45.8,
        "incumbent": true
       }
      ]
@@ -3499,29 +6873,1189 @@
      ]
     }
    ],
-   "sources": {
-    "market_set": {
-     "n": 432,
-     "us": 0.03,
-     "markets": 0.0252,
-     "fundamentals": 0.046
+   "series": {
+    "us": {
+     "n": 444,
+     "brier": 0.0294,
+     "us": 0.0294,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 137,
+       "mean_p": 0.005,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 18,
+       "mean_p": 0.0356,
+       "wins": 1,
+       "freq": 0.0556
+      },
+      {
+       "bracket": "5–10%",
+       "n": 13,
+       "mean_p": 0.0719,
+       "wins": 3,
+       "freq": 0.2308
+      },
+      {
+       "bracket": "10–20%",
+       "n": 8,
+       "mean_p": 0.1579,
+       "wins": 5,
+       "freq": 0.625
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.268,
+       "wins": 5,
+       "freq": 0.5556
+      },
+      {
+       "bracket": "35–65%",
+       "n": 8,
+       "mean_p": 0.4998,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 8,
+       "mean_p": 0.7168,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 14,
+       "mean_p": 0.8577,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 10,
+       "mean_p": 0.9331,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 10,
+       "mean_p": 0.9695,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 209,
+       "mean_p": 0.9968,
+       "wins": 209,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0952,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "lo": 0,
+       "hi": 0.02,
+       "n": 10,
+       "mean_p": 0.0064,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0005
+      },
+      {
+       "bracket": "2–5%",
+       "lo": 0.02,
+       "hi": 0.05,
+       "n": 3,
+       "mean_p": 0.0365,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.3333
+       ],
+       "wave": 0.0208
+      },
+      {
+       "bracket": "5–10%",
+       "lo": 0.05,
+       "hi": 0.1,
+       "n": 4,
+       "mean_p": 0.0877,
+       "wins": 1,
+       "freq": 0.25,
+       "band": [
+        0.0,
+        0.75
+       ],
+       "wave": 0.2125
+      },
+      {
+       "bracket": "10–20%",
+       "lo": 0.1,
+       "hi": 0.2,
+       "n": 5,
+       "mean_p": 0.1598,
+       "wins": 4,
+       "freq": 0.8,
+       "band": [
+        0.0,
+        0.8
+       ],
+       "wave": 0.4765
+      },
+      {
+       "bracket": "20–35%",
+       "lo": 0.2,
+       "hi": 0.35,
+       "n": 8,
+       "mean_p": 0.2707,
+       "wins": 4,
+       "freq": 0.5,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.7859
+      },
+      {
+       "bracket": "35–65%",
+       "lo": 0.35,
+       "hi": 0.65,
+       "n": 7,
+       "mean_p": 0.502,
+       "wins": 7,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.965
+      },
+      {
+       "bracket": "65–80%",
+       "lo": 0.65,
+       "hi": 0.8,
+       "n": 8,
+       "mean_p": 0.7168,
+       "wins": 8,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9984
+      },
+      {
+       "bracket": "80–90%",
+       "lo": 0.8,
+       "hi": 0.9,
+       "n": 13,
+       "mean_p": 0.8558,
+       "wins": 13,
+       "freq": 1.0,
+       "band": [
+        0.1538,
+        1.0
+       ],
+       "wave": 0.9998
+      },
+      {
+       "bracket": "90–95%",
+       "lo": 0.9,
+       "hi": 0.95,
+       "n": 9,
+       "mean_p": 0.9335,
+       "wins": 9,
+       "freq": 1.0,
+       "band": [
+        0.5556,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "lo": 0.95,
+       "hi": 0.98,
+       "n": 4,
+       "mean_p": 0.9647,
+       "wins": 4,
+       "freq": 1.0,
+       "band": [
+        0.75,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "lo": 0.98,
+       "hi": 1,
+       "n": 22,
+       "mean_p": 0.9947,
+       "wins": 22,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      }
+     ]
     },
-    "poll_set": {
-     "n": 91,
-     "us": 0.0961,
-     "polls": 0.1034
+    "market": {
+     "n": 435,
+     "brier": 0.0254,
+     "us": 0.03,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 58,
+       "mean_p": 0.0151,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 62,
+       "mean_p": 0.0311,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 26,
+       "mean_p": 0.0678,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 18,
+       "mean_p": 0.1368,
+       "wins": 2,
+       "freq": 0.1111
+      },
+      {
+       "bracket": "20–35%",
+       "n": 12,
+       "mean_p": 0.2741,
+       "wins": 6,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 18,
+       "mean_p": 0.4849,
+       "wins": 16,
+       "freq": 0.8889
+      },
+      {
+       "bracket": "65–80%",
+       "n": 10,
+       "mean_p": 0.7427,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8551,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 19,
+       "mean_p": 0.9299,
+       "wins": 19,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 46,
+       "mean_p": 0.9723,
+       "wins": 46,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 151,
+       "mean_p": 0.9871,
+       "wins": 151,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0823,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0162,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0392,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 4,
+       "mean_p": 0.0692,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1606,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.2915,
+       "wins": 4,
+       "freq": 0.4444
+      },
+      {
+       "bracket": "35–65%",
+       "n": 15,
+       "mean_p": 0.4874,
+       "wins": 13,
+       "freq": 0.8667
+      },
+      {
+       "bracket": "65–80%",
+       "n": 10,
+       "mean_p": 0.7427,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 13,
+       "mean_p": 0.8546,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 13,
+       "mean_p": 0.9278,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 8,
+       "mean_p": 0.9686,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 10,
+       "mean_p": 0.9885,
+       "wins": 10,
+       "freq": 1.0
+      }
+     ]
+    },
+    "polls": {
+     "n": 93,
+     "brier": 0.1026,
+     "us": 0.0952,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.0084,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 4,
+       "mean_p": 0.0276,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 8,
+       "mean_p": 0.331,
+       "wins": 1,
+       "freq": 0.125
+      },
+      {
+       "bracket": "35–65%",
+       "n": 27,
+       "mean_p": 0.5159,
+       "wins": 23,
+       "freq": 0.8519
+      },
+      {
+       "bracket": "65–80%",
+       "n": 14,
+       "mean_p": 0.7049,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 11,
+       "mean_p": 0.8496,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 7,
+       "mean_p": 0.9198,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9699,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 9,
+       "mean_p": 0.9936,
+       "wins": 9,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1026,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.0084,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 4,
+       "mean_p": 0.0276,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 8,
+       "mean_p": 0.331,
+       "wins": 1,
+       "freq": 0.125
+      },
+      {
+       "bracket": "35–65%",
+       "n": 27,
+       "mean_p": 0.5159,
+       "wins": 23,
+       "freq": 0.8519
+      },
+      {
+       "bracket": "65–80%",
+       "n": 14,
+       "mean_p": 0.7049,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 11,
+       "mean_p": 0.8496,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 7,
+       "mean_p": 0.9198,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9699,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 9,
+       "mean_p": 0.9936,
+       "wins": 9,
+       "freq": 1.0
+      }
+     ]
+    },
+    "fundamentals": {
+     "n": 444,
+     "brier": 0.0429,
+     "us": 0.0294,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 112,
+       "mean_p": 0.0034,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 19,
+       "mean_p": 0.0306,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 21,
+       "mean_p": 0.075,
+       "wins": 5,
+       "freq": 0.2381
+      },
+      {
+       "bracket": "10–20%",
+       "n": 15,
+       "mean_p": 0.135,
+       "wins": 2,
+       "freq": 0.1333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 17,
+       "mean_p": 0.2534,
+       "wins": 8,
+       "freq": 0.4706
+      },
+      {
+       "bracket": "35–65%",
+       "n": 27,
+       "mean_p": 0.5012,
+       "wins": 25,
+       "freq": 0.9259
+      },
+      {
+       "bracket": "65–80%",
+       "n": 11,
+       "mean_p": 0.7294,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 12,
+       "mean_p": 0.8494,
+       "wins": 12,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 6,
+       "mean_p": 0.9339,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 9,
+       "mean_p": 0.9628,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 195,
+       "mean_p": 0.9987,
+       "wins": 195,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1546,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 6,
+       "mean_p": 0.0019,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0355,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 6,
+       "mean_p": 0.0721,
+       "wins": 2,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "10–20%",
+       "n": 5,
+       "mean_p": 0.1359,
+       "wins": 1,
+       "freq": 0.2
+      },
+      {
+       "bracket": "20–35%",
+       "n": 12,
+       "mean_p": 0.2573,
+       "wins": 8,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "35–65%",
+       "n": 24,
+       "mean_p": 0.4975,
+       "wins": 22,
+       "freq": 0.9167
+      },
+      {
+       "bracket": "65–80%",
+       "n": 10,
+       "mean_p": 0.7259,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 10,
+       "mean_p": 0.8428,
+       "wins": 10,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 5,
+       "mean_p": 0.9326,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9631,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 12,
+       "mean_p": 0.9959,
+       "wins": 12,
+       "freq": 1.0
+      }
+     ]
+    },
+    "ddhq": {
+     "n": 411,
+     "brier": 0.0416,
+     "us": 0.029,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 79,
+       "mean_p": 0.0097,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 34,
+       "mean_p": 0.03,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 22,
+       "mean_p": 0.0609,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 24,
+       "mean_p": 0.135,
+       "wins": 9,
+       "freq": 0.375
+      },
+      {
+       "bracket": "20–35%",
+       "n": 16,
+       "mean_p": 0.2625,
+       "wins": 9,
+       "freq": 0.5625
+      },
+      {
+       "bracket": "35–65%",
+       "n": 13,
+       "mean_p": 0.4769,
+       "wins": 12,
+       "freq": 0.9231
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7269,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 8,
+       "mean_p": 0.8375,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 15,
+       "mean_p": 0.9147,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 21,
+       "mean_p": 0.9671,
+       "wins": 21,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 166,
+       "mean_p": 0.9918,
+       "wins": 166,
+       "freq": 1.0
+      }
+     ],
+     "shared": null,
+     "shared_brackets": null
+    },
+    "mix": {
+     "n": 444,
+     "brier": 0.0246,
+     "us": 0.0294,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 56,
+       "mean_p": 0.0149,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 65,
+       "mean_p": 0.0308,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 25,
+       "mean_p": 0.069,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 18,
+       "mean_p": 0.1337,
+       "wins": 1,
+       "freq": 0.0556
+      },
+      {
+       "bracket": "20–35%",
+       "n": 12,
+       "mean_p": 0.2781,
+       "wins": 6,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 17,
+       "mean_p": 0.4771,
+       "wins": 15,
+       "freq": 0.8824
+      },
+      {
+       "bracket": "65–80%",
+       "n": 15,
+       "mean_p": 0.7341,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 17,
+       "mean_p": 0.8531,
+       "wins": 17,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 14,
+       "mean_p": 0.928,
+       "wins": 14,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 44,
+       "mean_p": 0.9717,
+       "wins": 44,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 161,
+       "mean_p": 0.9877,
+       "wins": 161,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0807,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0113,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 6,
+       "mean_p": 0.032,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0799,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1421,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.2969,
+       "wins": 4,
+       "freq": 0.4444
+      },
+      {
+       "bracket": "35–65%",
+       "n": 14,
+       "mean_p": 0.4781,
+       "wins": 12,
+       "freq": 0.8571
+      },
+      {
+       "bracket": "65–80%",
+       "n": 15,
+       "mean_p": 0.7341,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8524,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 8,
+       "mean_p": 0.9232,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.963,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 12,
+       "mean_p": 0.9885,
+       "wins": 12,
+       "freq": 1.0
+      }
+     ]
+    },
+    "hindsight": {
+     "n": 444,
+     "brier": 0.0135,
+     "us": 0.0294,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 139,
+       "mean_p": 0.003,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 8,
+       "mean_p": 0.0251,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 11,
+       "mean_p": 0.0745,
+       "wins": 1,
+       "freq": 0.0909
+      },
+      {
+       "bracket": "10–20%",
+       "n": 4,
+       "mean_p": 0.1192,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 6,
+       "mean_p": 0.2696,
+       "wins": 2,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "35–65%",
+       "n": 7,
+       "mean_p": 0.5406,
+       "wins": 4,
+       "freq": 0.5714
+      },
+      {
+       "bracket": "65–80%",
+       "n": 7,
+       "mean_p": 0.7362,
+       "wins": 5,
+       "freq": 0.7143
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8656,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.9298,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9701,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 249,
+       "mean_p": 0.9996,
+       "wins": 249,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0426,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 10,
+       "mean_p": 0.0037,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 2,
+       "mean_p": 0.0289,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.1227,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.2903,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 6,
+       "mean_p": 0.5627,
+       "wins": 3,
+       "freq": 0.5
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7353,
+       "wins": 4,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "80–90%",
+       "n": 3,
+       "mean_p": 0.8627,
+       "wins": 2,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.9298,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 5,
+       "mean_p": 0.9701,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 54,
+       "mean_p": 0.9984,
+       "wins": 54,
+       "freq": 1.0
+      }
+     ]
+    }
+   },
+   "n_shared": 93,
+   "mix": {
+    "weights": {
+     "market": 0.74,
+     "polls": 0.26,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "hindsight": {
+     "weights": {
+      "market": 0.94,
+      "polls": 0.06,
+      "fundamentals": 0.0,
+      "ddhq": 0.0
+     },
+     "shift": 2.44,
+     "slope": 2.5,
+     "tossup": 0.92
+    },
+    "market": 0.025,
+    "states": {
+     "mix": 0.0251,
+     "hindsight": 0.0173,
+     "lookup": 0.045
+    },
+    "senate_2024": {
+     "n": 33,
+     "market": 0.0341,
+     "hindsight": 0.0562
     }
    }
   },
   "house|called": {
-   "n": 403,
-   "actual": 249,
-   "expected": 232.7,
-   "share_sims_below": 0.8823,
-   "brier": 0.0293,
-   "n_non_safe": 59,
-   "brier_non_safe": 0.1843,
-   "favourite_won": 0.9578,
+   "n": 411,
+   "actual": 253,
+   "expected": 237.0,
+   "share_sims_below": 0.8722,
+   "brier": 0.029,
+   "n_non_safe": 60,
+   "brier_non_safe": 0.183,
+   "favourite_won": 0.9586,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -3546,15 +8080,15 @@
      "bracket": "0–2%",
      "lo": 0,
      "hi": 0.02,
-     "n": 126,
+     "n": 129,
      "mean_p": 0.0048,
      "wins": 0,
      "freq": 0.0,
      "band": [
       0.0,
-      0.0159
+      0.0233
      ],
-     "wave": 0.0057
+     "wave": 0.0052
     },
     {
      "bracket": "2–5%",
@@ -3568,7 +8102,7 @@
       0.0,
       0.2
      ],
-     "wave": 0.0723
+     "wave": 0.066
     },
     {
      "bracket": "5–10%",
@@ -3582,7 +8116,7 @@
       0.0,
       0.4167
      ],
-     "wave": 0.1819
+     "wave": 0.1606
     },
     {
      "bracket": "10–20%",
@@ -3596,21 +8130,21 @@
       0.0,
       0.875
      ],
-     "wave": 0.5469
+     "wave": 0.5125
     },
     {
      "bracket": "20–35%",
      "lo": 0.2,
      "hi": 0.35,
-     "n": 6,
-     "mean_p": 0.2655,
+     "n": 7,
+     "mean_p": 0.2741,
      "wins": 4,
-     "freq": 0.6667,
+     "freq": 0.5714,
      "band": [
       0.0,
       1.0
      ],
-     "wave": 0.8075
+     "wave": 0.7925
     },
     {
      "bracket": "35–65%",
@@ -3624,7 +8158,7 @@
       0.0,
       1.0
      ],
-     "wave": 0.9714
+     "wave": 0.9643
     },
     {
      "bracket": "65–80%",
@@ -3638,7 +8172,7 @@
       0.0,
       1.0
      ],
-     "wave": 0.9965
+     "wave": 0.998
     },
     {
      "bracket": "80–90%",
@@ -3686,12 +8220,12 @@
      "bracket": "98–100%",
      "lo": 0.98,
      "hi": 1,
-     "n": 194,
+     "n": 198,
      "mean_p": 0.997,
-     "wins": 194,
+     "wins": 198,
      "freq": 1.0,
      "band": [
-      0.9897,
+      0.9899,
       1.0
      ],
      "wave": 1.0
@@ -3701,20 +8235,20 @@
     {
      "scope": "all",
      "party": "D",
-     "n": 232,
-     "chance": 0.9747,
+     "n": 236,
+     "chance": 0.9751,
      "won": 1.0,
-     "expected": 226.1,
-     "actual": 232
+     "expected": 230.1,
+     "actual": 236
     },
     {
      "scope": "all",
      "party": "R",
-     "n": 171,
-     "chance": 0.9618,
-     "won": 0.9006,
-     "expected": 164.5,
-     "actual": 154
+     "n": 175,
+     "chance": 0.9606,
+     "won": 0.9029,
+     "expected": 168.1,
+     "actual": 158
     },
     {
      "scope": "non-safe",
@@ -3728,22 +8262,22 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 30,
-     "chance": 0.8197,
-     "won": 0.4667,
-     "expected": 24.6,
-     "actual": 14
+     "n": 31,
+     "chance": 0.815,
+     "won": 0.4839,
+     "expected": 25.3,
+     "actual": 15
     }
    ],
    "regions": [
     {
      "region": "Northeast",
-     "n": 74,
-     "expected": 59.8,
+     "n": 75,
+     "expected": 60.2,
      "actual": 62,
-     "brier": 0.0175,
-     "n_non_safe": 8,
-     "expected_non_safe": 4.0,
+     "brier": 0.0187,
+     "n_non_safe": 9,
+     "expected_non_safe": 4.4,
      "actual_non_safe": 6,
      "upsets_d": 2,
      "upsets_r": 0,
@@ -3760,21 +8294,21 @@
         0.0,
         0.0
        ],
-       "wave": 0.0055
+       "wave": 0.0063
       },
       {
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 3,
-       "mean_p": 0.1142,
+       "n": 4,
+       "mean_p": 0.1671,
        "wins": 1,
-       "freq": 0.3333,
+       "freq": 0.25,
        "band": [
         0.0,
-        0.6667
+        0.75
        ],
-       "wave": 0.3742
+       "wave": 0.475
       },
       {
        "bracket": "35–65%",
@@ -3788,7 +8322,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9825
+       "wave": 0.9812
       },
       {
        "bracket": "65–95%",
@@ -3802,7 +8336,7 @@
         0.0,
         1.0
        ],
-       "wave": 1.0
+       "wave": 0.9992
       },
       {
        "bracket": "95–100%",
@@ -3844,7 +8378,7 @@
         0.0,
         0.0278
        ],
-       "wave": 0.0099
+       "wave": 0.0088
       },
       {
        "bracket": "5–35%",
@@ -3858,7 +8392,7 @@
         0.0,
         0.5714
        ],
-       "wave": 0.3118
+       "wave": 0.3018
       },
       {
        "bracket": "35–65%",
@@ -3872,7 +8406,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9467
+       "wave": 0.9317
       },
       {
        "bracket": "65–95%",
@@ -3886,7 +8420,7 @@
         0.25,
         1.0
        ],
-       "wave": 0.9984
+       "wave": 0.9997
       },
       {
        "bracket": "95–100%",
@@ -3928,7 +8462,7 @@
         0.0,
         0.0471
        ],
-       "wave": 0.0156
+       "wave": 0.0139
       },
       {
        "bracket": "5–35%",
@@ -3942,7 +8476,7 @@
         0.0,
         0.7143
        ],
-       "wave": 0.4804
+       "wave": 0.4498
       },
       {
        "bracket": "35–65%",
@@ -3956,7 +8490,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9975
+       "wave": 0.9962
       },
       {
        "bracket": "65–95%",
@@ -3990,10 +8524,10 @@
     },
     {
      "region": "West",
-     "n": 89,
-     "expected": 76.5,
-     "actual": 79,
-     "brier": 0.0152,
+     "n": 96,
+     "expected": 80.5,
+     "actual": 83,
+     "brier": 0.0141,
      "n_non_safe": 8,
      "expected_non_safe": 5.8,
      "actual_non_safe": 8,
@@ -4004,15 +8538,15 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 10,
-       "mean_p": 0.0052,
+       "n": 13,
+       "mean_p": 0.0058,
        "wins": 0,
        "freq": 0.0,
        "band": [
         0.0,
         0.0
        ],
-       "wave": 0.0063
+       "wave": 0.0075
       },
       {
        "bracket": "5–35%",
@@ -4026,7 +8560,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.6863
+       "wave": 0.6325
       },
       {
        "bracket": "65–95%",
@@ -4046,12 +8580,12 @@
        "bracket": "95–100%",
        "lo": 0.95,
        "hi": 1,
-       "n": 71,
-       "mean_p": 0.9953,
-       "wins": 71,
+       "n": 75,
+       "mean_p": 0.9955,
+       "wins": 75,
        "freq": 1.0,
        "band": [
-        0.9718,
+        0.9733,
         1.0
        ],
        "wave": 1.0
@@ -4078,7 +8612,7 @@
      "division": "Mountain",
      "region": "West",
      "n": 5,
-     "miss": 6.8,
+     "miss": 7.1,
      "se": 1.4
     },
     {
@@ -4108,10 +8642,24 @@
      "n": 7,
      "miss": 2.4,
      "se": 0.7
+    },
+    {
+     "division": "Pacific",
+     "region": "West",
+     "n": 1,
+     "miss": 2.3,
+     "se": null
+    },
+    {
+     "division": "New England",
+     "region": "Northeast",
+     "n": 1,
+     "miss": -0.0,
+     "se": null
     }
    ],
-   "mean_miss": 5.1,
-   "n_miss": 55,
+   "mean_miss": 5.0,
+   "n_miss": 57,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -4302,20 +8850,20 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.36,
-     "lead_votes": 16317,
-     "reporting": 94,
+     "margin": 5.78,
+     "lead_votes": 17991,
+     "reporting": 96,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.0,
+       "pct": 50.2,
        "incumbent": false
       },
       {
        "name": "David Flippo",
        "party": "R",
-       "pct": 44.6,
+       "pct": 44.4,
        "incumbent": false
       }
      ]
@@ -4348,20 +8896,20 @@
      "p": 0.246,
      "won": 1,
      "status": "called",
-     "margin": 4.59,
-     "lead_votes": 12767,
-     "reporting": 94,
+     "margin": 4.72,
+     "lead_votes": 14524,
+     "reporting": 99,
      "top": [
       {
        "name": "Jessica Killin",
        "party": "D",
-       "pct": 50.6,
+       "pct": 50.5,
        "incumbent": false
       },
       {
        "name": "Jeff Crank",
        "party": "R",
-       "pct": 46.0,
+       "pct": 45.8,
        "incumbent": true
       }
      ]
@@ -4390,17 +8938,1234 @@
      ]
     }
    ],
-   "sources": {
-    "market_set": {
-     "n": 399,
-     "us": 0.0296,
-     "markets": 0.0241,
-     "fundamentals": 0.0424
+   "series": {
+    "us": {
+     "n": 411,
+     "brier": 0.029,
+     "us": 0.029,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 129,
+       "mean_p": 0.0048,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 15,
+       "mean_p": 0.0353,
+       "wins": 1,
+       "freq": 0.0667
+      },
+      {
+       "bracket": "5–10%",
+       "n": 12,
+       "mean_p": 0.07,
+       "wins": 3,
+       "freq": 0.25
+      },
+      {
+       "bracket": "10–20%",
+       "n": 8,
+       "mean_p": 0.1579,
+       "wins": 5,
+       "freq": 0.625
+      },
+      {
+       "bracket": "20–35%",
+       "n": 7,
+       "mean_p": 0.2741,
+       "wins": 4,
+       "freq": 0.5714
+      },
+      {
+       "bracket": "35–65%",
+       "n": 7,
+       "mean_p": 0.5033,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 5,
+       "mean_p": 0.6942,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 12,
+       "mean_p": 0.8577,
+       "wins": 12,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 9,
+       "mean_p": 0.9346,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 9,
+       "mean_p": 0.9697,
+       "wins": 9,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 198,
+       "mean_p": 0.997,
+       "wins": 198,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1136,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "lo": 0,
+       "hi": 0.02,
+       "n": 6,
+       "mean_p": 0.0047,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0017
+      },
+      {
+       "bracket": "2–5%",
+       "lo": 0.02,
+       "hi": 0.05,
+       "n": 1,
+       "mean_p": 0.0428,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0375
+      },
+      {
+       "bracket": "5–10%",
+       "lo": 0.05,
+       "hi": 0.1,
+       "n": 3,
+       "mean_p": 0.0852,
+       "wins": 1,
+       "freq": 0.3333,
+       "band": [
+        0.0,
+        0.6667
+       ],
+       "wave": 0.2183
+      },
+      {
+       "bracket": "10–20%",
+       "lo": 0.1,
+       "hi": 0.2,
+       "n": 5,
+       "mean_p": 0.1598,
+       "wins": 4,
+       "freq": 0.8,
+       "band": [
+        0.0,
+        0.8
+       ],
+       "wave": 0.521
+      },
+      {
+       "bracket": "20–35%",
+       "lo": 0.2,
+       "hi": 0.35,
+       "n": 6,
+       "mean_p": 0.2788,
+       "wins": 3,
+       "freq": 0.5,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.8183
+      },
+      {
+       "bracket": "35–65%",
+       "lo": 0.35,
+       "hi": 0.65,
+       "n": 6,
+       "mean_p": 0.5064,
+       "wins": 6,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.9679
+      },
+      {
+       "bracket": "65–80%",
+       "lo": 0.65,
+       "hi": 0.8,
+       "n": 5,
+       "mean_p": 0.6942,
+       "wins": 5,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.998
+      },
+      {
+       "bracket": "80–90%",
+       "lo": 0.8,
+       "hi": 0.9,
+       "n": 11,
+       "mean_p": 0.8554,
+       "wins": 11,
+       "freq": 1.0,
+       "band": [
+        0.1818,
+        1.0
+       ],
+       "wave": 0.9998
+      },
+      {
+       "bracket": "90–95%",
+       "lo": 0.9,
+       "hi": 0.95,
+       "n": 8,
+       "mean_p": 0.9352,
+       "wins": 8,
+       "freq": 1.0,
+       "band": [
+        0.5,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "lo": 0.95,
+       "hi": 0.98,
+       "n": 3,
+       "mean_p": 0.9639,
+       "wins": 3,
+       "freq": 1.0,
+       "band": [
+        0.6667,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "lo": 0.98,
+       "hi": 1,
+       "n": 14,
+       "mean_p": 0.9949,
+       "wins": 14,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      }
+     ]
     },
-    "poll_set": {
-     "n": 66,
-     "us": 0.1154,
-     "polls": 0.1246
+    "market": {
+     "n": 402,
+     "brier": 0.0244,
+     "us": 0.0297,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 53,
+       "mean_p": 0.015,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 59,
+       "mean_p": 0.0306,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 23,
+       "mean_p": 0.0671,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 17,
+       "mean_p": 0.1365,
+       "wins": 2,
+       "freq": 0.1176
+      },
+      {
+       "bracket": "20–35%",
+       "n": 10,
+       "mean_p": 0.2664,
+       "wins": 5,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 16,
+       "mean_p": 0.4748,
+       "wins": 14,
+       "freq": 0.875
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7447,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8551,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 17,
+       "mean_p": 0.9297,
+       "wins": 17,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 44,
+       "mean_p": 0.9724,
+       "wins": 44,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 142,
+       "mean_p": 0.9869,
+       "wins": 142,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0941,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.0152,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0302,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.0642,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.17,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "20–35%",
+       "n": 7,
+       "mean_p": 0.2855,
+       "wins": 3,
+       "freq": 0.4286
+      },
+      {
+       "bracket": "35–65%",
+       "n": 13,
+       "mean_p": 0.4753,
+       "wins": 11,
+       "freq": 0.8462
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7447,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 13,
+       "mean_p": 0.8546,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 11,
+       "mean_p": 0.9271,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 6,
+       "mean_p": 0.9679,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 4,
+       "mean_p": 0.9846,
+       "wins": 4,
+       "freq": 1.0
+      }
+     ]
+    },
+    "polls": {
+     "n": 68,
+     "brier": 0.1229,
+     "us": 0.1136,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 1,
+       "mean_p": 0.0025,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.035,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 7,
+       "mean_p": 0.329,
+       "wins": 1,
+       "freq": 0.1429
+      },
+      {
+       "bracket": "35–65%",
+       "n": 24,
+       "mean_p": 0.5297,
+       "wins": 21,
+       "freq": 0.875
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7063,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 7,
+       "mean_p": 0.8613,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 4,
+       "mean_p": 0.9122,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 4,
+       "mean_p": 0.9717,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 4,
+       "mean_p": 0.9959,
+       "wins": 4,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1229,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 1,
+       "mean_p": 0.0025,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.035,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 3,
+       "mean_p": 0.1611,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "20–35%",
+       "n": 7,
+       "mean_p": 0.329,
+       "wins": 1,
+       "freq": 0.1429
+      },
+      {
+       "bracket": "35–65%",
+       "n": 24,
+       "mean_p": 0.5297,
+       "wins": 21,
+       "freq": 0.875
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7063,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 7,
+       "mean_p": 0.8613,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 4,
+       "mean_p": 0.9122,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 4,
+       "mean_p": 0.9717,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 4,
+       "mean_p": 0.9959,
+       "wins": 4,
+       "freq": 1.0
+      }
+     ]
+    },
+    "fundamentals": {
+     "n": 411,
+     "brier": 0.0393,
+     "us": 0.029,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 110,
+       "mean_p": 0.0032,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 18,
+       "mean_p": 0.0303,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 17,
+       "mean_p": 0.0744,
+       "wins": 5,
+       "freq": 0.2941
+      },
+      {
+       "bracket": "10–20%",
+       "n": 13,
+       "mean_p": 0.1398,
+       "wins": 2,
+       "freq": 0.1538
+      },
+      {
+       "bracket": "20–35%",
+       "n": 12,
+       "mean_p": 0.2557,
+       "wins": 6,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 23,
+       "mean_p": 0.5199,
+       "wins": 22,
+       "freq": 0.9565
+      },
+      {
+       "bracket": "65–80%",
+       "n": 7,
+       "mean_p": 0.7351,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 6,
+       "mean_p": 0.8444,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 4,
+       "mean_p": 0.9319,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 7,
+       "mean_p": 0.9656,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 194,
+       "mean_p": 0.9987,
+       "wins": 194,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1696,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 6,
+       "mean_p": 0.0019,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0633,
+       "wins": 2,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "10–20%",
+       "n": 4,
+       "mean_p": 0.1441,
+       "wins": 1,
+       "freq": 0.25
+      },
+      {
+       "bracket": "20–35%",
+       "n": 8,
+       "mean_p": 0.2597,
+       "wins": 6,
+       "freq": 0.75
+      },
+      {
+       "bracket": "35–65%",
+       "n": 20,
+       "mean_p": 0.5183,
+       "wins": 19,
+       "freq": 0.95
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.7302,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8352,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.929,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9631,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 11,
+       "mean_p": 0.9964,
+       "wins": 11,
+       "freq": 1.0
+      }
+     ]
+    },
+    "ddhq": {
+     "n": 411,
+     "brier": 0.0416,
+     "us": 0.029,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 79,
+       "mean_p": 0.0097,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 34,
+       "mean_p": 0.03,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 22,
+       "mean_p": 0.0609,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 24,
+       "mean_p": 0.135,
+       "wins": 9,
+       "freq": 0.375
+      },
+      {
+       "bracket": "20–35%",
+       "n": 16,
+       "mean_p": 0.2625,
+       "wins": 9,
+       "freq": 0.5625
+      },
+      {
+       "bracket": "35–65%",
+       "n": 13,
+       "mean_p": 0.4769,
+       "wins": 12,
+       "freq": 0.9231
+      },
+      {
+       "bracket": "65–80%",
+       "n": 13,
+       "mean_p": 0.7269,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 8,
+       "mean_p": 0.8375,
+       "wins": 8,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 15,
+       "mean_p": 0.9147,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 21,
+       "mean_p": 0.9671,
+       "wins": 21,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 166,
+       "mean_p": 0.9918,
+       "wins": 166,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1782,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 3,
+       "mean_p": 0.01,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0233,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.08,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 6,
+       "mean_p": 0.1417,
+       "wins": 4,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "20–35%",
+       "n": 12,
+       "mean_p": 0.2692,
+       "wins": 9,
+       "freq": 0.75
+      },
+      {
+       "bracket": "35–65%",
+       "n": 12,
+       "mean_p": 0.4875,
+       "wins": 11,
+       "freq": 0.9167
+      },
+      {
+       "bracket": "65–80%",
+       "n": 12,
+       "mean_p": 0.7283,
+       "wins": 12,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8275,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 6,
+       "mean_p": 0.9117,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.965,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 7,
+       "mean_p": 0.9913,
+       "wins": 7,
+       "freq": 1.0
+      }
+     ]
+    },
+    "mix": {
+     "n": 411,
+     "brier": 0.0237,
+     "us": 0.029,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 52,
+       "mean_p": 0.0149,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 61,
+       "mean_p": 0.0305,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 23,
+       "mean_p": 0.0693,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 16,
+       "mean_p": 0.1345,
+       "wins": 1,
+       "freq": 0.0625
+      },
+      {
+       "bracket": "20–35%",
+       "n": 9,
+       "mean_p": 0.2555,
+       "wins": 5,
+       "freq": 0.5556
+      },
+      {
+       "bracket": "35–65%",
+       "n": 17,
+       "mean_p": 0.4626,
+       "wins": 14,
+       "freq": 0.8235
+      },
+      {
+       "bracket": "65–80%",
+       "n": 11,
+       "mean_p": 0.7397,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 15,
+       "mean_p": 0.8626,
+       "wins": 15,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 13,
+       "mean_p": 0.9297,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 43,
+       "mean_p": 0.9718,
+       "wins": 43,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 151,
+       "mean_p": 0.9877,
+       "wins": 151,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0932,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 1,
+       "mean_p": 0.0098,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0283,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.0888,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1721,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 6,
+       "mean_p": 0.2724,
+       "wins": 3,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 14,
+       "mean_p": 0.4605,
+       "wins": 11,
+       "freq": 0.7857
+      },
+      {
+       "bracket": "65–80%",
+       "n": 11,
+       "mean_p": 0.7397,
+       "wins": 11,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 13,
+       "mean_p": 0.8632,
+       "wins": 13,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 7,
+       "mean_p": 0.9256,
+       "wins": 7,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 5,
+       "mean_p": 0.9624,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9874,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ]
+    },
+    "hindsight": {
+     "n": 411,
+     "brier": 0.0133,
+     "us": 0.029,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 129,
+       "mean_p": 0.0034,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 7,
+       "mean_p": 0.0274,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 10,
+       "mean_p": 0.079,
+       "wins": 1,
+       "freq": 0.1
+      },
+      {
+       "bracket": "10–20%",
+       "n": 4,
+       "mean_p": 0.1282,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 6,
+       "mean_p": 0.2866,
+       "wins": 2,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.4912,
+       "wins": 2,
+       "freq": 0.5
+      },
+      {
+       "bracket": "65–80%",
+       "n": 7,
+       "mean_p": 0.7266,
+       "wins": 5,
+       "freq": 0.7143
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8539,
+       "wins": 4,
+       "freq": 0.8
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9334,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 5,
+       "mean_p": 0.9691,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 232,
+       "mean_p": 0.9997,
+       "wins": 232,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0511,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0042,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0319,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1569,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3137,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 3,
+       "mean_p": 0.514,
+       "wins": 1,
+       "freq": 0.3333
+      },
+      {
+       "bracket": "65–80%",
+       "n": 6,
+       "mean_p": 0.723,
+       "wins": 4,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8482,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9334,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 4,
+       "mean_p": 0.9689,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 40,
+       "mean_p": 0.9984,
+       "wins": 40,
+       "freq": 1.0
+      }
+     ]
+    }
+   },
+   "n_shared": 68,
+   "mix": {
+    "weights": {
+     "market": 0.82,
+     "polls": 0.18,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "hindsight": {
+     "weights": {
+      "market": 0.92,
+      "polls": 0.08,
+      "fundamentals": 0.0,
+      "ddhq": 0.0
+     },
+     "shift": 2.45,
+     "slope": 2.45,
+     "tossup": 0.921
+    },
+    "market": 0.024,
+    "states": {
+     "mix": 0.0244,
+     "hindsight": 0.0176,
+     "lookup": 0.0414
+    },
+    "senate_2024": {
+     "n": 33,
+     "market": 0.0341,
+     "hindsight": 0.0572
     }
    }
   },
@@ -5020,8 +10785,8 @@
      "p": 0.835,
      "won": 1,
      "status": "called",
-     "margin": 6.42,
-     "lead_votes": 45211,
+     "margin": 6.39,
+     "lead_votes": 45054,
      "reporting": 93,
      "top": [
       {
@@ -5043,8 +10808,8 @@
      "p": 0.881,
      "won": 1,
      "status": "called",
-     "margin": 7.01,
-     "lead_votes": 334802,
+     "margin": 7.0,
+     "lead_votes": 334311,
      "reporting": 98,
      "top": [
       {
@@ -5066,8 +10831,8 @@
      "p": 0.096,
      "won": 0,
      "status": "called",
-     "margin": -2.89,
-     "lead_votes": 238709,
+     "margin": -2.88,
+     "lead_votes": 238504,
      "reporting": 99,
      "top": [
       {
@@ -5135,8 +10900,8 @@
      "p": 0.037,
      "won": 0,
      "status": "called",
-     "margin": -10.62,
-     "lead_votes": 51204,
+     "margin": -10.63,
+     "lead_votes": 51242,
      "reporting": 97,
      "top": [
       {
@@ -5154,20 +10919,1079 @@
      ]
     }
    ],
-   "sources": {
-    "market_set": {
+   "series": {
+    "us": {
      "n": 33,
+     "brier": 0.0343,
      "us": 0.0343,
-     "markets": 0.0382,
-     "fundamentals": 0.0888
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 8,
+       "mean_p": 0.0079,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0373,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0955,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.2467,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 1,
+       "mean_p": 0.4754,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 3,
+       "mean_p": 0.7545,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 2,
+       "mean_p": 0.8579,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 1,
+       "mean_p": 0.9197,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 1,
+       "mean_p": 0.9671,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 11,
+       "mean_p": 0.9939,
+       "wins": 11,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0452,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "lo": 0,
+       "hi": 0.02,
+       "n": 4,
+       "mean_p": 0.009,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "lo": 0.02,
+       "hi": 0.05,
+       "n": 2,
+       "mean_p": 0.0333,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        0.0
+       ],
+       "wave": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "lo": 0.05,
+       "hi": 0.1,
+       "n": 1,
+       "mean_p": 0.0955,
+       "wins": 0,
+       "freq": 0.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.0325
+      },
+      {
+       "bracket": "20–35%",
+       "lo": 0.2,
+       "hi": 0.35,
+       "n": 2,
+       "mean_p": 0.2467,
+       "wins": 1,
+       "freq": 0.5,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.4875
+      },
+      {
+       "bracket": "35–65%",
+       "lo": 0.35,
+       "hi": 0.65,
+       "n": 1,
+       "mean_p": 0.4754,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 0.965
+      },
+      {
+       "bracket": "65–80%",
+       "lo": 0.65,
+       "hi": 0.8,
+       "n": 3,
+       "mean_p": 0.7545,
+       "wins": 3,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "lo": 0.8,
+       "hi": 0.9,
+       "n": 2,
+       "mean_p": 0.8579,
+       "wins": 2,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "lo": 0.9,
+       "hi": 0.95,
+       "n": 1,
+       "mean_p": 0.9197,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        0.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "lo": 0.95,
+       "hi": 0.98,
+       "n": 1,
+       "mean_p": 0.9671,
+       "wins": 1,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "lo": 0.98,
+       "hi": 1,
+       "n": 8,
+       "mean_p": 0.9943,
+       "wins": 8,
+       "freq": 1.0,
+       "band": [
+        1.0,
+        1.0
+       ],
+       "wave": 1.0
+      }
+     ]
     },
-    "poll_set": {
+    "market": {
+     "n": 33,
+     "brier": 0.0382,
+     "us": 0.0343,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 5,
+       "mean_p": 0.0162,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.041,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0728,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1419,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3126,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 2,
+       "mean_p": 0.5662,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7398,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9317,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9705,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 9,
+       "mean_p": 0.9893,
+       "wins": 9,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0502,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0175,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 2,
+       "mean_p": 0.0437,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 2,
+       "mean_p": 0.0742,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1419,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.3126,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 2,
+       "mean_p": 0.5662,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7398,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9317,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9705,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 6,
+       "mean_p": 0.991,
+       "wins": 6,
+       "freq": 1.0
+      }
+     ]
+    },
+    "polls": {
      "n": 25,
+     "brier": 0.0475,
      "us": 0.0452,
-     "polls": 0.0475
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0113,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0252,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 1,
+       "mean_p": 0.3445,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "35–65%",
+       "n": 3,
+       "mean_p": 0.4053,
+       "wins": 2,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "65–80%",
+       "n": 1,
+       "mean_p": 0.687,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8293,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.93,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9664,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9918,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0475,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0113,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 3,
+       "mean_p": 0.0252,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0907,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 1,
+       "mean_p": 0.3445,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "35–65%",
+       "n": 3,
+       "mean_p": 0.4053,
+       "wins": 2,
+       "freq": 0.6667
+      },
+      {
+       "bracket": "65–80%",
+       "n": 1,
+       "mean_p": 0.687,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8293,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 3,
+       "mean_p": 0.93,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9664,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9918,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ]
+    },
+    "fundamentals": {
+     "n": 33,
+     "brier": 0.0888,
+     "us": 0.0343,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 2,
+       "mean_p": 0.0149,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0355,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 4,
+       "mean_p": 0.0778,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.1036,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 5,
+       "mean_p": 0.248,
+       "wins": 2,
+       "freq": 0.4
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.3936,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7195,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 6,
+       "mean_p": 0.8544,
+       "wins": 6,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9379,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 2,
+       "mean_p": 0.9529,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 1,
+       "mean_p": 0.9901,
+       "wins": 1,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.1137,
+     "shared_brackets": [
+      {
+       "bracket": "2–5%",
+       "n": 1,
+       "mean_p": 0.0355,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 3,
+       "mean_p": 0.0809,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 1,
+       "mean_p": 0.1033,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 4,
+       "mean_p": 0.2526,
+       "wins": 2,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 4,
+       "mean_p": 0.3936,
+       "wins": 3,
+       "freq": 0.75
+      },
+      {
+       "bracket": "65–80%",
+       "n": 4,
+       "mean_p": 0.7195,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 5,
+       "mean_p": 0.8505,
+       "wins": 5,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 2,
+       "mean_p": 0.9379,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 1,
+       "mean_p": 0.9901,
+       "wins": 1,
+       "freq": 1.0
+      }
+     ]
+    },
+    "mix": {
+     "n": 33,
+     "brier": 0.0335,
+     "us": 0.0343,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 4,
+       "mean_p": 0.0146,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 5,
+       "mean_p": 0.0308,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "5–10%",
+       "n": 1,
+       "mean_p": 0.0699,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.1401,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.347,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 1,
+       "mean_p": 0.4888,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 2,
+       "mean_p": 0.7632,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8274,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 1,
+       "mean_p": 0.9454,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 3,
+       "mean_p": 0.9722,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 8,
+       "mean_p": 0.9893,
+       "wins": 8,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0439,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 1,
+       "mean_p": 0.0122,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "2–5%",
+       "n": 4,
+       "mean_p": 0.0297,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "10–20%",
+       "n": 2,
+       "mean_p": 0.1401,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "20–35%",
+       "n": 2,
+       "mean_p": 0.347,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "35–65%",
+       "n": 1,
+       "mean_p": 0.4888,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "65–80%",
+       "n": 2,
+       "mean_p": 0.7632,
+       "wins": 2,
+       "freq": 1.0
+      },
+      {
+       "bracket": "80–90%",
+       "n": 4,
+       "mean_p": 0.8274,
+       "wins": 4,
+       "freq": 1.0
+      },
+      {
+       "bracket": "90–95%",
+       "n": 1,
+       "mean_p": 0.9454,
+       "wins": 1,
+       "freq": 1.0
+      },
+      {
+       "bracket": "95–98%",
+       "n": 3,
+       "mean_p": 0.9722,
+       "wins": 3,
+       "freq": 1.0
+      },
+      {
+       "bracket": "98–100%",
+       "n": 5,
+       "mean_p": 0.9913,
+       "wins": 5,
+       "freq": 1.0
+      }
+     ]
+    },
+    "hindsight": {
+     "n": 33,
+     "brier": 0.0108,
+     "us": 0.0343,
+     "brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 12,
+       "mean_p": 0.0017,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "35–65%",
+       "n": 2,
+       "mean_p": 0.5002,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "98–100%",
+       "n": 19,
+       "mean_p": 0.999,
+       "wins": 19,
+       "freq": 1.0
+      }
+     ],
+     "shared": 0.0142,
+     "shared_brackets": [
+      {
+       "bracket": "0–2%",
+       "n": 7,
+       "mean_p": 0.0029,
+       "wins": 0,
+       "freq": 0.0
+      },
+      {
+       "bracket": "35–65%",
+       "n": 2,
+       "mean_p": 0.5002,
+       "wins": 1,
+       "freq": 0.5
+      },
+      {
+       "bracket": "98–100%",
+       "n": 16,
+       "mean_p": 0.9989,
+       "wins": 16,
+       "freq": 1.0
+      }
+     ]
+    }
+   },
+   "n_shared": 25,
+   "mix": {
+    "weights": {
+     "market": 0.38,
+     "polls": 0.62,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "hindsight": {
+     "weights": {
+      "market": 0.86,
+      "polls": 0.0,
+      "fundamentals": 0.14,
+      "ddhq": 0.0
+     },
+     "shift": 4.32,
+     "slope": 5.08,
+     "tossup": 0.987
+    },
+    "market": 0.0382,
+    "states": {
+     "mix": 0.0356,
+     "hindsight": 0.0442,
+     "lookup": 0.0606
+    },
+    "senate_2024": {
+     "n": 33,
+     "market": 0.0341,
+     "hindsight": 0.0551
     }
    }
   }
+ },
+ "mix_groups": {
+  "leaders": [
+   {
+    "name": "All races",
+    "n": 468,
+    "weights": {
+     "market": 0.78,
+     "polls": 0.22,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0342
+   },
+   {
+    "name": "House",
+    "n": 433,
+    "weights": {
+     "market": 0.9,
+     "polls": 0.1,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0324
+   },
+   {
+    "name": "Senate",
+    "n": 35,
+    "weights": {
+     "market": 0.2,
+     "polls": 0.8,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0503
+   },
+   {
+    "name": "Northeast",
+    "n": 81,
+    "weights": {
+     "market": 0.72,
+     "polls": 0.0,
+     "fundamentals": 0.28,
+     "ddhq": 0.0
+    },
+    "brier": 0.0164
+   },
+   {
+    "name": "Midwest",
+    "n": 99,
+    "weights": {
+     "market": 0.34,
+     "polls": 0.66,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0331
+   },
+   {
+    "name": "South",
+    "n": 177,
+    "weights": {
+     "market": 0.94,
+     "polls": 0.06,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0501
+   },
+   {
+    "name": "West",
+    "n": 111,
+    "weights": {
+     "market": 1.0,
+     "polls": 0.0,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0181
+   }
+  ],
+  "called": [
+   {
+    "name": "All races",
+    "n": 444,
+    "weights": {
+     "market": 0.74,
+     "polls": 0.26,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0246
+   },
+   {
+    "name": "House",
+    "n": 411,
+    "weights": {
+     "market": 0.82,
+     "polls": 0.18,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0237
+   },
+   {
+    "name": "Senate",
+    "n": 33,
+    "weights": {
+     "market": 0.38,
+     "polls": 0.62,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0335
+   },
+   {
+    "name": "Northeast",
+    "n": 80,
+    "weights": {
+     "market": 0.8,
+     "polls": 0.0,
+     "fundamentals": 0.2,
+     "ddhq": 0.0
+    },
+    "brier": 0.016
+   },
+   {
+    "name": "Midwest",
+    "n": 98,
+    "weights": {
+     "market": 0.4,
+     "polls": 0.6,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.031
+   },
+   {
+    "name": "South",
+    "n": 164,
+    "weights": {
+     "market": 1.0,
+     "polls": 0.0,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.032
+   },
+   {
+    "name": "West",
+    "n": 102,
+    "weights": {
+     "market": 0.76,
+     "polls": 0.24,
+     "fundamentals": 0.0,
+     "ddhq": 0.0
+    },
+    "brier": 0.0101
+   }
+  ]
  },
  "contest": {
   "seats": {
@@ -5176,7 +12000,7 @@
     219,
     265
    ],
-   "called": 249,
+   "called": 253,
    "with_leaders": 259,
    "off_by": 21,
    "share_sims_below": 0.8506
@@ -5297,16 +12121,17 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 4.4,
+    "margin": 4.42,
     "called_by": [
-     "CNN"
+     "CNN",
+     "NYT"
     ],
     "reporting": 88,
     "top": [
      {
       "name": "Cait Conley",
       "party": "D",
-      "pct": 52.1,
+      "pct": 52.2,
       "incumbent": false
      },
      {
@@ -5324,11 +12149,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 60972046,
-  "rep": 47747763,
-  "total": 110339263,
-  "share_counted": 90.86,
-  "margin": 12.0
+  "dem": 61984344,
+  "rep": 48188217,
+  "total": 111810491,
+  "share_counted": 91.99,
+  "margin": 12.3
  },
  "senate": {
   "p_control": 0.7754,
