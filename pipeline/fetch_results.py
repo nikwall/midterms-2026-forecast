@@ -6,7 +6,9 @@ Sources (public JSON behind their results pages, re-read every 3 hours by update
            (race calls by the Associated Press)
 
 A race counts as called once either source names a winner; if they name different parties it is
-"disputed" and counts as not called. Votes come from whichever source has counted more.
+"disputed" and counts as not called. A top-two race whose finalists share a party (California) also
+counts as called for that party, with no candidate named: the seat is decided, as in the NYT seat
+tally, though the person is not. Votes come from whichever source has counted more.
 Not-yet-called races keep the current leader, except where a runoff decides (Louisiana's open
 races without a majority).
 
@@ -97,14 +99,15 @@ def merge(rid, recs):
     non_rep = next((c for c in cands if c["party"] != "R"), None)
     top_share = 100 * cands[0]["votes"] / total if total else 0
     state = rid.split("-")[1]
-    status = "disputed" if len(winners) > 1 else "called" if winners else "counting"
+    one_party = len(cands) > 1 and total and len({c["party"] for c in cands}) == 1 and cands[0]["party"] != "O"
+    status = "disputed" if len(winners) > 1 else "called" if winners or one_party else "counting"
     if status == "counting" and (any(r["runoff"] for r in recs) or (state in RUNOFF_STATES and total and top_share < 50)):
         status = "runoff"
     called = next((r for r in recs if r["winner"]), None)
     return {
         "status": status,
-        "winner": called["winner"] if status == "called" else None,
-        "winner_name": called["winner_name"] if status == "called" else None,
+        "winner": (called["winner"] if called else cands[0]["party"]) if status == "called" else None,
+        "winner_name": called["winner_name"] if status == "called" and called else None,
         "called_by": [r["source"] for r in recs if r["winner"]],
         "leader": cands[0]["party"] if status == "counting" and total else None,
         "leader_name": cands[0]["name"] if status == "counting" and total else None,

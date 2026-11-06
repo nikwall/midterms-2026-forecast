@@ -23,7 +23,8 @@ const JOINT = [
   { key: "rep_house_rep_senate", label: "Republicans win both", color: "var(--r3)" },
 ];
 
-const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null, results: null, cal: null };
+const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null, results: null, cal: null,
+  calOn: new Set(["us", "market", "polls", "fundamentals"]) };
 const $ = (sel) => document.querySelector(sel);
 const TABS = ["results", "congress", "contest", "maps", "weights", "record", "method"];  // the first opens by default
 // Source icons (sprite in index.html): polls ring a phone, markets pay in bills, DDHQ rings the desk bell.
@@ -471,7 +472,7 @@ function resultText(id) {
 }
 
 function statusText(x) {
-  if (x.status === "called") return x.called_by.length > 1 ? "Called" : `Called by ${x.called_by[0]}`;
+  if (x.status === "called") return x.called_by.length > 1 ? "Called" : x.called_by.length ? `Called by ${x.called_by[0]}` : "Both finalists from one party";
   if (x.status === "counting") return `Not called, ${x.reporting}% counted`;
   return x.status === "runoff" ? "Runoff" : "Sources disagree";
 }
@@ -482,8 +483,40 @@ function who(c) {
 
 const pct0 = (p) => `${Math.round(p * 100)}%`;
 
-// Our chance (x) against the share the non-Republican side won (y), one dot per bracket.
-function calPlot(root, rows, { size, big }) {
+// What the calibration chart can show. Colour, shape and line belong to the series, whatever else is on.
+const CAL_SERIES = [
+  { key: "us", label: "Our forecast", color: "var(--d3)", shape: "circle" },
+  { key: "market", label: "Markets", color: "var(--s-market)", shape: "square" },
+  { key: "polls", label: "Polls", color: "var(--s-polls)", shape: "triangle" },
+  { key: "fundamentals", label: "Fundamentals", color: "var(--s-fundamentals)", shape: "diamond" },
+  { key: "ddhq", label: "DDHQ", color: "var(--s-ddhq)", shape: "down" },
+  { key: "mix", label: "Best mix", color: "var(--ink)", shape: "ring" },
+  { key: "hindsight", label: "Best mix, knowing the wave", color: "var(--ink)", shape: "box", dash: "6 4" },
+];
+const MIX_SOURCES = CAL_SERIES.filter((s) => ["market", "polls", "fundamentals", "ddhq"].includes(s.key));
+const POINTS = {
+  square: [[-.9, -.9], [.9, -.9], [.9, .9], [-.9, .9]], box: [[-.9, -.9], [.9, -.9], [.9, .9], [-.9, .9]],
+  diamond: [[0, -1.25], [1.25, 0], [0, 1.25], [-1.25, 0]], triangle: [[0, -1.2], [1.15, .85], [-1.15, .85]], down: [[0, 1.2], [1.15, -.85], [-1.15, -.85]],
+};
+
+function calMark(root, s, cx, cy, r) {
+  const hollow = s.shape === "ring" || s.shape === "box";
+  const style = hollow ? `fill:var(--bg);stroke:${s.color};stroke-width:2` : `fill:${s.color};stroke:var(--bg);stroke-width:1.5`;
+  if (s.shape === "circle" || s.shape === "ring") return svg("circle", { cx, cy, r, style }, root);
+  return svg("polygon", { points: POINTS[s.shape].map(([a, b]) => `${cx + a * r},${cy + b * r}`).join(" "), style }, root);
+}
+
+// The line and marker of a series, for the switches and the tables.
+function calKey(s) {
+  const node = svg("svg", { class: "cal-key", viewBox: "0 0 24 12", "aria-hidden": "true" });
+  svg("line", { x1: 0, x2: 24, y1: 6, y2: 6, style: `stroke:${s.color};stroke-width:2`, "stroke-dasharray": s.dash }, node);
+  calMark(node, s, 12, 6, 4);
+  return node;
+}
+
+// The chance given (x) against the share the non-Republican side won (y), one dot per bracket.
+// rows is our forecast; overlays are other series, each { s, rows }.
+function calPlot(root, rows, { size, big, us = true, overlays = [] }) {
   root.replaceChildren();
   const m = big ? { l: 46, r: 12, t: 12, b: 42 } : { l: 32, r: 8, t: 8, b: 24 };
   const W = size, H = size;
@@ -497,19 +530,35 @@ function calPlot(root, rows, { size, big }) {
     svg("text", { x: x(v), y: H - m.b + 15, "text-anchor": "middle" }, root).textContent = pct0(v);
   }
   if (big) {
-    svg("text", { x: (m.l + W - m.r) / 2, y: H - 6, "text-anchor": "middle" }, root).textContent = "Our chance for the Democratic side";
+    svg("text", { x: (m.l + W - m.r) / 2, y: H - 6, "text-anchor": "middle" }, root).textContent = "Chance given to the Democratic side";
     svg("text", { x: 12, y: (m.t + H - m.b) / 2, "text-anchor": "middle", transform: `rotate(-90 12 ${(m.t + H - m.b) / 2})` }, root).textContent = "Share they actually won";
   }
-  const band = rows.map((r) => `${x(r.mean_p)},${y(r.band[1])}`).concat(rows.slice().reverse().map((r) => `${x(r.mean_p)},${y(r.band[0])}`));
-  svg("polygon", { class: "cal-band", points: band.join(" ") }, root);
+  if (us) {
+    const band = rows.map((r) => `${x(r.mean_p)},${y(r.band[1])}`).concat(rows.slice().reverse().map((r) => `${x(r.mean_p)},${y(r.band[0])}`));
+    svg("polygon", { class: "cal-band", points: band.join(" ") }, root);
+  }
   svg("line", { class: "cal-ideal", x1: x(0), y1: y(0), x2: x(1), y2: y(1) }, root);
-  svg("polyline", { class: "cal-wave", points: rows.map((r) => `${x(r.mean_p)},${y(r.wave)}`).join(" ") }, root);
+  if (us) svg("polyline", { class: "cal-wave", points: rows.map((r) => `${x(r.mean_p)},${y(r.wave)}`).join(" ") }, root);
   if (big) {
-    svg("text", { class: "cal-corner", x: m.l + 8, y: m.t + 14 }, root).textContent = "Above the line: Democrats did better than we said";
+    svg("text", { class: "cal-corner", x: m.l + 8, y: m.t + 14 }, root).textContent = "Above the line: Democrats did better than forecast";
     svg("text", { class: "cal-corner", x: W - m.r - 8, y: H - m.b - 8, "text-anchor": "end" }, root).textContent = "Below the line: worse";
   }
-  const most = Math.max(...rows.map((r) => r.n));
-  for (const r of rows) {
+  const most = Math.max(...(us ? rows : []).concat(overlays.flatMap((o) => o.rows)).map((r) => r.n), 1);
+  for (const { s, rows: line } of overlays) {
+    svg("polyline", { class: "cal-series", style: `stroke:${s.color}`, "stroke-dasharray": s.dash, points: line.map((r) => `${x(r.mean_p)},${y(r.freq)}`).join(" ") }, root);
+  }
+  if (us && overlays.length) svg("polyline", { class: "cal-series", style: "stroke:var(--d3)", points: rows.map((r) => `${x(r.mean_p)},${y(r.freq)}`).join(" ") }, root);
+  for (const { s, rows: line } of overlays) {
+    for (const r of line) {
+      const rad = 4 + 3 * Math.sqrt(r.n / most);
+      calMark(root, s, x(r.mean_p), y(r.freq), rad);
+      const hit = svg("circle", { cx: x(r.mean_p), cy: y(r.freq), r: rad + 6, fill: "transparent", tabindex: 0 }, root);
+      bindTip(hit, () => tipRows(`${s.label}, ${r.bracket}: ${r.n} ${r.n === 1 ? "race" : "races"}`, [
+        ["They won", `${r.wins} of ${r.n} (${pct0(r.freq)})`], ["It said", pct1(r.mean_p)],
+      ]));
+    }
+  }
+  for (const r of us ? rows : []) {
     const rad = (big ? 4.5 : 3.5) + (big ? 5 : 3) * Math.sqrt(r.n / most);
     svg("circle", { class: "cal-dot", cx: x(r.mean_p), cy: y(r.freq), r: rad }, root);
     const hit = svg("circle", { cx: x(r.mean_p), cy: y(r.freq), r: rad + 8, fill: "transparent", tabindex: 0 }, root);
@@ -564,14 +613,25 @@ function renderCalibration() {
   }
   const name = $("#cal-view").value, basis = $("#cal-basis").value;
   const v = c.views[`${name}|${basis}`], called = c.views[`${name}|called`];
+  const shared = $("#cal-shared").checked && v.n_shared > 0;
+  const usRows = shared ? v.series.us.shared_brackets : v.brackets;
+  const rowsOf = (key) => { const s = v.series[key]; return s ? (shared ? s.shared_brackets : s.brackets) : null; };
   const h = r.house;
   $("#res-tally").textContent = `House: Democrats ${h.called.D} called, ${h.leading.D} ahead · Republicans ${h.called.R} called, ${h.leading.R} ahead` +
     (h.runoff ? ` · ${h.runoff} ${h.runoff === 1 ? "runoff" : "runoffs"}` : "");
   const total = name === "all" ? 470 : name === "house" ? 435 : 35;
-  $("#cal-count").textContent = basis === "leaders" && v.n > called.n
+  $("#cal-count").textContent = (basis === "leaders" && v.n > called.n
     ? `${v.n} of ${total} races: ${called.n} called, ${v.n - called.n} counted with the current leader`
-    : `${called.n} of ${total} races called.` + (basis === "called" && called.n < total ? " The rest are mostly close, so leaving them out flatters us." : "");
-  calPlot($("#cal-main"), v.brackets, { size: 520, big: true });
+    : `${called.n} of ${total} races called` + (basis === "called" && called.n < total ? ". The rest are mostly close, so leaving them out flatters us" : "")) +
+    (shared ? `. Chart: the ${v.n_shared} of them with both polls and markets.` : ".");
+  for (const box of document.querySelectorAll("#cal-toggles input")) {
+    box.disabled = !rowsOf(box.value);
+    box.parentElement.classList.toggle("off", box.disabled);
+    box.parentElement.title = box.disabled ? (v.series[box.value] ? "Only in the House, so not on the shared races of both chambers" : "Not available for these races") : "";
+  }
+  const overlays = CAL_SERIES.filter((s) => s.key !== "us" && app.calOn.has(s.key) && rowsOf(s.key)).map((s) => ({ s, rows: rowsOf(s.key) }));
+  calPlot($("#cal-main"), usRows, { size: 520, big: true, us: app.calOn.has("us"), overlays });
+  $("#cal-us-legend").hidden = !app.calOn.has("us");
 
   const fav = (scope, p) => v.favourites.find((f) => f.scope === scope && f.party === p);
   const fd = fav("all", "D"), fr = fav("all", "R");
@@ -598,19 +658,19 @@ function renderCalibration() {
     html("td", { text: `${label[f.party]}${f.scope === "all" ? ", all races" : ", non-safe"}` }), html("td", { class: "num", text: f.n }),
     html("td", { class: "num", text: pct(f.chance) }), html("td", { class: "num", text: `${pct0(f.won)} (${f.actual})` }), html("td", { text: reading(f) }),
   ])));
-  const src = v.sources, sourceRows = [];
-  if (src.market_set) {
-    sourceRows.push(["Against the markets", src.market_set.n, src.market_set.us, src.market_set.markets],
-      [name === "senate" ? "Against fundamentals" : "Against DDHQ / fundamentals", src.market_set.n, src.market_set.us, src.market_set.fundamentals]);
-  }
-  if (src.poll_set) sourceRows.push(["Against the polls", src.poll_set.n, src.poll_set.us, src.poll_set.polls]);
-  $("#cal-sources").replaceChildren(...sourceRows.map(([a, n, us, o]) => html("tr", {}, [
-    html("td", { text: a }), html("td", { class: "num", text: n }), html("td", { class: "num", text: us.toFixed(3) }), html("td", { class: "num", text: o.toFixed(3) }),
-  ])));
-  $("#cal-table").replaceChildren(...v.brackets.map((b) => html("tr", {}, [
+  renderFits(v, basis);
+  $("#cal-table").replaceChildren(...usRows.map((b) => html("tr", {}, [
     html("td", { text: b.bracket }), html("td", { class: "num", text: b.n }), html("td", { class: "num", text: pct1(b.mean_p) }), html("td", { class: "num", text: b.wins }),
     html("td", { class: "num", text: pct1(b.freq) }), html("td", { class: "num", text: `${pct(b.band[0])}–${pct(b.band[1])}` }), html("td", { class: "num", text: pct(b.wave) }),
   ])));
+
+  const cols = CAL_SERIES.filter((s) => s.key !== "us" && rowsOf(s.key));
+  const brackets = [...new Set(cols.flatMap((s) => rowsOf(s.key).map((b) => b.bracket)))].sort((a, b) => parseInt(a) - parseInt(b));
+  $("#cal-by-source-head").replaceChildren(html("tr", {}, [html("th", { text: "Chance given" }), ...cols.map((s) => html("th", { class: "num", text: s.label }))]));
+  $("#cal-by-source").replaceChildren(...brackets.map((label) => html("tr", {}, [html("td", { text: label }), ...cols.map((s) => {
+    const b = rowsOf(s.key).find((x) => x.bracket === label);
+    return html("td", { class: "num", text: b ? `${pct0(b.freq)} (${b.n})` : "–" });
+  })])));
 
   $("#cal-regions").replaceChildren(...v.regions.map((x) => {
     const plot = svg("svg", { class: "chart", role: "img", "aria-label": `Calibration in the ${x.region}` });
@@ -641,10 +701,60 @@ function renderCalibration() {
     html("p", { text: "“Democratic side” is what each probability refers to: the Democrat, or the independent where one is the main challenger (Alaska's Bill Hill; the Senate races in Nebraska, Montana, Idaho and South Dakota)." }),
     html("p", { text: "Races are not independent coin flips. The grey band is the 90% range of each bracket's share across our own 20,000 simulations, with the shared national error included. In the middle brackets it is nearly the full height, because one national swing can turn all of those races at once. So a wide band does not mean we did well; it says that a single election cannot settle the calibration of the middle brackets." }),
     html("p", { text: "The orange line asks a sharper question: in the simulations whose total comes closest to the actual total, what did each bracket do? If the dots follow it, the miss is the size of the wave. If they stray from it, we also ordered the races wrongly." }),
-    html("p", { text: "Not-yet-called races are close by nature, so leaving them out would hide most of the action; the default counts the current leader, which can still change, and “Called races only” shows the safe facts. Runoffs are left out until they are decided." }),
+    html("p", { text: "Not-yet-called races are close by nature, so leaving them out would hide most of the action; the default counts the current leader, which can still change, and “Called races only” shows the safe facts. Runoffs are left out until they are decided. A race with two finalists from one party counts as called for that party, as in the New York Times seat tally, even if the winner is not known yet." }),
+    html("p", { text: "The sources on the chart are the inputs as they stood in the frozen entry, so none of them knows the result. Markets are Kalshi and Polymarket together, weighted by volume; Polymarket lists only 56 of the races. Polls and fundamentals become chances through our own error sizes, so those two curves carry part of our judgment. Fundamentals are our own: district lean, national environment, incumbency. DDHQ's House probabilities were the model's House fundamentals, but DDHQ blends polls and markets itself, so they appear on their own. They date from 22 October, the rest from 2 November." }),
+    html("p", { text: "Polls exist for about a hundred races, nearly all of them close, and safe seats make any Brier score look good. So a source's score on its own races says little against another source's. The shared column and the switch above the chart use only the races with both polls and markets." }),
+    html("p", { text: "The best mix is a weighted average of the sources' log-odds. The weights are found by trying every split in 2-point steps and keeping the one with the lowest Brier score on the races selected. A race without one of the sources uses the others. “Knowing the wave” adds a shift and a sharpening of the log-odds, also fitted to the results. Plain market prices use our fundamentals in the few races without a market, so that every row covers the same races. The lookup table gives each race the result of the race with the most similar source chances; a race finds itself, so it fits perfectly by construction. All of this is hindsight, and none of it could have been entered before the election." }),
+    html("p", { text: "Two tests. “Other states held out” predicts each state with a fit on the rest; the wave stays known, because all states shared the same election. “2024 Senate” applies this year's correction to Polymarket's prices one week before the 2024 election, a different year with a different wave. That is one small test: 33 races, one market, one week out." }),
     html("p", { class: "small" }, ["Results: ", ...r.sources.flatMap((s, i) => [i ? " and " : "", html("a", { href: s.url, target: "_blank", rel: "noopener", text: s.name })]),
       ". Refreshed every three hours by GitHub Actions; the forecast itself stays frozen under the tag contest-entry. Code: pipeline/fetch_results.py, pipeline/calibration.py."]),
   );
+}
+
+// Which source did best, what the best mix would have been, and how much of that fit survives a test.
+function renderFits(v, basis) {
+  const s4 = (x) => (x == null ? "–" : x.toFixed(4));
+  const rows = CAL_SERIES.filter((s) => v.series[s.key]);
+  $("#cal-shared-head").textContent = `Shared ${v.n_shared} races`;
+  $("#cal-sources").replaceChildren(...rows.map((s) => {
+    const x = v.series[s.key];
+    return html("tr", {}, [
+      html("td", {}, html("span", { class: "cal-name" }, [calKey(s), s.label])), html("td", { class: "num", text: x.n }), html("td", { class: "num", text: s4(x.brier) }),
+      html("td", { class: "num", text: s.key === "us" ? "" : s4(x.us) }), html("td", { class: "num", text: s4(x.shared) }),
+    ]);
+  }));
+
+  const m = v.mix, h = m.hindsight, us = v.series.us.brier;
+  const named = (w) => MIX_SOURCES.filter((s) => w[s.key] > 0).sort((a, b) => w[b.key] - w[a.key]).map((s) => `${Math.round(w[s.key] * 100)}% ${s.label.toLowerCase()}`).join(", ");
+  const zero = MIX_SOURCES.filter((s) => v.series[s.key] && !m.weights[s.key]).map((s) => (s.key === "ddhq" ? "DDHQ" : s.label.toLowerCase()));
+  const gain = (a, b) => (a < b ? "better than" : a > b ? "worse than" : "the same as");
+  const fitted = rows.filter((s) => MIX_SOURCES.includes(s)).length - 1;
+  const past = m.senate_2024;
+  $("#mix-reading").replaceChildren(...[
+    `Best weights on these races: ${named(m.weights)}${zero.length ? `, nothing on ${zero.join(" or ")}` : ""}. That scores ${s4(v.series.mix.brier)}, against ${s4(m.market)} for plain market prices and ${s4(us)} for our forecast.`,
+    `Knowing the wave is what pays: moving a coin-flip race to ${pct0(h.tossup)} and sharpening the rest scores ${s4(v.series.hindsight.brier)}. On the 2024 Senate races the same correction scores ${s4(past.hindsight)}, ${gain(past.hindsight, past.market)} the plain prices at ${s4(past.market)}.`,
+    `A lookup table of the results fits perfectly, at 0.0000. With each state held out it scores ${s4(m.states.lookup)}, ${gain(m.states.lookup, us)} our forecast.`,
+  ].map((t) => html("li", { text: t })));
+
+  const test = (label, n, a, b, c) => html("tr", {}, [html("td", { text: label }), html("td", { class: "num", text: n }), html("td", { class: "num", text: s4(a) }), html("td", { class: "num", text: s4(b) }), html("td", { class: "num", text: s4(c) })]);
+  $("#mix-past-head").textContent = `2024 Senate, ${past.n} races`;
+  $("#mix-tests").replaceChildren(
+    test("Our forecast", 0, us, us, null),
+    test("Plain market prices", 0, m.market, m.market, past.market),
+    test("Best mix", fitted, v.series.mix.brier, m.states.mix, null),
+    test("Best mix, knowing the wave", fitted + 2, v.series.hindsight.brier, m.states.hindsight, past.hindsight),
+    test("Lookup table", "every race", 0, m.states.lookup, null),
+  );
+
+  $("#mix-groups").replaceChildren(...app.cal.mix_groups[basis].map((g) => html("div", { class: "mix-row" }, [
+    html("span", { class: "mix-name", text: g.name }),
+    html("span", { class: "mix-bar" }, MIX_SOURCES.filter((s) => g.weights[s.key] > 0).map((s) => {
+      const seg = html("span", { style: `width:${g.weights[s.key] * 100}%;background:${s.color}`, tabindex: 0 });
+      bindTip(seg, () => tipRows(`${g.name}: ${s.label}`, [["Weight", pct0(g.weights[s.key])], ["Races", g.n], ["Brier score of this mix", s4(g.brier)]]));
+      return seg;
+    })),
+    html("span", { class: "muted mix-text", text: named(g.weights) }),
+  ])));
 }
 
 function renderScore() {
@@ -1355,7 +1465,14 @@ async function init() {
   renderBacktest(backtest);
 
   for (const id of ["f-chamber", "f-close", "f-sort"]) $("#" + id).addEventListener("change", () => renderRaces());
-  for (const id of ["cal-view", "cal-basis"]) $("#" + id).addEventListener("change", renderCalibration);
+  for (const id of ["cal-view", "cal-basis", "cal-shared"]) $("#" + id).addEventListener("change", renderCalibration);
+  $("#cal-toggles").append(...CAL_SERIES.map((s) => {
+    const box = html("input", { type: "checkbox", value: s.key });
+    box.checked = app.calOn.has(s.key);
+    box.addEventListener("change", () => { app.calOn[box.checked ? "add" : "delete"](s.key); renderCalibration(); });
+    return html("label", { class: "cal-toggle" }, [box, calKey(s), s.label]);
+  }));
+  $("#mix-legend").append(...MIX_SOURCES.map((s) => html("span", { class: "legend-item" }, [html("span", { class: "key-swatch", style: `background:${s.color}` }), s.label])));
   $("#f-search").addEventListener("input", () => renderRaces());
   $("#f-clear").addEventListener("click", () => { app.stateFilter = null; renderRaces(); });
   addEventListener("scroll", () => { tip.hidden = true; }, { passive: true });

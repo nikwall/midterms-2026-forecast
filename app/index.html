@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-11-05c">
+<link rel="stylesheet" href="styles.css?v=2026-11-05d">
 </head>
 <body>
 <!-- Icons: polls ring a phone, markets pay in dollar bills, DDHQ rings the desk bell, and our team mark is the arq
@@ -102,16 +102,17 @@
         <label for="cal-basis">Count
           <select id="cal-basis"><option value="leaders">Called, plus current leaders</option><option value="called">Called races only</option></select>
         </label>
+        <label for="cal-shared"><input type="checkbox" id="cal-shared"> Only races with polls and markets</label>
         <span class="muted small" id="cal-count"></span>
       </div>
+      <fieldset class="cal-toggles" id="cal-toggles"><legend>Show on the chart</legend></fieldset>
       <div class="cal-grid">
         <article class="card">
           <svg class="chart" id="cal-main" role="img" aria-label="Calibration chart: our chance for each bracket of races against the share the Democratic side won"></svg>
           <div class="legend" aria-hidden="true">
-            <span class="legend-item"><span class="key-dot"></span>What happened (bigger dot, more races)</span>
             <span class="legend-item"><span class="key-line ideal"></span>Perfect calibration</span>
-            <span class="legend-item"><span class="key-band"></span>90% range of our simulations</span>
-            <span class="legend-item"><span class="key-line wave"></span>Our model, given a wave this big</span>
+            <span class="legend-item">Bigger mark, more races</span>
+            <span class="legend-item" id="cal-us-legend"><span class="key-band"></span>90% range of our simulations<span class="key-line wave"></span>Our model, given a wave this big</span>
           </div>
         </article>
         <div class="cal-side">
@@ -119,10 +120,6 @@
           <table class="small-table">
             <thead><tr><th>Where we favoured</th><th class="num">Races</th><th class="num">We said</th><th class="num">They won</th><th>Reading</th></tr></thead>
             <tbody id="cal-fav"></tbody>
-          </table>
-          <table class="small-table">
-            <thead><tr><th>Brier score, same races (lower is better)</th><th class="num">Races</th><th class="num">Us</th><th class="num">Other</th></tr></thead>
-            <tbody id="cal-sources"></tbody>
           </table>
         </div>
       </div>
@@ -134,7 +131,42 @@
             <tbody id="cal-table"></tbody>
           </table>
         </div>
+        <p class="muted small">Each source by its own chance: the share the Democratic side won, with the number of races in brackets.</p>
+        <div class="table-wrap">
+          <table class="small-table">
+            <thead id="cal-by-source-head"></thead>
+            <tbody id="cal-by-source"></tbody>
+          </table>
+        </div>
       </details>
+    </div>
+
+    <div class="block">
+      <div class="block-head"><h2>Which source did best, and what would the best mix have been?</h2><span class="muted">Brier score, lower is better. The mixes are fitted to the results: hindsight, not forecasts</span></div>
+      <div class="cal-grid">
+        <div class="cal-side">
+          <div class="table-wrap">
+            <table class="small-table">
+              <thead><tr><th>Source</th><th class="num">Races</th><th class="num">Brier, its races</th><th class="num">Us, same races</th><th class="num" id="cal-shared-head">Shared races</th></tr></thead>
+              <tbody id="cal-sources"></tbody>
+            </table>
+          </div>
+          <ul class="verdict" id="mix-reading"></ul>
+        </div>
+        <div class="cal-side">
+          <div class="table-wrap">
+            <table class="small-table">
+              <thead><tr><th>Does the fit hold up?</th><th class="num">Numbers fitted</th><th class="num">In sample</th><th class="num">Other states held out</th><th class="num" id="mix-past-head">2024 Senate</th></tr></thead>
+              <tbody id="mix-tests"></tbody>
+            </table>
+          </div>
+          <article class="card">
+            <h3>The best mix changes with the races you fit it on</h3>
+            <div class="mix-groups" id="mix-groups"></div>
+            <div class="legend" id="mix-legend" aria-hidden="true"></div>
+          </article>
+        </div>
+      </div>
     </div>
 
     <div class="block">
@@ -519,7 +551,7 @@
   </footer>
 </main>
 <div class="tooltip" id="tooltip" role="status" hidden></div>
-<script src="app.js?v=2026-11-05d"></script>
+<script src="app.js?v=2026-11-05f"></script>
 <script src="whatif.js?v=2026-11-05"></script>
 </body>
 </html>

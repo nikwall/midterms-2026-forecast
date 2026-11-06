@@ -20,6 +20,8 @@
   --on-d3: #ffffff; --on-d2: #ffffff; --on-d1: #2f3639;
   --on-mid: #2f3639;
   --on-r1: #2f3639; --on-r2: #ffffff; --on-r3: #ffffff;
+  /* Sources on the calibration chart. Validated as a set; their marks also differ in shape. */
+  --s-market: #1baf7a; --s-polls: #eda100; --s-fundamentals: #6250d6; --s-ddhq: #e87ba4;
   --pending: #f0f2f3;
   --pending-ink: #737a7f;
   --norace: transparent;
@@ -416,11 +418,26 @@ footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--li
 .chart .cal-ideal { stroke: var(--ink-2); stroke-width: 1; }
 .chart .cal-wave { fill: none; stroke: #c8643b; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .chart .cal-dot { fill: var(--d3); stroke: var(--bg); stroke-width: 2; }
+.chart .cal-series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.cal-toggles { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; border: 0; margin: 0; padding: 0; font-size: 0.82rem; color: var(--ink-2); }
+.cal-toggles legend { float: left; padding: 0; margin-right: 2px; }
+.cal-toggle { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+.cal-toggle input { margin: 0; }
+.cal-toggle.off { opacity: 0.45; cursor: default; }
+.cal-key { width: 24px; height: 12px; flex: none; overflow: visible; }
+.cal-name { display: inline-flex; align-items: center; gap: 6px; }
+.mix-groups { display: grid; gap: 4px; margin: 6px 0 8px; font-size: 0.78rem; }
+.mix-row { display: grid; grid-template-columns: 74px minmax(0, 1fr) minmax(0, 1.1fr); gap: 8px; align-items: center; }
+.mix-bar { display: flex; gap: 2px; height: 12px; }
+.mix-bar span { display: block; height: 100%; }
+.mix-bar span:first-child { border-radius: 3px 0 0 3px; }
+.mix-bar span:last-child { border-radius: 0 3px 3px 0; }
+.mix-text { line-height: 1.25; }
+.key-swatch { width: 12px; height: 12px; border-radius: 3px; flex: none; }
 .chart .cal-whisker { stroke: var(--d2); stroke-width: 2; stroke-linecap: round; }
 .chart .cal-mean { stroke: var(--ink-2); stroke-width: 1; }
 .chart text.cal-corner { fill: var(--muted); font-size: 11px; font-weight: 300; }
 .chart text.row-label { fill: var(--ink); }
-.key-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--d3); flex: none; }
 .key-line { width: 16px; height: 2px; flex: none; }
 .key-line.ideal { background: var(--ink-2); height: 1px; }
 .key-line.wave { background: #c8643b; }

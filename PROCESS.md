@@ -405,3 +405,29 @@ The entry stands as frozen on 2 Nov. From now on only results change.
 | M5 | S1 (House) and S2 (Senate) are marked resolved: yes. Dates are the AP calls in US Eastern time: Senate 3 Nov (11:34 PM), House 4 Nov (2:13 AM). Both cards now show the count from `results.json`, beside the forecast, and link to the results tab. | The calls are in. The marker moves by the page rule: checks hold 88 % to 92 %, The Long Repair 58 % to 61 %. |
 | M6 | S3 (contempt vote) and S8 (AI preemption law) were built on P(D House). They now start from the result: S3 68 % (was 62 %), S8 stays at 12 %. | Otherwise the page would still use a 91 % chance for something that has happened. |
 | M7 | The link-preview image `app/atlas/og.png` is redrawn with the new numbers. `gen_cards.py` now leaves `post1_map.png` alone by default, because that is the image as posted on 2 Nov. | The old image still said the signals resolve on 3 November. |
+
+## 5 November 2026 (evening): each source on the chart, and the best mix in hindsight
+
+The forecast stays frozen. All of this is scoring, after the fact.
+
+| # | Choice | Why |
+|---|---|---|
+| C71 | A top-two race whose finalists share a party counts as called for that party, with no winner named. On 5 Nov that is CA-04, 07, 11, 14 (Democrats) and CA-40 (Republicans). | Your count of 406 is the New York Times seat tally: 401 AP calls plus these five. We had 403, the AP calls plus CNN's NJ-02 and NY-17. Together that makes 408: Democrats 253, Republicans 155. |
+| C72 | Switches on the calibration chart: our forecast, markets, polls, fundamentals, DDHQ and the two mixes. Markets are Kalshi and Polymarket together, weighted by volume, as in the model. | Your request, and your choice to keep Polymarket joint with Kalshi. It lists 56 races, Kalshi 459. |
+| C73 | "Fundamentals" on the chart are our own (lean, environment, incumbency) in all races. DDHQ is its own series, House only. | The model's House fundamentals were DDHQ's probabilities, but DDHQ blends polls and markets itself, so calling them fundamentals would mislead. |
+| C74 | Sources are compared on shared races as well: those with both polls and markets. The chart has a switch for it, the table a column. | Polls exist in about 100 races, nearly all close. Safe seats flatter any Brier score, so 0.035 for markets and 0.120 for polls on their own races says nothing about which is better. |
+| C75 | Best mix: weights on the sources' log-odds, every split in 2-point steps, lowest Brier score on the races selected. In sample only. A race without a source uses the others. | Your request. The fit runs again for each selection, so the weights can be compared across races. Plain numpy, so the three-hourly update needs nothing new. |
+| C76 | Two more fits beside it. "Knowing the wave" adds a shift and a sharpening of the log-odds. The lookup table gives each race the result of the most similar race, and only appears in the test table. | Weights alone barely beat plain prices, so they are not "the model that would have done best". The other two show what more in-sample fit buys. |
+| C77 | Two tests you did not ask for: each state predicted by a fit on the other states, and this year's correction applied to the 2024 Senate races with Polymarket's prices one week out. Neither changes a fit. | You plan to say that in-sample fit is probably not robust, and this puts a number on it. The state test cannot catch the wave, because all states share it, so it needs a different year. The 2024 test is small: 33 races, one market, one week out. |
+
+**Findings on 5 Nov, 21:30 UTC (408 House seats decided; the page always shows the current numbers):**
+
+- **Sources, same races:** on the 103 races with polls and markets, Brier: markets 0.099, us 0.113, polls 0.120, fundamentals 0.172. On the 458 races with a market: markets 0.035, us 0.040.
+- **Chambers differ:** House (76 shared races): markets 0.107, us 0.126, polls 0.139. Senate (27): polls 0.066, us 0.075, markets 0.076.
+- **Best mix:** 78% markets, 22% polls, nothing on fundamentals or DDHQ: 0.0342, against 0.0344 for plain market prices and 0.0392 for us. With states held out: 0.0348, slightly worse than plain prices.
+- **The weights do not travel:** House 90/10 markets to polls, Senate 20/80, Midwest 34/66, South 94/6, West 100/0, Northeast 72% markets and 28% fundamentals.
+- **Knowing the wave:** 0.0259 in sample and 0.0291 with states held out, but 0.0472 on the 2024 Senate races, where plain prices score 0.0341.
+- **Lookup table:** 0.0000 in sample, 0.0577 with states held out. That is worse than our forecast, DDHQ and our own fundamentals.
+- **For the record:** our forecast lost to plain market prices. What it did beat were polls and fundamentals on their own. So the result shows that one election cannot set the weights. It does not show that our weights were right.
+- **Still open:** 25 races count with their current leader and two go to runoffs; 13 open races are within one point.
+
