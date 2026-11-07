@@ -30,10 +30,10 @@
   "not_called": 2
  },
  "national": {
-  "dem": 63727957,
-  "rep": 48921104,
-  "total": 114332172,
-  "share_counted": 94.11,
+  "dem": 63734286,
+  "rep": 48922261,
+  "total": 114339764,
+  "share_counted": 94.12,
   "margin": 13.0
  },
  "control": {
@@ -392,8 +392,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 6.91,
-   "lead_votes": 24299,
+   "margin": 6.89,
+   "lead_votes": 24290,
    "reporting": 99,
    "top": [
     {
@@ -418,7 +418,7 @@
    "leader": "R",
    "leader_name": "Eli Crane",
    "margin": -1.19,
-   "lead_votes": 3885,
+   "lead_votes": 3884,
    "reporting": 99,
    "top": [
     {
@@ -446,7 +446,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 86.48,
-   "lead_votes": 119983,
+   "lead_votes": 120306,
    "reporting": 99,
    "top": [
     {
@@ -473,8 +473,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 27.11,
-   "lead_votes": 68538,
+   "margin": 27.1,
+   "lead_votes": 68656,
    "reporting": 99,
    "top": [
     {
@@ -502,7 +502,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -3.44,
-   "lead_votes": 11116,
+   "lead_votes": 11113,
    "reporting": 99,
    "top": [
     {
@@ -558,7 +558,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 44.01,
-   "lead_votes": 86346,
+   "lead_votes": 86380,
    "reporting": 96,
    "top": [
     {
@@ -586,7 +586,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -2.47,
-   "lead_votes": 7057,
+   "lead_votes": 7060,
    "reporting": 99,
    "top": [
     {
@@ -613,8 +613,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -14.77,
-   "lead_votes": 41369,
+   "margin": -14.74,
+   "lead_votes": 41338,
    "reporting": 96,
    "top": [
     {
@@ -5288,8 +5288,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.54,
-   "lead_votes": 64759,
+   "margin": 25.65,
+   "lead_votes": 65149,
    "reporting": 84,
    "top": [
     {
@@ -5344,8 +5344,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 83.03,
-   "lead_votes": 144745,
+   "margin": 83.05,
+   "lead_votes": 145126,
    "reporting": 79,
    "top": [
     {
@@ -5372,8 +5372,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 39.54,
-   "lead_votes": 115795,
+   "margin": 39.57,
+   "lead_votes": 115972,
    "reporting": 88,
    "top": [
     {
@@ -5428,20 +5428,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 68.47,
-   "lead_votes": 125971,
-   "reporting": 75,
+   "margin": 68.89,
+   "lead_votes": 129192,
+   "reporting": 76,
    "top": [
     {
      "name": "Kweisi Mfume",
      "party": "D",
-     "pct": 84.2,
+     "pct": 84.4,
      "incumbent": true
     },
     {
      "name": "Scott Collier",
      "party": "R",
-     "pct": 15.8,
+     "pct": 15.6,
      "incumbent": false
     }
    ]
@@ -6209,7 +6209,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -25.95,
-   "lead_votes": 65056,
+   "lead_votes": 65055,
    "reporting": 99,
    "top": [
     {
@@ -6265,7 +6265,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -19.74,
-   "lead_votes": 50912,
+   "lead_votes": 50911,
    "reporting": 99,
    "top": [
     {
@@ -9080,8 +9080,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 61.5,
-   "lead_votes": 113157,
+   "margin": 61.53,
+   "lead_votes": 113299,
    "reporting": 99,
    "top": [
     {
@@ -9109,8 +9109,8 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 236802,
-   "reporting": 98,
+   "lead_votes": 237112,
+   "reporting": 99,
    "top": [
     {
      "name": "Chris Rabb",
@@ -9164,8 +9164,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 44.14,
-   "lead_votes": 130766,
+   "margin": 44.15,
+   "lead_votes": 130774,
    "reporting": 99,
    "top": [
     {
@@ -12171,7 +12171,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -9.42,
-   "lead_votes": 158011,
+   "lead_votes": 158017,
    "reporting": 99,
    "top": [
     {
@@ -13120,5 +13120,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-07T17:37+00:00"
+ "updated": "2026-11-07T21:37+00:00"
 }

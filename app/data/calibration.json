@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T17:37+00:00",
+ "updated": "2026-11-07T21:37+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -12151,10 +12151,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 63727957,
-  "rep": 48921104,
-  "total": 114332172,
-  "share_counted": 94.11,
+  "dem": 63734286,
+  "rep": 48922261,
+  "total": 114339764,
+  "share_counted": 94.12,
   "margin": 13.0
  },
  "senate": {
