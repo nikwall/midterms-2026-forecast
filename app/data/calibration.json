@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T09:47+00:00",
+ "updated": "2026-11-07T17:37+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -2961,14 +2961,14 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.98,
-     "lead_votes": 19131,
-     "reporting": 97,
+     "margin": 5.89,
+     "lead_votes": 18896,
+     "reporting": 98,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.3,
+       "pct": 50.2,
        "incumbent": false
       },
       {
@@ -6786,14 +6786,14 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.98,
-     "lead_votes": 19131,
-     "reporting": 97,
+     "margin": 5.89,
+     "lead_votes": 18896,
+     "reporting": 98,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.3,
+       "pct": 50.2,
        "incumbent": false
       },
       {
@@ -8852,14 +8852,14 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.98,
-     "lead_votes": 19131,
-     "reporting": 97,
+     "margin": 5.89,
+     "lead_votes": 18896,
+     "reporting": 98,
      "top": [
       {
        "name": "Teresa Benitez-Thompson",
        "party": "D",
-       "pct": 50.3,
+       "pct": 50.2,
        "incumbent": false
       },
       {
@@ -12151,11 +12151,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 63614146,
-  "rep": 48878142,
-  "total": 114174795,
-  "share_counted": 93.98,
-  "margin": 12.9
+  "dem": 63727957,
+  "rep": 48921104,
+  "total": 114332172,
+  "share_counted": 94.11,
+  "margin": 13.0
  },
  "senate": {
   "p_control": 0.7754,
