@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T20:44+00:00",
+ "updated": "2026-11-07T00:44+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -575,9 +575,9 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 10,
-     "miss": 5.1,
-     "se": 1.2
+     "n": 11,
+     "miss": 4.9,
+     "se": 1.1
     },
     {
      "division": "Middle Atlantic",
@@ -604,14 +604,14 @@
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.3,
+     "miss": 2.6,
      "se": null
     },
     {
      "division": "West North Central",
      "region": "Midwest",
      "n": 12,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": 0.7
     },
     {
@@ -623,7 +623,7 @@
     }
    ],
    "mean_miss": 4.5,
-   "n_miss": 85,
+   "n_miss": 86,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -768,8 +768,8 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.21,
-     "lead_votes": 2029,
+     "margin": 0.27,
+     "lead_votes": 2574,
      "reporting": 97,
      "top": [
       {
@@ -814,9 +814,9 @@
      "p": 0.128,
      "won": 1,
      "status": "counting",
-     "margin": 0.81,
-     "lead_votes": 3069,
-     "reporting": 95,
+     "margin": 0.83,
+     "lead_votes": 3172,
+     "reporting": 97,
      "top": [
       {
        "name": "Eileen Laubacher",
@@ -2653,9 +2653,9 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 10,
-     "miss": 5.1,
-     "se": 1.2
+     "n": 11,
+     "miss": 4.9,
+     "se": 1.1
     },
     {
      "division": "Middle Atlantic",
@@ -2682,14 +2682,14 @@
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.3,
+     "miss": 2.6,
      "se": null
     },
     {
      "division": "West North Central",
      "region": "Midwest",
      "n": 8,
-     "miss": 2.3,
+     "miss": 2.4,
      "se": 0.6
     },
     {
@@ -2701,7 +2701,7 @@
     }
    ],
    "mean_miss": 4.6,
-   "n_miss": 74,
+   "n_miss": 75,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -2869,9 +2869,9 @@
      "p": 0.128,
      "won": 1,
      "status": "counting",
-     "margin": 0.81,
-     "lead_votes": 3069,
-     "reporting": 95,
+     "margin": 0.83,
+     "lead_votes": 3172,
+     "reporting": 97,
      "top": [
       {
        "name": "Eileen Laubacher",
@@ -4685,7 +4685,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 4.7,
+     "miss": 4.8,
      "se": null
     },
     {
@@ -4713,7 +4713,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.0,
+     "miss": 2.1,
      "se": 2.0
     }
    ],
@@ -4725,8 +4725,8 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.21,
-     "lead_votes": 2029,
+     "margin": 0.27,
+     "lead_votes": 2574,
      "reporting": 97,
      "top": [
       {
@@ -4748,8 +4748,8 @@
      "p": 0.256,
      "won": 1,
      "status": "called",
-     "margin": 4.49,
-     "lead_votes": 91569,
+     "margin": 4.5,
+     "lead_votes": 91815,
      "reporting": 99,
      "top": [
       {
@@ -4772,7 +4772,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.11,
-     "lead_votes": 55837,
+     "lead_votes": 55833,
      "reporting": 99,
      "top": [
       {
@@ -4817,8 +4817,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.0,
-     "lead_votes": 54909,
+     "margin": 5.05,
+     "lead_votes": 55585,
      "reporting": 99,
      "top": [
       {
@@ -4840,20 +4840,20 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -6.44,
-     "lead_votes": 48163,
-     "reporting": 96,
+     "margin": -6.23,
+     "lead_votes": 47013,
+     "reporting": 97,
      "top": [
       {
        "name": "Pete Ricketts",
        "party": "R",
-       "pct": 50.2,
+       "pct": 50.1,
        "incumbent": true
       },
       {
        "name": "Dan Osborn",
        "party": "O",
-       "pct": 43.8,
+       "pct": 43.9,
        "incumbent": false
       }
      ]
@@ -4956,7 +4956,7 @@
      "won": 0,
      "status": "called",
      "margin": -2.88,
-     "lead_votes": 238487,
+     "lead_votes": 238147,
      "reporting": 99,
      "top": [
       {
@@ -5981,14 +5981,14 @@
    }
   },
   "all|called": {
-   "n": 448,
-   "actual": 273,
-   "expected": 255.7,
-   "share_sims_below": 0.8467,
-   "brier": 0.0295,
-   "n_non_safe": 73,
-   "brier_non_safe": 0.168,
-   "favourite_won": 0.9576,
+   "n": 450,
+   "actual": 274,
+   "expected": 256.1,
+   "share_sims_below": 0.8479,
+   "brier": 0.0302,
+   "n_non_safe": 74,
+   "brier_non_safe": 0.1707,
+   "favourite_won": 0.9556,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -6006,6 +6006,7 @@
     "H-NC-09",
     "H-NC-13",
     "H-NC-14",
+    "H-SC-01",
     "H-AL-02",
     "H-TX-09",
     "H-TX-23"
@@ -6029,15 +6030,15 @@
      "bracket": "2–5%",
      "lo": 0.02,
      "hi": 0.05,
-     "n": 19,
-     "mean_p": 0.0356,
+     "n": 20,
+     "mean_p": 0.035,
      "wins": 1,
-     "freq": 0.0526,
+     "freq": 0.05,
      "band": [
       0.0,
-      0.2105
+      0.2
      ],
-     "wave": 0.0468
+     "wave": 0.0457
     },
     {
      "bracket": "5–10%",
@@ -6051,7 +6052,7 @@
       0.0,
       0.4286
      ],
-     "wave": 0.1264
+     "wave": 0.1252
     },
     {
      "bracket": "10–20%",
@@ -6065,7 +6066,7 @@
       0.0,
       0.875
      ],
-     "wave": 0.4131
+     "wave": 0.4147
     },
     {
      "bracket": "20–35%",
@@ -6079,21 +6080,21 @@
       0.0,
       1.0
      ],
-     "wave": 0.7245
+     "wave": 0.7268
     },
     {
      "bracket": "35–65%",
      "lo": 0.35,
      "hi": 0.65,
-     "n": 8,
-     "mean_p": 0.4998,
-     "wins": 8,
+     "n": 9,
+     "mean_p": 0.488,
+     "wins": 9,
      "freq": 1.0,
      "band": [
       0.0,
       1.0
      ],
-     "wave": 0.9447
+     "wave": 0.9431
     },
     {
      "bracket": "65–80%",
@@ -6179,11 +6180,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 194,
-     "chance": 0.9548,
-     "won": 0.9021,
-     "expected": 185.2,
-     "actual": 175
+     "n": 196,
+     "chance": 0.9532,
+     "won": 0.898,
+     "expected": 186.8,
+     "actual": 176
     },
     {
      "scope": "non-safe",
@@ -6197,10 +6198,10 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 38,
-     "chance": 0.8053,
-     "won": 0.5263,
-     "expected": 30.6,
+     "n": 39,
+     "chance": 0.8002,
+     "won": 0.5128,
+     "expected": 31.2,
      "actual": 20
     }
    ],
@@ -6229,7 +6230,7 @@
         0.0,
         0.0
        ],
-       "wave": 0.004
+       "wave": 0.0043
       },
       {
        "bracket": "5–35%",
@@ -6243,7 +6244,7 @@
         0.0,
         0.8
        ],
-       "wave": 0.452
+       "wave": 0.46
       },
       {
        "bracket": "35–65%",
@@ -6257,7 +6258,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.97
+       "wave": 0.9712
       },
       {
        "bracket": "65–95%",
@@ -6313,7 +6314,7 @@
         0.0,
         0.027
        ],
-       "wave": 0.0069
+       "wave": 0.0075
       },
       {
        "bracket": "5–35%",
@@ -6327,7 +6328,7 @@
         0.0,
         0.625
        ],
-       "wave": 0.2975
+       "wave": 0.2963
       },
       {
        "bracket": "35–65%",
@@ -6341,7 +6342,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9069
+       "wave": 0.9119
       },
       {
        "bracket": "65–95%",
@@ -6355,7 +6356,7 @@
         0.1667,
         1.0
        ],
-       "wave": 0.9996
+       "wave": 0.9998
       },
       {
        "bracket": "95–100%",
@@ -6375,29 +6376,29 @@
     },
     {
      "region": "South",
-     "n": 164,
-     "expected": 56.7,
-     "actual": 64,
-     "brier": 0.0387,
-     "n_non_safe": 28,
-     "expected_non_safe": 12.0,
-     "actual_non_safe": 19,
-     "upsets_d": 8,
+     "n": 166,
+     "expected": 57.2,
+     "actual": 65,
+     "brier": 0.0404,
+     "n_non_safe": 29,
+     "expected_non_safe": 12.4,
+     "actual_non_safe": 20,
+     "upsets_d": 9,
      "upsets_r": 0,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 92,
-       "mean_p": 0.01,
+       "n": 93,
+       "mean_p": 0.0101,
        "wins": 1,
-       "freq": 0.0109,
+       "freq": 0.0108,
        "band": [
         0.0,
-        0.0435
+        0.043
        ],
-       "wave": 0.0098
+       "wave": 0.0095
       },
       {
        "bracket": "5–35%",
@@ -6411,21 +6412,21 @@
         0.0,
         0.75
        ],
-       "wave": 0.3927
+       "wave": 0.3911
       },
       {
        "bracket": "35–65%",
        "lo": 0.35,
        "hi": 0.65,
-       "n": 2,
-       "mean_p": 0.5945,
-       "wins": 2,
+       "n": 3,
+       "mean_p": 0.5274,
+       "wins": 3,
        "freq": 1.0,
        "band": [
         0.0,
         1.0
        ],
-       "wave": 0.995
+       "wave": 0.9658
       },
       {
        "bracket": "65–95%",
@@ -6439,7 +6440,7 @@
         0.1,
         1.0
        ],
-       "wave": 1.0
+       "wave": 0.9998
       },
       {
        "bracket": "95–100%",
@@ -6481,7 +6482,7 @@
         0.0,
         0.0588
        ],
-       "wave": 0.0104
+       "wave": 0.0113
       },
       {
        "bracket": "5–35%",
@@ -6495,7 +6496,7 @@
         0.0,
         0.75
        ],
-       "wave": 0.5306
+       "wave": 0.5344
       },
       {
        "bracket": "65–95%",
@@ -6546,9 +6547,9 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 8,
-     "miss": 5.7,
-     "se": 1.3
+     "n": 9,
+     "miss": 5.3,
+     "se": 1.2
     },
     {
      "division": "Middle Atlantic",
@@ -6567,23 +6568,23 @@
     {
      "division": "South Atlantic",
      "region": "South",
-     "n": 18,
-     "miss": 3.3,
+     "n": 19,
+     "miss": 3.2,
      "se": 0.7
-    },
-    {
-     "division": "West North Central",
-     "region": "Midwest",
-     "n": 11,
-     "miss": 2.3,
-     "se": 0.8
     },
     {
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.3,
+     "miss": 2.6,
      "se": null
+    },
+    {
+     "division": "West North Central",
+     "region": "Midwest",
+     "n": 11,
+     "miss": 2.4,
+     "se": 0.8
     },
     {
      "division": "New England",
@@ -6594,7 +6595,7 @@
     }
    ],
    "mean_miss": 4.6,
-   "n_miss": 72,
+   "n_miss": 74,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -6854,8 +6855,8 @@
      "p": 0.256,
      "won": 1,
      "status": "called",
-     "margin": 4.49,
-     "lead_votes": 91569,
+     "margin": 4.5,
+     "lead_votes": 91815,
      "reporting": 99,
      "top": [
       {
@@ -6875,9 +6876,9 @@
    ],
    "series": {
     "us": {
-     "n": 448,
-     "brier": 0.0295,
-     "us": 0.0295,
+     "n": 450,
+     "brier": 0.0302,
+     "us": 0.0302,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -6888,10 +6889,10 @@
       },
       {
        "bracket": "2–5%",
-       "n": 19,
-       "mean_p": 0.0356,
+       "n": 20,
+       "mean_p": 0.035,
        "wins": 1,
-       "freq": 0.0526
+       "freq": 0.05
       },
       {
        "bracket": "5–10%",
@@ -6916,9 +6917,9 @@
       },
       {
        "bracket": "35–65%",
-       "n": 8,
-       "mean_p": 0.4998,
-       "wins": 8,
+       "n": 9,
+       "mean_p": 0.488,
+       "wins": 9,
        "freq": 1.0
       },
       {
@@ -6957,7 +6958,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.0948,
+     "shared": 0.0976,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -6971,7 +6972,7 @@
         0.0,
         0.0
        ],
-       "wave": 0.0008
+       "wave": 0.001
       },
       {
        "bracket": "2–5%",
@@ -6985,7 +6986,7 @@
         0.0,
         0.3333
        ],
-       "wave": 0.015
+       "wave": 0.0167
       },
       {
        "bracket": "5–10%",
@@ -6999,7 +7000,7 @@
         0.0,
         0.75
        ],
-       "wave": 0.1675
+       "wave": 0.165
       },
       {
        "bracket": "10–20%",
@@ -7013,7 +7014,7 @@
         0.0,
         0.8
        ],
-       "wave": 0.414
+       "wave": 0.4165
       },
       {
        "bracket": "20–35%",
@@ -7027,21 +7028,21 @@
         0.0,
         1.0
        ],
-       "wave": 0.7345
+       "wave": 0.7362
       },
       {
        "bracket": "35–65%",
        "lo": 0.35,
        "hi": 0.65,
-       "n": 7,
-       "mean_p": 0.502,
-       "wins": 7,
+       "n": 8,
+       "mean_p": 0.4884,
+       "wins": 8,
        "freq": 1.0,
        "band": [
         0.0,
         1.0
        ],
-       "wave": 0.9521
+       "wave": 0.9481
       },
       {
        "bracket": "65–80%",
@@ -7116,9 +7117,9 @@
      ]
     },
     "market": {
-     "n": 439,
-     "brier": 0.0258,
-     "us": 0.0301,
+     "n": 441,
+     "brier": 0.0263,
+     "us": 0.0308,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -7136,8 +7137,8 @@
       },
       {
        "bracket": "5–10%",
-       "n": 26,
-       "mean_p": 0.0678,
+       "n": 27,
+       "mean_p": 0.0677,
        "wins": 0,
        "freq": 0.0
       },
@@ -7157,10 +7158,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 19,
-       "mean_p": 0.4794,
-       "wins": 16,
-       "freq": 0.8421
+       "n": 20,
+       "mean_p": 0.4799,
+       "wins": 17,
+       "freq": 0.85
       },
       {
        "bracket": "65–80%",
@@ -7198,7 +7199,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.0832,
+     "shared": 0.085,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -7237,10 +7238,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 16,
-       "mean_p": 0.4806,
-       "wins": 13,
-       "freq": 0.8125
+       "n": 17,
+       "mean_p": 0.4812,
+       "wins": 14,
+       "freq": 0.8235
       },
       {
        "bracket": "65–80%",
@@ -7280,9 +7281,9 @@
      ]
     },
     "polls": {
-     "n": 95,
-     "brier": 0.1067,
-     "us": 0.0948,
+     "n": 96,
+     "brier": 0.1074,
+     "us": 0.0976,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -7321,10 +7322,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 29,
-       "mean_p": 0.5177,
-       "wins": 23,
-       "freq": 0.7931
+       "n": 30,
+       "mean_p": 0.5198,
+       "wins": 24,
+       "freq": 0.8
       },
       {
        "bracket": "65–80%",
@@ -7362,7 +7363,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.1067,
+     "shared": 0.1074,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -7401,10 +7402,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 29,
-       "mean_p": 0.5177,
-       "wins": 23,
-       "freq": 0.7931
+       "n": 30,
+       "mean_p": 0.5198,
+       "wins": 24,
+       "freq": 0.8
       },
       {
        "bracket": "65–80%",
@@ -7444,9 +7445,9 @@
      ]
     },
     "fundamentals": {
-     "n": 448,
-     "brier": 0.0429,
-     "us": 0.0295,
+     "n": 450,
+     "brier": 0.0437,
+     "us": 0.0302,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -7457,8 +7458,8 @@
       },
       {
        "bracket": "2–5%",
-       "n": 19,
-       "mean_p": 0.0306,
+       "n": 20,
+       "mean_p": 0.0309,
        "wins": 0,
        "freq": 0.0
       },
@@ -7478,10 +7479,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 18,
-       "mean_p": 0.2583,
-       "wins": 8,
-       "freq": 0.4444
+       "n": 19,
+       "mean_p": 0.262,
+       "wins": 9,
+       "freq": 0.4737
       },
       {
        "bracket": "35–65%",
@@ -7526,7 +7527,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.1526,
+     "shared": 0.1557,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -7558,10 +7559,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 13,
-       "mean_p": 0.2638,
-       "wins": 8,
-       "freq": 0.6154
+       "n": 14,
+       "mean_p": 0.2683,
+       "wins": 9,
+       "freq": 0.6429
       },
       {
        "bracket": "35–65%",
@@ -7608,9 +7609,9 @@
      ]
     },
     "ddhq": {
-     "n": 415,
-     "brier": 0.0416,
-     "us": 0.0291,
+     "n": 417,
+     "brier": 0.0427,
+     "us": 0.0299,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -7628,8 +7629,8 @@
       },
       {
        "bracket": "5–10%",
-       "n": 23,
-       "mean_p": 0.0622,
+       "n": 24,
+       "mean_p": 0.0633,
        "wins": 0,
        "freq": 0.0
       },
@@ -7642,10 +7643,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 16,
-       "mean_p": 0.2625,
-       "wins": 9,
-       "freq": 0.5625
+       "n": 17,
+       "mean_p": 0.2641,
+       "wins": 10,
+       "freq": 0.5882
       },
       {
        "bracket": "35–65%",
@@ -7694,9 +7695,9 @@
      "shared_brackets": null
     },
     "mix": {
-     "n": 448,
-     "brier": 0.0251,
-     "us": 0.0295,
+     "n": 450,
+     "brier": 0.0255,
+     "us": 0.0302,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -7714,312 +7715,312 @@
       },
       {
        "bracket": "5–10%",
-       "n": 25,
-       "mean_p": 0.0684,
+       "n": 26,
+       "mean_p": 0.0685,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "10–20%",
        "n": 20,
-       "mean_p": 0.1309,
+       "mean_p": 0.1312,
        "wins": 1,
        "freq": 0.05
       },
       {
        "bracket": "20–35%",
-       "n": 10,
-       "mean_p": 0.2605,
-       "wins": 5,
-       "freq": 0.5
+       "n": 11,
+       "mean_p": 0.2696,
+       "wins": 6,
+       "freq": 0.5455
       },
       {
        "bracket": "35–65%",
        "n": 21,
-       "mean_p": 0.4531,
+       "mean_p": 0.4622,
        "wins": 16,
        "freq": 0.7619
       },
       {
        "bracket": "65–80%",
        "n": 15,
-       "mean_p": 0.7359,
+       "mean_p": 0.7353,
        "wins": 15,
        "freq": 1.0
       },
       {
        "bracket": "80–90%",
        "n": 17,
-       "mean_p": 0.8599,
+       "mean_p": 0.8577,
        "wins": 17,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 14,
-       "mean_p": 0.93,
+       "mean_p": 0.9293,
        "wins": 14,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
-       "n": 45,
-       "mean_p": 0.972,
-       "wins": 45,
+       "n": 44,
+       "mean_p": 0.9718,
+       "wins": 44,
        "freq": 1.0
       },
       {
        "bracket": "98–100%",
-       "n": 160,
+       "n": 161,
        "mean_p": 0.9877,
-       "wins": 160,
+       "wins": 161,
        "freq": 1.0
       }
      ],
-     "shared": 0.0822,
+     "shared": 0.0839,
      "shared_brackets": [
       {
        "bracket": "0–2%",
        "n": 2,
-       "mean_p": 0.0119,
+       "mean_p": 0.0117,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
        "n": 6,
-       "mean_p": 0.0312,
+       "mean_p": 0.0315,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "5–10%",
        "n": 3,
-       "mean_p": 0.075,
+       "mean_p": 0.0765,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "10–20%",
        "n": 3,
-       "mean_p": 0.1362,
+       "mean_p": 0.1381,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "20–35%",
-       "n": 7,
-       "mean_p": 0.2771,
-       "wins": 3,
-       "freq": 0.4286
+       "n": 8,
+       "mean_p": 0.2876,
+       "wins": 4,
+       "freq": 0.5
       },
       {
        "bracket": "35–65%",
        "n": 18,
-       "mean_p": 0.4499,
+       "mean_p": 0.4605,
        "wins": 13,
        "freq": 0.7222
       },
       {
        "bracket": "65–80%",
        "n": 15,
-       "mean_p": 0.7359,
+       "mean_p": 0.7353,
        "wins": 15,
        "freq": 1.0
       },
       {
        "bracket": "80–90%",
        "n": 15,
-       "mean_p": 0.8601,
+       "mean_p": 0.8576,
        "wins": 15,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 8,
-       "mean_p": 0.9266,
+       "mean_p": 0.9255,
        "wins": 8,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
-       "n": 7,
-       "mean_p": 0.966,
-       "wins": 7,
+       "n": 6,
+       "mean_p": 0.9635,
+       "wins": 6,
        "freq": 1.0
       },
       {
        "bracket": "98–100%",
-       "n": 11,
-       "mean_p": 0.989,
-       "wins": 11,
+       "n": 12,
+       "mean_p": 0.9883,
+       "wins": 12,
        "freq": 1.0
       }
      ]
     },
     "hindsight": {
-     "n": 448,
+     "n": 450,
      "brier": 0.0155,
-     "us": 0.0295,
+     "us": 0.0302,
      "brackets": [
       {
        "bracket": "0–2%",
-       "n": 137,
-       "mean_p": 0.0036,
+       "n": 140,
+       "mean_p": 0.0038,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
-       "n": 10,
-       "mean_p": 0.0267,
+       "n": 8,
+       "mean_p": 0.0274,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "5–10%",
        "n": 13,
-       "mean_p": 0.0747,
+       "mean_p": 0.0734,
        "wins": 1,
        "freq": 0.0769
       },
       {
        "bracket": "10–20%",
        "n": 4,
-       "mean_p": 0.1142,
+       "mean_p": 0.1128,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "20–35%",
        "n": 7,
-       "mean_p": 0.2525,
+       "mean_p": 0.2521,
        "wins": 2,
        "freq": 0.2857
       },
       {
        "bracket": "35–65%",
        "n": 9,
-       "mean_p": 0.5388,
+       "mean_p": 0.5419,
        "wins": 5,
        "freq": 0.5556
       },
       {
        "bracket": "65–80%",
        "n": 7,
-       "mean_p": 0.7008,
+       "mean_p": 0.7052,
        "wins": 4,
        "freq": 0.5714
       },
       {
        "bracket": "80–90%",
-       "n": 5,
-       "mean_p": 0.8529,
-       "wins": 5,
+       "n": 6,
+       "mean_p": 0.8602,
+       "wins": 6,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 4,
-       "mean_p": 0.9296,
+       "mean_p": 0.9323,
        "wins": 4,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
        "n": 3,
-       "mean_p": 0.9583,
+       "mean_p": 0.9602,
        "wins": 3,
        "freq": 1.0
       },
       {
        "bracket": "98–100%",
        "n": 249,
-       "mean_p": 0.9993,
+       "mean_p": 0.9994,
        "wins": 249,
        "freq": 1.0
       }
      ],
-     "shared": 0.0506,
+     "shared": 0.0503,
      "shared_brackets": [
       {
        "bracket": "0–2%",
        "n": 10,
-       "mean_p": 0.0043,
+       "mean_p": 0.0041,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
        "n": 2,
-       "mean_p": 0.032,
+       "mean_p": 0.0311,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "10–20%",
        "n": 2,
-       "mean_p": 0.1148,
+       "mean_p": 0.1134,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "20–35%",
        "n": 3,
-       "mean_p": 0.2701,
+       "mean_p": 0.2699,
        "wins": 1,
        "freq": 0.3333
       },
       {
        "bracket": "35–65%",
        "n": 8,
-       "mean_p": 0.5601,
+       "mean_p": 0.5634,
        "wins": 4,
        "freq": 0.5
       },
       {
        "bracket": "65–80%",
        "n": 6,
-       "mean_p": 0.7041,
+       "mean_p": 0.7084,
        "wins": 3,
        "freq": 0.5
       },
       {
        "bracket": "80–90%",
-       "n": 4,
-       "mean_p": 0.8593,
-       "wins": 4,
+       "n": 5,
+       "mean_p": 0.8659,
+       "wins": 5,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 4,
-       "mean_p": 0.9296,
+       "mean_p": 0.9323,
        "wins": 4,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
        "n": 2,
-       "mean_p": 0.9621,
+       "mean_p": 0.9639,
        "wins": 2,
        "freq": 1.0
       },
       {
        "bracket": "98–100%",
        "n": 54,
-       "mean_p": 0.997,
+       "mean_p": 0.9972,
        "wins": 54,
        "freq": 1.0
       }
      ]
     }
    },
-   "n_shared": 95,
+   "n_shared": 96,
    "mix": {
     "weights": {
-     "market": 0.8,
-     "polls": 0.2,
+     "market": 0.78,
+     "polls": 0.22,
      "fundamentals": 0.0,
      "ddhq": 0.0
     },
@@ -8030,32 +8031,32 @@
       "fundamentals": 0.0,
       "ddhq": 0.0
      },
-     "shift": 2.02,
-     "slope": 2.27,
-     "tossup": 0.883
+     "shift": 2.05,
+     "slope": 2.3,
+     "tossup": 0.886
     },
-    "market": 0.0254,
+    "market": 0.0259,
     "states": {
-     "mix": 0.0257,
+     "mix": 0.0261,
      "hindsight": 0.0183,
-     "lookup": 0.0536
+     "lookup": 0.0533
     },
     "senate_2024": {
      "n": 33,
      "market": 0.0341,
-     "hindsight": 0.0517
+     "hindsight": 0.052
     }
    }
   },
   "house|called": {
-   "n": 415,
-   "actual": 253,
-   "expected": 237.6,
-   "share_sims_below": 0.8527,
-   "brier": 0.0291,
-   "n_non_safe": 63,
-   "brier_non_safe": 0.1767,
-   "favourite_won": 0.959,
+   "n": 417,
+   "actual": 254,
+   "expected": 238.1,
+   "share_sims_below": 0.8538,
+   "brier": 0.0299,
+   "n_non_safe": 64,
+   "brier_non_safe": 0.1797,
+   "favourite_won": 0.9568,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -8071,6 +8072,7 @@
     "H-NC-09",
     "H-NC-13",
     "H-NC-14",
+    "H-SC-01",
     "H-AL-02",
     "H-TX-09",
     "H-TX-23"
@@ -8088,21 +8090,21 @@
       0.0,
       0.0233
      ],
-     "wave": 0.0045
+     "wave": 0.0044
     },
     {
      "bracket": "2–5%",
      "lo": 0.02,
      "hi": 0.05,
-     "n": 16,
-     "mean_p": 0.0353,
+     "n": 17,
+     "mean_p": 0.0345,
      "wins": 1,
-     "freq": 0.0625,
+     "freq": 0.0588,
      "band": [
       0.0,
-      0.1875
+      0.1765
      ],
-     "wave": 0.0528
+     "wave": 0.0513
     },
     {
      "bracket": "5–10%",
@@ -8116,7 +8118,7 @@
       0.0,
       0.3846
      ],
-     "wave": 0.1313
+     "wave": 0.1319
     },
     {
      "bracket": "10–20%",
@@ -8130,7 +8132,7 @@
       0.0,
       0.875
      ],
-     "wave": 0.4331
+     "wave": 0.4359
     },
     {
      "bracket": "20–35%",
@@ -8144,21 +8146,21 @@
       0.0,
       1.0
      ],
-     "wave": 0.7458
+     "wave": 0.75
     },
     {
      "bracket": "35–65%",
      "lo": 0.35,
      "hi": 0.65,
-     "n": 7,
-     "mean_p": 0.5033,
-     "wins": 7,
+     "n": 8,
+     "mean_p": 0.4896,
+     "wins": 8,
      "freq": 1.0,
      "band": [
       0.0,
       1.0
      ],
-     "wave": 0.9546
+     "wave": 0.9466
     },
     {
      "bracket": "65–80%",
@@ -8172,7 +8174,7 @@
       0.0,
       1.0
      ],
-     "wave": 0.9965
+     "wave": 0.9975
     },
     {
      "bracket": "80–90%",
@@ -8244,11 +8246,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 179,
-     "chance": 0.958,
-     "won": 0.905,
-     "expected": 171.5,
-     "actual": 162
+     "n": 181,
+     "chance": 0.9562,
+     "won": 0.9006,
+     "expected": 173.1,
+     "actual": 163
     },
     {
      "scope": "non-safe",
@@ -8262,10 +8264,10 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 34,
-     "chance": 0.8137,
-     "won": 0.5294,
-     "expected": 27.7,
+     "n": 35,
+     "chance": 0.8078,
+     "won": 0.5143,
+     "expected": 28.3,
      "actual": 18
     }
    ],
@@ -8294,7 +8296,7 @@
         0.0,
         0.0
        ],
-       "wave": 0.0063
+       "wave": 0.006
       },
       {
        "bracket": "5–35%",
@@ -8308,7 +8310,7 @@
         0.0,
         0.8
        ],
-       "wave": 0.4615
+       "wave": 0.469
       },
       {
        "bracket": "35–65%",
@@ -8378,7 +8380,7 @@
         0.0,
         0.0278
        ],
-       "wave": 0.007
+       "wave": 0.0074
       },
       {
        "bracket": "5–35%",
@@ -8392,7 +8394,7 @@
         0.0,
         0.5714
        ],
-       "wave": 0.2543
+       "wave": 0.2561
       },
       {
        "bracket": "35–65%",
@@ -8406,7 +8408,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9125
+       "wave": 0.91
       },
       {
        "bracket": "65–95%",
@@ -8420,7 +8422,7 @@
         0.25,
         1.0
        ],
-       "wave": 0.9991
+       "wave": 0.9994
       },
       {
        "bracket": "95–100%",
@@ -8440,29 +8442,29 @@
     },
     {
      "region": "South",
-     "n": 150,
-     "expected": 51.6,
-     "actual": 58,
-     "brier": 0.0381,
-     "n_non_safe": 25,
-     "expected_non_safe": 10.9,
-     "actual_non_safe": 17,
-     "upsets_d": 7,
+     "n": 152,
+     "expected": 52.0,
+     "actual": 59,
+     "brier": 0.0401,
+     "n_non_safe": 26,
+     "expected_non_safe": 11.3,
+     "actual_non_safe": 18,
+     "upsets_d": 8,
      "upsets_r": 0,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 85,
-       "mean_p": 0.0097,
+       "n": 86,
+       "mean_p": 0.0099,
        "wins": 1,
-       "freq": 0.0118,
+       "freq": 0.0116,
        "band": [
         0.0,
-        0.0471
+        0.0465
        ],
-       "wave": 0.0111
+       "wave": 0.011
       },
       {
        "bracket": "5–35%",
@@ -8476,21 +8478,21 @@
         0.0,
         0.7143
        ],
-       "wave": 0.4043
+       "wave": 0.4048
       },
       {
        "bracket": "35–65%",
        "lo": 0.35,
        "hi": 0.65,
-       "n": 2,
-       "mean_p": 0.5945,
-       "wins": 2,
+       "n": 3,
+       "mean_p": 0.5274,
+       "wins": 3,
        "freq": 1.0,
        "band": [
         0.0,
         1.0
        ],
-       "wave": 0.995
+       "wave": 0.9625
       },
       {
        "bracket": "65–95%",
@@ -8546,7 +8548,7 @@
         0.0,
         0.0714
        ],
-       "wave": 0.0118
+       "wave": 0.0125
       },
       {
        "bracket": "5–35%",
@@ -8560,7 +8562,7 @@
         0.0,
         0.75
        ],
-       "wave": 0.5344
+       "wave": 0.5369
       },
       {
        "bracket": "65–95%",
@@ -8574,7 +8576,7 @@
         0.3333,
         1.0
        ],
-       "wave": 0.9988
+       "wave": 0.9992
       },
       {
        "bracket": "95–100%",
@@ -8611,9 +8613,9 @@
     {
      "division": "Mountain",
      "region": "West",
-     "n": 8,
-     "miss": 5.7,
-     "se": 1.3
+     "n": 9,
+     "miss": 5.3,
+     "se": 1.2
     },
     {
      "division": "Middle Atlantic",
@@ -8632,23 +8634,23 @@
     {
      "division": "South Atlantic",
      "region": "South",
-     "n": 16,
-     "miss": 3.1,
-     "se": 0.8
-    },
-    {
-     "division": "West North Central",
-     "region": "Midwest",
-     "n": 7,
-     "miss": 2.4,
+     "n": 17,
+     "miss": 3.0,
      "se": 0.7
     },
     {
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.3,
+     "miss": 2.6,
      "se": null
+    },
+    {
+     "division": "West North Central",
+     "region": "Midwest",
+     "n": 7,
+     "miss": 2.6,
+     "se": 0.7
     },
     {
      "division": "New England",
@@ -8659,7 +8661,7 @@
     }
    ],
    "mean_miss": 4.8,
-   "n_miss": 62,
+   "n_miss": 64,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -8940,9 +8942,9 @@
    ],
    "series": {
     "us": {
-     "n": 415,
-     "brier": 0.0291,
-     "us": 0.0291,
+     "n": 417,
+     "brier": 0.0299,
+     "us": 0.0299,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -8953,10 +8955,10 @@
       },
       {
        "bracket": "2–5%",
-       "n": 16,
-       "mean_p": 0.0353,
+       "n": 17,
+       "mean_p": 0.0345,
        "wins": 1,
-       "freq": 0.0625
+       "freq": 0.0588
       },
       {
        "bracket": "5–10%",
@@ -8981,9 +8983,9 @@
       },
       {
        "bracket": "35–65%",
-       "n": 7,
-       "mean_p": 0.5033,
-       "wins": 7,
+       "n": 8,
+       "mean_p": 0.4896,
+       "wins": 8,
        "freq": 1.0
       },
       {
@@ -9022,7 +9024,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.1125,
+     "shared": 0.1161,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -9036,7 +9038,7 @@
         0.0,
         0.0
        ],
-       "wave": 0.0017
+       "wave": 0.0021
       },
       {
        "bracket": "2–5%",
@@ -9050,7 +9052,7 @@
         0.0,
         0.0
        ],
-       "wave": 0.03
+       "wave": 0.0325
       },
       {
        "bracket": "5–10%",
@@ -9064,7 +9066,7 @@
         0.0,
         0.6667
        ],
-       "wave": 0.1742
+       "wave": 0.1767
       },
       {
        "bracket": "10–20%",
@@ -9078,7 +9080,7 @@
         0.0,
         0.8
        ],
-       "wave": 0.43
+       "wave": 0.433
       },
       {
        "bracket": "20–35%",
@@ -9092,21 +9094,21 @@
         0.0,
         1.0
        ],
-       "wave": 0.7606
+       "wave": 0.7653
       },
       {
        "bracket": "35–65%",
        "lo": 0.35,
        "hi": 0.65,
-       "n": 6,
-       "mean_p": 0.5064,
-       "wins": 6,
+       "n": 7,
+       "mean_p": 0.4903,
+       "wins": 7,
        "freq": 1.0,
        "band": [
         0.0,
         1.0
        ],
-       "wave": 0.96
+       "wave": 0.9511
       },
       {
        "bracket": "65–80%",
@@ -9120,7 +9122,7 @@
         0.0,
         1.0
        ],
-       "wave": 0.9965
+       "wave": 0.9975
       },
       {
        "bracket": "80–90%",
@@ -9181,9 +9183,9 @@
      ]
     },
     "market": {
-     "n": 406,
-     "brier": 0.0248,
-     "us": 0.0298,
+     "n": 408,
+     "brier": 0.0253,
+     "us": 0.0305,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -9201,7 +9203,7 @@
       },
       {
        "bracket": "5–10%",
-       "n": 23,
+       "n": 24,
        "mean_p": 0.0671,
        "wins": 0,
        "freq": 0.0
@@ -9222,10 +9224,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 17,
-       "mean_p": 0.4691,
-       "wins": 14,
-       "freq": 0.8235
+       "n": 18,
+       "mean_p": 0.4703,
+       "wins": 15,
+       "freq": 0.8333
       },
       {
        "bracket": "65–80%",
@@ -9263,7 +9265,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.095,
+     "shared": 0.0973,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -9302,10 +9304,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 14,
-       "mean_p": 0.4684,
-       "wins": 11,
-       "freq": 0.7857
+       "n": 15,
+       "mean_p": 0.4698,
+       "wins": 12,
+       "freq": 0.8
       },
       {
        "bracket": "65–80%",
@@ -9345,9 +9347,9 @@
      ]
     },
     "polls": {
-     "n": 70,
-     "brier": 0.1278,
-     "us": 0.1125,
+     "n": 71,
+     "brier": 0.1285,
+     "us": 0.1161,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -9379,10 +9381,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 26,
-       "mean_p": 0.5307,
-       "wins": 21,
-       "freq": 0.8077
+       "n": 27,
+       "mean_p": 0.5325,
+       "wins": 22,
+       "freq": 0.8148
       },
       {
        "bracket": "65–80%",
@@ -9420,7 +9422,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.1278,
+     "shared": 0.1285,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -9452,10 +9454,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 26,
-       "mean_p": 0.5307,
-       "wins": 21,
-       "freq": 0.8077
+       "n": 27,
+       "mean_p": 0.5325,
+       "wins": 22,
+       "freq": 0.8148
       },
       {
        "bracket": "65–80%",
@@ -9495,9 +9497,9 @@
      ]
     },
     "fundamentals": {
-     "n": 415,
-     "brier": 0.0392,
-     "us": 0.0291,
+     "n": 417,
+     "brier": 0.0401,
+     "us": 0.0299,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -9508,8 +9510,8 @@
       },
       {
        "bracket": "2–5%",
-       "n": 18,
-       "mean_p": 0.0303,
+       "n": 19,
+       "mean_p": 0.0307,
        "wins": 0,
        "freq": 0.0
       },
@@ -9529,10 +9531,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 13,
-       "mean_p": 0.2623,
-       "wins": 6,
-       "freq": 0.4615
+       "n": 14,
+       "mean_p": 0.267,
+       "wins": 7,
+       "freq": 0.5
       },
       {
        "bracket": "35–65%",
@@ -9577,7 +9579,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.1665,
+     "shared": 0.1705,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -9602,10 +9604,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 9,
-       "mean_p": 0.2688,
-       "wins": 6,
-       "freq": 0.6667
+       "n": 10,
+       "mean_p": 0.2747,
+       "wins": 7,
+       "freq": 0.7
       },
       {
        "bracket": "35–65%",
@@ -9652,9 +9654,9 @@
      ]
     },
     "ddhq": {
-     "n": 415,
-     "brier": 0.0416,
-     "us": 0.0291,
+     "n": 417,
+     "brier": 0.0427,
+     "us": 0.0299,
      "brackets": [
       {
        "bracket": "0–2%",
@@ -9672,8 +9674,8 @@
       },
       {
        "bracket": "5–10%",
-       "n": 23,
-       "mean_p": 0.0622,
+       "n": 24,
+       "mean_p": 0.0633,
        "wins": 0,
        "freq": 0.0
       },
@@ -9686,10 +9688,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 16,
-       "mean_p": 0.2625,
-       "wins": 9,
-       "freq": 0.5625
+       "n": 17,
+       "mean_p": 0.2641,
+       "wins": 10,
+       "freq": 0.5882
       },
       {
        "bracket": "35–65%",
@@ -9734,7 +9736,7 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.1752,
+     "shared": 0.1798,
      "shared_brackets": [
       {
        "bracket": "0–2%",
@@ -9766,10 +9768,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 12,
-       "mean_p": 0.2692,
-       "wins": 9,
-       "freq": 0.75
+       "n": 13,
+       "mean_p": 0.2708,
+       "wins": 10,
+       "freq": 0.7692
       },
       {
        "bracket": "35–65%",
@@ -9816,70 +9818,70 @@
      ]
     },
     "mix": {
-     "n": 415,
-     "brier": 0.0242,
-     "us": 0.0291,
+     "n": 417,
+     "brier": 0.0247,
+     "us": 0.0299,
      "brackets": [
       {
        "bracket": "0–2%",
        "n": 53,
-       "mean_p": 0.0149,
+       "mean_p": 0.015,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
        "n": 60,
-       "mean_p": 0.0305,
+       "mean_p": 0.0306,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "5–10%",
-       "n": 23,
-       "mean_p": 0.0685,
+       "n": 24,
+       "mean_p": 0.0686,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "10–20%",
        "n": 18,
-       "mean_p": 0.1318,
+       "mean_p": 0.132,
        "wins": 1,
        "freq": 0.0556
       },
       {
        "bracket": "20–35%",
-       "n": 11,
-       "mean_p": 0.2688,
+       "n": 10,
+       "mean_p": 0.2622,
        "wins": 6,
-       "freq": 0.5455
+       "freq": 0.6
       },
       {
        "bracket": "35–65%",
-       "n": 18,
-       "mean_p": 0.4713,
-       "wins": 14,
-       "freq": 0.7778
+       "n": 20,
+       "mean_p": 0.4684,
+       "wins": 15,
+       "freq": 0.75
       },
       {
        "bracket": "65–80%",
        "n": 8,
-       "mean_p": 0.7446,
+       "mean_p": 0.742,
        "wins": 8,
        "freq": 1.0
       },
       {
        "bracket": "80–90%",
        "n": 16,
-       "mean_p": 0.8591,
+       "mean_p": 0.8568,
        "wins": 16,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 14,
-       "mean_p": 0.9299,
+       "mean_p": 0.9291,
        "wins": 14,
        "freq": 1.0
       },
@@ -9898,159 +9900,159 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.0946,
+     "shared": 0.0968,
      "shared_brackets": [
       {
        "bracket": "0–2%",
        "n": 2,
-       "mean_p": 0.0144,
+       "mean_p": 0.0147,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
        "n": 2,
-       "mean_p": 0.0293,
+       "mean_p": 0.0302,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "5–10%",
        "n": 2,
-       "mean_p": 0.0798,
+       "mean_p": 0.0827,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "10–20%",
        "n": 1,
-       "mean_p": 0.1627,
+       "mean_p": 0.1658,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "20–35%",
-       "n": 8,
-       "mean_p": 0.2864,
+       "n": 7,
+       "mean_p": 0.2796,
        "wins": 4,
-       "freq": 0.5
+       "freq": 0.5714
       },
       {
        "bracket": "35–65%",
-       "n": 15,
-       "mean_p": 0.4711,
-       "wins": 11,
-       "freq": 0.7333
+       "n": 17,
+       "mean_p": 0.4677,
+       "wins": 12,
+       "freq": 0.7059
       },
       {
        "bracket": "65–80%",
        "n": 8,
-       "mean_p": 0.7446,
+       "mean_p": 0.742,
        "wins": 8,
        "freq": 1.0
       },
       {
        "bracket": "80–90%",
        "n": 14,
-       "mean_p": 0.8592,
+       "mean_p": 0.8566,
        "wins": 14,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 8,
-       "mean_p": 0.9265,
+       "mean_p": 0.9252,
        "wins": 8,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
        "n": 5,
-       "mean_p": 0.9632,
+       "mean_p": 0.963,
        "wins": 5,
        "freq": 1.0
       },
       {
        "bracket": "98–100%",
        "n": 5,
-       "mean_p": 0.9864,
+       "mean_p": 0.9868,
        "wins": 5,
        "freq": 1.0
       }
      ]
     },
     "hindsight": {
-     "n": 415,
-     "brier": 0.0156,
-     "us": 0.0291,
+     "n": 417,
+     "brier": 0.0155,
+     "us": 0.0299,
      "brackets": [
       {
        "bracket": "0–2%",
        "n": 125,
-       "mean_p": 0.004,
+       "mean_p": 0.0038,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
-       "n": 11,
-       "mean_p": 0.0281,
+       "n": 12,
+       "mean_p": 0.0265,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "5–10%",
        "n": 12,
-       "mean_p": 0.0815,
+       "mean_p": 0.0797,
        "wins": 1,
        "freq": 0.0833
       },
       {
        "bracket": "10–20%",
        "n": 4,
-       "mean_p": 0.1212,
+       "mean_p": 0.1194,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "20–35%",
        "n": 7,
-       "mean_p": 0.2651,
+       "mean_p": 0.2644,
        "wins": 2,
        "freq": 0.2857
       },
       {
        "bracket": "35–65%",
        "n": 7,
-       "mean_p": 0.5387,
+       "mean_p": 0.5419,
        "wins": 4,
        "freq": 0.5714
       },
       {
        "bracket": "65–80%",
        "n": 7,
-       "mean_p": 0.6995,
+       "mean_p": 0.7043,
        "wins": 4,
        "freq": 0.5714
       },
       {
        "bracket": "80–90%",
-       "n": 4,
-       "mean_p": 0.8389,
-       "wins": 4,
+       "n": 5,
+       "mean_p": 0.8492,
+       "wins": 5,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 5,
-       "mean_p": 0.9292,
+       "mean_p": 0.9322,
        "wins": 5,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
        "n": 1,
-       "mean_p": 0.9601,
+       "mean_p": 0.9622,
        "wins": 1,
        "freq": 1.0
       },
@@ -10062,86 +10064,86 @@
        "freq": 1.0
       }
      ],
-     "shared": 0.0617,
+     "shared": 0.0612,
      "shared_brackets": [
       {
        "bracket": "0–2%",
        "n": 5,
-       "mean_p": 0.0041,
+       "mean_p": 0.0038,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "2–5%",
        "n": 1,
-       "mean_p": 0.0268,
+       "mean_p": 0.0258,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "10–20%",
        "n": 1,
-       "mean_p": 0.1287,
+       "mean_p": 0.1269,
        "wins": 0,
        "freq": 0.0
       },
       {
        "bracket": "20–35%",
        "n": 3,
-       "mean_p": 0.2826,
+       "mean_p": 0.2822,
        "wins": 1,
        "freq": 0.3333
       },
       {
        "bracket": "35–65%",
        "n": 6,
-       "mean_p": 0.5653,
+       "mean_p": 0.5688,
        "wins": 3,
        "freq": 0.5
       },
       {
        "bracket": "65–80%",
        "n": 6,
-       "mean_p": 0.7026,
+       "mean_p": 0.7074,
        "wins": 3,
        "freq": 0.5
       },
       {
        "bracket": "80–90%",
-       "n": 3,
-       "mean_p": 0.8444,
-       "wins": 3,
+       "n": 4,
+       "mean_p": 0.8547,
+       "wins": 4,
        "freq": 1.0
       },
       {
        "bracket": "90–95%",
        "n": 4,
-       "mean_p": 0.9248,
+       "mean_p": 0.928,
        "wins": 4,
        "freq": 1.0
       },
       {
        "bracket": "95–98%",
        "n": 1,
-       "mean_p": 0.9601,
+       "mean_p": 0.9622,
        "wins": 1,
        "freq": 1.0
       },
       {
        "bracket": "98–100%",
        "n": 40,
-       "mean_p": 0.9968,
+       "mean_p": 0.997,
        "wins": 40,
        "freq": 1.0
       }
      ]
     }
    },
-   "n_shared": 70,
+   "n_shared": 71,
    "mix": {
     "weights": {
-     "market": 0.88,
-     "polls": 0.12,
+     "market": 0.86,
+     "polls": 0.14,
      "fundamentals": 0.0,
      "ddhq": 0.0
     },
@@ -10152,20 +10154,20 @@
       "fundamentals": 0.0,
       "ddhq": 0.0
      },
-     "shift": 1.97,
-     "slope": 2.19,
-     "tossup": 0.877
+     "shift": 2.01,
+     "slope": 2.22,
+     "tossup": 0.882
     },
-    "market": 0.0244,
+    "market": 0.0249,
     "states": {
-     "mix": 0.0249,
-     "hindsight": 0.0189,
-     "lookup": 0.0506
+     "mix": 0.0254,
+     "hindsight": 0.0188,
+     "lookup": 0.0504
     },
     "senate_2024": {
      "n": 33,
      "market": 0.0341,
-     "hindsight": 0.0521
+     "hindsight": 0.0524
     }
    }
   },
@@ -10635,7 +10637,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.0,
+     "miss": 2.1,
      "se": 2.0
     }
    ],
@@ -10647,8 +10649,8 @@
      "p": 0.256,
      "won": 1,
      "status": "called",
-     "margin": 4.49,
-     "lead_votes": 91569,
+     "margin": 4.5,
+     "lead_votes": 91815,
      "reporting": 99,
      "top": [
       {
@@ -10671,7 +10673,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.11,
-     "lead_votes": 55837,
+     "lead_votes": 55833,
      "reporting": 99,
      "top": [
       {
@@ -10693,8 +10695,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.0,
-     "lead_votes": 54909,
+     "margin": 5.05,
+     "lead_votes": 55585,
      "reporting": 99,
      "top": [
       {
@@ -10716,20 +10718,20 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -6.44,
-     "lead_votes": 48163,
-     "reporting": 96,
+     "margin": -6.23,
+     "lead_votes": 47013,
+     "reporting": 97,
      "top": [
       {
        "name": "Pete Ricketts",
        "party": "R",
-       "pct": 50.2,
+       "pct": 50.1,
        "incumbent": true
       },
       {
        "name": "Dan Osborn",
        "party": "O",
-       "pct": 43.8,
+       "pct": 43.9,
        "incumbent": false
       }
      ]
@@ -10832,7 +10834,7 @@
      "won": 0,
      "status": "called",
      "margin": -2.88,
-     "lead_votes": 238487,
+     "lead_votes": 238147,
      "reporting": 99,
      "top": [
       {
@@ -11916,25 +11918,25 @@
   "called": [
    {
     "name": "All races",
-    "n": 448,
+    "n": 450,
     "weights": {
-     "market": 0.8,
-     "polls": 0.2,
+     "market": 0.78,
+     "polls": 0.22,
      "fundamentals": 0.0,
      "ddhq": 0.0
     },
-    "brier": 0.0251
+    "brier": 0.0255
    },
    {
     "name": "House",
-    "n": 415,
+    "n": 417,
     "weights": {
-     "market": 0.88,
-     "polls": 0.12,
+     "market": 0.86,
+     "polls": 0.14,
      "fundamentals": 0.0,
      "ddhq": 0.0
     },
-    "brier": 0.0242
+    "brier": 0.0247
    },
    {
     "name": "Senate",
@@ -11971,14 +11973,14 @@
    },
    {
     "name": "South",
-    "n": 164,
+    "n": 166,
     "weights": {
      "market": 1.0,
      "polls": 0.0,
      "fundamentals": 0.0,
      "ddhq": 0.0
     },
-    "brier": 0.032
+    "brier": 0.0332
    },
    {
     "name": "West",
@@ -12000,7 +12002,7 @@
     219,
     265
    ],
-   "called": 253,
+   "called": 254,
    "with_leaders": 259,
    "off_by": 21,
    "share_sims_below": 0.8506
@@ -12149,11 +12151,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 62405957,
-  "rep": 48384065,
-  "total": 112441180,
-  "share_counted": 92.41,
-  "margin": 12.5
+  "dem": 62954117,
+  "rep": 48551542,
+  "total": 113173201,
+  "share_counted": 93.15,
+  "margin": 12.7
  },
  "senate": {
   "p_control": 0.7754,
