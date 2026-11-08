@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T21:37+00:00",
+ "updated": "2026-11-08T05:19+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -814,8 +814,8 @@
      "p": 0.128,
      "won": 1,
      "status": "counting",
-     "margin": 0.83,
-     "lead_votes": 3172,
+     "margin": 0.85,
+     "lead_votes": 3237,
      "reporting": 97,
      "top": [
       {
@@ -2869,8 +2869,8 @@
      "p": 0.128,
      "won": 1,
      "status": "counting",
-     "margin": 0.83,
-     "lead_votes": 3172,
+     "margin": 0.85,
+     "lead_votes": 3237,
      "reporting": 97,
      "top": [
       {
@@ -12123,7 +12123,7 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 6.03,
+    "margin": 6.13,
     "called_by": [
      "CNN",
      "NYT"
@@ -12151,11 +12151,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 63734286,
-  "rep": 48922261,
-  "total": 114339764,
-  "share_counted": 94.12,
-  "margin": 13.0
+  "dem": 64048344,
+  "rep": 49035173,
+  "total": 114767007,
+  "share_counted": 94.52,
+  "margin": 13.1
  },
  "senate": {
   "p_control": 0.7754,
