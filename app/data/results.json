@@ -30,9 +30,9 @@
   "not_called": 2
  },
  "national": {
-  "dem": 64048344,
-  "rep": 49035173,
-  "total": 114767007,
+  "dem": 64051223,
+  "rep": 49036055,
+  "total": 114770778,
   "share_counted": 94.52,
   "margin": 13.1
  },
@@ -8016,9 +8016,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 51.75,
-   "lead_votes": 116010,
-   "reporting": 82,
+   "margin": 51.77,
+   "lead_votes": 117994,
+   "reporting": 83,
    "top": [
     {
      "name": "George Latimer",
@@ -8044,8 +8044,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 6.13,
-   "lead_votes": 19047,
+   "margin": 6.14,
+   "lead_votes": 19060,
    "reporting": 95,
    "top": [
     {
@@ -13120,5 +13120,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-08T05:19+00:00"
+ "updated": "2026-11-08T19:26+00:00"
 }
