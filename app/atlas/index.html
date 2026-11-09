@@ -145,9 +145,12 @@ section { margin-top: 44px; }
 .marker, .ghost { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; pointer-events: none;
   transition: left .45s cubic-bezier(.3,.7,.3,1), top .45s cubic-bezier(.3,.7,.3,1), opacity .2s; }
 .marker { background: var(--crimson-fill); box-shadow: 0 0 0 3px var(--bg), 0 1px 6px rgba(0,0,0,.25); z-index: 2; }
-.marker span { position: absolute; left: 50%; top: 28px; transform: translateX(-50%); white-space: nowrap; font-size: 12px; font-weight: 500;
+.marker span, .start span { position: absolute; left: 28px; top: 50%; transform: translateY(-50%); white-space: nowrap; font-size: 12px; font-weight: 500;
   letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); background: var(--bg); padding: 1px 6px; border-radius: 10px; }
-.marker.flip span { top: auto; bottom: 28px; }
+.marker.flip span { left: auto; right: 28px; }
+.start { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; border: 2.5px solid var(--crimson); background: var(--bg); pointer-events: none; z-index: 1; display: none; }
+.start.on { display: block; }
+.start span { left: 20px; color: var(--muted); letter-spacing: .06em; }
 .ghost { border: 2.5px dashed var(--crimson); background: transparent; opacity: 0; z-index: 1; }
 .ghost.on { opacity: 1; }
 .mapnote { margin-top: 14px; display: flex; gap: 10px; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 13.5px; color: var(--muted); }
@@ -155,6 +158,35 @@ section { margin-top: 44px; }
   border-radius: 20px; padding: 5px 14px; cursor: pointer; }
 .reset:hover { background: var(--tint); }
 .reset[disabled] { opacity: .45; cursor: default; }
+
+/* ---------- Wie sich der Punkt bewegt hat ---------- */
+.move-lead { max-width: 74ch; font-size: 16px; line-height: 1.45; margin-bottom: 14px; }
+.move { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.ladder h4, .mfields h4 { font-family: var(--cond); font-weight: 700; font-size: 19px; line-height: 1.2; color: var(--green); margin-bottom: 4px; }
+.ladder h4 em { font-family: var(--body); font-style: normal; font-weight: 400; font-size: 13px; color: var(--muted); margin-left: 8px; }
+.ladder + .ladder { margin-top: 16px; }
+.lrow { display: grid; grid-template-columns: minmax(180px, 1.15fr) minmax(0, 2fr) 76px; gap: 16px; align-items: center; min-height: 48px; border-top: 1px solid var(--line); }
+.lrow.scale { min-height: 20px; border-top: 0; }
+.lrow.today .ll b, .lrow.today .lv { color: var(--crimson); }
+.ll b { display: block; font-weight: 500; font-size: 15px; line-height: 1.25; }
+.ll span { font-size: 13px; color: var(--muted); }
+.lt { position: relative; height: 26px; }
+.lt u { position: absolute; top: -11px; bottom: -11px; width: 1px; background: var(--line); }
+.lrow.scale .lt { height: 16px; }
+.lrow.scale .lt span { position: absolute; bottom: 0; transform: translateX(-50%); font-size: 12px; color: var(--muted); white-space: nowrap; }
+.lt i { position: absolute; top: 50%; display: block; }
+.lt .seg { height: 4px; margin-top: -2px; background: var(--crimson-fill); border-radius: 2px; }
+.lt .was { width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border: 2.5px solid var(--crimson); border-radius: 50%; background: var(--bg); }
+.lt .now { width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; border-radius: 50%; background: var(--crimson-fill); box-shadow: 0 0 0 2px var(--bg); }
+.lt .now.big { width: 22px; height: 22px; margin: -11px 0 0 -11px; box-shadow: 0 0 0 3px var(--bg); }
+.lv { text-align: right; font-family: var(--cond); font-weight: 700; font-size: 22px; line-height: 1.05; color: var(--green); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lv small { display: block; font-family: var(--body); font-weight: 400; font-size: 13px; color: var(--muted); }
+.axis-still { margin-top: 12px; font-size: 14px; color: var(--muted); }
+.axis-still b { font-weight: 500; color: var(--green); }
+.mfield { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.mfield b { font-family: var(--cond); font-weight: 700; font-size: 20px; color: var(--green); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mfield b span { font-weight: 400; color: var(--muted); }
+.mfield.top, .mfield.top b { color: var(--crimson); }
 
 .grp { display: flex; align-items: center; font-family: var(--cond); font-weight: 700; font-size: 19px; color: var(--green); margin: 4px 0 10px; }
 .grp + .sig { margin-top: 0; }
@@ -175,6 +207,8 @@ section { margin-top: 44px; }
 .sig .why { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
 .sig .then { grid-column: 1; display: flex; gap: 9px; align-items: flex-start; font-size: 14px; line-height: 1.38; }
 .sig .then b { color: var(--crimson); font-weight: 500; }
+.sig .moved { grid-column: 1; font-size: 14px; line-height: 1.38; }
+.sig .moved b { font-weight: 500; color: var(--crimson); font-variant-numeric: tabular-nums; }
 .mm { width: 22px; height: 22px; flex: none; margin-top: 1px; }
 .mm rect { fill: var(--tint-2); } .mm rect.on { fill: var(--crimson-fill); }
 .seg3 { grid-column: 2; align-self: end; display: inline-flex; border: 1px solid var(--sage); border-radius: 18px; overflow: hidden; }
@@ -229,7 +263,21 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
   .mapcol { position: static; }
   .method { grid-template-columns: minmax(0, 1fr); }
 }
+@media (max-width: 900px) {
+  .move { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
 @media (max-width: 620px) {
+  .lrow { grid-template-columns: minmax(0, 1fr) 70px; row-gap: 2px; padding: 7px 0; }
+  .lrow .ll { grid-column: 1 / -1; }
+  .lrow.scale { padding: 0; }
+  .lrow.scale > :empty { display: none; }
+  .lt u { top: 0; bottom: 0; }
+  .qd.tl, .qd.tr { justify-content: flex-end; }
+  .marker { width: 16px; height: 16px; margin: -8px 0 0 -8px; }
+  .start { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-width: 2px; }
+  .marker span, .start span { font-size: 10px; padding: 0 4px; line-height: 13px; }
+  .marker span { left: 20px; } .start span { left: 18px; }
+  .marker.flip span { right: 20px; }
   .sig .resolved { grid-column: 1; justify-self: start; }
   .poles { font-size: 11px; letter-spacing: .05em; }
   .fields, .axdef { grid-template-columns: minmax(0, 1fr); }
@@ -301,6 +349,16 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
     <p class="reading" id="reading"></p>
   </section>
 
+  <!-- ================= Wie sich der Punkt bewegt hat ================= -->
+  <section aria-labelledby="l-move" id="move-section" hidden>
+    <div class="section-label" id="l-move">How the marker has moved</div>
+    <p class="move-lead" id="move-lead"></p>
+    <div class="move">
+      <div id="ladders"></div>
+      <div class="mfields" id="mfields"></div>
+    </div>
+  </section>
+
   <!-- ================= Karte und Signale ================= -->
   <section aria-labelledby="l-sig">
     <div class="section-label" id="l-sig">Where the signals point</div>
@@ -315,6 +373,7 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
             <div class="qd bl" id="qdCG"><p class="d">The build-out disappoints. Elections remain, but nothing binds the executive.</p><span class="p"></span><h3>The Hollow Republic</h3></div>
             <div class="qd br" id="qdCF"><p class="d">AI remakes work fast, and the levers of compute and data sit with the executive.</p><span class="p"></span><h3>The Command Cloud</h3></div>
             <svg class="overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line id="arrow" x1="0" y1="0" x2="0" y2="0" opacity="0"/></svg>
+            <div class="start" id="start"><span>31 Oct</span></div>
             <div class="ghost" id="ghost"></div>
             <div class="marker" id="marker"><span>Today</span></div>
           </div>
@@ -350,7 +409,7 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
         <p>Five questions, the two axis questions among them, were researched and forecast on 31 Oct 2026 by a forecasting system that leads public tournaments and scores above the median human superforecaster on open benchmarks. Quick runs, one per question.</p></div>
       <div class="mcard"><h4>Our estimates and the what-if</h4>
         <p>Three signals carry our own estimate, with the arithmetic shown. Field probabilities multiply the two axis probabilities; the axes were chosen to be independent, so this is an approximation.</p>
-        <p>The what-if shifts reflect our judgment of how much each signal tells. They are combined as independent evidence on the log-odds scale and keep the average forecast unchanged.</p></div>
+        <p>The what-if shifts reflect our judgment of how much each signal tells. They are combined as independent evidence on the log-odds scale and keep the average forecast unchanged. A resolved signal counts the same way, once, in the order the signals were called.</p></div>
     </div>
     <div class="axdef">
       <div><b>Axis 1 · Do checks and balances hold?</b>Measured as: V-Dem still rates the US a democracy (electoral or liberal) for 2030, in its Democracy Report 2031. In March 2026 V-Dem moved the US from liberal to electoral democracy, the first downgrade since 1969. <b class="fc">AI forecast: 12&nbsp;% for an autocracy rating</b>, with the 2028 election as the main risk; so checks hold with 88&nbsp;%.</div>
@@ -519,6 +578,21 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
   }
   function poleName(s) { const a = AXES[s.axis]; return s.dir === "pos" ? a.pos : a.neg; }
 
+  // The way the marker has come: one step per resolved signal, in the order they were called.
+  const path = (function () {
+    const st = {}; SIGNALS.forEach(s => st[s.id] = "open");
+    const here = () => ({ h: axisP("checks", st), f: axisP("ai", st) });
+    const out = [here()];
+    SIGNALS.filter(s => s.resolved).sort((a, b) => Date.parse(a.resolvedOn) - Date.parse(b.resolvedOn))
+      .forEach(s => { st[s.id] = s.resolved; out.push(Object.assign(here(), { s })); });
+    return out;
+  })();
+  const axisKey = ax => ax === "checks" ? "h" : "f", one = v => (v * 100).toFixed(1) + " %";
+  function movedLine(s) {
+    const i = path.findIndex(p => p.s === s), k = axisKey(s.axis);
+    return '<p class="moved">Moved the marker: <b>' + AXES[s.axis].pos + " " + one(path[i - 1][k]) + " → " + one(path[i][k]) + "</b></p>";
+  }
+
   // ---------- render signals ----------
   const sigsEl = document.getElementById("sigs");
   let html = "";
@@ -533,7 +607,7 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
           "<span>" + (s.resolved ? "Forecast " + Math.round(s.p * 100) + " % · resolved " + s.resolvedOn : s.extra) + "</span></p>" +
         '<p class="why">' + s.why + "</p>" +
         '<p class="then">' + mm(dirCells(s)) + "<span><b>" + (s.resolved === "yes" ? "Yes, so toward " : "If yes, toward ") + poleName(s) + ":</b> " + s.then + "</span></p>" +
-        (s.resolved ? '<span class="resolved">Resolved: ' + s.resolved + "</span>" :
+        (s.resolved ? movedLine(s) + '<span class="resolved">Resolved: ' + s.resolved + "</span>" :
         '<div class="seg3" role="group" aria-label="What-if for: ' + s.short + '">' +
           '<button type="button" data-v="open" aria-pressed="true">Open</button>' +
           '<button type="button" data-v="yes" aria-pressed="false">Yes</button>' +
@@ -575,8 +649,52 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
     svg.innerHTML = s;
   })();
 
+  // ---------- how the marker has moved ----------
+  (function moved() {
+    if (path.length < 2) return;
+    const NUM = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"], n = path.length - 1;
+    const start = path[0], end = path[n];
+    document.getElementById("move-lead").textContent = NUM[n] + (n === 1 ? " signal has" : " signals have") + " resolved since the map was set on 31 Oct. " +
+      "Each result moved the marker once. A result we expected moves it little; a surprise moves it further.";
+    const short = { checks: "Do checks and balances hold?", ai: "How fast does AI change the economy?" };
+    let out = "", still = "";
+    ["checks", "ai"].forEach(ax => {
+      const k = axisKey(ax), steps = path.slice(1).filter(p => p.s.axis === ax);
+      if (!steps.length) { still += '<p class="axis-still"><b>' + short[ax] + "</b> Still at " + pct(start[k]) + ": no signal on this axis has resolved yet.</p>"; return; }
+      const vals = [start[k]].concat(steps.map(p => p[k])).map(v => v * 100);
+      const lo = Math.floor(Math.min.apply(null, vals)) - 1, hi = Math.ceil(Math.max.apply(null, vals)) + 1;
+      const x = v => (v * 100 - lo) / (hi - lo) * 100;
+      let grid = "", ticks = "";
+      for (let t = lo; t <= hi; t++) { if (t % 2) continue; const at = (t - lo) / (hi - lo) * 100;
+        grid += '<u style="left:' + at + '%"></u>'; ticks += '<span style="left:' + at + '%">' + t + " %</span>"; }
+      const row = (cls, label, sub_, track, value, delta) => '<div class="lrow ' + cls + '"><div class="ll"><b>' + label + "</b><span>" + sub_ + '</span></div><div class="lt">' + grid + track +
+        '</div><div class="lv">' + value + (delta ? "<small>" + delta + "</small>" : "") + "</div></div>";
+      const sign = d => (d >= 0 ? "+" : "−") + Math.abs(d * 100).toFixed(1);
+      const dot = (cls, v) => '<i class="' + cls + '" style="left:' + x(v) + '%"></i>';
+      let html_ = "<h4>" + short[ax] + "<em>scale enlarged: the map runs from 0 to 100 %</em></h4>" +
+        '<div class="lrow scale"><div></div><div class="lt">' + ticks + "</div><div></div></div>" +
+        row("", "Start", "Forecasts of 31 Oct", dot("was", start[k]), one(start[k]), "");
+      let prev = start[k];
+      steps.forEach(p => {
+        const s = p.s, left = Math.min(x(prev), x(p[k])), width = Math.abs(x(p[k]) - x(prev));
+        html_ += row("", s.short, (s.resolved === "yes" ? "Yes" : "No") + ", " + s.resolvedOn.replace(/ 20\d\d$/, "") + " · we forecast " + Math.round(s.p * 100) + " %",
+          '<i class="seg" style="left:' + left + "%;width:" + width + '%"></i>' + dot("was", prev) + dot("now", p[k]), one(p[k]), sign(p[k] - prev));
+        prev = p[k];
+      });
+      html_ += row("today", "Today", "After " + NUM[steps.length].toLowerCase() + (steps.length === 1 ? " result" : " results"), dot("now big", end[k]), one(end[k]), sign(end[k] - start[k]) + " in all");
+      out += '<div class="ladder">' + html_ + "</div>";
+    });
+    document.getElementById("ladders").innerHTML = out + still;
+    const a = fieldsP(start.h, start.f), b = fieldsP(end.h, end.f), t = top(b);
+    document.getElementById("mfields").innerHTML = "<h4>What it means for the four fields</h4>" + Object.keys(b).sort((x, y) => b[y] - b[x]).map(k =>
+      '<div class="mfield' + (k === t ? " top" : "") + '"><span>' + FIELDS[k].name + "</span><b><span>" + pct(a[k]) + " → </span>" + pct(b[k]) + "</b></div>").join("");
+    document.getElementById("move-section").hidden = false;
+  })();
+
   // ---------- update ----------
   const $ = id => document.getElementById(id);
+  if (path.length > 1) { const st = document.getElementById("start"); st.classList.add("on");
+    st.style.left = clamp(path[0].f, 0.04, 0.96) * 100 + "%"; st.style.top = clamp(1 - path[0].h, 0.04, 0.96) * 100 + "%"; }
   function setPill(id, txt, hot) { const g = $(id); g.querySelector("text").textContent = txt; g.classList.toggle("hot", hot); }
   function place(el, h, f) { el.style.left = clamp(f, 0.04, 0.96) * 100 + "%"; el.style.top = clamp(1 - h, 0.04, 0.96) * 100 + "%"; }
 
@@ -598,7 +716,7 @@ footer.ft { margin-top: 44px; border-top: 2px solid var(--brand); padding-top: 1
       const old = fe.querySelector(".em"); if (old) old.remove();
       if (t === k) fe.querySelector(".h").insertAdjacentHTML("beforeend", '<span class="em">most likely</span>');
     });
-    const m = $("marker"); place(m, h, f); m.classList.toggle("flip", h < 0.16);
+    const m = $("marker"); place(m, h, f); m.classList.toggle("flip", f > 0.78);
     const set = SIGNALS.filter(s => !s.resolved && state[s.id] !== "open");
     m.querySelector("span").textContent = set.length ? "What-if" : "Today";
     $("reading").innerHTML = '<span class="dot"></span><span>' + (set.length ? "With your " + set.length + " what-if " + (set.length > 1 ? "answers" : "answer") + ", the most likely path" : "Today the most likely path") +

@@ -453,3 +453,12 @@ The forecast stays frozen. This replaces parts of C68, C72, C73, C74, C76 and C7
 - **House vote:** D+13.2 with 95% counted, against the D+8.2 we expected.
 - **What this does and does not show:** our weighting did not beat plain market prices. The seat range held, but that is one election: 259 is one draw from our distribution.
 
+## 9 November 2026: how the atlas marker moved
+
+| # | Choice | Why |
+|---|---|---|
+| M8 | The atlas shows where the marker started (31 Oct) next to where it is today, and a new section "How the marker has moved": one row per resolved signal with the value before and after, the total, and the four fields before and after. Each resolved signal card names its own step. The rows are built from the same formula as the marker and follow the order of the AP calls: Senate 3 Nov, House 4 Nov. | Your request. The move is 4 points on one axis, about the size of the marker on the map, so the map alone cannot show it. The rows use an enlarged scale and say so. |
+| M9 | `linkedin/atlas_marker_moved.png` shows the same move as an image for post 2 (`linkedin/post_atlas_move.py` reads the numbers from the atlas page). The folder stays out of Git. | Your request. Page and image cannot disagree, because the image takes its inputs from the page. |
+
+**The move:** checks hold 88.0 % on 31 Oct, 90.6 % after the Senate (+2.6), 92.0 % after the House (+1.4). AI fast stays at 34 %. The Long Repair 58 % to 61 %, The Managed Boom 30 % to 31 %, The Hollow Republic 8 % to 5 %, The Command Cloud 4 % to 3 %.
+
