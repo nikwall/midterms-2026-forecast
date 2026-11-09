@@ -30,11 +30,11 @@
   "not_called": 2
  },
  "national": {
-  "dem": 64149825,
-  "rep": 49052140,
-  "total": 114885949,
-  "share_counted": 94.68,
-  "margin": 13.1
+  "dem": 64178266,
+  "rep": 49060318,
+  "total": 114922568,
+  "share_counted": 94.8,
+  "margin": 13.2
  },
  "control": {
   "house": {
@@ -1055,20 +1055,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 53.91,
-   "lead_votes": 106509,
-   "reporting": 63,
+   "margin": 54.34,
+   "lead_votes": 113721,
+   "reporting": 67,
    "top": [
     {
      "name": "Sam Liccardo",
      "party": "D",
-     "pct": 77.0,
+     "pct": 77.2,
      "incumbent": true
     },
     {
      "name": "Peter Soulé",
      "party": "R",
-     "pct": 23.0,
+     "pct": 22.8,
      "incumbent": false
     }
    ]
@@ -1083,20 +1083,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 42.86,
-   "lead_votes": 64168,
-   "reporting": 65,
+   "margin": 43.7,
+   "lead_votes": 70147,
+   "reporting": 70,
    "top": [
     {
      "name": "Ro Khanna",
      "party": "D",
-     "pct": 71.4,
+     "pct": 71.8,
      "incumbent": true
     },
     {
      "name": "Ritesh Tandon",
      "party": "R",
-     "pct": 28.6,
+     "pct": 28.2,
      "incumbent": false
     }
    ]
@@ -1111,20 +1111,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 44.68,
-   "lead_votes": 61507,
-   "reporting": 68,
+   "margin": 44.92,
+   "lead_votes": 64794,
+   "reporting": 71,
    "top": [
     {
      "name": "Zoe Lofgren",
      "party": "D",
-     "pct": 72.3,
+     "pct": 72.5,
      "incumbent": true
     },
     {
      "name": "Shane Lewis",
      "party": "R",
-     "pct": 27.7,
+     "pct": 27.5,
      "incumbent": false
     }
    ]
@@ -1139,9 +1139,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 45.94,
-   "lead_votes": 113131,
-   "reporting": 73,
+   "margin": 46.07,
+   "lead_votes": 116916,
+   "reporting": 76,
    "top": [
     {
      "name": "Jimmy Panetta",
@@ -1250,7 +1250,7 @@
    "leader_name": "Jay Obernolte",
    "margin": -2.85,
    "lead_votes": 5434,
-   "reporting": 82,
+   "reporting": 85,
    "top": [
     {
      "name": "Jay Obernolte",
@@ -1362,7 +1362,7 @@
    "leader_name": null,
    "margin": 28.03,
    "lead_votes": 64124,
-   "reporting": 93,
+   "reporting": 97,
    "top": [
     {
      "name": "George Whitesides",
@@ -1390,7 +1390,7 @@
    "leader_name": null,
    "margin": 39.51,
    "lead_votes": 99717,
-   "reporting": 92,
+   "reporting": 95,
    "top": [
     {
      "name": "Judy Chu",
@@ -1418,7 +1418,7 @@
    "leader_name": null,
    "margin": null,
    "lead_votes": 25626,
-   "reporting": 95,
+   "reporting": 97,
    "top": [
     {
      "name": "Luz Rivas",
@@ -1446,7 +1446,7 @@
    "leader_name": null,
    "margin": 55.0,
    "lead_votes": 140469,
-   "reporting": 93,
+   "reporting": 97,
    "top": [
     {
      "name": "Laura Friedman",
@@ -1474,7 +1474,7 @@
    "leader_name": null,
    "margin": 32.29,
    "lead_votes": 74445,
-   "reporting": 93,
+   "reporting": 96,
    "top": [
     {
      "name": "Gil Cisneros",
@@ -1502,7 +1502,7 @@
    "leader_name": null,
    "margin": 35.72,
    "lead_votes": 91008,
-   "reporting": 87,
+   "reporting": 90,
    "top": [
     {
      "name": "Brad Sherman",
@@ -1530,7 +1530,7 @@
    "leader_name": null,
    "margin": 36.61,
    "lead_votes": 65378,
-   "reporting": 87,
+   "reporting": 88,
    "top": [
     {
      "name": "Pete Aguilar",
@@ -1558,7 +1558,7 @@
    "leader_name": null,
    "margin": null,
    "lead_votes": 40759,
-   "reporting": 94,
+   "reporting": 97,
    "top": [
     {
      "name": "Angela Gonzales-Torres",
@@ -1586,7 +1586,7 @@
    "leader_name": null,
    "margin": 33.91,
    "lead_votes": 58786,
-   "reporting": 89,
+   "reporting": 84,
    "top": [
     {
      "name": "Norma Torres",
@@ -1614,7 +1614,7 @@
    "leader_name": null,
    "margin": 45.67,
    "lead_votes": 137307,
-   "reporting": 94,
+   "reporting": 97,
    "top": [
     {
      "name": "Ted Lieu",
@@ -1642,7 +1642,7 @@
    "leader_name": null,
    "margin": null,
    "lead_votes": 39616,
-   "reporting": 93,
+   "reporting": 97,
    "top": [
     {
      "name": "Sydney Kamlager-Dove",
@@ -1670,7 +1670,7 @@
    "leader_name": null,
    "margin": 35.34,
    "lead_votes": 72851,
-   "reporting": 90,
+   "reporting": 93,
    "top": [
     {
      "name": "Hilda Solis",
@@ -1751,7 +1751,7 @@
    "leader_name": null,
    "margin": 35.09,
    "lead_votes": 84837,
-   "reporting": 91,
+   "reporting": 94,
    "top": [
     {
      "name": "Linda Sánchez",
@@ -1807,7 +1807,7 @@
    "leader_name": null,
    "margin": 65.7,
    "lead_votes": 121154,
-   "reporting": 95,
+   "reporting": 97,
    "top": [
     {
      "name": "Maxine Waters",
@@ -1835,7 +1835,7 @@
    "leader_name": null,
    "margin": 63.31,
    "lead_votes": 112867,
-   "reporting": 95,
+   "reporting": 97,
    "top": [
     {
      "name": "Nanette Barragán",
@@ -13120,5 +13120,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-09T00:39+00:00"
+ "updated": "2026-11-09T05:26+00:00"
 }
