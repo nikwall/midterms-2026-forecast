@@ -13,27 +13,22 @@ What it computes, for all races / House / Senate and for called races / called p
                 band: the 5th to 95th percentile of that share across our own 20,000 simulations.
                 Races are not independent, so this is much wider than a coin-flip interval: one
                 shared national error moves every bracket the same way.
-                wave: the same share in the simulations whose total comes closest to the actual
-                total. If the dots sit on this line, the miss is the size of the wave and not the
-                ordering of the races.
     favourites  where we favoured each party: the chance we gave against how often they won
     regions     the same by Census region, with coarser brackets
     divisions   how far actual margins ended above our expected margin, in non-safe races
-    series      the same brackets and Brier scores for each source alone, and for the best mixes
-    mix         what the best mix of the sources looks like, and how each fit holds up
+    series      the same brackets and Brier scores for our forecast, markets, fundamentals and
+                the best mix, all on the same races: those with a market price
+    mix         the weights of the best mix, and how the fits do on states they never saw
 
 The sources, as they stood in the frozen entry: markets (Kalshi and Polymarket together, weighted by
-volume), polls, our own fundamentals, and DDHQ's House probabilities (22 Oct). DDHQ blends polls and
-markets itself, so it counts as a source of its own and not as fundamentals.
+volume), polls and our own fundamentals. Polls enter the mix where they exist, but with about a
+hundred races they get no line of their own.
 
-The best mixes use the results, so they are hindsight and never forecasts. The forecast stays frozen.
-    best mix         the weights on the sources' log-odds with the lowest Brier score on these races
-    knowing the wave those weights plus a shift and a sharpening of the log-odds
-    lookup table     each race takes the result of the race with the most similar source chances. It
-                     finds itself, so its fit is perfect by construction; it only shows in the test.
-Two tests: each state predicted by a fit on the other states (same election, so the wave stays
-known), and the fit applied to the 2024 Senate races, a different election, with Polymarket prices
-one week out (data/backtest_markets_2024.csv).
+The best mix uses the results, so it is hindsight and never a forecast. The forecast stays frozen.
+    best mix      the weights on the sources' log-odds with the lowest Brier score on these races
+    lookup table  each race takes the result of the race with the most similar source chances. It
+                  finds itself, so its fit is perfect by construction; it only shows in the test.
+The test: each state is predicted by a fit on the other states of this election.
 Writes app/data/calibration.json.
 
     python -I pipeline/calibration.py
@@ -56,14 +51,13 @@ APP = ROOT / "app" / "data"
 DATA = ROOT / "data"
 FROZEN = "2026-11-02T21:02+00:00"  # meta.updated of the contest entry
 
-BRACKETS = [(0, .02), (.02, .05), (.05, .10), (.10, .20), (.20, .35), (.35, .65), (.65, .80), (.80, .90), (.90, .95), (.95, .98), (.98, 1.01)]
+BRACKETS = [(0, .05), (.05, .20), (.20, .35), (.35, .65), (.65, .80), (.80, .95), (.95, 1.01)]
 COARSE = [(0, .05), (.05, .35), (.35, .65), (.65, .95), (.95, 1.01)]
 SAFE = 0.05  # below this, or above 1 - this, a race counts as safe (the rating bands)
-WAVE_SIMS = 400
 MIN_COUNTED = 90  # percent of the vote counted before a margin is compared
-SOURCES = ("market", "polls", "fundamentals", "ddhq")
+SOURCES = ("market", "polls", "fundamentals")
 CLIP = 0.001  # chances are held inside 0.1-99.9% before they become log-odds
-MIX_STEP, TEST_STEP = 0.02, 0.05  # grid of weights: for the fit, and for the many refits of the state test
+MIX_STEP = 0.02  # the grid of weights
 REGION = {"New England": "Northeast", "Middle Atlantic": "Northeast", "East North Central": "Midwest", "West North Central": "Midwest",
           "South Atlantic": "South", "East South Central": "South", "West South Central": "South", "Mountain": "West", "Pacific": "West"}
 REGIONS = ["Northeast", "Midwest", "South", "West"]
@@ -104,7 +98,7 @@ def outcomes(races, results, basis):
     return y
 
 
-def rows(idx, edges, p, y, wins, wave):
+def rows(idx, edges, p, y, wins):
     out = []
     for lo, hi in edges:
         m = [i for i in idx if lo <= p[i] < hi]
@@ -113,8 +107,7 @@ def rows(idx, edges, p, y, wins, wave):
         sims = wins[:, m].mean(axis=1)
         out.append({"bracket": label(lo, hi), "lo": lo, "hi": min(hi, 1), "n": len(m), "mean_p": round(float(p[m].mean()), 4),
                     "wins": int(y[m].sum()), "freq": round(float(y[m].mean()), 4),
-                    "band": [round(float(q), 4) for q in np.percentile(sims, [5, 95])],
-                    "wave": round(float(wins[wave][:, m].mean()), 4)})
+                    "band": [round(float(q), 4) for q in np.percentile(sims, [5, 95])]})
     return out
 
 
@@ -141,9 +134,8 @@ def source_chances(forecast, races):
     q = np.full((len(races), len(SOURCES)), np.nan)
     for i, r in enumerate(races):
         x = forecast["races"][r["id"]]["inputs"]
-        f = x["fundamentals"]  # in the House this is DDHQ, and our own sit in fundamentals_own
-        q[i] = [x.get("market", {}).get("p", np.nan), x.get("polls", {}).get("p", np.nan),
-                x.get("fundamentals_own", f)["p"], f["p"] if f["source"] == "ddhq" else np.nan]
+        # In the House "fundamentals" is DDHQ, and our own sit in fundamentals_own.
+        q[i] = [x.get("market", {}).get("p", np.nan), x.get("polls", {}).get("p", np.nan), x.get("fundamentals_own", x["fundamentals"])["p"]]
     return q
 
 
@@ -170,33 +162,12 @@ def blend(w, z, have):
     return np.where(den > 0, (w @ (z * have).T) / np.where(den > 0, den, 1), z.sum(axis=1) / have.sum(axis=1))
 
 
-def fit_weights(z, have, y, step, shift=0.0, slope=1.0):
+def fit_weights(z, have, y):
     """The weights with the lowest Brier score; a source with no race in this set stays at 0."""
     used = have.any(axis=0)
-    grid = np.zeros((len(simplex(int(used.sum()), step)), z.shape[1]))
-    grid[:, used] = simplex(int(used.sum()), step)
-    return grid[((expit(shift + slope * blend(grid, z, have)) - y) ** 2).mean(axis=1).argmin()]
-
-
-def fit_shift(score, y):
-    """Shift and slope of the log-odds with the lowest Brier score: a coarse grid, then zooming in."""
-    shifts, slopes = np.arange(-4, 4.01, .25), np.arange(.25, 5.01, .25)
-    d = .25
-    for _ in range(4):
-        e = ((expit(shifts[:, None, None] + slopes[None, :, None] * score) - y) ** 2).mean(axis=2)
-        i, j = np.unravel_index(e.argmin(), e.shape)
-        a, b = float(shifts[i]), float(slopes[j])
-        shifts, slopes, d = a + np.linspace(-d, d, 9), b + np.linspace(-d, d, 9), d / 4
-    return a, b
-
-
-def fit_hindsight(z, have, y, step):
-    """Weights, shift and slope together, in turns."""
-    w = fit_weights(z, have, y, step)
-    for _ in range(3):
-        a, b = fit_shift(blend(w, z, have), y)
-        w = fit_weights(z, have, y, step, a, b)
-    return (w, *fit_shift(blend(w, z, have), y))
+    grid = np.zeros((len(simplex(int(used.sum()), MIX_STEP)), z.shape[1]))
+    grid[:, used] = simplex(int(used.sum()), MIX_STEP)
+    return grid[((expit(blend(grid, z, have)) - y) ** 2).mean(axis=1).argmin()]
 
 
 def state_test(idx, states, q, z, have, y):
@@ -204,22 +175,12 @@ def state_test(idx, states, q, z, have, y):
     idx = np.array(idx)
     used = have[idx].any(axis=0)
     filled = np.where(have[:, used] > 0, q[:, used], np.nanmean(q[idx][:, used], axis=0))
-    mix, hindsight, lookup = np.empty(len(y)), np.empty(len(y)), np.empty(len(y))
+    mix, lookup = np.empty(len(y)), np.empty(len(y))
     for s in sorted(set(states[idx])):
         tr, te = idx[states[idx] != s], idx[states[idx] == s]
-        mix[te] = expit(blend(fit_weights(z[tr], have[tr], y[tr], TEST_STEP), z[te], have[te]))
-        w, a, b = fit_hindsight(z[tr], have[tr], y[tr], TEST_STEP)
-        hindsight[te] = expit(a + b * blend(w, z[te], have[te]))
+        mix[te] = expit(blend(fit_weights(z[tr], have[tr], y[tr]), z[te], have[te]))
         lookup[te] = y[tr][((filled[te][:, None, :] - filled[tr][None, :, :]) ** 2).sum(axis=2).argmin(axis=1)]
-    return {"mix": brier(mix[idx], y[idx]), "hindsight": brier(hindsight[idx], y[idx]), "lookup": brier(lookup[idx], y[idx])}
-
-
-def senate_2024(shift, slope):
-    """A different election: plain Polymarket prices one week out, then with this year's correction."""
-    rows_2024 = list(csv.DictReader((DATA / "backtest_markets_2024.csv").open(encoding="utf-8")))
-    p = np.array([float(r["p_nonrep"]) for r in rows_2024])
-    won = np.array([r["won"] == "True" for r in rows_2024], float)
-    return {"n": len(rows_2024), "market": brier(p, won), "hindsight": brier(expit(shift + slope * logit(p)), won)}
+    return {"mix": brier(mix[idx], y[idx]), "lookup": brier(lookup[idx], y[idx])}
 
 
 def plain_rows(idx, p, y):
@@ -232,28 +193,16 @@ def plain_rows(idx, p, y):
     return out
 
 
-def compare(idx, p, y, q, wins, wave, states):
-    """Every source and fit on these races: on its own races, and on those with both polls and markets."""
+def compare(idx, p, y, q, wins, states):
+    """Our forecast, the sources and the best mix, all on the same races: those with a market price."""
     z, have = np.nan_to_num(logit(q)), (~np.isnan(q)).astype(float)
-    ix = np.array(idx)
-    w = fit_weights(z[ix], have[ix], y[ix], MIX_STEP)
-    wh, shift, slope = fit_hindsight(z[ix], have[ix], y[ix], MIX_STEP)
-    chance = {"us": p, **{k: q[:, j] for j, k in enumerate(SOURCES)}, "mix": expit(blend(w, z, have)), "hindsight": expit(shift + slope * blend(wh, z, have))}
-    shared = [i for i in idx if have[i, 0] and have[i, 1]]
-    series = {}
-    for key, c in chance.items():
-        m = [i for i in idx if not np.isnan(c[i])]
-        if not m:
-            continue
-        covers = bool(shared) and not np.isnan(c[shared]).any()
-        series[key] = {"n": len(m), "brier": brier(c[m], y[m]), "us": brier(p[m], y[m]), "brackets": plain_rows(m, c, y),
-                       "shared": brier(c[shared], y[shared]) if covers else None,
-                       "shared_brackets": (rows(shared, BRACKETS, c, y, wins, wave) if key == "us" else plain_rows(shared, c, y)) if covers else None}
-    named = lambda v: dict(zip(SOURCES, (round(float(x), 2) for x in v)))
-    market_or_fundamentals = np.where(have[:, 0] > 0, q[:, 0], q[:, 2])
-    mix = {"weights": named(w), "hindsight": {"weights": named(wh), "shift": round(shift, 2), "slope": round(slope, 2), "tossup": round(float(expit(shift)), 3)},
-           "market": brier(market_or_fundamentals[ix], y[ix]), "states": state_test(idx, states, q, z, have, y), "senate_2024": senate_2024(shift, slope)}
-    return series, len(shared), mix
+    same = [i for i in idx if have[i, 0]]
+    ix = np.array(same)
+    w = fit_weights(z[ix], have[ix], y[ix])
+    chance = {"us": p, "market": q[:, 0], "fundamentals": q[:, 2], "mix": expit(blend(w, z, have))}
+    series = {key: {"n": len(same), "brier": brier(c[ix], y[ix]), "expected": round(float(c[ix].sum()), 1), "actual": int(y[ix].sum()),
+                    "brackets": rows(same, BRACKETS, c, y, wins) if key == "us" else plain_rows(same, c, y)} for key, c in chance.items()}
+    return series, {"weights": dict(zip(SOURCES, (round(float(x), 2) for x in w))), "states": state_test(same, states, q, z, have, y)}
 
 
 def groups(idx_all, chamber, region_of, q, y):
@@ -265,15 +214,21 @@ def groups(idx_all, chamber, region_of, q, y):
     for name, m in parts:
         if m:
             ix = np.array(m)
-            w = fit_weights(z[ix], have[ix], y[ix], MIX_STEP)
+            w = fit_weights(z[ix], have[ix], y[ix])
             out.append({"name": name, "n": len(m), "weights": dict(zip(SOURCES, (round(float(x), 2) for x in w))), "brier": brier(expit(blend(w, z[ix], have[ix])), y[ix])})
     return out
+
+
+def independent_range(races, wins):
+    """The 80% seat range if House races were independent: each keeps its chance, the shared errors go."""
+    house = [i for i, r in enumerate(races) if r["chamber"] == "house" and r["side"] == "D"]
+    seats = np.random.default_rng(model.SEED).permuted(wins[:, house], axis=0).sum(axis=1)
+    return [int(x) for x in np.percentile(seats, [10, 90])]
 
 
 def view(idx, races, p, y, wins, results, q, states):
     total = int(y[idx].sum())
     sims = wins[:, idx].sum(axis=1)
-    wave = np.argsort(np.abs(sims - total), kind="stable")[:WAVE_SIMS]
     non_safe = [i for i in idx if SAFE <= p[i] <= 1 - SAFE]
     region_of = [REGION[r["division"]] for r in races]
 
@@ -285,7 +240,7 @@ def view(idx, races, p, y, wins, results, q, states):
             regions.append({"region": name, "n": len(m), "expected": round(float(p[m].sum()), 1), "actual": int(y[m].sum()), "brier": brier(p[m], y[m]),
                             "n_non_safe": len(ns), "expected_non_safe": round(float(p[ns].sum()), 1), "actual_non_safe": int(y[ns].sum()),
                             "upsets_d": sum(1 for i in m if p[i] < .5 and y[i] == 1), "upsets_r": sum(1 for i in m if p[i] >= .5 and y[i] == 0),
-                            "brackets": rows(m, COARSE, p, y, wins, wave)})
+                            "brackets": rows(m, COARSE, p, y, wins)})
 
     misses = {}
     for i in non_safe:
@@ -303,21 +258,21 @@ def view(idx, races, p, y, wins, results, q, states):
         surprises.append({"race_id": r["id"], "p": round(float(p[i]), 3), "won": int(y[i]), "status": x["status"], "margin": x["margin"],
                           "lead_votes": x["lead_votes"], "reporting": x["reporting"], "top": x["top"]})
 
-    series, n_shared, mix = compare(idx, p, y, q, wins, wave, states)
+    series, mix = compare(idx, p, y, q, wins, states)
     return {
         "n": len(idx), "actual": total, "expected": round(float(p[idx].sum()), 1), "share_sims_below": round(float((sims < total).mean()), 4),
         "brier": brier(p[idx], y[idx]), "n_non_safe": len(non_safe), "brier_non_safe": brier(p[non_safe], y[non_safe]) if non_safe else None,
         "favourite_won": round(float(np.mean((p[idx] >= .5) == (y[idx] == 1))), 4),
         "wrong": [races[i]["id"] for i in idx if (p[i] >= .5) != (y[i] == 1)],
-        "brackets": rows(idx, BRACKETS, p, y, wins, wave), "favourites": favourites(idx, p, y), "regions": regions,
+        "favourites": favourites(idx, p, y), "regions": regions,
         "divisions": sorted(divisions, key=lambda d: -d["miss"]),
         "mean_miss": round(float(np.mean(every)), 1) if every else None, "n_miss": len(every),
         "surprises": surprises,
-        "series": series, "n_shared": n_shared, "mix": mix,
+        "series": series, "mix": mix,
     }
 
 
-def contest(forecast, results):
+def contest(forecast, results, independent):
     c, h = forecast["contest"], results["house"]
     called, ahead = h["called"]["D"], h["called"]["D"] + h["leading"]["D"]
     dist = forecast["house"]["distribution"]
@@ -332,7 +287,7 @@ def contest(forecast, results):
             errors.append((d["p"] - (side != "R")) ** 2)
     if won_house is not None:
         errors.append((c["p_majority"] - won_house) ** 2)
-    return {"seats": {"answer": c["seats"]["answer"], "ci80": c["seats"]["ci80"], "called": called, "with_leaders": ahead, "off_by": ahead - c["seats"]["answer"],
+    return {"seats": {"answer": c["seats"]["answer"], "ci80": c["seats"]["ci80"], "called": called, "with_leaders": ahead, "off_by": ahead - c["seats"]["answer"], "independent_ci80": independent,
                       "share_sims_below": round(sum(x["p"] for x in dist if x["seats"] < ahead), 4)},
             "p_majority": c["p_majority"], "dem_majority": won_house, "districts": districts, "brier": round(float(np.mean(errors)), 4), "n_scored": len(errors)}
 
@@ -355,10 +310,10 @@ def main():
         for name, keep in (("all", np.ones(len(races), bool)), ("house", chamber == "house"), ("senate", chamber == "senate")):
             idx = [i for i in range(len(races)) if keep[i] and known[i] is not None]
             views[f"{name}|{basis}"] = view(idx, races, p, y, wins, results, q, states)
-        mix_groups[basis] = groups([i for i in range(len(races)) if known[i] is not None], chamber, region_of, q, y)
+        mix_groups[basis] = groups([i for i in range(len(races)) if known[i] is not None and not np.isnan(q[i, 0])], chamber, region_of, q, y)
 
     s = results["senate"]
-    out = {"updated": results["updated"], "frozen": FROZEN, "views": views, "mix_groups": mix_groups, "contest": contest(forecast, results),
+    out = {"updated": results["updated"], "frozen": FROZEN, "views": views, "mix_groups": mix_groups, "contest": contest(forecast, results, independent_range(races, wins)),
            "environment": env["mean"], "national": results["national"],
            "senate": {"p_control": forecast["senate"]["p_dem_control"], "median": forecast["senate"]["dem_seats"]["median"],
                       "called": results["not_up"]["D"] + s["called"]["D"], "with_leaders": results["not_up"]["D"] + s["called"]["D"] + s["leading"]["D"],
@@ -366,15 +321,15 @@ def main():
     (APP / "calibration.json").write_text(json.dumps(out, indent=1, ensure_ascii=False), encoding="utf-8")
     v = views["all|leaders"]
     print(f"All races with a result or leader: {v['n']}; non-Republican wins {v['actual']} vs expected {v['expected']}; Brier {v['brier']}, non-safe {v['brier_non_safe']} ({v['n_non_safe']})")
-    for b in v["brackets"]:
-        print(f"  {b['bracket']:>8} n {b['n']:>3}  said {b['mean_p']:.3f}  won {b['freq']:.3f}  band {b['band']}  wave {b['wave']}")
+    for b in v["series"]["us"]["brackets"]:
+        print(f"  {b['bracket']:>8} n {b['n']:>3}  said {b['mean_p']:.3f}  won {b['freq']:.3f}  band {b['band']}")
     for f in v["favourites"]:
         print(" ", f)
     for r in v["regions"]:
         print(" ", {k: x for k, x in r.items() if k != "brackets"})
     print(" ", v["divisions"], v["mean_miss"], v["n_miss"])
     for k, x in v["series"].items():
-        print(f"  {k:>12} n {x['n']:>3}  Brier {x['brier']:.4f}  us {x['us']:.4f}  shared ({v['n_shared']}) {x['shared']}")
+        print(f"  {k:>12} n {x['n']:>3}  Brier {x['brier']:.4f}  expected {x['expected']}  actual {x['actual']}")
     print(" ", v["mix"])
     for g in mix_groups["leaders"]:
         print(" ", g)

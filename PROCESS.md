@@ -431,3 +431,25 @@ The forecast stays frozen. All of this is scoring, after the fact.
 - **For the record:** our forecast lost to plain market prices. What it did beat were polls and fundamentals on their own. So the result shows that one election cannot set the weights. It does not show that our weights were right.
 - **Still open:** 25 races count with their current leader and two go to runoffs; 13 open races are within one point.
 
+## 9 November 2026: a simpler chart, and what we learned
+
+The forecast stays frozen. This replaces parts of C68, C72, C73, C74, C76 and C77.
+
+| # | Choice | Why |
+|---|---|---|
+| C78 | The chart has four lines: our forecast, markets, fundamentals, best mix. Out: the orange "given a wave this big" line, "best mix, knowing the wave", the 2024 Senate test, polls and DDHQ as lines, and the switch for shared races. | Your request. The chart should say one thing. Polls exist in about a hundred races and cannot be compared with the rest. |
+| C79 | Of DDHQ and our own fundamentals, the chart keeps our own. | You asked to pick one. Ours cover House and Senate and hold no polls or markets, and DDHQ did not score better in the House (0.0497 against 0.0485 on the races we can compare). DDHQ remains the model's House input in the frozen entry. |
+| C80 | Polls stay inside the best mix where they exist; a race without polls uses the other two. | The mix still covers every race, so it can be compared. Without polls it would nearly equal the market line. |
+| C81 | All four lines and all scores use the same races: those with a market price (458 of 468 on 9 Nov). The best mix is fitted on those. | So every line is judged on the same races and no column needs a footnote. |
+| C82 | Seven brackets instead of eleven (0–5, 5–20, 20–35, 35–65, 65–80, 80–95, 95–100%). Smooth lines through the points, names on the lines, tinted halves, title stating the finding. The grey range moves to the region charts and the table. | Your request for a really nice chart. Eleven brackets held too few races per source, and the lines zigzagged. |
+| C83 | Three learnings and one takeaway on top of the opening tab, with live numbers. | Your request. The takeaway: data for the estimate, judgment for the error. |
+
+**Findings on 9 Nov, 05:18 UTC (417 House seats decided, 18 races count with their leader, two runoffs):**
+
+- **Same 458 races, Brier:** best mix 0.0348, markets 0.0350, us 0.0400, fundamentals 0.0546. Every source expected fewer Democratic wins than happened (273): us 251, markets 257, fundamentals 245.
+- **Best mix:** 78% markets, 22% polls, nothing on fundamentals. House 90/10, Senate 20/80. On states it never saw: 0.0354, a little worse than plain prices.
+- **Lookup table:** 0.0000 on the races it knows, 0.0437 on states it never saw, worse than our forecast.
+- **Seats:** 259 Democratic House seats counting leaders, inside our 80% range of 219–265. With independent races the range would have been 236–245.
+- **House vote:** D+13.2 with 95% counted, against the D+8.2 we expected.
+- **What this does and does not show:** our weighting did not beat plain market prices. The seat range held, but that is one election: 259 is one draw from our distribution.
+

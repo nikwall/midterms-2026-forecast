@@ -20,8 +20,8 @@
   --on-d3: #ffffff; --on-d2: #ffffff; --on-d1: #2f3639;
   --on-mid: #2f3639;
   --on-r1: #2f3639; --on-r2: #ffffff; --on-r3: #ffffff;
-  /* Sources on the calibration chart. Validated as a set; their marks also differ in shape. */
-  --s-market: #1baf7a; --s-polls: #eda100; --s-fundamentals: #6250d6; --s-ddhq: #e87ba4;
+  /* Sources on the calibration chart, validated as a set with --d3. The best mix is also dashed and hollow. */
+  --s-market: #1baf7a; --s-fundamentals: #eda100; --s-mix: #c8643b; --s-polls: #6250d6;
   --pending: #f0f2f3;
   --pending-ink: #737a7f;
   --norace: transparent;
@@ -400,6 +400,22 @@ tbody tr:hover, tbody tr.highlight { background: var(--panel); }
 .source-group li a { justify-self: start; }
 .source-group li span { font-size: 0.76rem; color: var(--muted); }
 
+/* What the election taught us: the first thing on the opening tab */
+.learned { background: var(--accent-soft); border-bottom: 1px solid var(--line); }
+.learned:empty { display: none; }
+.learned-inner { max-width: 1120px; margin: 0 auto; display: grid; gap: 12px;
+  padding: 16px max(16px, env(safe-area-inset-right, 0px)) 18px max(16px, env(safe-area-inset-left, 0px)); }
+.learned-head { display: grid; gap: 3px; }
+.learned-head h2 { font-size: 1.7rem; font-weight: 400; line-height: 1.15; }
+.learned-head p { max-width: 54rem; font-size: 0.95rem; color: var(--ink-2); }
+.learn-over { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+.learn-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.learn { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 11px 14px 12px; display: grid; gap: 2px; align-content: start; font-size: 0.86rem; }
+.learn h3 { font-size: 1.05rem; font-weight: 400; }
+.learn-stat { font-size: 1.6rem; font-weight: 400; line-height: 1.15; font-variant-numeric: tabular-nums; color: var(--d3); margin-top: 3px; }
+.learn-note { font-size: 0.74rem; color: var(--muted); line-height: 1.3; margin-bottom: 5px; }
+@media (max-width: 860px) { .learn-grid { grid-template-columns: minmax(0, 1fr); } .learned-head h2 { font-size: 1.4rem; } }
+
 .notice { border: 1px solid var(--line); padding: 14px 16px; border-radius: var(--radius); }
 footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 6px; }
 
@@ -409,23 +425,32 @@ footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--li
 .block-head h2, #races { scroll-margin-top: 100px; }
 
 /* Results and calibration */
-.cal-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.cal-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.cal-grid.even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .cal-side { display: grid; gap: 12px; min-width: 0; }
 .verdict { margin: 0; padding-left: 1.05rem; display: grid; gap: 6px; font-size: 0.86rem; }
 .region-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .card.region { display: grid; gap: 3px; align-content: start; padding: 10px 11px; }
 .chart .cal-band { fill: #e7ebee; }
 .chart .cal-ideal { stroke: var(--ink-2); stroke-width: 1; }
-.chart .cal-wave { fill: none; stroke: #c8643b; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .chart .cal-dot { fill: var(--d3); stroke: var(--bg); stroke-width: 2; }
-.chart .cal-series { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .zone-d { fill: #f1f5fb; }
+.chart .zone-r { fill: #fcf4f5; }
+.chart .cal-path { fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.chart text.cal-axis { fill: var(--ink-2); font-size: 12px; font-weight: 300; }
+.chart text.cal-label { fill: var(--ink); font-size: 13px; font-weight: 500; paint-order: stroke; stroke-width: 4px; stroke-linejoin: round; }
+.chart text.cal-label.on-d { stroke: #f1f5fb; }
+.chart text.cal-label.on-r { stroke: #fcf4f5; }
+.source-chart .cal-line { transition: opacity 120ms ease; }
+.source-chart.dimmed .cal-line:not(.lit) { opacity: 0.22; }
+.cal-hero { display: grid; gap: 6px; }
+.cal-hero h3 { font-size: 1.15rem; font-weight: 400; line-height: 1.25; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .cal-toggles { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; border: 0; margin: 0; padding: 0; font-size: 0.82rem; color: var(--ink-2); }
 .cal-toggles legend { float: left; padding: 0; margin-right: 2px; }
 .cal-toggle { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
 .cal-toggle input { margin: 0; }
-.cal-toggle.off { opacity: 0.45; cursor: default; }
-.cal-key { width: 24px; height: 12px; flex: none; overflow: visible; }
-.cal-name { display: inline-flex; align-items: center; gap: 6px; }
+.cal-key { width: 26px; height: 12px; flex: none; overflow: visible; }
 .mix-groups { display: grid; gap: 4px; margin: 6px 0 8px; font-size: 0.78rem; }
 .mix-row { display: grid; grid-template-columns: 74px minmax(0, 1fr) minmax(0, 1.1fr); gap: 8px; align-items: center; }
 .mix-bar { display: flex; gap: 2px; height: 12px; }
@@ -438,9 +463,5 @@ footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--li
 .chart .cal-mean { stroke: var(--ink-2); stroke-width: 1; }
 .chart text.cal-corner { fill: var(--muted); font-size: 11px; font-weight: 300; }
 .chart text.row-label { fill: var(--ink); }
-.key-line { width: 16px; height: 2px; flex: none; }
-.key-line.ideal { background: var(--ink-2); height: 1px; }
-.key-line.wave { background: #c8643b; }
-.key-band { width: 16px; height: 10px; background: #e7ebee; flex: none; }
 @media (max-width: 860px) { .cal-grid { grid-template-columns: minmax(0, 1fr); } .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .cal-side th, .cal-side td { white-space: normal; }

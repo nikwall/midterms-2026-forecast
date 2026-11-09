@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=2026-11-05d">
+<link rel="stylesheet" href="styles.css?v=2026-11-09a">
 </head>
 <body>
 <!-- Icons: polls ring a phone, markets pay in dollar bills, DDHQ rings the desk bell, and our team mark is the arq
@@ -72,6 +72,9 @@
   </div>
 </header>
 
+<!-- What the election taught us: the first thing on the opening tab. Filled by app.js from calibration.json. -->
+<section class="learned" id="learned" data-panel="results" aria-label="What the election taught us"></section>
+
 <!-- The 2030 future map: what the House and Senate results mean beyond Tuesday. Numbers filled by app.js. -->
 <a class="atlas-banner" href="atlas/" aria-label="Open the America 2030 Future Atlas">
   <span class="atlas-inner">
@@ -102,18 +105,14 @@
         <label for="cal-basis">Count
           <select id="cal-basis"><option value="leaders">Called, plus current leaders</option><option value="called">Called races only</option></select>
         </label>
-        <label for="cal-shared"><input type="checkbox" id="cal-shared"> Only races with polls and markets</label>
         <span class="muted small" id="cal-count"></span>
       </div>
-      <fieldset class="cal-toggles" id="cal-toggles"><legend>Show on the chart</legend></fieldset>
       <div class="cal-grid">
-        <article class="card">
-          <svg class="chart" id="cal-main" role="img" aria-label="Calibration chart: our chance for each bracket of races against the share the Democratic side won"></svg>
-          <div class="legend" aria-hidden="true">
-            <span class="legend-item"><span class="key-line ideal"></span>Perfect calibration</span>
-            <span class="legend-item">Bigger mark, more races</span>
-            <span class="legend-item" id="cal-us-legend"><span class="key-band"></span>90% range of our simulations<span class="key-line wave"></span>Our model, given a wave this big</span>
-          </div>
+        <article class="card cal-hero">
+          <h3 id="cal-title"></h3>
+          <p class="muted small" id="cal-sub"></p>
+          <fieldset class="cal-toggles" id="cal-toggles"><legend class="sr-only">Show on the chart</legend></fieldset>
+          <svg class="chart source-chart" id="cal-main" role="img" aria-label="Calibration chart: the chance each source gave the Democratic side against the share of those races Democrats won. The numbers are in the table below."></svg>
         </article>
         <div class="cal-side">
           <ul class="verdict" id="cal-verdict"></ul>
@@ -127,7 +126,7 @@
         <summary>The numbers behind the chart</summary>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Our chance</th><th class="num">Races</th><th class="num">Mean chance</th><th class="num">Democratic side won</th><th class="num">Share</th><th class="num">90% range</th><th class="num">Given this wave</th></tr></thead>
+            <thead><tr><th>Our chance</th><th class="num">Races</th><th class="num">Mean chance</th><th class="num">Democratic side won</th><th class="num">Share</th><th class="num">90% range</th></tr></thead>
             <tbody id="cal-table"></tbody>
           </table>
         </div>
@@ -142,35 +141,27 @@
     </div>
 
     <div class="block">
-      <div class="block-head"><h2>Which source did best, and what would the best mix have been?</h2><span class="muted">Brier score, lower is better. The mixes are fitted to the results: hindsight, not forecasts</span></div>
-      <div class="cal-grid">
+      <div class="block-head"><h2>Could a better mix of the sources have done it?</h2><span class="muted">The best mix is fitted to the results: hindsight, not a forecast</span></div>
+      <div class="cal-grid even">
         <div class="cal-side">
           <div class="table-wrap">
             <table class="small-table">
-              <thead><tr><th>Source</th><th class="num">Races</th><th class="num">Brier, its races</th><th class="num">Us, same races</th><th class="num" id="cal-shared-head">Shared races</th></tr></thead>
-              <tbody id="cal-sources"></tbody>
-            </table>
-          </div>
-          <ul class="verdict" id="mix-reading"></ul>
-        </div>
-        <div class="cal-side">
-          <div class="table-wrap">
-            <table class="small-table">
-              <thead><tr><th>Does the fit hold up?</th><th class="num">Numbers fitted</th><th class="num">In sample</th><th class="num">Other states held out</th><th class="num" id="mix-past-head">2024 Senate</th></tr></thead>
+              <thead><tr><th>Brier score, lower is better</th><th class="num">Numbers fitted</th><th class="num">On these races</th><th class="num">On states it never saw</th></tr></thead>
               <tbody id="mix-tests"></tbody>
             </table>
           </div>
-          <article class="card">
-            <h3>The best mix changes with the races you fit it on</h3>
-            <div class="mix-groups" id="mix-groups"></div>
-            <div class="legend" id="mix-legend" aria-hidden="true"></div>
-          </article>
+          <p class="muted small" id="mix-note"></p>
         </div>
+        <article class="card">
+          <h3>The best mix changes with the races you fit it on</h3>
+          <div class="mix-groups" id="mix-groups"></div>
+          <div class="legend" id="mix-legend" aria-hidden="true"></div>
+        </article>
       </div>
     </div>
 
     <div class="block">
-      <div class="block-head"><h2>Are there different regions?</h2><span class="muted">Census regions, same axes, coarser brackets</span></div>
+      <div class="block-head"><h2>Are there different regions?</h2><span class="muted">Our forecast by Census region, coarser brackets. Grey: the 90% range of our simulations</span></div>
       <div class="region-grid" id="cal-regions"></div>
       <article class="card">
         <h3>How far margins ended above ours, by Census division</h3>
@@ -551,7 +542,7 @@
   </footer>
 </main>
 <div class="tooltip" id="tooltip" role="status" hidden></div>
-<script src="app.js?v=2026-11-05f"></script>
+<script src="app.js?v=2026-11-09c"></script>
 <script src="whatif.js?v=2026-11-05"></script>
 </body>
 </html>

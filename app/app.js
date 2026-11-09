@@ -24,7 +24,7 @@ const JOINT = [
 ];
 
 const app = { seats: null, forecast: null, stateFilter: null, byId: {}, stateByAbbr: {}, cands: {}, news: null, results: null, cal: null,
-  calOn: new Set(["us", "market", "polls", "fundamentals"]) };
+  calOn: new Set(["us", "market", "fundamentals", "mix"]), calLines: null, calWidth: 0 };
 const $ = (sel) => document.querySelector(sel);
 const TABS = ["results", "congress", "contest", "maps", "weights", "record", "method"];  // the first opens by default
 // Source icons (sprite in index.html): polls ring a phone, markets pay in bills, DDHQ rings the desk bell.
@@ -177,6 +177,7 @@ function showTab(name) {
   for (const p of document.querySelectorAll("[data-panel]")) p.hidden = p.dataset.panel !== name;
   for (const a of document.querySelectorAll("[data-tab]")) a.setAttribute("aria-selected", String(a.dataset.tab === name));
   tip.hidden = true;
+  drawSources();  // the main chart is drawn to the width it has, and a hidden tab has none
 }
 
 // ---------- faces ----------
@@ -483,88 +484,141 @@ function who(c) {
 
 const pct0 = (p) => `${Math.round(p * 100)}%`;
 
-// What the calibration chart can show. Colour, shape and line belong to the series, whatever else is on.
+// The lines on the main chart. Colour belongs to the series, whatever else is switched on.
 const CAL_SERIES = [
-  { key: "us", label: "Our forecast", color: "var(--d3)", shape: "circle" },
-  { key: "market", label: "Markets", color: "var(--s-market)", shape: "square" },
-  { key: "polls", label: "Polls", color: "var(--s-polls)", shape: "triangle" },
-  { key: "fundamentals", label: "Fundamentals", color: "var(--s-fundamentals)", shape: "diamond" },
-  { key: "ddhq", label: "DDHQ", color: "var(--s-ddhq)", shape: "down" },
-  { key: "mix", label: "Best mix", color: "var(--ink)", shape: "ring" },
-  { key: "hindsight", label: "Best mix, knowing the wave", color: "var(--ink)", shape: "box", dash: "6 4" },
+  { key: "us", label: "Our forecast", color: "var(--d3)" },
+  { key: "market", label: "Markets", color: "var(--s-market)" },
+  { key: "fundamentals", label: "Fundamentals", color: "var(--s-fundamentals)" },
+  { key: "mix", label: "Best mix", color: "var(--s-mix)", hindsight: true },  // dashed and hollow: not a forecast
 ];
-const MIX_SOURCES = CAL_SERIES.filter((s) => ["market", "polls", "fundamentals", "ddhq"].includes(s.key));
-const POINTS = {
-  square: [[-.9, -.9], [.9, -.9], [.9, .9], [-.9, .9]], box: [[-.9, -.9], [.9, -.9], [.9, .9], [-.9, .9]],
-  diamond: [[0, -1.25], [1.25, 0], [0, 1.25], [-1.25, 0]], triangle: [[0, -1.2], [1.15, .85], [-1.15, .85]], down: [[0, 1.2], [1.15, -.85], [-1.15, -.85]],
-};
+// What the best mix may use. Polls have too few races for a line of their own.
+const MIX_SOURCES = [
+  { key: "market", label: "Markets", color: "var(--s-market)" },
+  { key: "polls", label: "Polls", color: "var(--s-polls)" },
+  { key: "fundamentals", label: "Fundamentals", color: "var(--s-fundamentals)" },
+];
 
-function calMark(root, s, cx, cy, r) {
-  const hollow = s.shape === "ring" || s.shape === "box";
-  const style = hollow ? `fill:var(--bg);stroke:${s.color};stroke-width:2` : `fill:${s.color};stroke:var(--bg);stroke-width:1.5`;
-  if (s.shape === "circle" || s.shape === "ring") return svg("circle", { cx, cy, r, style }, root);
-  return svg("polygon", { points: POINTS[s.shape].map(([a, b]) => `${cx + a * r},${cy + b * r}`).join(" "), style }, root);
+function calDot(parent, s, cx, cy, r) {
+  const style = s.hindsight ? `fill:var(--bg);stroke:${s.color};stroke-width:2` : `fill:${s.color};stroke:var(--bg);stroke-width:2`;
+  return svg("circle", { cx, cy, r, style }, parent);
 }
 
-// The line and marker of a series, for the switches and the tables.
+// The line and dot of a series, for the switches.
 function calKey(s) {
-  const node = svg("svg", { class: "cal-key", viewBox: "0 0 24 12", "aria-hidden": "true" });
-  svg("line", { x1: 0, x2: 24, y1: 6, y2: 6, style: `stroke:${s.color};stroke-width:2`, "stroke-dasharray": s.dash }, node);
-  calMark(node, s, 12, 6, 4);
+  const node = svg("svg", { class: "cal-key", viewBox: "0 0 26 12", "aria-hidden": "true" });
+  svg("line", { x1: 0, x2: 26, y1: 6, y2: 6, style: `stroke:${s.color};stroke-width:2`, "stroke-dasharray": s.hindsight ? "4 3" : null }, node);
+  calDot(node, s, 13, 6, 4);
   return node;
 }
 
-// The chance given (x) against the share the non-Republican side won (y), one dot per bracket.
-// rows is our forecast; overlays are other series, each { s, rows }.
-function calPlot(root, rows, { size, big, us = true, overlays = [] }) {
+// A smooth line that passes through every point and never overshoots them (monotone cubic).
+function smoothPath(pts) {
+  const seg = pts.slice(1).map((p, i) => { const w = Math.max(p[0] - pts[i][0], 1e-6); return { w, s: (p[1] - pts[i][1]) / w }; });
+  const slope = pts.map((_, i) => {
+    if (i === 0) return seg[0].s;
+    if (i === seg.length) return seg[i - 1].s;
+    const a = seg[i - 1], b = seg[i];
+    return a.s * b.s <= 0 ? 0 : 3 * (a.w + b.w) / ((2 * b.w + a.w) / a.s + (b.w + 2 * a.w) / b.s);
+  });
+  return pts.slice(1).reduce((d, p, i) => {
+    const h = seg[i].w / 3, q = pts[i];
+    return `${d}C${q[0] + h},${q[1] + slope[i] * h} ${p[0] - h},${p[1] - slope[i + 1] * h} ${p[0]},${p[1]}`;
+  }, `M${pts[0][0]},${pts[0][1]}`);
+}
+
+// The main chart: what each source said against what happened. Drawn 1:1 to its width, so the
+// text stays the same size on a phone.
+function sourceChart(root, lines, S) {
   root.replaceChildren();
-  const m = big ? { l: 46, r: 12, t: 12, b: 42 } : { l: 32, r: 8, t: 8, b: 24 };
-  const W = size, H = size;
-  root.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  const x = (p) => m.l + (W - m.l - m.r) * p;
-  const y = (p) => H - m.b - (H - m.t - m.b) * p;
-  for (const v of big ? [0, .25, .5, .75, 1] : [0, .5, 1]) {
-    svg("line", { class: v === 0 ? "axis" : "gridline", x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, root);
-    svg("line", { class: v === 0 ? "axis" : "gridline", x1: x(v), x2: x(v), y1: m.t, y2: H - m.b }, root);
-    svg("text", { x: m.l - 6, y: y(v) + 4, "text-anchor": "end" }, root).textContent = pct0(v);
-    svg("text", { x: x(v), y: H - m.b + 15, "text-anchor": "middle" }, root).textContent = pct0(v);
+  const small = S < 440;
+  const m = { l: small ? 40 : 52, r: 12, t: 10, b: small ? 42 : 50 };
+  const P = S - m.l - m.r;
+  root.setAttribute("viewBox", `0 0 ${S} ${m.t + P + m.b}`);
+  const x = (p) => m.l + P * p, y = (p) => m.t + P * (1 - p);
+  const zone = (cls, pts) => svg("polygon", { class: cls, points: pts.map(([a, b]) => `${x(a)},${y(b)}`).join(" ") }, root);
+  zone("zone-d", [[0, 0], [0, 1], [1, 1]]);
+  zone("zone-r", [[0, 0], [1, 0], [1, 1]]);
+  for (const v of [0, .25, .5, .75, 1]) {
+    svg("line", { class: v === 0 ? "axis" : "gridline", x1: m.l, x2: S - m.r, y1: y(v), y2: y(v) }, root);
+    svg("line", { class: v === 0 ? "axis" : "gridline", x1: x(v), x2: x(v), y1: m.t, y2: m.t + P }, root);
+    svg("text", { x: m.l - 7, y: y(v) + 4, "text-anchor": "end" }, root).textContent = pct0(v);
+    svg("text", { x: x(v), y: m.t + P + 17, "text-anchor": "middle" }, root).textContent = pct0(v);
   }
-  if (big) {
-    svg("text", { x: (m.l + W - m.r) / 2, y: H - 6, "text-anchor": "middle" }, root).textContent = "Chance given to the Democratic side";
-    svg("text", { x: 12, y: (m.t + H - m.b) / 2, "text-anchor": "middle", transform: `rotate(-90 12 ${(m.t + H - m.b) / 2})` }, root).textContent = "Share they actually won";
-  }
-  if (us) {
-    const band = rows.map((r) => `${x(r.mean_p)},${y(r.band[1])}`).concat(rows.slice().reverse().map((r) => `${x(r.mean_p)},${y(r.band[0])}`));
-    svg("polygon", { class: "cal-band", points: band.join(" ") }, root);
-  }
+  svg("text", { class: "cal-axis", x: x(.5), y: m.t + P + (small ? 36 : 42), "text-anchor": "middle" }, root).textContent = "Chance the source gave the Democratic side";
+  const my = m.t + P / 2;
+  svg("text", { class: "cal-axis", x: small ? 9 : 13, y: my, "text-anchor": "middle", transform: `rotate(-90 ${small ? 9 : 13} ${my})` }, root).textContent = "Share of those races Democrats won";
+
   svg("line", { class: "cal-ideal", x1: x(0), y1: y(0), x2: x(1), y2: y(1) }, root);
-  if (us) svg("polyline", { class: "cal-wave", points: rows.map((r) => `${x(r.mean_p)},${y(r.wave)}`).join(" ") }, root);
-  if (big) {
-    svg("text", { class: "cal-corner", x: m.l + 8, y: m.t + 14 }, root).textContent = "Above the line: Democrats did better than forecast";
-    svg("text", { class: "cal-corner", x: W - m.r - 8, y: H - m.b - 8, "text-anchor": "end" }, root).textContent = "Below the line: worse";
-  }
-  const most = Math.max(...(us ? rows : []).concat(overlays.flatMap((o) => o.rows)).map((r) => r.n), 1);
-  for (const { s, rows: line } of overlays) {
-    svg("polyline", { class: "cal-series", style: `stroke:${s.color}`, "stroke-dasharray": s.dash, points: line.map((r) => `${x(r.mean_p)},${y(r.freq)}`).join(" ") }, root);
-  }
-  if (us && overlays.length) svg("polyline", { class: "cal-series", style: "stroke:var(--d3)", points: rows.map((r) => `${x(r.mean_p)},${y(r.freq)}`).join(" ") }, root);
-  for (const { s, rows: line } of overlays) {
-    for (const r of line) {
-      const rad = 4 + 3 * Math.sqrt(r.n / most);
-      calMark(root, s, x(r.mean_p), y(r.freq), rad);
-      const hit = svg("circle", { cx: x(r.mean_p), cy: y(r.freq), r: rad + 6, fill: "transparent", tabindex: 0 }, root);
-      bindTip(hit, () => tipRows(`${s.label}, ${r.bracket}: ${r.n} ${r.n === 1 ? "race" : "races"}`, [
-        ["They won", `${r.wins} of ${r.n} (${pct0(r.freq)})`], ["It said", pct1(r.mean_p)],
+  const dx = x(.74), dy = y(.74);
+  svg("text", { class: "cal-corner", x: dx, y: dy + 15, "text-anchor": "middle", transform: `rotate(-45 ${dx} ${dy})` }, root).textContent = "Perfect calibration";
+  // In the empty part of the upper triangle, clear of the names on the lines.
+  (small ? ["Democrats", "did better", "than forecast"] : ["Democrats did better", "than forecast"]).forEach((t, i) => {
+    svg("text", { class: "cal-corner", x: x(0) + 10, y: y(.8) + 14 * i }, root).textContent = t;
+  });
+  svg("text", { class: "cal-corner", x: x(1) - 10, y: y(0) - 11, "text-anchor": "end" }, root).textContent = "Republicans did better than forecast";
+
+  const most = Math.max(...lines.flatMap((l) => l.rows.map((r) => r.n)), 1);
+  const groups = [];
+  const light = (g) => { root.classList.toggle("dimmed", !!g); for (const h of groups) h.classList.toggle("lit", h === g); };
+  for (const l of [...lines].reverse()) {  // our forecast is drawn last, on top
+    const g = svg("g", { class: "cal-line" }, root);
+    groups.push(g);
+    svg("path", { class: "cal-path", d: smoothPath(l.rows.map((r) => [x(r.mean_p), y(r.freq)])),
+      style: `stroke:${l.s.color};stroke-width:${l.s.key === "us" ? 3 : 2}`, "stroke-dasharray": l.s.hindsight ? "7 6" : null }, g);
+    for (const r of l.rows) {
+      const rad = 4 + 4.5 * Math.sqrt(r.n / most);
+      calDot(g, l.s, x(r.mean_p), y(r.freq), rad);
+      const hit = svg("circle", { cx: x(r.mean_p), cy: y(r.freq), r: rad + 7, fill: "transparent", tabindex: 0, "aria-label": `${l.s.label}, ${r.bracket}: won ${r.wins} of ${r.n}` }, g);
+      bindTip(hit, () => tipRows(`${l.s.label}, ${r.bracket}: ${r.n} ${r.n === 1 ? "race" : "races"}`, [
+        ["Democrats won", `${r.wins} of ${r.n} (${pct0(r.freq)})`], ["It gave them", pct1(r.mean_p)],
       ]));
+      for (const [on, off] of [["pointerenter", "pointerleave"], ["focus", "blur"]]) {
+        hit.addEventListener(on, () => light(g));
+        hit.addEventListener(off, () => light(null));
+      }
     }
   }
-  for (const r of us ? rows : []) {
-    const rad = (big ? 4.5 : 3.5) + (big ? 5 : 3) * Math.sqrt(r.n / most);
+  // Names on the lines, where they fan out: the higher half to the left, the lower half to the right.
+  const anchors = lines.map((l) => ({ l, r: l.rows.reduce((a, b) => (Math.abs(b.mean_p - .5) < Math.abs(a.mean_p - .5) ? b : a)) })).sort((a, b) => b.r.freq - a.r.freq);
+  const lowest = { left: -Infinity, right: -Infinity };  // lines that end at the same height must not share a label row
+  anchors.forEach(({ l, r }, i) => {
+    const side = i < anchors.length / 2 ? "left" : "right";
+    const py = Math.max(y(r.freq) + 4, lowest[side] + 16);
+    lowest[side] = py;
+    svg("text", { class: `cal-label ${r.freq >= r.mean_p ? "on-d" : "on-r"}`, x: x(r.mean_p) + (side === "left" ? -13 : 13), y: py, "text-anchor": side === "left" ? "end" : "start" }, root).textContent = l.s.label;
+  });
+}
+
+function drawSources(force) {
+  const root = $("#cal-main"), width = Math.min(root.getBoundingClientRect().width, 680);
+  if (!app.calLines || (!force && width === app.calWidth)) return;
+  app.calWidth = width;
+  sourceChart(root, app.calLines, width || 600);
+}
+
+// The small region charts: our forecast against what happened, with the range of our simulations.
+function calPlot(root, rows, size) {
+  root.replaceChildren();
+  const m = { l: 32, r: 8, t: 8, b: 24 };
+  root.setAttribute("viewBox", `0 0 ${size} ${size}`);
+  const x = (p) => m.l + (size - m.l - m.r) * p;
+  const y = (p) => size - m.b - (size - m.t - m.b) * p;
+  for (const v of [0, .5, 1]) {
+    svg("line", { class: v === 0 ? "axis" : "gridline", x1: m.l, x2: size - m.r, y1: y(v), y2: y(v) }, root);
+    svg("line", { class: v === 0 ? "axis" : "gridline", x1: x(v), x2: x(v), y1: m.t, y2: size - m.b }, root);
+    svg("text", { x: m.l - 6, y: y(v) + 4, "text-anchor": "end" }, root).textContent = pct0(v);
+    svg("text", { x: x(v), y: size - m.b + 15, "text-anchor": "middle" }, root).textContent = pct0(v);
+  }
+  const band = rows.map((r) => `${x(r.mean_p)},${y(r.band[1])}`).concat(rows.slice().reverse().map((r) => `${x(r.mean_p)},${y(r.band[0])}`));
+  svg("polygon", { class: "cal-band", points: band.join(" ") }, root);
+  svg("line", { class: "cal-ideal", x1: x(0), y1: y(0), x2: x(1), y2: y(1) }, root);
+  const most = Math.max(...rows.map((r) => r.n));
+  for (const r of rows) {
+    const rad = 3.5 + 3 * Math.sqrt(r.n / most);
     svg("circle", { class: "cal-dot", cx: x(r.mean_p), cy: y(r.freq), r: rad }, root);
     const hit = svg("circle", { cx: x(r.mean_p), cy: y(r.freq), r: rad + 8, fill: "transparent", tabindex: 0 }, root);
     bindTip(hit, () => tipRows(`${r.bracket}: ${r.n} ${r.n === 1 ? "race" : "races"}`, [
-      ["They won", `${r.wins} of ${r.n} (${pct0(r.freq)})`], ["We said", pct1(r.mean_p)],
-      ["90% range", `${pct(r.band[0])} to ${pct(r.band[1])}`], ["Given this wave", pct(r.wave)],
+      ["They won", `${r.wins} of ${r.n} (${pct0(r.freq)})`], ["We said", pct1(r.mean_p)], ["90% range", `${pct(r.band[0])} to ${pct(r.band[1])}`],
     ]));
   }
 }
@@ -613,25 +667,21 @@ function renderCalibration() {
   }
   const name = $("#cal-view").value, basis = $("#cal-basis").value;
   const v = c.views[`${name}|${basis}`], called = c.views[`${name}|called`];
-  const shared = $("#cal-shared").checked && v.n_shared > 0;
-  const usRows = shared ? v.series.us.shared_brackets : v.brackets;
-  const rowsOf = (key) => { const s = v.series[key]; return s ? (shared ? s.shared_brackets : s.brackets) : null; };
+  const usRows = v.series.us.brackets, rowsOf = (key) => v.series[key].brackets;
   const h = r.house;
   $("#res-tally").textContent = `House: Democrats ${h.called.D} called, ${h.leading.D} ahead · Republicans ${h.called.R} called, ${h.leading.R} ahead` +
     (h.runoff ? ` · ${h.runoff} ${h.runoff === 1 ? "runoff" : "runoffs"}` : "");
   const total = name === "all" ? 470 : name === "house" ? 435 : 35;
   $("#cal-count").textContent = (basis === "leaders" && v.n > called.n
     ? `${v.n} of ${total} races: ${called.n} called, ${v.n - called.n} counted with the current leader`
-    : `${called.n} of ${total} races called` + (basis === "called" && called.n < total ? ". The rest are mostly close, so leaving them out flatters us" : "")) +
-    (shared ? `. Chart: the ${v.n_shared} of them with both polls and markets.` : ".");
-  for (const box of document.querySelectorAll("#cal-toggles input")) {
-    box.disabled = !rowsOf(box.value);
-    box.parentElement.classList.toggle("off", box.disabled);
-    box.parentElement.title = box.disabled ? (v.series[box.value] ? "Only in the House, so not on the shared races of both chambers" : "Not available for these races") : "";
-  }
-  const overlays = CAL_SERIES.filter((s) => s.key !== "us" && app.calOn.has(s.key) && rowsOf(s.key)).map((s) => ({ s, rows: rowsOf(s.key) }));
-  calPlot($("#cal-main"), usRows, { size: 520, big: true, us: app.calOn.has("us"), overlays });
-  $("#cal-us-legend").hidden = !app.calOn.has("us");
+    : `${called.n} of ${total} races called` + (basis === "called" && called.n < total ? ". The rest are mostly close, so leaving them out flatters us" : "")) + ".";
+  const real = CAL_SERIES.filter((s) => !s.hindsight);
+  const under = real.every((s) => v.series[s.key].expected < v.series[s.key].actual);
+  const best = real.reduce((a, b) => (v.series[b.key].brier < v.series[a.key].brier ? b : a));
+  $("#cal-title").textContent = `${under ? "Every source underrated Democrats. " : ""}${best.label} came closest.`;
+  $("#cal-sub").textContent = `The ${v.series.us.n} races with a market price, grouped by the chance each source gave them. Bigger dot, more races.`;
+  app.calLines = CAL_SERIES.filter((s) => app.calOn.has(s.key)).map((s) => ({ s, rows: rowsOf(s.key) }));
+  drawSources(true);
 
   const fav = (scope, p) => v.favourites.find((f) => f.scope === scope && f.party === p);
   const fd = fav("all", "D"), fr = fav("all", "R");
@@ -646,7 +696,7 @@ function renderCalibration() {
       : `${upD} misses went to the Democratic side, ${upR} to Republicans.`}`);
   }
   const miss = c.national?.margin != null ? c.national.margin - c.environment : null;
-  if (miss != null && Math.abs(miss) >= 1) items.push(`The errors share a cause: the national House vote so far is ${margin(c.national.margin)} (${Math.round(c.national.share_counted)}% counted) against the ${margin(c.environment)} we expected. One shared error moves every bracket together, which is why the 90% range is so wide in the middle.`);
+  if (miss != null && Math.abs(miss) >= 1) items.push(`The errors share a cause: the national House vote so far is ${margin(c.national.margin)} (${Math.round(c.national.share_counted)}% counted) against the ${margin(c.environment)} we expected. One shared error moves every bracket together.`);
   if (name !== "senate") {
     const s = c.contest.seats, inside = s.with_leaders >= s.ci80[0] && s.with_leaders <= s.ci80[1];
     items.push(`The total ${inside ? "stayed inside" : "went outside"} our 80% range of ${s.ci80[0]}–${s.ci80[1]}: ${s.with_leaders} Democratic House seats, counting leaders, is the ${Math.round(s.share_sims_below * 100)}th percentile of our simulations.`);
@@ -661,10 +711,10 @@ function renderCalibration() {
   renderFits(v, basis);
   $("#cal-table").replaceChildren(...usRows.map((b) => html("tr", {}, [
     html("td", { text: b.bracket }), html("td", { class: "num", text: b.n }), html("td", { class: "num", text: pct1(b.mean_p) }), html("td", { class: "num", text: b.wins }),
-    html("td", { class: "num", text: pct1(b.freq) }), html("td", { class: "num", text: `${pct(b.band[0])}–${pct(b.band[1])}` }), html("td", { class: "num", text: pct(b.wave) }),
+    html("td", { class: "num", text: pct1(b.freq) }), html("td", { class: "num", text: `${pct(b.band[0])}–${pct(b.band[1])}` }),
   ])));
 
-  const cols = CAL_SERIES.filter((s) => s.key !== "us" && rowsOf(s.key));
+  const cols = CAL_SERIES.filter((s) => s.key !== "us");
   const brackets = [...new Set(cols.flatMap((s) => rowsOf(s.key).map((b) => b.bracket)))].sort((a, b) => parseInt(a) - parseInt(b));
   $("#cal-by-source-head").replaceChildren(html("tr", {}, [html("th", { text: "Chance given" }), ...cols.map((s) => html("th", { class: "num", text: s.label }))]));
   $("#cal-by-source").replaceChildren(...brackets.map((label) => html("tr", {}, [html("td", { text: label }), ...cols.map((s) => {
@@ -674,7 +724,7 @@ function renderCalibration() {
 
   $("#cal-regions").replaceChildren(...v.regions.map((x) => {
     const plot = svg("svg", { class: "chart", role: "img", "aria-label": `Calibration in the ${x.region}` });
-    calPlot(plot, x.brackets, { size: 250, big: false });
+    calPlot(plot, x.brackets, 250);
     return html("article", { class: "card region" }, [
       html("h3", { text: x.region }),
       html("p", { class: "muted small", text: `Non-safe: ${x.actual_non_safe} of ${x.n_non_safe} won, ${Math.round(x.expected_non_safe)} expected · ${x.upsets_d + x.upsets_r} ${x.upsets_d + x.upsets_r === 1 ? "miss" : "misses"}` }),
@@ -697,60 +747,67 @@ function renderCalibration() {
   }));
 
   $("#cal-method").replaceChildren(
-    html("p", { text: "Every race we forecast goes into a bracket by the chance we gave it on 2 November, in the frozen contest entry. Perfectly calibrated forecasts put the dots on the diagonal: of the races we gave about 30%, about 30% are won. A dot above the diagonal means Democrats did better than we said; a dot below, worse." }),
+    html("p", { text: "Every race goes into a bracket by the chance a source gave it. Perfectly calibrated forecasts put the dots on the diagonal: of the races given about 30%, about 30% are won. A dot above the diagonal means Democrats did better than that source said; a dot below, worse. Our own chances are those of the frozen contest entry of 2 November." }),
     html("p", { text: "“Democratic side” is what each probability refers to: the Democrat, or the independent where one is the main challenger (Alaska's Bill Hill; the Senate races in Nebraska, Montana, Idaho and South Dakota)." }),
-    html("p", { text: "Races are not independent coin flips. The grey band is the 90% range of each bracket's share across our own 20,000 simulations, with the shared national error included. In the middle brackets it is nearly the full height, because one national swing can turn all of those races at once. So a wide band does not mean we did well; it says that a single election cannot settle the calibration of the middle brackets." }),
-    html("p", { text: "The orange line asks a sharper question: in the simulations whose total comes closest to the actual total, what did each bracket do? If the dots follow it, the miss is the size of the wave. If they stray from it, we also ordered the races wrongly." }),
+    html("p", { text: "The sources on the chart are the inputs as they stood in the frozen entry, so none of them knows the result. Markets are Kalshi and Polymarket together, weighted by volume; Polymarket lists only 56 of the races. Fundamentals are our own: district lean, national environment, incumbency. The chart and the scores cover the races with a market price, so every line is judged on the same races. Polls exist in only about a hundred of the 470 races, nearly all close, so they get no line of their own. In the House our forecast used DDHQ's probabilities as its fundamentals input; on their own they scored about the same as ours, so the chart shows ours, which also cover the Senate." }),
+    html("p", { text: "The best mix is a weighted average of the log-odds of markets, polls and fundamentals. The weights come from trying every split in 2-point steps and keeping the one with the lowest Brier score on the races selected; a race without polls uses the other two. It uses the results, so it is hindsight and could not have been entered before the election. The lookup table gives each race the result of the race with the most similar source chances. A race finds itself, so it fits perfectly by construction. “On states it never saw” predicts each state with a fit on the other states of this election." }),
+    html("p", { text: "Races are not independent coin flips. The grey band on the region charts is the 90% range of each bracket's share across our own 20,000 simulations, with the shared national error included. In the middle brackets it is nearly the full height, because one national swing can turn all of those races at once. So a wide band does not mean we did well; it says that a single election cannot settle the calibration of the middle brackets. The independent range quoted at the top of the page keeps every race's chance from the frozen forecast and removes the shared errors." }),
     html("p", { text: "Not-yet-called races are close by nature, so leaving them out would hide most of the action; the default counts the current leader, which can still change, and “Called races only” shows the safe facts. Runoffs are left out until they are decided. A race with two finalists from one party counts as called for that party, as in the New York Times seat tally, even if the winner is not known yet." }),
-    html("p", { text: "The sources on the chart are the inputs as they stood in the frozen entry, so none of them knows the result. Markets are Kalshi and Polymarket together, weighted by volume; Polymarket lists only 56 of the races. Polls and fundamentals become chances through our own error sizes, so those two curves carry part of our judgment. Fundamentals are our own: district lean, national environment, incumbency. DDHQ's House probabilities were the model's House fundamentals, but DDHQ blends polls and markets itself, so they appear on their own. They date from 22 October, the rest from 2 November." }),
-    html("p", { text: "Polls exist for about a hundred races, nearly all of them close, and safe seats make any Brier score look good. So a source's score on its own races says little against another source's. The shared column and the switch above the chart use only the races with both polls and markets." }),
-    html("p", { text: "The best mix is a weighted average of the sources' log-odds. The weights are found by trying every split in 2-point steps and keeping the one with the lowest Brier score on the races selected. A race without one of the sources uses the others. “Knowing the wave” adds a shift and a sharpening of the log-odds, also fitted to the results. Plain market prices use our fundamentals in the few races without a market, so that every row covers the same races. The lookup table gives each race the result of the race with the most similar source chances; a race finds itself, so it fits perfectly by construction. All of this is hindsight, and none of it could have been entered before the election." }),
-    html("p", { text: "Two tests. “Other states held out” predicts each state with a fit on the rest; the wave stays known, because all states shared the same election. “2024 Senate” applies this year's correction to Polymarket's prices one week before the 2024 election, a different year with a different wave. That is one small test: 33 races, one market, one week out." }),
     html("p", { class: "small" }, ["Results: ", ...r.sources.flatMap((s, i) => [i ? " and " : "", html("a", { href: s.url, target: "_blank", rel: "noopener", text: s.name })]),
       ". Refreshed every three hours by GitHub Actions; the forecast itself stays frozen under the tag contest-entry. Code: pipeline/fetch_results.py, pipeline/calibration.py."]),
   );
 }
 
-// Which source did best, what the best mix would have been, and how much of that fit survives a test.
+// The three learnings on top of the page. The numbers come from calibration.json, so they follow the count.
+function renderLearned() {
+  const c = app.cal;
+  if (!c) return;
+  const v = c.views["all|leaders"], s = v.series, seats = c.contest.seats;
+  const marketWeight = (name) => pct0(c.mix_groups.leaders.find((g) => g.name === name).weights.market);
+  const now = seats.with_leaders, [lo, hi] = seats.ci80, [indLo, indHi] = seats.independent_ci80;
+  const inside = now >= lo && now <= hi;
+  const card = (over, title, stat, note, body) => html("article", { class: "learn" }, [
+    html("span", { class: "learn-over", text: over }), html("h3", { text: title }),
+    html("p", { class: "learn-stat", text: stat }), html("p", { class: "learn-note", text: note }), html("p", { text: body }),
+  ]);
+  $("#learned").replaceChildren(html("div", { class: "learned-inner" }, [
+    html("div", { class: "learned-head" }, [
+      html("span", { class: "learn-over", text: "What the election taught us" }),
+      html("h2", { text: "Data for the estimate, judgment for the error." }),
+      html("p", { text: "Data sets the odds race by race, and a plain market price was the hardest number to beat. What one election cannot tell you is whom to trust next time, or how wrong everyone can be at once. That part stays judgment." }),
+    ]),
+    html("div", { class: "learn-grid" }, [
+      card("1 · Data", "A good price is hard to beat", `${s.market.brier.toFixed(3)} vs ${s.us.brier.toFixed(3)}`, "Brier score, markets against our forecast (lower is better)",
+        `On the same ${s.us.n} races, plain market prices beat our own blend of markets, polls and fundamentals. How to blend them was our judgment call, and it did not add accuracy.`),
+      card("2 · Fit", "A perfect fit teaches nothing", `0.000 → ${v.mix.states.lookup.toFixed(3)}`, "A lookup table of the results: on races it knows, then on states it never saw",
+        `The best mix of our sources only just beats plain prices, ${s.mix.brier.toFixed(4)} against ${s.market.brier.toFixed(4)}. And it changes with the sample: markets get ${marketWeight("House")} of the weight in the House, ${marketWeight("Senate")} in the Senate. Looking back, the data cannot pick the recipe.`),
+      card("3 · Judgment", "Everyone can be wrong at once", `${now} ${inside ? "in" : "outside"} ${lo}–${hi}`, "Democratic House seats, counting leaders, against our 80% range",
+        `Every source underrated Democrats together: the House vote is ${margin(c.national.margin)}, we expected ${margin(c.environment)}, and no mix of them could have fixed that. ` +
+        (inside ? `Our range held because we assumed that races move together. As independent races it would have been ${indLo}–${indHi}, and ${now} would be far outside.` : `Our range did not hold, even with races moving together.`)),
+    ]),
+  ]));
+}
+
+// Could a better mix have done it, and how much of that fit survives on states it never saw?
 function renderFits(v, basis) {
-  const s4 = (x) => (x == null ? "–" : x.toFixed(4));
-  const rows = CAL_SERIES.filter((s) => v.series[s.key]);
-  $("#cal-shared-head").textContent = `Shared ${v.n_shared} races`;
-  $("#cal-sources").replaceChildren(...rows.map((s) => {
-    const x = v.series[s.key];
-    return html("tr", {}, [
-      html("td", {}, html("span", { class: "cal-name" }, [calKey(s), s.label])), html("td", { class: "num", text: x.n }), html("td", { class: "num", text: s4(x.brier) }),
-      html("td", { class: "num", text: s.key === "us" ? "" : s4(x.us) }), html("td", { class: "num", text: s4(x.shared) }),
-    ]);
-  }));
-
-  const m = v.mix, h = m.hindsight, us = v.series.us.brier;
-  const named = (w) => MIX_SOURCES.filter((s) => w[s.key] > 0).sort((a, b) => w[b.key] - w[a.key]).map((s) => `${Math.round(w[s.key] * 100)}% ${s.label.toLowerCase()}`).join(", ");
-  const zero = MIX_SOURCES.filter((s) => v.series[s.key] && !m.weights[s.key]).map((s) => (s.key === "ddhq" ? "DDHQ" : s.label.toLowerCase()));
-  const gain = (a, b) => (a < b ? "better than" : a > b ? "worse than" : "the same as");
-  const fitted = rows.filter((s) => MIX_SOURCES.includes(s)).length - 1;
-  const past = m.senate_2024;
-  $("#mix-reading").replaceChildren(...[
-    `Best weights on these races: ${named(m.weights)}${zero.length ? `, nothing on ${zero.join(" or ")}` : ""}. That scores ${s4(v.series.mix.brier)}, against ${s4(m.market)} for plain market prices and ${s4(us)} for our forecast.`,
-    `Knowing the wave is what pays: moving a coin-flip race to ${pct0(h.tossup)} and sharpening the rest scores ${s4(v.series.hindsight.brier)}. On the 2024 Senate races the same correction scores ${s4(past.hindsight)}, ${gain(past.hindsight, past.market)} the plain prices at ${s4(past.market)}.`,
-    `A lookup table of the results fits perfectly, at 0.0000. With each state held out it scores ${s4(m.states.lookup)}, ${gain(m.states.lookup, us)} our forecast.`,
-  ].map((t) => html("li", { text: t })));
-
-  const test = (label, n, a, b, c) => html("tr", {}, [html("td", { text: label }), html("td", { class: "num", text: n }), html("td", { class: "num", text: s4(a) }), html("td", { class: "num", text: s4(b) }), html("td", { class: "num", text: s4(c) })]);
-  $("#mix-past-head").textContent = `2024 Senate, ${past.n} races`;
+  const s4 = (x) => x.toFixed(4);
+  const m = v.mix, s = v.series;
+  const row = (label, n, a, b) => html("tr", {}, [html("td", { text: label }), html("td", { class: "num", text: n }), html("td", { class: "num", text: s4(a) }), html("td", { class: "num", text: s4(b) })]);
+  const fitted = MIX_SOURCES.length - 1;
   $("#mix-tests").replaceChildren(
-    test("Our forecast", 0, us, us, null),
-    test("Plain market prices", 0, m.market, m.market, past.market),
-    test("Best mix", fitted, v.series.mix.brier, m.states.mix, null),
-    test("Best mix, knowing the wave", fitted + 2, v.series.hindsight.brier, m.states.hindsight, past.hindsight),
-    test("Lookup table", "every race", 0, m.states.lookup, null),
+    row("Our forecast", 0, s.us.brier, s.us.brier),
+    row("Markets", 0, s.market.brier, s.market.brier),
+    row("Fundamentals", 0, s.fundamentals.brier, s.fundamentals.brier),
+    row("Best mix", fitted, s.mix.brier, m.states.mix),
+    row("Lookup table of the results", "every race", 0, m.states.lookup),
   );
-
+  const named = (w) => MIX_SOURCES.filter((x) => w[x.key] > 0).sort((a, b) => w[b.key] - w[a.key]).map((x) => `${Math.round(w[x.key] * 100)}% ${x.label.toLowerCase()}`).join(", ");
+  $("#mix-note").textContent = `All on the same ${s.us.n} races with a market price. Best mix on these races: ${named(m.weights)}. Polls enter it where they exist, but with about a hundred races they get no line of their own.`;
   $("#mix-groups").replaceChildren(...app.cal.mix_groups[basis].map((g) => html("div", { class: "mix-row" }, [
     html("span", { class: "mix-name", text: g.name }),
-    html("span", { class: "mix-bar" }, MIX_SOURCES.filter((s) => g.weights[s.key] > 0).map((s) => {
-      const seg = html("span", { style: `width:${g.weights[s.key] * 100}%;background:${s.color}`, tabindex: 0 });
-      bindTip(seg, () => tipRows(`${g.name}: ${s.label}`, [["Weight", pct0(g.weights[s.key])], ["Races", g.n], ["Brier score of this mix", s4(g.brier)]]));
+    html("span", { class: "mix-bar" }, MIX_SOURCES.filter((x) => g.weights[x.key] > 0).map((x) => {
+      const seg = html("span", { style: `width:${g.weights[x.key] * 100}%;background:${x.color}`, tabindex: 0 });
+      bindTip(seg, () => tipRows(`${g.name}: ${x.label}`, [["Weight", pct0(g.weights[x.key])], ["Races", g.n], ["Brier score of this mix", s4(g.brier)]]));
       return seg;
     })),
     html("span", { class: "muted mix-text", text: named(g.weights) }),
@@ -1463,9 +1520,11 @@ async function init() {
   app.results = results;
   app.cal = cal;
   renderBacktest(backtest);
+  renderLearned();
 
   for (const id of ["f-chamber", "f-close", "f-sort"]) $("#" + id).addEventListener("change", () => renderRaces());
-  for (const id of ["cal-view", "cal-basis", "cal-shared"]) $("#" + id).addEventListener("change", renderCalibration);
+  for (const id of ["cal-view", "cal-basis"]) $("#" + id).addEventListener("change", renderCalibration);
+  addEventListener("resize", () => drawSources());
   $("#cal-toggles").append(...CAL_SERIES.map((s) => {
     const box = html("input", { type: "checkbox", value: s.key });
     box.checked = app.calOn.has(s.key);

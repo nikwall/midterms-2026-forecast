@@ -80,7 +80,7 @@ and go to http://localhost:8770.
 The forecast is frozen; only the results change.
 
 - `pipeline/fetch_results.py` collects the results (CNN; The New York Times with AP calls) into `app/data/results.json`.
-- `pipeline/calibration.py` scores the frozen forecast against them and writes `app/data/calibration.json`, which feeds the "Results & calibration" tab. It scores each source alone too (markets, polls, fundamentals, DDHQ) and fits the best mix of them in hindsight, with two tests of that fit. A run takes a few minutes.
+- `pipeline/calibration.py` scores the frozen forecast against them and writes `app/data/calibration.json`, which feeds the "Results & calibration" tab. It also scores markets and our own fundamentals on the same races, and fits the best mix of the sources in hindsight, with a test on held-out states.
 - GitHub runs both every three hours (**Actions → Update results**) and republishes the dashboard if anything changed.
 - `run_all.py` refuses to run after Election Day: market prices now contain the results, so a refresh would overwrite the predictions. `--after-election` overrides this.
 
