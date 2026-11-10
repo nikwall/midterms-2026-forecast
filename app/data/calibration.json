@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T22:06+00:00",
+ "updated": "2026-11-10T06:42+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -436,7 +436,7 @@
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": null
     },
     {
@@ -639,8 +639,8 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.85,
-     "lead_votes": 3237,
+     "margin": 0.88,
+     "lead_votes": 3352,
      "reporting": 98,
      "top": [
       {
@@ -1442,7 +1442,7 @@
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": null
     },
     {
@@ -1622,8 +1622,8 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.85,
-     "lead_votes": 3237,
+     "margin": 0.88,
+     "lead_votes": 3352,
      "reporting": 98,
      "top": [
       {
@@ -1715,7 +1715,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18896,
+     "lead_votes": 18898,
      "reporting": 98,
      "top": [
       {
@@ -2408,7 +2408,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57137,
+     "lead_votes": 57178,
      "reporting": 99,
      "top": [
       {
@@ -2430,20 +2430,20 @@
      "p": 0.677,
      "won": 1,
      "status": "counting",
-     "margin": 0.3,
-     "lead_votes": 637,
-     "reporting": 74,
+     "margin": 1.15,
+     "lead_votes": 2517,
+     "reporting": 76,
      "top": [
       {
        "name": "Mary Peltola",
        "party": "D",
-       "pct": 48.2,
+       "pct": 48.6,
        "incumbent": false
       },
       {
        "name": "Dan S. Sullivan",
        "party": "R",
-       "pct": 47.9,
+       "pct": 47.5,
        "incumbent": true
       }
      ]
@@ -2500,7 +2500,7 @@
      "won": 1,
      "status": "called",
      "margin": 12.1,
-     "lead_votes": 1196405,
+     "lead_votes": 1196376,
      "reporting": 99,
      "top": [
       {
@@ -2546,7 +2546,7 @@
      "won": 1,
      "status": "called",
      "margin": 6.2,
-     "lead_votes": 44033,
+     "lead_votes": 44037,
      "reporting": 97,
      "top": [
       {
@@ -2918,14 +2918,14 @@
    }
   },
   "all|called": {
-   "n": 454,
+   "n": 455,
    "actual": 276,
    "expected": 256.9,
-   "share_sims_below": 0.8487,
+   "share_sims_below": 0.8485,
    "brier": 0.0328,
    "n_non_safe": 78,
    "brier_non_safe": 0.1788,
-   "favourite_won": 0.9515,
+   "favourite_won": 0.9516,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -2963,11 +2963,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 200,
-     "chance": 0.9503,
-     "won": 0.89,
-     "expected": 190.1,
-     "actual": 178
+     "n": 201,
+     "chance": 0.9504,
+     "won": 0.8905,
+     "expected": 191.0,
+     "actual": 179
     },
     {
      "scope": "non-safe",
@@ -3228,10 +3228,10 @@
     },
     {
      "region": "West",
-     "n": 107,
+     "n": 108,
      "expected": 84.4,
      "actual": 87,
-     "brier": 0.0215,
+     "brier": 0.0213,
      "n_non_safe": 12,
      "expected_non_safe": 6.5,
      "actual_non_safe": 9,
@@ -3242,13 +3242,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 17,
-       "mean_p": 0.0105,
+       "n": 18,
+       "mean_p": 0.0118,
        "wins": 0,
        "freq": 0.0,
        "band": [
         0.0,
-        0.0588
+        0.0556
        ]
       },
       {
@@ -3347,7 +3347,7 @@
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": null
     },
     {
@@ -3481,8 +3481,8 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.85,
-     "lead_votes": 3237,
+     "margin": 0.88,
+     "lead_votes": 3352,
      "reporting": 98,
      "top": [
       {
@@ -3574,7 +3574,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18896,
+     "lead_votes": 18898,
      "reporting": 98,
      "top": [
       {
@@ -3640,8 +3640,8 @@
    ],
    "series": {
     "us": {
-     "n": 445,
-     "brier": 0.0335,
+     "n": 446,
+     "brier": 0.0334,
      "expected": 248.9,
      "actual": 268,
      "brackets": [
@@ -3649,13 +3649,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 156,
-       "mean_p": 0.0089,
+       "n": 157,
+       "mean_p": 0.009,
        "wins": 1,
        "freq": 0.0064,
        "band": [
         0.0,
-        0.0385
+        0.0382
        ]
       },
       {
@@ -3739,9 +3739,9 @@
      ]
     },
     "market": {
-     "n": 445,
+     "n": 446,
      "brier": 0.0284,
-     "expected": 253.5,
+     "expected": 253.7,
      "actual": 268,
      "brackets": [
       {
@@ -3753,10 +3753,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 48,
-       "mean_p": 0.0972,
+       "n": 49,
+       "mean_p": 0.0986,
        "wins": 2,
-       "freq": 0.0417
+       "freq": 0.0408
       },
       {
        "bracket": "20–35%",
@@ -3796,9 +3796,9 @@
      ]
     },
     "fundamentals": {
-     "n": 445,
-     "brier": 0.0474,
-     "expected": 242.8,
+     "n": 446,
+     "brier": 0.0475,
+     "expected": 243.1,
      "actual": 268,
      "brackets": [
       {
@@ -3817,10 +3817,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 19,
-       "mean_p": 0.263,
+       "n": 20,
+       "mean_p": 0.2643,
        "wins": 10,
-       "freq": 0.5263
+       "freq": 0.5
       },
       {
        "bracket": "35–65%",
@@ -3853,9 +3853,9 @@
      ]
     },
     "mix": {
-     "n": 445,
+     "n": 446,
      "brier": 0.0282,
-     "expected": 253.6,
+     "expected": 253.8,
      "actual": 268,
      "brackets": [
       {
@@ -3867,10 +3867,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 47,
-       "mean_p": 0.0964,
+       "n": 48,
+       "mean_p": 0.0978,
        "wins": 1,
-       "freq": 0.0213
+       "freq": 0.0208
       },
       {
        "bracket": "20–35%",
@@ -3918,19 +3918,19 @@
     },
     "states": {
      "mix": 0.0288,
-     "lookup": 0.0382
+     "lookup": 0.0381
     }
    }
   },
   "house|called": {
-   "n": 421,
+   "n": 422,
    "actual": 256,
-   "expected": 238.8,
-   "share_sims_below": 0.8556,
-   "brier": 0.0327,
+   "expected": 238.9,
+   "share_sims_below": 0.8551,
+   "brier": 0.0326,
    "n_non_safe": 68,
    "brier_non_safe": 0.1886,
-   "favourite_won": 0.9525,
+   "favourite_won": 0.9526,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -3966,11 +3966,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 185,
-     "chance": 0.953,
-     "won": 0.8919,
-     "expected": 176.3,
-     "actual": 165
+     "n": 186,
+     "chance": 0.9531,
+     "won": 0.8925,
+     "expected": 177.3,
+     "actual": 166
     },
     {
      "scope": "non-safe",
@@ -4231,10 +4231,10 @@
     },
     {
      "region": "West",
-     "n": 101,
+     "n": 102,
      "expected": 81.3,
      "actual": 84,
-     "brier": 0.0227,
+     "brier": 0.0225,
      "n_non_safe": 12,
      "expected_non_safe": 6.5,
      "actual_non_safe": 9,
@@ -4245,13 +4245,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 14,
-       "mean_p": 0.0079,
+       "n": 15,
+       "mean_p": 0.0096,
        "wins": 0,
        "freq": 0.0,
        "band": [
         0.0,
-        0.0714
+        0.0667
        ]
       },
       {
@@ -4350,7 +4350,7 @@
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": null
     },
     {
@@ -4484,8 +4484,8 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.85,
-     "lead_votes": 3237,
+     "margin": 0.88,
+     "lead_votes": 3352,
      "reporting": 98,
      "top": [
       {
@@ -4577,7 +4577,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18896,
+     "lead_votes": 18898,
      "reporting": 98,
      "top": [
       {
@@ -4643,22 +4643,22 @@
    ],
    "series": {
     "us": {
-     "n": 412,
+     "n": 413,
      "brier": 0.0334,
-     "expected": 230.8,
+     "expected": 230.9,
      "actual": 248,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 145,
-       "mean_p": 0.0083,
+       "n": 146,
+       "mean_p": 0.0085,
        "wins": 1,
-       "freq": 0.0069,
+       "freq": 0.0068,
        "band": [
         0.0,
-        0.0345
+        0.0411
        ]
       },
       {
@@ -4742,9 +4742,9 @@
      ]
     },
     "market": {
-     "n": 412,
+     "n": 413,
      "brier": 0.0276,
-     "expected": 235.5,
+     "expected": 235.7,
      "actual": 248,
      "brackets": [
       {
@@ -4756,10 +4756,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 44,
-       "mean_p": 0.0978,
+       "n": 45,
+       "mean_p": 0.0993,
        "wins": 2,
-       "freq": 0.0455
+       "freq": 0.0444
       },
       {
        "bracket": "20–35%",
@@ -4799,9 +4799,9 @@
      ]
     },
     "fundamentals": {
-     "n": 412,
-     "brier": 0.0441,
-     "expected": 226.6,
+     "n": 413,
+     "brier": 0.0442,
+     "expected": 226.9,
      "actual": 248,
      "brackets": [
       {
@@ -4820,10 +4820,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 14,
-       "mean_p": 0.2684,
+       "n": 15,
+       "mean_p": 0.2697,
        "wins": 8,
-       "freq": 0.5714
+       "freq": 0.5333
       },
       {
        "bracket": "35–65%",
@@ -4856,9 +4856,9 @@
      ]
     },
     "mix": {
-     "n": 412,
+     "n": 413,
      "brier": 0.0275,
-     "expected": 235.5,
+     "expected": 235.7,
      "actual": 248,
      "brackets": [
       {
@@ -4870,10 +4870,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 43,
-       "mean_p": 0.0963,
+       "n": 44,
+       "mean_p": 0.0979,
        "wins": 1,
-       "freq": 0.0233
+       "freq": 0.0227
       },
       {
        "bracket": "20–35%",
@@ -4921,7 +4921,7 @@
     },
     "states": {
      "mix": 0.0282,
-     "lookup": 0.0388
+     "lookup": 0.0387
     }
    }
   },
@@ -5272,7 +5272,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57137,
+     "lead_votes": 57178,
      "reporting": 99,
      "top": [
       {
@@ -5341,7 +5341,7 @@
      "won": 1,
      "status": "called",
      "margin": 12.1,
-     "lead_votes": 1196405,
+     "lead_votes": 1196376,
      "reporting": 99,
      "top": [
       {
@@ -5387,7 +5387,7 @@
      "won": 1,
      "status": "called",
      "margin": 6.2,
-     "lead_votes": 44033,
+     "lead_votes": 44037,
      "reporting": 97,
      "top": [
       {
@@ -5501,8 +5501,8 @@
      "p": 0.037,
      "won": 0,
      "status": "called",
-     "margin": -10.63,
-     "lead_votes": 51246,
+     "margin": -10.53,
+     "lead_votes": 50969,
      "reporting": 98,
      "top": [
       {
@@ -5881,7 +5881,7 @@
   "called": [
    {
     "name": "All races",
-    "n": 445,
+    "n": 446,
     "weights": {
      "market": 0.82,
      "polls": 0.18,
@@ -5891,7 +5891,7 @@
    },
    {
     "name": "House",
-    "n": 412,
+    "n": 413,
     "weights": {
      "market": 0.92,
      "polls": 0.08,
@@ -5941,13 +5941,13 @@
    },
    {
     "name": "West",
-    "n": 98,
+    "n": 99,
     "weights": {
      "market": 1.0,
      "polls": 0.0,
      "fundamentals": 0.0
     },
-    "brier": 0.0188
+    "brier": 0.0189
    }
   ]
  },
@@ -6083,7 +6083,7 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 6.14,
+    "margin": 6.26,
     "called_by": [
      "CNN",
      "NYT"
@@ -6093,13 +6093,13 @@
      {
       "name": "Cait Conley",
       "party": "D",
-      "pct": 53.0,
+      "pct": 53.1,
       "incumbent": false
      },
      {
       "name": "Mike Lawler",
       "party": "R",
-      "pct": 46.9,
+      "pct": 46.8,
       "incumbent": true
      }
     ],
@@ -6111,11 +6111,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 64320386,
-  "rep": 49112853,
-  "total": 115120691,
-  "share_counted": 95.1,
-  "margin": 13.2
+  "dem": 65000280,
+  "rep": 49383170,
+  "total": 116075055,
+  "share_counted": 95.95,
+  "margin": 13.5
  },
  "senate": {
   "p_control": 0.7754,
