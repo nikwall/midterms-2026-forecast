@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T06:42+00:00",
+ "updated": "2026-11-10T16:54+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -616,9 +616,9 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.68,
-     "lead_votes": 7260,
-     "reporting": 97,
+     "margin": 2.71,
+     "lead_votes": 7368,
+     "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
@@ -1435,7 +1435,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 8,
-     "miss": 2.5,
+     "miss": 2.4,
      "se": 0.6
     },
     {
@@ -1599,9 +1599,9 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.68,
-     "lead_votes": 7260,
-     "reporting": 97,
+     "margin": 2.71,
+     "lead_votes": 7368,
+     "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
@@ -1715,7 +1715,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18898,
+     "lead_votes": 18896,
      "reporting": 98,
      "top": [
       {
@@ -2408,7 +2408,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57178,
+     "lead_votes": 57174,
      "reporting": 99,
      "top": [
       {
@@ -2454,7 +2454,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.05,
-     "lead_votes": 55585,
+     "lead_votes": 55568,
      "reporting": 99,
      "top": [
       {
@@ -2569,7 +2569,7 @@
      "won": 1,
      "status": "called",
      "margin": 7.08,
-     "lead_votes": 339848,
+     "lead_votes": 339854,
      "reporting": 98,
      "top": [
       {
@@ -2592,7 +2592,7 @@
      "won": 0,
      "status": "called",
      "margin": -2.87,
-     "lead_votes": 237307,
+     "lead_votes": 237306,
      "reporting": 99,
      "top": [
       {
@@ -3458,9 +3458,9 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.68,
-     "lead_votes": 7260,
-     "reporting": 97,
+     "margin": 2.71,
+     "lead_votes": 7368,
+     "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
@@ -3574,7 +3574,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18898,
+     "lead_votes": 18896,
      "reporting": 98,
      "top": [
       {
@@ -4461,9 +4461,9 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.68,
-     "lead_votes": 7260,
-     "reporting": 97,
+     "margin": 2.71,
+     "lead_votes": 7368,
+     "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
@@ -4577,7 +4577,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18898,
+     "lead_votes": 18896,
      "reporting": 98,
      "top": [
       {
@@ -5272,7 +5272,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57178,
+     "lead_votes": 57174,
      "reporting": 99,
      "top": [
       {
@@ -5295,7 +5295,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.05,
-     "lead_votes": 55585,
+     "lead_votes": 55568,
      "reporting": 99,
      "top": [
       {
@@ -5410,7 +5410,7 @@
      "won": 1,
      "status": "called",
      "margin": 7.08,
-     "lead_votes": 339848,
+     "lead_votes": 339854,
      "reporting": 98,
      "top": [
       {
@@ -5433,7 +5433,7 @@
      "won": 0,
      "status": "called",
      "margin": -2.87,
-     "lead_votes": 237307,
+     "lead_votes": 237306,
      "reporting": 99,
      "top": [
       {
@@ -5479,7 +5479,7 @@
      "won": 0,
      "status": "called",
      "margin": -1.76,
-     "lead_votes": 25855,
+     "lead_votes": 25802,
      "reporting": 99,
      "top": [
       {
@@ -5501,14 +5501,14 @@
      "p": 0.037,
      "won": 0,
      "status": "called",
-     "margin": -10.53,
-     "lead_votes": 50969,
-     "reporting": 98,
+     "margin": -10.43,
+     "lead_votes": 50998,
+     "reporting": 99,
      "top": [
       {
        "name": "Kurt Alme",
        "party": "R",
-       "pct": 48.3,
+       "pct": 48.2,
        "incumbent": false
       },
       {
@@ -6088,7 +6088,7 @@
      "CNN",
      "NYT"
     ],
-    "reporting": 95,
+    "reporting": 97,
     "top": [
      {
       "name": "Cait Conley",
@@ -6111,10 +6111,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 65000280,
-  "rep": 49383170,
-  "total": 116075055,
-  "share_counted": 95.95,
+  "dem": 65016695,
+  "rep": 49396852,
+  "total": 116105646,
+  "share_counted": 96.01,
   "margin": 13.5
  },
  "senate": {
