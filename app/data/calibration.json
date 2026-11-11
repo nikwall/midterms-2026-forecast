@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T23:00+00:00",
+ "updated": "2026-11-11T05:28+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -479,8 +479,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.38,
-     "lead_votes": 6527,
+     "margin": 2.41,
+     "lead_votes": 6619,
      "reporting": 99,
      "top": [
       {
@@ -594,9 +594,9 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.28,
-     "lead_votes": 2633,
-     "reporting": 97,
+     "margin": 0.31,
+     "lead_votes": 2990,
+     "reporting": 98,
      "top": [
       {
        "name": "Scott Colom",
@@ -641,7 +641,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.88,
-     "lead_votes": 3353,
+     "lead_votes": 3362,
      "reporting": 98,
      "top": [
       {
@@ -709,8 +709,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.47,
-     "lead_votes": 7850,
+     "margin": 2.51,
+     "lead_votes": 7977,
      "reporting": 99,
      "top": [
       {
@@ -722,7 +722,7 @@
       {
        "name": "Brad Knott",
        "party": "R",
-       "pct": 48.1,
+       "pct": 48.0,
        "incumbent": true
       }
      ]
@@ -1455,7 +1455,7 @@
      "se": null
     }
    ],
-   "mean_miss": 4.6,
+   "mean_miss": 4.7,
    "n_miss": 75,
    "surprises": [
     {
@@ -1486,8 +1486,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.38,
-     "lead_votes": 6527,
+     "margin": 2.41,
+     "lead_votes": 6619,
      "reporting": 99,
      "top": [
       {
@@ -1625,7 +1625,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.88,
-     "lead_votes": 3353,
+     "lead_votes": 3362,
      "reporting": 98,
      "top": [
       {
@@ -1693,8 +1693,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.47,
-     "lead_votes": 7850,
+     "margin": 2.51,
+     "lead_votes": 7977,
      "reporting": 99,
      "top": [
       {
@@ -1706,7 +1706,7 @@
       {
        "name": "Brad Knott",
        "party": "R",
-       "pct": 48.1,
+       "pct": 48.0,
        "incumbent": true
       }
      ]
@@ -2363,9 +2363,9 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.28,
-     "lead_votes": 2633,
-     "reporting": 97,
+     "margin": 0.31,
+     "lead_votes": 2990,
+     "reporting": 98,
      "top": [
       {
        "name": "Scott Colom",
@@ -2432,20 +2432,20 @@
      "p": 0.677,
      "won": 1,
      "status": "counting",
-     "margin": 1.15,
-     "lead_votes": 2517,
-     "reporting": 76,
+     "margin": 1.75,
+     "lead_votes": 4250,
+     "reporting": 84,
      "top": [
       {
        "name": "Mary Peltola",
        "party": "D",
-       "pct": 48.6,
+       "pct": 49.0,
        "incumbent": false
       },
       {
        "name": "Dan S. Sullivan",
        "party": "R",
-       "pct": 47.5,
+       "pct": 47.2,
        "incumbent": true
       }
      ]
@@ -3368,8 +3368,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.38,
-     "lead_votes": 6527,
+     "margin": 2.41,
+     "lead_votes": 6619,
      "reporting": 99,
      "top": [
       {
@@ -3484,7 +3484,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.88,
-     "lead_votes": 3353,
+     "lead_votes": 3362,
      "reporting": 98,
      "top": [
       {
@@ -3552,8 +3552,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.47,
-     "lead_votes": 7850,
+     "margin": 2.51,
+     "lead_votes": 7977,
      "reporting": 99,
      "top": [
       {
@@ -3565,7 +3565,7 @@
       {
        "name": "Brad Knott",
        "party": "R",
-       "pct": 48.1,
+       "pct": 48.0,
        "incumbent": true
       }
      ]
@@ -4371,8 +4371,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.38,
-     "lead_votes": 6527,
+     "margin": 2.41,
+     "lead_votes": 6619,
      "reporting": 99,
      "top": [
       {
@@ -4487,7 +4487,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.88,
-     "lead_votes": 3353,
+     "lead_votes": 3362,
      "reporting": 98,
      "top": [
       {
@@ -4555,8 +4555,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.47,
-     "lead_votes": 7850,
+     "margin": 2.51,
+     "lead_votes": 7977,
      "reporting": 99,
      "top": [
       {
@@ -4568,7 +4568,7 @@
       {
        "name": "Brad Knott",
        "party": "R",
-       "pct": 48.1,
+       "pct": 48.0,
        "incumbent": true
       }
      ]
@@ -5977,7 +5977,7 @@
     "p": 0.8647,
     "status": "called",
     "side": "D",
-    "margin": 3.4,
+    "margin": 3.43,
     "called_by": [
      "CNN",
      "NYT"
@@ -6004,7 +6004,7 @@
     "p": 0.8931,
     "status": "called",
     "side": "D",
-    "margin": 15.79,
+    "margin": 15.83,
     "called_by": [
      "CNN",
      "NYT"
@@ -6113,11 +6113,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 65077984,
-  "rep": 49415843,
-  "total": 116186917,
-  "share_counted": 96.09,
-  "margin": 13.5
+  "dem": 65620268,
+  "rep": 49672870,
+  "total": 117020031,
+  "share_counted": 96.82,
+  "margin": 13.6
  },
  "senate": {
   "p_control": 0.7754,
