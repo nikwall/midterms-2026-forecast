@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T13:50+00:00",
+ "updated": "2026-11-11T21:48+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -396,7 +396,7 @@
      "region": "South",
      "n": 3,
      "miss": 7.4,
-     "se": 1.4
+     "se": 1.3
     },
     {
      "division": "Mountain",
@@ -502,8 +502,8 @@
      "p": 0.053,
      "won": 1,
      "status": "counting",
-     "margin": 0.11,
-     "lead_votes": 325,
+     "margin": 0.12,
+     "lead_votes": 335,
      "reporting": 99,
      "top": [
       {
@@ -594,20 +594,20 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.31,
-     "lead_votes": 2990,
-     "reporting": 98,
+     "margin": 0.46,
+     "lead_votes": 4400,
+     "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.1,
+       "pct": 49.2,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.8,
+       "pct": 48.7,
        "incumbent": true
       }
      ]
@@ -617,14 +617,14 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.71,
-     "lead_votes": 7368,
+     "margin": 2.79,
+     "lead_votes": 7597,
      "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.8,
+       "pct": 50.9,
        "incumbent": false
       },
       {
@@ -686,8 +686,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.34,
-     "lead_votes": 6372,
+     "margin": 2.31,
+     "lead_votes": 6290,
      "reporting": 99,
      "top": [
       {
@@ -710,7 +710,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.51,
-     "lead_votes": 7977,
+     "lead_votes": 7984,
      "reporting": 99,
      "top": [
       {
@@ -1509,8 +1509,8 @@
      "p": 0.053,
      "won": 1,
      "status": "counting",
-     "margin": 0.11,
-     "lead_votes": 325,
+     "margin": 0.12,
+     "lead_votes": 335,
      "reporting": 99,
      "top": [
       {
@@ -1601,14 +1601,14 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.71,
-     "lead_votes": 7368,
+     "margin": 2.79,
+     "lead_votes": 7597,
      "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.8,
+       "pct": 50.9,
        "incumbent": false
       },
       {
@@ -1670,8 +1670,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.34,
-     "lead_votes": 6372,
+     "margin": 2.31,
+     "lead_votes": 6290,
      "reporting": 99,
      "top": [
       {
@@ -1694,7 +1694,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.51,
-     "lead_votes": 7977,
+     "lead_votes": 7984,
      "reporting": 99,
      "top": [
       {
@@ -1717,7 +1717,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18888,
+     "lead_votes": 18902,
      "reporting": 98,
      "top": [
       {
@@ -2323,7 +2323,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 4.8,
+     "miss": 5.0,
      "se": null
     },
     {
@@ -2351,11 +2351,11 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.1,
+     "miss": 2.2,
      "se": 2.0
     }
    ],
-   "mean_miss": 3.5,
+   "mean_miss": 3.6,
    "n_miss": 11,
    "surprises": [
     {
@@ -2363,20 +2363,20 @@
      "p": 0.108,
      "won": 1,
      "status": "counting",
-     "margin": 0.31,
-     "lead_votes": 2990,
-     "reporting": 98,
+     "margin": 0.46,
+     "lead_votes": 4400,
+     "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.1,
+       "pct": 49.2,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.8,
+       "pct": 48.7,
        "incumbent": true
       }
      ]
@@ -2387,8 +2387,8 @@
      "won": 1,
      "status": "called",
      "margin": 4.5,
-     "lead_votes": 91809,
-     "reporting": 99,
+     "lead_votes": 91810,
+     "reporting": 100,
      "top": [
       {
        "name": "Annie Andrews",
@@ -2410,7 +2410,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57176,
+     "lead_votes": 57177,
      "reporting": 99,
      "top": [
       {
@@ -2478,9 +2478,9 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -6.24,
-     "lead_votes": 47058,
-     "reporting": 97,
+     "margin": -6.14,
+     "lead_votes": 46509,
+     "reporting": 98,
      "top": [
       {
        "name": "Pete Ricketts",
@@ -2920,14 +2920,14 @@
    }
   },
   "all|called": {
-   "n": 457,
-   "actual": 276,
-   "expected": 257.4,
-   "share_sims_below": 0.8374,
-   "brier": 0.0329,
-   "n_non_safe": 80,
-   "brier_non_safe": 0.1757,
-   "favourite_won": 0.9519,
+   "n": 459,
+   "actual": 277,
+   "expected": 257.7,
+   "share_sims_below": 0.838,
+   "brier": 0.0338,
+   "n_non_safe": 82,
+   "brier_non_safe": 0.1773,
+   "favourite_won": 0.9499,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -2942,6 +2942,7 @@
     "H-CO-04",
     "H-CO-05",
     "H-MO-02",
+    "H-NC-03",
     "H-NC-06",
     "H-NC-09",
     "H-NC-13",
@@ -2965,11 +2966,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 203,
-     "chance": 0.9486,
-     "won": 0.8916,
-     "expected": 192.6,
-     "actual": 181
+     "n": 205,
+     "chance": 0.9473,
+     "won": 0.8878,
+     "expected": 194.2,
+     "actual": 182
     },
     {
      "scope": "non-safe",
@@ -2983,11 +2984,11 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 45,
-     "chance": 0.7996,
-     "won": 0.5333,
-     "expected": 36.0,
-     "actual": 24
+     "n": 47,
+     "chance": 0.8003,
+     "won": 0.5319,
+     "expected": 37.6,
+     "actual": 25
     }
    ],
    "regions": [
@@ -3151,14 +3152,14 @@
     },
     {
      "region": "South",
-     "n": 170,
-     "expected": 58.0,
-     "actual": 66,
-     "brier": 0.0429,
-     "n_non_safe": 33,
-     "expected_non_safe": 13.2,
-     "actual_non_safe": 21,
-     "upsets_d": 10,
+     "n": 172,
+     "expected": 58.3,
+     "actual": 67,
+     "brier": 0.0453,
+     "n_non_safe": 35,
+     "expected_non_safe": 13.6,
+     "actual_non_safe": 22,
+     "upsets_d": 11,
      "upsets_r": 0,
      "brackets": [
       {
@@ -3178,13 +3179,13 @@
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 20,
-       "mean_p": 0.1674,
-       "wins": 8,
-       "freq": 0.4,
+       "n": 22,
+       "mean_p": 0.1688,
+       "wins": 9,
+       "freq": 0.4091,
        "band": [
         0.0,
-        0.75
+        0.7273
        ]
       },
       {
@@ -3334,7 +3335,7 @@
     {
      "division": "South Atlantic",
      "region": "South",
-     "n": 23,
+     "n": 25,
      "miss": 3.3,
      "se": 0.6
     },
@@ -3361,7 +3362,7 @@
     }
    ],
    "mean_miss": 4.5,
-   "n_miss": 80,
+   "n_miss": 82,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -3460,14 +3461,14 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.71,
-     "lead_votes": 7368,
+     "margin": 2.79,
+     "lead_votes": 7597,
      "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.8,
+       "pct": 50.9,
        "incumbent": false
       },
       {
@@ -3529,8 +3530,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.34,
-     "lead_votes": 6372,
+     "margin": 2.31,
+     "lead_votes": 6290,
      "reporting": 99,
      "top": [
       {
@@ -3553,7 +3554,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.51,
-     "lead_votes": 7977,
+     "lead_votes": 7984,
      "reporting": 99,
      "top": [
       {
@@ -3576,7 +3577,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18888,
+     "lead_votes": 18902,
      "reporting": 98,
      "top": [
       {
@@ -3642,10 +3643,10 @@
    ],
    "series": {
     "us": {
-     "n": 448,
-     "brier": 0.0335,
-     "expected": 249.4,
-     "actual": 268,
+     "n": 450,
+     "brier": 0.0344,
+     "expected": 249.7,
+     "actual": 269,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -3664,23 +3665,23 @@
        "bracket": "5–20%",
        "lo": 0.05,
        "hi": 0.2,
-       "n": 24,
-       "mean_p": 0.1015,
+       "n": 25,
+       "mean_p": 0.0998,
        "wins": 9,
-       "freq": 0.375,
+       "freq": 0.36,
        "band": [
         0.0,
-        0.5833
+        0.56
        ]
       },
       {
        "bracket": "20–35%",
        "lo": 0.2,
        "hi": 0.35,
-       "n": 15,
-       "mean_p": 0.2667,
-       "wins": 6,
-       "freq": 0.4,
+       "n": 16,
+       "mean_p": 0.2692,
+       "wins": 7,
+       "freq": 0.4375,
        "band": [
         0.0,
         1.0
@@ -3741,10 +3742,10 @@
      ]
     },
     "market": {
-     "n": 448,
-     "brier": 0.0289,
-     "expected": 254.4,
-     "actual": 268,
+     "n": 450,
+     "brier": 0.0295,
+     "expected": 255.0,
+     "actual": 269,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -3755,10 +3756,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 49,
-       "mean_p": 0.0986,
+       "n": 50,
+       "mean_p": 0.0983,
        "wins": 2,
-       "freq": 0.0408
+       "freq": 0.04
       },
       {
        "bracket": "20–35%",
@@ -3769,10 +3770,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 25,
-       "mean_p": 0.4601,
-       "wins": 19,
-       "freq": 0.76
+       "n": 26,
+       "mean_p": 0.4593,
+       "wins": 20,
+       "freq": 0.7692
       },
       {
        "bracket": "65–80%",
@@ -3798,10 +3799,10 @@
      ]
     },
     "fundamentals": {
-     "n": 448,
-     "brier": 0.0476,
-     "expected": 243.6,
-     "actual": 268,
+     "n": 450,
+     "brier": 0.049,
+     "expected": 243.9,
+     "actual": 269,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -3812,10 +3813,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 43,
-       "mean_p": 0.0974,
-       "wins": 8,
-       "freq": 0.186
+       "n": 45,
+       "mean_p": 0.1003,
+       "wins": 9,
+       "freq": 0.2
       },
       {
        "bracket": "20–35%",
@@ -3855,10 +3856,10 @@
      ]
     },
     "mix": {
-     "n": 448,
-     "brier": 0.0288,
-     "expected": 254.5,
-     "actual": 268,
+     "n": 450,
+     "brier": 0.0294,
+     "expected": 255.1,
+     "actual": 269,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -3869,10 +3870,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 48,
-       "mean_p": 0.0974,
+       "n": 49,
+       "mean_p": 0.0972,
        "wins": 1,
-       "freq": 0.0208
+       "freq": 0.0204
       },
       {
        "bracket": "20–35%",
@@ -3883,10 +3884,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 25,
-       "mean_p": 0.4589,
-       "wins": 17,
-       "freq": 0.68
+       "n": 26,
+       "mean_p": 0.4582,
+       "wins": 18,
+       "freq": 0.6923
       },
       {
        "bracket": "65–80%",
@@ -3919,20 +3920,20 @@
      "fundamentals": 0.0
     },
     "states": {
-     "mix": 0.0295,
-     "lookup": 0.0379
+     "mix": 0.0301,
+     "lookup": 0.04
     }
    }
   },
   "house|called": {
-   "n": 424,
-   "actual": 256,
-   "expected": 239.3,
-   "share_sims_below": 0.8417,
-   "brier": 0.0327,
-   "n_non_safe": 70,
-   "brier_non_safe": 0.1847,
-   "favourite_won": 0.9528,
+   "n": 426,
+   "actual": 257,
+   "expected": 239.7,
+   "share_sims_below": 0.8424,
+   "brier": 0.0337,
+   "n_non_safe": 72,
+   "brier_non_safe": 0.1863,
+   "favourite_won": 0.9507,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -3945,6 +3946,7 @@
     "H-CO-04",
     "H-CO-05",
     "H-MO-02",
+    "H-NC-03",
     "H-NC-06",
     "H-NC-09",
     "H-NC-13",
@@ -3968,11 +3970,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 188,
-     "chance": 0.9511,
-     "won": 0.8936,
-     "expected": 178.8,
-     "actual": 168
+     "n": 190,
+     "chance": 0.9497,
+     "won": 0.8895,
+     "expected": 180.4,
+     "actual": 169
     },
     {
      "scope": "non-safe",
@@ -3986,11 +3988,11 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 41,
-     "chance": 0.806,
-     "won": 0.5366,
-     "expected": 33.0,
-     "actual": 22
+     "n": 43,
+     "chance": 0.8065,
+     "won": 0.5349,
+     "expected": 34.7,
+     "actual": 23
     }
    ],
    "regions": [
@@ -4154,14 +4156,14 @@
     },
     {
      "region": "South",
-     "n": 156,
-     "expected": 52.8,
-     "actual": 60,
-     "brier": 0.0428,
-     "n_non_safe": 30,
-     "expected_non_safe": 12.1,
-     "actual_non_safe": 19,
-     "upsets_d": 9,
+     "n": 158,
+     "expected": 53.2,
+     "actual": 61,
+     "brier": 0.0453,
+     "n_non_safe": 32,
+     "expected_non_safe": 12.4,
+     "actual_non_safe": 20,
+     "upsets_d": 10,
      "upsets_r": 0,
      "brackets": [
       {
@@ -4181,13 +4183,13 @@
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 18,
-       "mean_p": 0.1665,
-       "wins": 7,
-       "freq": 0.3889,
+       "n": 20,
+       "mean_p": 0.1681,
+       "wins": 8,
+       "freq": 0.4,
        "band": [
         0.0,
-        0.7222
+        0.7
        ]
       },
       {
@@ -4337,8 +4339,8 @@
     {
      "division": "South Atlantic",
      "region": "South",
-     "n": 21,
-     "miss": 3.2,
+     "n": 23,
+     "miss": 3.3,
      "se": 0.6
     },
     {
@@ -4364,7 +4366,7 @@
     }
    ],
    "mean_miss": 4.7,
-   "n_miss": 70,
+   "n_miss": 72,
    "surprises": [
     {
      "race_id": "H-NC-06",
@@ -4463,14 +4465,14 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.71,
-     "lead_votes": 7368,
+     "margin": 2.79,
+     "lead_votes": 7597,
      "reporting": 98,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.8,
+       "pct": 50.9,
        "incumbent": false
       },
       {
@@ -4532,8 +4534,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.34,
-     "lead_votes": 6372,
+     "margin": 2.31,
+     "lead_votes": 6290,
      "reporting": 99,
      "top": [
       {
@@ -4556,7 +4558,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.51,
-     "lead_votes": 7977,
+     "lead_votes": 7984,
      "reporting": 99,
      "top": [
       {
@@ -4579,7 +4581,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.89,
-     "lead_votes": 18888,
+     "lead_votes": 18902,
      "reporting": 98,
      "top": [
       {
@@ -4645,10 +4647,10 @@
    ],
    "series": {
     "us": {
-     "n": 415,
-     "brier": 0.0335,
-     "expected": 231.3,
-     "actual": 248,
+     "n": 417,
+     "brier": 0.0344,
+     "expected": 231.7,
+     "actual": 249,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -4667,23 +4669,23 @@
        "bracket": "5–20%",
        "lo": 0.05,
        "hi": 0.2,
-       "n": 23,
-       "mean_p": 0.1018,
+       "n": 24,
+       "mean_p": 0.1,
        "wins": 9,
-       "freq": 0.3913,
+       "freq": 0.375,
        "band": [
         0.0,
-        0.5652
+        0.5417
        ]
       },
       {
        "bracket": "20–35%",
        "lo": 0.2,
        "hi": 0.35,
-       "n": 13,
-       "mean_p": 0.2697,
-       "wins": 5,
-       "freq": 0.3846,
+       "n": 14,
+       "mean_p": 0.2724,
+       "wins": 6,
+       "freq": 0.4286,
        "band": [
         0.0,
         1.0
@@ -4744,10 +4746,10 @@
      ]
     },
     "market": {
-     "n": 415,
-     "brier": 0.0281,
-     "expected": 236.5,
-     "actual": 248,
+     "n": 417,
+     "brier": 0.0288,
+     "expected": 237.0,
+     "actual": 249,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -4758,10 +4760,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 45,
-       "mean_p": 0.0993,
+       "n": 46,
+       "mean_p": 0.099,
        "wins": 2,
-       "freq": 0.0444
+       "freq": 0.0435
       },
       {
        "bracket": "20–35%",
@@ -4772,10 +4774,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 23,
-       "mean_p": 0.4508,
-       "wins": 17,
-       "freq": 0.7391
+       "n": 24,
+       "mean_p": 0.4504,
+       "wins": 18,
+       "freq": 0.75
       },
       {
        "bracket": "65–80%",
@@ -4801,10 +4803,10 @@
      ]
     },
     "fundamentals": {
-     "n": 415,
-     "brier": 0.0443,
-     "expected": 227.4,
-     "actual": 248,
+     "n": 417,
+     "brier": 0.0458,
+     "expected": 227.7,
+     "actual": 249,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -4815,10 +4817,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 37,
-       "mean_p": 0.0991,
-       "wins": 8,
-       "freq": 0.2162
+       "n": 39,
+       "mean_p": 0.1024,
+       "wins": 9,
+       "freq": 0.2308
       },
       {
        "bracket": "20–35%",
@@ -4858,10 +4860,10 @@
      ]
     },
     "mix": {
-     "n": 415,
-     "brier": 0.0281,
-     "expected": 236.5,
-     "actual": 248,
+     "n": 417,
+     "brier": 0.0288,
+     "expected": 237.0,
+     "actual": 249,
      "brackets": [
       {
        "bracket": "0–5%",
@@ -4872,10 +4874,10 @@
       },
       {
        "bracket": "5–20%",
-       "n": 44,
-       "mean_p": 0.0975,
+       "n": 45,
+       "mean_p": 0.0972,
        "wins": 1,
-       "freq": 0.0227
+       "freq": 0.0222
       },
       {
        "bracket": "20–35%",
@@ -4886,10 +4888,10 @@
       },
       {
        "bracket": "35–65%",
-       "n": 22,
-       "mean_p": 0.4584,
-       "wins": 16,
-       "freq": 0.7273
+       "n": 23,
+       "mean_p": 0.4576,
+       "wins": 17,
+       "freq": 0.7391
       },
       {
        "bracket": "65–80%",
@@ -4922,8 +4924,8 @@
      "fundamentals": 0.0
     },
     "states": {
-     "mix": 0.0287,
-     "lookup": 0.0386
+     "mix": 0.0293,
+     "lookup": 0.0408
     }
    }
   },
@@ -5238,7 +5240,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.1,
+     "miss": 2.2,
      "se": 2.0
     }
    ],
@@ -5251,8 +5253,8 @@
      "won": 1,
      "status": "called",
      "margin": 4.5,
-     "lead_votes": 91809,
-     "reporting": 99,
+     "lead_votes": 91810,
+     "reporting": 100,
      "top": [
       {
        "name": "Annie Andrews",
@@ -5274,7 +5276,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57176,
+     "lead_votes": 57177,
      "reporting": 99,
      "top": [
       {
@@ -5319,9 +5321,9 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -6.24,
-     "lead_votes": 47058,
-     "reporting": 97,
+     "margin": -6.14,
+     "lead_votes": 46509,
+     "reporting": 98,
      "top": [
       {
        "name": "Pete Ricketts",
@@ -5883,23 +5885,23 @@
   "called": [
    {
     "name": "All races",
-    "n": 448,
+    "n": 450,
     "weights": {
      "market": 0.86,
      "polls": 0.14,
      "fundamentals": 0.0
     },
-    "brier": 0.0288
+    "brier": 0.0294
    },
    {
     "name": "House",
-    "n": 415,
+    "n": 417,
     "weights": {
      "market": 0.96,
      "polls": 0.04,
      "fundamentals": 0.0
     },
-    "brier": 0.0281
+    "brier": 0.0288
    },
    {
     "name": "Senate",
@@ -5933,13 +5935,13 @@
    },
    {
     "name": "South",
-    "n": 170,
+    "n": 172,
     "weights": {
      "market": 1.0,
      "polls": 0.0,
      "fundamentals": 0.0
     },
-    "brier": 0.0366
+    "brier": 0.038
    },
    {
     "name": "West",
@@ -5960,7 +5962,7 @@
     219,
     265
    ],
-   "called": 256,
+   "called": 257,
    "with_leaders": 260,
    "off_by": 22,
    "independent_ci80": [
@@ -6113,10 +6115,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 65620784,
-  "rep": 49673238,
-  "total": 117020942,
-  "share_counted": 96.82,
+  "dem": 65640628,
+  "rep": 49683345,
+  "total": 117051497,
+  "share_counted": 96.9,
   "margin": 13.6
  },
  "senate": {
