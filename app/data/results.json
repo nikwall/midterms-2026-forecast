@@ -30,9 +30,9 @@
   "not_called": 2
  },
  "national": {
-  "dem": 65620268,
-  "rep": 49672870,
-  "total": 117020031,
+  "dem": 65620784,
+  "rep": 49673238,
+  "total": 117020942,
   "share_counted": 96.82,
   "margin": 13.6
  },
@@ -6455,8 +6455,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -25.22,
-   "lead_votes": 54233,
+   "margin": -25.24,
+   "lead_votes": 54360,
    "reporting": 98,
    "top": [
     {
@@ -6468,7 +6468,7 @@
     {
      "name": "Jeffrey Hulum",
      "party": "D",
-     "pct": 35.9,
+     "pct": 35.8,
      "incumbent": false
     }
    ]
@@ -6539,8 +6539,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 3.43,
-   "lead_votes": 10789,
+   "margin": 3.44,
+   "lead_votes": 10800,
    "reporting": 99,
    "top": [
     {
@@ -6698,8 +6698,8 @@
    "called_by": [],
    "leader": "R",
    "leader_name": "David Rouzer",
-   "margin": -0.74,
-   "lead_votes": 2378,
+   "margin": -0.7,
+   "lead_votes": 2270,
    "reporting": 99,
    "top": [
     {
@@ -6711,7 +6711,7 @@
     {
      "name": "Kimberly Hardy",
      "party": "D",
-     "pct": 49.1,
+     "pct": 49.2,
      "incumbent": false
     }
    ]
@@ -6754,20 +6754,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 2.29,
-   "lead_votes": 6218,
+   "margin": 2.34,
+   "lead_votes": 6372,
    "reporting": 99,
    "top": [
     {
      "name": "Richard Ojeda",
      "party": "D",
-     "pct": 51.1,
+     "pct": 51.2,
      "incumbent": false
     },
     {
      "name": "Richard Hudson",
      "party": "R",
-     "pct": 48.9,
+     "pct": 48.8,
      "incumbent": true
     }
    ]
@@ -9633,7 +9633,7 @@
    "leader": "R",
    "leader_name": "Joe Wilson",
    "margin": -0.96,
-   "lead_votes": 2842,
+   "lead_votes": 2840,
    "reporting": 99,
    "top": [
     {
@@ -12697,8 +12697,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 19.7,
-   "lead_votes": 831808,
+   "margin": 19.71,
+   "lead_votes": 832114,
    "reporting": 99,
    "top": [
     {
@@ -13146,5 +13146,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-11T05:28+00:00"
+ "updated": "2026-11-11T13:50+00:00"
 }

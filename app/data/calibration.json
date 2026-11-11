@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T05:28+00:00",
+ "updated": "2026-11-11T13:50+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -686,20 +686,20 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.29,
-     "lead_votes": 6218,
+     "margin": 2.34,
+     "lead_votes": 6372,
      "reporting": 99,
      "top": [
       {
        "name": "Richard Ojeda",
        "party": "D",
-       "pct": 51.1,
+       "pct": 51.2,
        "incumbent": false
       },
       {
        "name": "Richard Hudson",
        "party": "R",
-       "pct": 48.9,
+       "pct": 48.8,
        "incumbent": true
       }
      ]
@@ -1670,20 +1670,20 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.29,
-     "lead_votes": 6218,
+     "margin": 2.34,
+     "lead_votes": 6372,
      "reporting": 99,
      "top": [
       {
        "name": "Richard Ojeda",
        "party": "D",
-       "pct": 51.1,
+       "pct": 51.2,
        "incumbent": false
       },
       {
        "name": "Richard Hudson",
        "party": "R",
-       "pct": 48.9,
+       "pct": 48.8,
        "incumbent": true
       }
      ]
@@ -3529,20 +3529,20 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.29,
-     "lead_votes": 6218,
+     "margin": 2.34,
+     "lead_votes": 6372,
      "reporting": 99,
      "top": [
       {
        "name": "Richard Ojeda",
        "party": "D",
-       "pct": 51.1,
+       "pct": 51.2,
        "incumbent": false
       },
       {
        "name": "Richard Hudson",
        "party": "R",
-       "pct": 48.9,
+       "pct": 48.8,
        "incumbent": true
       }
      ]
@@ -4532,20 +4532,20 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.29,
-     "lead_votes": 6218,
+     "margin": 2.34,
+     "lead_votes": 6372,
      "reporting": 99,
      "top": [
       {
        "name": "Richard Ojeda",
        "party": "D",
-       "pct": 51.1,
+       "pct": 51.2,
        "incumbent": false
       },
       {
        "name": "Richard Hudson",
        "party": "R",
-       "pct": 48.9,
+       "pct": 48.8,
        "incumbent": true
       }
      ]
@@ -5977,7 +5977,7 @@
     "p": 0.8647,
     "status": "called",
     "side": "D",
-    "margin": 3.43,
+    "margin": 3.44,
     "called_by": [
      "CNN",
      "NYT"
@@ -6113,9 +6113,9 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 65620268,
-  "rep": 49672870,
-  "total": 117020031,
+  "dem": 65620784,
+  "rep": 49673238,
+  "total": 117020942,
   "share_counted": 96.82,
   "margin": 13.6
  },
