@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T17:27+00:00",
+ "updated": "2026-11-12T23:22+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -423,7 +423,7 @@
      "division": "South Atlantic",
      "region": "South",
      "n": 27,
-     "miss": 3.5,
+     "miss": 3.6,
      "se": 0.5
     },
     {
@@ -572,7 +572,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6573,
+     "lead_votes": 6574,
      "reporting": 99,
      "top": [
       {
@@ -594,20 +594,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.58,
-     "lead_votes": 5597,
+     "margin": 0.61,
+     "lead_votes": 5941,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.2,
+       "pct": 49.3,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.7,
+       "pct": 48.6,
        "incumbent": true
       }
      ]
@@ -617,20 +617,20 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.79,
-     "lead_votes": 7597,
-     "reporting": 98,
+     "margin": 3.2,
+     "lead_votes": 8794,
+     "reporting": 99,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.9,
+       "pct": 51.1,
        "incumbent": false
       },
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 48.1,
+       "pct": 47.9,
        "incumbent": true
       }
      ]
@@ -709,8 +709,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.51,
-     "lead_votes": 7984,
+     "margin": 2.52,
+     "lead_votes": 8007,
      "reporting": 99,
      "top": [
       {
@@ -1451,7 +1451,7 @@
      "division": "New England",
      "region": "Northeast",
      "n": 1,
-     "miss": -0.0,
+     "miss": -0.1,
      "se": null
     }
    ],
@@ -1579,7 +1579,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6573,
+     "lead_votes": 6574,
      "reporting": 99,
      "top": [
       {
@@ -1601,20 +1601,20 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.79,
-     "lead_votes": 7597,
-     "reporting": 98,
+     "margin": 3.2,
+     "lead_votes": 8794,
+     "reporting": 99,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.9,
+       "pct": 51.1,
        "incumbent": false
       },
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 48.1,
+       "pct": 47.9,
        "incumbent": true
       }
      ]
@@ -1693,8 +1693,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.51,
-     "lead_votes": 7984,
+     "margin": 2.52,
+     "lead_votes": 8007,
      "reporting": 99,
      "top": [
       {
@@ -1716,8 +1716,8 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.89,
-     "lead_votes": 18902,
+     "margin": 5.88,
+     "lead_votes": 18893,
      "reporting": 98,
      "top": [
       {
@@ -2363,20 +2363,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.58,
-     "lead_votes": 5597,
+     "margin": 0.61,
+     "lead_votes": 5941,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.2,
+       "pct": 49.3,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.7,
+       "pct": 48.6,
        "incumbent": true
       }
      ]
@@ -2410,7 +2410,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57176,
+     "lead_votes": 57177,
      "reporting": 99,
      "top": [
       {
@@ -2455,8 +2455,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.04,
-     "lead_votes": 55480,
+     "margin": 5.03,
+     "lead_votes": 55392,
      "reporting": 99,
      "top": [
       {
@@ -2478,8 +2478,8 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -6.14,
-     "lead_votes": 46518,
+     "margin": -6.15,
+     "lead_votes": 46572,
      "reporting": 98,
      "top": [
       {
@@ -2525,7 +2525,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.85,
-     "lead_votes": 223223,
+     "lead_votes": 223381,
      "reporting": 98,
      "top": [
       {
@@ -3337,7 +3337,7 @@
      "division": "South Atlantic",
      "region": "South",
      "n": 25,
-     "miss": 3.3,
+     "miss": 3.4,
      "se": 0.6
     },
     {
@@ -3440,7 +3440,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6573,
+     "lead_votes": 6574,
      "reporting": 99,
      "top": [
       {
@@ -3462,20 +3462,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.58,
-     "lead_votes": 5597,
+     "margin": 0.61,
+     "lead_votes": 5941,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.2,
+       "pct": 49.3,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.7,
+       "pct": 48.6,
        "incumbent": true
       }
      ]
@@ -3485,20 +3485,20 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.79,
-     "lead_votes": 7597,
-     "reporting": 98,
+     "margin": 3.2,
+     "lead_votes": 8794,
+     "reporting": 99,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.9,
+       "pct": 51.1,
        "incumbent": false
       },
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 48.1,
+       "pct": 47.9,
        "incumbent": true
       }
      ]
@@ -3577,8 +3577,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.51,
-     "lead_votes": 7984,
+     "margin": 2.52,
+     "lead_votes": 8007,
      "reporting": 99,
      "top": [
       {
@@ -3600,8 +3600,8 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.89,
-     "lead_votes": 18902,
+     "margin": 5.88,
+     "lead_votes": 18893,
      "reporting": 98,
      "top": [
       {
@@ -4362,7 +4362,7 @@
      "division": "New England",
      "region": "Northeast",
      "n": 1,
-     "miss": -0.0,
+     "miss": -0.1,
      "se": null
     }
    ],
@@ -4444,7 +4444,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6573,
+     "lead_votes": 6574,
      "reporting": 99,
      "top": [
       {
@@ -4466,20 +4466,20 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 2.79,
-     "lead_votes": 7597,
-     "reporting": 98,
+     "margin": 3.2,
+     "lead_votes": 8794,
+     "reporting": 99,
      "top": [
       {
        "name": "Zack Mullock",
        "party": "D",
-       "pct": 50.9,
+       "pct": 51.1,
        "incumbent": false
       },
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 48.1,
+       "pct": 47.9,
        "incumbent": true
       }
      ]
@@ -4558,8 +4558,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.51,
-     "lead_votes": 7984,
+     "margin": 2.52,
+     "lead_votes": 8007,
      "reporting": 99,
      "top": [
       {
@@ -4581,8 +4581,8 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.89,
-     "lead_votes": 18902,
+     "margin": 5.88,
+     "lead_votes": 18893,
      "reporting": 98,
      "top": [
       {
@@ -5261,20 +5261,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.58,
-     "lead_votes": 5597,
+     "margin": 0.61,
+     "lead_votes": 5941,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.2,
+       "pct": 49.3,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.7,
+       "pct": 48.6,
        "incumbent": true
       }
      ]
@@ -5308,7 +5308,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57176,
+     "lead_votes": 57177,
      "reporting": 99,
      "top": [
       {
@@ -5330,8 +5330,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.04,
-     "lead_votes": 55480,
+     "margin": 5.03,
+     "lead_votes": 55392,
      "reporting": 99,
      "top": [
       {
@@ -5353,8 +5353,8 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -6.14,
-     "lead_votes": 46518,
+     "margin": -6.15,
+     "lead_votes": 46572,
      "reporting": 98,
      "top": [
       {
@@ -5400,7 +5400,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.85,
-     "lead_votes": 223223,
+     "lead_votes": 223381,
      "reporting": 98,
      "top": [
       {
@@ -6124,10 +6124,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 65841517,
-  "rep": 49771850,
-  "total": 117343563,
-  "share_counted": 97.11,
+  "dem": 65972488,
+  "rep": 49819996,
+  "total": 117524389,
+  "share_counted": 97.25,
   "margin": 13.7
  },
  "senate": {
