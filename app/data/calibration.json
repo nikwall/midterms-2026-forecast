@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T06:33+00:00",
+ "updated": "2026-11-12T17:27+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -395,7 +395,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 3,
-     "miss": 7.4,
+     "miss": 7.5,
      "se": 1.3
     },
     {
@@ -409,7 +409,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.5,
+     "miss": 4.6,
      "se": 0.8
     },
     {
@@ -594,8 +594,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.49,
-     "lead_votes": 4669,
+     "margin": 0.58,
+     "lead_votes": 5597,
      "reporting": 99,
      "top": [
       {
@@ -1416,7 +1416,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.5,
+     "miss": 4.6,
      "se": 0.8
     },
     {
@@ -2323,7 +2323,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 5.0,
+     "miss": 5.1,
      "se": null
     },
     {
@@ -2363,8 +2363,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.49,
-     "lead_votes": 4669,
+     "margin": 0.58,
+     "lead_votes": 5597,
      "reporting": 99,
      "top": [
       {
@@ -2410,7 +2410,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57177,
+     "lead_votes": 57176,
      "reporting": 99,
      "top": [
       {
@@ -2455,8 +2455,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.05,
-     "lead_votes": 55543,
+     "margin": 5.04,
+     "lead_votes": 55480,
      "reporting": 99,
      "top": [
       {
@@ -2479,7 +2479,7 @@
      "won": 0,
      "status": "called",
      "margin": -6.14,
-     "lead_votes": 46509,
+     "lead_votes": 46518,
      "reporting": 98,
      "top": [
       {
@@ -3309,7 +3309,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 3,
-     "miss": 7.4,
+     "miss": 7.5,
      "se": 1.3
     },
     {
@@ -3323,7 +3323,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.5,
+     "miss": 4.6,
      "se": 0.8
     },
     {
@@ -3462,8 +3462,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.49,
-     "lead_votes": 4669,
+     "margin": 0.58,
+     "lead_votes": 5597,
      "reporting": 99,
      "top": [
       {
@@ -4327,7 +4327,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.5,
+     "miss": 4.6,
      "se": 0.8
     },
     {
@@ -5221,7 +5221,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 5.0,
+     "miss": 5.1,
      "se": null
     },
     {
@@ -5261,8 +5261,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.49,
-     "lead_votes": 4669,
+     "margin": 0.58,
+     "lead_votes": 5597,
      "reporting": 99,
      "top": [
       {
@@ -5308,7 +5308,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57177,
+     "lead_votes": 57176,
      "reporting": 99,
      "top": [
       {
@@ -5330,8 +5330,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.05,
-     "lead_votes": 55543,
+     "margin": 5.04,
+     "lead_votes": 55480,
      "reporting": 99,
      "top": [
       {
@@ -5354,7 +5354,7 @@
      "won": 0,
      "status": "called",
      "margin": -6.14,
-     "lead_votes": 46509,
+     "lead_votes": 46518,
      "reporting": 98,
      "top": [
       {
@@ -6096,7 +6096,7 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 6.03,
+    "margin": 6.05,
     "called_by": [
      "CNN",
      "NYT"
@@ -6124,11 +6124,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 65664917,
-  "rep": 49691717,
-  "total": 117086410,
-  "share_counted": 96.93,
-  "margin": 13.6
+  "dem": 65841517,
+  "rep": 49771850,
+  "total": 117343563,
+  "share_counted": 97.11,
+  "margin": 13.7
  },
  "senate": {
   "p_control": 0.7754,
