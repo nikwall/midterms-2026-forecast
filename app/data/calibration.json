@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T14:17+00:00",
+ "updated": "2026-11-13T21:18+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -402,7 +402,7 @@
      "division": "Mountain",
      "region": "West",
      "n": 11,
-     "miss": 4.9,
+     "miss": 5.0,
      "se": 1.1
     },
     {
@@ -479,8 +479,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.41,
-     "lead_votes": 6619,
+     "margin": 2.4,
+     "lead_votes": 6609,
      "reporting": 99,
      "top": [
       {
@@ -503,7 +503,7 @@
      "won": 1,
      "status": "counting",
      "margin": 0.12,
-     "lead_votes": 335,
+     "lead_votes": 331,
      "reporting": 99,
      "top": [
       {
@@ -572,7 +572,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6574,
+     "lead_votes": 6567,
      "reporting": 99,
      "top": [
       {
@@ -594,8 +594,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.68,
-     "lead_votes": 6565,
+     "margin": 0.78,
+     "lead_votes": 7553,
      "reporting": 99,
      "top": [
       {
@@ -640,9 +640,9 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.88,
-     "lead_votes": 3362,
-     "reporting": 98,
+     "margin": 0.9,
+     "lead_votes": 3458,
+     "reporting": 99,
      "top": [
       {
        "name": "Eileen Laubacher",
@@ -686,8 +686,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.31,
-     "lead_votes": 6290,
+     "margin": 2.3,
+     "lead_votes": 6275,
      "reporting": 99,
      "top": [
       {
@@ -709,8 +709,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.52,
-     "lead_votes": 8008,
+     "margin": 2.51,
+     "lead_votes": 7999,
      "reporting": 99,
      "top": [
       {
@@ -1409,7 +1409,7 @@
      "division": "Mountain",
      "region": "West",
      "n": 11,
-     "miss": 4.9,
+     "miss": 5.0,
      "se": 1.1
     },
     {
@@ -1486,8 +1486,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.41,
-     "lead_votes": 6619,
+     "margin": 2.4,
+     "lead_votes": 6609,
      "reporting": 99,
      "top": [
       {
@@ -1510,7 +1510,7 @@
      "won": 1,
      "status": "counting",
      "margin": 0.12,
-     "lead_votes": 335,
+     "lead_votes": 331,
      "reporting": 99,
      "top": [
       {
@@ -1579,7 +1579,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6574,
+     "lead_votes": 6567,
      "reporting": 99,
      "top": [
       {
@@ -1624,9 +1624,9 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.88,
-     "lead_votes": 3362,
-     "reporting": 98,
+     "margin": 0.9,
+     "lead_votes": 3458,
+     "reporting": 99,
      "top": [
       {
        "name": "Eileen Laubacher",
@@ -1670,8 +1670,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.31,
-     "lead_votes": 6290,
+     "margin": 2.3,
+     "lead_votes": 6275,
      "reporting": 99,
      "top": [
       {
@@ -1693,8 +1693,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.52,
-     "lead_votes": 8008,
+     "margin": 2.51,
+     "lead_votes": 7999,
      "reporting": 99,
      "top": [
       {
@@ -1716,8 +1716,8 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.88,
-     "lead_votes": 18893,
+     "margin": 5.85,
+     "lead_votes": 18810,
      "reporting": 98,
      "top": [
       {
@@ -2323,7 +2323,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 5.2,
+     "miss": 5.3,
      "se": null
     },
     {
@@ -2351,7 +2351,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.2,
+     "miss": 2.1,
      "se": 2.0
     }
    ],
@@ -2363,8 +2363,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.68,
-     "lead_votes": 6565,
+     "margin": 0.78,
+     "lead_votes": 7553,
      "reporting": 99,
      "top": [
       {
@@ -2410,7 +2410,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57178,
+     "lead_votes": 57260,
      "reporting": 99,
      "top": [
       {
@@ -2432,20 +2432,20 @@
      "p": 0.677,
      "won": 1,
      "status": "counting",
-     "margin": 2.28,
+     "margin": 2.27,
      "lead_votes": 5800,
      "reporting": 88,
      "top": [
       {
        "name": "Mary Peltola",
        "party": "D",
-       "pct": 49.2,
+       "pct": 49.1,
        "incumbent": false
       },
       {
-       "name": "Dan S. Sullivan",
+       "name": "Dan Sullivan",
        "party": "R",
-       "pct": 47.0,
+       "pct": 46.8,
        "incumbent": true
       }
      ]
@@ -2455,8 +2455,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.03,
-     "lead_votes": 55390,
+     "margin": 5.02,
+     "lead_votes": 55324,
      "reporting": 99,
      "top": [
       {
@@ -2479,7 +2479,7 @@
      "won": 0,
      "status": "called",
      "margin": -6.15,
-     "lead_votes": 46572,
+     "lead_votes": 46574,
      "reporting": 98,
      "top": [
       {
@@ -2524,8 +2524,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.85,
-     "lead_votes": 223248,
+     "margin": 4.84,
+     "lead_votes": 223044,
      "reporting": 98,
      "top": [
       {
@@ -3316,7 +3316,7 @@
      "division": "Mountain",
      "region": "West",
      "n": 11,
-     "miss": 4.9,
+     "miss": 5.0,
      "se": 1.1
     },
     {
@@ -3370,8 +3370,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.41,
-     "lead_votes": 6619,
+     "margin": 2.4,
+     "lead_votes": 6609,
      "reporting": 99,
      "top": [
       {
@@ -3440,7 +3440,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6574,
+     "lead_votes": 6567,
      "reporting": 99,
      "top": [
       {
@@ -3462,8 +3462,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.68,
-     "lead_votes": 6565,
+     "margin": 0.78,
+     "lead_votes": 7553,
      "reporting": 99,
      "top": [
       {
@@ -3508,9 +3508,9 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.88,
-     "lead_votes": 3362,
-     "reporting": 98,
+     "margin": 0.9,
+     "lead_votes": 3458,
+     "reporting": 99,
      "top": [
       {
        "name": "Eileen Laubacher",
@@ -3554,8 +3554,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.31,
-     "lead_votes": 6290,
+     "margin": 2.3,
+     "lead_votes": 6275,
      "reporting": 99,
      "top": [
       {
@@ -3577,8 +3577,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.52,
-     "lead_votes": 8008,
+     "margin": 2.51,
+     "lead_votes": 7999,
      "reporting": 99,
      "top": [
       {
@@ -3600,8 +3600,8 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.88,
-     "lead_votes": 18893,
+     "margin": 5.85,
+     "lead_votes": 18810,
      "reporting": 98,
      "top": [
       {
@@ -4320,7 +4320,7 @@
      "division": "Mountain",
      "region": "West",
      "n": 11,
-     "miss": 4.9,
+     "miss": 5.0,
      "se": 1.1
     },
     {
@@ -4374,8 +4374,8 @@
      "p": 0.045,
      "won": 1,
      "status": "called",
-     "margin": 2.41,
-     "lead_votes": 6619,
+     "margin": 2.4,
+     "lead_votes": 6609,
      "reporting": 99,
      "top": [
       {
@@ -4444,7 +4444,7 @@
      "won": 1,
      "status": "called",
      "margin": 2.27,
-     "lead_votes": 6574,
+     "lead_votes": 6567,
      "reporting": 99,
      "top": [
       {
@@ -4489,9 +4489,9 @@
      "p": 0.128,
      "won": 1,
      "status": "called",
-     "margin": 0.88,
-     "lead_votes": 3362,
-     "reporting": 98,
+     "margin": 0.9,
+     "lead_votes": 3458,
+     "reporting": 99,
      "top": [
       {
        "name": "Eileen Laubacher",
@@ -4535,8 +4535,8 @@
      "p": 0.185,
      "won": 1,
      "status": "called",
-     "margin": 2.31,
-     "lead_votes": 6290,
+     "margin": 2.3,
+     "lead_votes": 6275,
      "reporting": 99,
      "top": [
       {
@@ -4558,8 +4558,8 @@
      "p": 0.191,
      "won": 1,
      "status": "called",
-     "margin": 2.52,
-     "lead_votes": 8008,
+     "margin": 2.51,
+     "lead_votes": 7999,
      "reporting": 99,
      "top": [
       {
@@ -4581,8 +4581,8 @@
      "p": 0.197,
      "won": 1,
      "status": "called",
-     "margin": 5.88,
-     "lead_votes": 18893,
+     "margin": 5.85,
+     "lead_votes": 18810,
      "reporting": 98,
      "top": [
       {
@@ -4627,20 +4627,20 @@
      "p": 0.246,
      "won": 1,
      "status": "called",
-     "margin": 4.72,
-     "lead_votes": 14524,
-     "reporting": 95,
+     "margin": 5.08,
+     "lead_votes": 15815,
+     "reporting": 99,
      "top": [
       {
        "name": "Jessica Killin",
        "party": "D",
-       "pct": 50.5,
+       "pct": 50.7,
        "incumbent": false
       },
       {
        "name": "Jeff Crank",
        "party": "R",
-       "pct": 45.8,
+       "pct": 45.6,
        "incumbent": true
       }
      ]
@@ -5221,7 +5221,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 5.2,
+     "miss": 5.3,
      "se": null
     },
     {
@@ -5249,7 +5249,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.2,
+     "miss": 2.1,
      "se": 2.0
     }
    ],
@@ -5261,8 +5261,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.68,
-     "lead_votes": 6565,
+     "margin": 0.78,
+     "lead_votes": 7553,
      "reporting": 99,
      "top": [
       {
@@ -5308,7 +5308,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57178,
+     "lead_votes": 57260,
      "reporting": 99,
      "top": [
       {
@@ -5330,8 +5330,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.03,
-     "lead_votes": 55390,
+     "margin": 5.02,
+     "lead_votes": 55324,
      "reporting": 99,
      "top": [
       {
@@ -5354,7 +5354,7 @@
      "won": 0,
      "status": "called",
      "margin": -6.15,
-     "lead_votes": 46572,
+     "lead_votes": 46574,
      "reporting": 98,
      "top": [
       {
@@ -5399,8 +5399,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.85,
-     "lead_votes": 223248,
+     "margin": 4.84,
+     "lead_votes": 223044,
      "reporting": 98,
      "top": [
       {
@@ -6096,7 +6096,7 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 6.05,
+    "margin": 6.06,
     "called_by": [
      "CNN",
      "NYT"
@@ -6124,10 +6124,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66166048,
-  "rep": 49929949,
-  "total": 117831725,
-  "share_counted": 97.52,
+  "dem": 66247290,
+  "rep": 49953803,
+  "total": 117939261,
+  "share_counted": 97.69,
   "margin": 13.8
  },
  "senate": {
