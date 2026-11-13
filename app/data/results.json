@@ -30,10 +30,10 @@
   "not_called": 1
  },
  "national": {
-  "dem": 66163343,
-  "rep": 49926933,
-  "total": 117822689,
-  "share_counted": 97.51,
+  "dem": 66166048,
+  "rep": 49929949,
+  "total": 117831725,
+  "share_counted": 97.52,
   "margin": 13.8
  },
  "control": {
@@ -3712,7 +3712,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 9.55,
-   "lead_votes": 33216,
+   "lead_votes": 33215,
    "reporting": 99,
    "top": [
     {
@@ -5732,7 +5732,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 3.32,
-   "lead_votes": 13180,
+   "lead_votes": 13187,
    "reporting": 98,
    "top": [
     {
@@ -6372,20 +6372,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -17.58,
-   "lead_votes": 42502,
+   "margin": -17.42,
+   "lead_votes": 42307,
    "reporting": 99,
    "top": [
     {
      "name": "Trent Kelly",
      "party": "R",
-     "pct": 58.1,
+     "pct": 58.0,
      "incumbent": true
     },
     {
      "name": "Cliff Johnson",
      "party": "D",
-     "pct": 40.5,
+     "pct": 40.6,
      "incumbent": false
     }
    ]
@@ -6400,8 +6400,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 37.83,
-   "lead_votes": 93106,
+   "margin": 37.89,
+   "lead_votes": 93452,
    "reporting": 99,
    "top": [
     {
@@ -6413,7 +6413,7 @@
     {
      "name": "Ron Eller",
      "party": "R",
-     "pct": 29.9,
+     "pct": 29.8,
      "incumbent": false
     }
    ]
@@ -6429,7 +6429,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -16.02,
-   "lead_votes": 40942,
+   "lead_votes": 40938,
    "reporting": 99,
    "top": [
     {
@@ -6811,7 +6811,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 15.83,
-   "lead_votes": 54394,
+   "lead_votes": 54398,
    "reporting": 99,
    "top": [
     {
@@ -8238,8 +8238,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.37,
-   "lead_votes": 61775,
+   "margin": -20.35,
+   "lead_votes": 61743,
    "reporting": 98,
    "top": [
     {
@@ -9078,20 +9078,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 5.48,
-   "lead_votes": 19561,
+   "margin": 5.61,
+   "lead_votes": 20110,
    "reporting": 99,
    "top": [
     {
      "name": "Bob Harvie",
      "party": "D",
-     "pct": 52.7,
+     "pct": 52.8,
      "incumbent": false
     },
     {
      "name": "Brian Fitzpatrick",
      "party": "R",
-     "pct": 47.3,
+     "pct": 47.2,
      "incumbent": true
     }
    ]
@@ -12371,7 +12371,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 4.2,
-   "lead_votes": 57177,
+   "lead_votes": 57178,
    "reporting": 99,
    "top": [
     {
@@ -12595,7 +12595,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 7.08,
-   "lead_votes": 339775,
+   "lead_votes": 339782,
    "reporting": 98,
    "top": [
     {
@@ -12650,8 +12650,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 0.61,
-   "lead_votes": 5941,
+   "margin": 0.68,
+   "lead_votes": 6565,
    "reporting": 99,
    "top": [
     {
@@ -12707,7 +12707,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 19.7,
-   "lead_votes": 832091,
+   "lead_votes": 832095,
    "reporting": 99,
    "top": [
     {
@@ -13155,5 +13155,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-13T05:52+00:00"
+ "updated": "2026-11-13T14:17+00:00"
 }

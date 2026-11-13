@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T05:52+00:00",
+ "updated": "2026-11-13T14:17+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -396,7 +396,7 @@
      "region": "South",
      "n": 3,
      "miss": 7.5,
-     "se": 1.3
+     "se": 1.2
     },
     {
      "division": "Mountain",
@@ -594,8 +594,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.61,
-     "lead_votes": 5941,
+     "margin": 0.68,
+     "lead_votes": 6565,
      "reporting": 99,
      "top": [
       {
@@ -2323,7 +2323,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 5.1,
+     "miss": 5.2,
      "se": null
     },
     {
@@ -2363,8 +2363,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.61,
-     "lead_votes": 5941,
+     "margin": 0.68,
+     "lead_votes": 6565,
      "reporting": 99,
      "top": [
       {
@@ -2410,7 +2410,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57177,
+     "lead_votes": 57178,
      "reporting": 99,
      "top": [
       {
@@ -2571,7 +2571,7 @@
      "won": 1,
      "status": "called",
      "margin": 7.08,
-     "lead_votes": 339775,
+     "lead_votes": 339782,
      "reporting": 98,
      "top": [
       {
@@ -3310,7 +3310,7 @@
      "region": "South",
      "n": 3,
      "miss": 7.5,
-     "se": 1.3
+     "se": 1.2
     },
     {
      "division": "Mountain",
@@ -3462,8 +3462,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.61,
-     "lead_votes": 5941,
+     "margin": 0.68,
+     "lead_votes": 6565,
      "reporting": 99,
      "top": [
       {
@@ -5221,7 +5221,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 1,
-     "miss": 5.1,
+     "miss": 5.2,
      "se": null
     },
     {
@@ -5261,8 +5261,8 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.61,
-     "lead_votes": 5941,
+     "margin": 0.68,
+     "lead_votes": 6565,
      "reporting": 99,
      "top": [
       {
@@ -5308,7 +5308,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57177,
+     "lead_votes": 57178,
      "reporting": 99,
      "top": [
       {
@@ -5446,7 +5446,7 @@
      "won": 1,
      "status": "called",
      "margin": 7.08,
-     "lead_votes": 339775,
+     "lead_votes": 339782,
      "reporting": 98,
      "top": [
       {
@@ -6124,10 +6124,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66163343,
-  "rep": 49926933,
-  "total": 117822689,
-  "share_counted": 97.51,
+  "dem": 66166048,
+  "rep": 49929949,
+  "total": 117831725,
+  "share_counted": 97.52,
   "margin": 13.8
  },
  "senate": {
