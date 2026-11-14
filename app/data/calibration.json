@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T05:41+00:00",
+ "updated": "2026-11-14T13:14+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -5521,8 +5521,8 @@
      "p": 0.045,
      "won": 0,
      "status": "called",
-     "margin": -1.76,
-     "lead_votes": 25802,
+     "margin": -1.77,
+     "lead_votes": 25955,
      "reporting": 99,
      "top": [
       {

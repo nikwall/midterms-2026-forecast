@@ -12514,8 +12514,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -1.76,
-   "lead_votes": 25802,
+   "margin": -1.77,
+   "lead_votes": 25955,
    "reporting": 99,
    "top": [
     {
@@ -13159,5 +13159,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-14T05:41+00:00"
+ "updated": "2026-11-14T13:14+00:00"
 }
