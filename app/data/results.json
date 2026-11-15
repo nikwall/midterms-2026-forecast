@@ -30,10 +30,10 @@
   "not_called": 1
  },
  "national": {
-  "dem": 66494563,
-  "rep": 50048945,
-  "total": 118305970,
-  "share_counted": 98.06,
+  "dem": 66500722,
+  "rep": 50051231,
+  "total": 118316333,
+  "share_counted": 98.07,
   "margin": 13.9
  },
  "control": {
@@ -56,14 +56,14 @@
    "called_by": [],
    "leader": "R",
    "leader_name": "Nick Begich",
-   "margin": -6.1,
-   "lead_votes": 16833,
-   "reporting": 96,
+   "margin": -5.99,
+   "lead_votes": 16775,
+   "reporting": 97,
    "top": [
     {
      "name": "Nick Begich",
      "party": "R",
-     "pct": 47.8,
+     "pct": 47.7,
      "incumbent": true
     },
     {
@@ -3883,8 +3883,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 44.91,
-   "lead_votes": 107782,
+   "margin": 45.06,
+   "lead_votes": 108556,
    "reporting": 98,
    "top": [
     {
@@ -3911,20 +3911,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 46.07,
-   "lead_votes": 102915,
+   "margin": 46.11,
+   "lead_votes": 103126,
    "reporting": 97,
    "top": [
     {
      "name": "Donna Miller",
      "party": "D",
-     "pct": 73.0,
+     "pct": 73.1,
      "incumbent": false
     },
     {
      "name": "Michael Noack",
      "party": "R",
-     "pct": 27.0,
+     "pct": 26.9,
      "incumbent": false
     }
    ]
@@ -3939,20 +3939,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 54.85,
-   "lead_votes": 111098,
+   "margin": 55.01,
+   "lead_votes": 112163,
    "reporting": 99,
    "top": [
     {
      "name": "Delia Ramirez",
      "party": "D",
-     "pct": 77.4,
+     "pct": 77.5,
      "incumbent": true
     },
     {
      "name": "Angel Oakley",
      "party": "R",
-     "pct": 22.6,
+     "pct": 22.5,
      "incumbent": false
     }
    ]
@@ -3967,8 +3967,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 55.42,
-   "lead_votes": 90057,
+   "margin": 55.46,
+   "lead_votes": 90349,
    "reporting": 99,
    "top": [
     {
@@ -3995,8 +3995,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 54.35,
-   "lead_votes": 150673,
+   "margin": 54.43,
+   "lead_votes": 151473,
    "reporting": 99,
    "top": [
     {
@@ -4024,7 +4024,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 25.9,
-   "lead_votes": 69394,
+   "lead_votes": 69411,
    "reporting": 99,
    "top": [
     {
@@ -4051,8 +4051,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 78.63,
-   "lead_votes": 162410,
+   "margin": 78.66,
+   "lead_votes": 164013,
    "reporting": 99,
    "top": [
     {
@@ -4080,7 +4080,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 28.68,
-   "lead_votes": 61843,
+   "lead_votes": 61846,
    "reporting": 98,
    "top": [
     {
@@ -4107,8 +4107,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 53.76,
-   "lead_votes": 141178,
+   "margin": 53.78,
+   "lead_votes": 141312,
    "reporting": 98,
    "top": [
     {
@@ -12178,20 +12178,20 @@
    "called_by": [],
    "leader": "D",
    "leader_name": "Mary Peltola",
-   "margin": 3.75,
-   "lead_votes": 10412,
-   "reporting": 96,
+   "margin": 3.98,
+   "lead_votes": 11213,
+   "reporting": 97,
    "top": [
     {
      "name": "Mary Peltola",
      "party": "D",
-     "pct": 49.8,
+     "pct": 49.9,
      "incumbent": false
     },
     {
      "name": "Dan Sullivan",
      "party": "R",
-     "pct": 46.1,
+     "pct": 46.0,
      "incumbent": true
     }
    ]
@@ -12430,14 +12430,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.42,
-   "lead_votes": 1063456,
+   "margin": 25.49,
+   "lead_votes": 1068386,
    "reporting": 98,
    "top": [
     {
      "name": "Juliana Stratton",
      "party": "D",
-     "pct": 61.9,
+     "pct": 62.0,
      "incumbent": false
     },
     {
@@ -13159,5 +13159,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-14T13:14+00:00"
+ "updated": "2026-11-15T00:53+00:00"
 }

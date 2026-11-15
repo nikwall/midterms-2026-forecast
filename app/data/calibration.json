@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T13:14+00:00",
+ "updated": "2026-11-15T00:53+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -444,7 +444,7 @@
      "division": "Pacific",
      "region": "West",
      "n": 3,
-     "miss": 1.0,
+     "miss": 1.1,
      "se": 1.3
     }
    ],
@@ -1444,8 +1444,8 @@
      "division": "Pacific",
      "region": "West",
      "n": 2,
-     "miss": 0.4,
-     "se": 2.0
+     "miss": 0.5,
+     "se": 1.9
     },
     {
      "division": "New England",
@@ -2348,18 +2348,18 @@
      "se": 0.4
     },
     {
+     "division": "Pacific",
+     "region": "West",
+     "n": 1,
+     "miss": 2.3,
+     "se": null
+    },
+    {
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
      "miss": 2.2,
      "se": 1.9
-    },
-    {
-     "division": "Pacific",
-     "region": "West",
-     "n": 1,
-     "miss": 2.1,
-     "se": null
     }
    ],
    "mean_miss": 3.5,
@@ -2439,20 +2439,20 @@
      "p": 0.677,
      "won": 1,
      "status": "counting",
-     "margin": 3.75,
-     "lead_votes": 10412,
-     "reporting": 96,
+     "margin": 3.98,
+     "lead_votes": 11213,
+     "reporting": 97,
      "top": [
       {
        "name": "Mary Peltola",
        "party": "D",
-       "pct": 49.8,
+       "pct": 49.9,
        "incumbent": false
       },
       {
        "name": "Dan Sullivan",
        "party": "R",
-       "pct": 46.1,
+       "pct": 46.0,
        "incumbent": true
       }
      ]
@@ -6131,10 +6131,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66494563,
-  "rep": 50048945,
-  "total": 118305970,
-  "share_counted": 98.06,
+  "dem": 66500722,
+  "rep": 50051231,
+  "total": 118316333,
+  "share_counted": 98.07,
   "margin": 13.9
  },
  "senate": {
