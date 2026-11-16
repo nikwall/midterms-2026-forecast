@@ -30,9 +30,9 @@
   "not_called": 1
  },
  "national": {
-  "dem": 66500722,
-  "rep": 50051231,
-  "total": 118316333,
+  "dem": 66503497,
+  "rep": 50051363,
+  "total": 118319247,
   "share_counted": 98.07,
   "margin": 13.9
  },
@@ -3883,20 +3883,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 45.06,
-   "lead_votes": 108556,
+   "margin": 45.11,
+   "lead_votes": 108810,
    "reporting": 98,
    "top": [
     {
      "name": "Jonathan Jackson",
      "party": "D",
-     "pct": 72.5,
+     "pct": 72.6,
      "incumbent": true
     },
     {
      "name": "Christian Maxwell",
      "party": "R",
-     "pct": 27.5,
+     "pct": 27.4,
      "incumbent": false
     }
    ]
@@ -3911,8 +3911,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 46.11,
-   "lead_votes": 103126,
+   "margin": 46.12,
+   "lead_votes": 103210,
    "reporting": 97,
    "top": [
     {
@@ -3939,8 +3939,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 55.01,
-   "lead_votes": 112163,
+   "margin": 55.06,
+   "lead_votes": 112457,
    "reporting": 99,
    "top": [
     {
@@ -3967,8 +3967,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 55.46,
-   "lead_votes": 90349,
+   "margin": 55.48,
+   "lead_votes": 90424,
    "reporting": 99,
    "top": [
     {
@@ -3995,20 +3995,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 54.43,
-   "lead_votes": 151473,
+   "margin": 54.56,
+   "lead_votes": 152387,
    "reporting": 99,
    "top": [
     {
      "name": "Mike Quigley",
      "party": "D",
-     "pct": 77.2,
+     "pct": 77.3,
      "incumbent": true
     },
     {
      "name": "Tommy Hanson",
      "party": "R",
-     "pct": 22.8,
+     "pct": 22.7,
      "incumbent": false
     }
    ]
@@ -4023,20 +4023,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.9,
-   "lead_votes": 69411,
+   "margin": 25.91,
+   "lead_votes": 69454,
    "reporting": 99,
    "top": [
     {
      "name": "Sean Casten",
      "party": "D",
-     "pct": 62.9,
+     "pct": 63.0,
      "incumbent": true
     },
     {
      "name": "Niki Conforti",
      "party": "R",
-     "pct": 37.1,
+     "pct": 37.0,
      "incumbent": false
     }
    ]
@@ -4051,8 +4051,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 78.66,
-   "lead_votes": 164013,
+   "margin": 78.69,
+   "lead_votes": 164493,
    "reporting": 99,
    "top": [
     {
@@ -4079,8 +4079,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 28.68,
-   "lead_votes": 61846,
+   "margin": 28.69,
+   "lead_votes": 61854,
    "reporting": 98,
    "top": [
     {
@@ -4107,9 +4107,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 53.78,
-   "lead_votes": 141312,
-   "reporting": 98,
+   "margin": 53.86,
+   "lead_votes": 141803,
+   "reporting": 99,
    "top": [
     {
      "name": "Daniel Biss",
@@ -12430,8 +12430,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.49,
-   "lead_votes": 1068386,
+   "margin": 25.54,
+   "lead_votes": 1071038,
    "reporting": 98,
    "top": [
     {
@@ -12443,7 +12443,7 @@
     {
      "name": "Don Tracy",
      "party": "R",
-     "pct": 36.5,
+     "pct": 36.4,
      "incumbent": false
     }
    ]
@@ -13159,5 +13159,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-15T00:53+00:00"
+ "updated": "2026-11-16T00:52+00:00"
 }
