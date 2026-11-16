@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T00:52+00:00",
+ "updated": "2026-11-16T21:49+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -395,7 +395,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 3,
-     "miss": 7.5,
+     "miss": 7.6,
      "se": 1.2
     },
     {
@@ -409,7 +409,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.6,
+     "miss": 4.7,
      "se": 0.8
     },
     {
@@ -430,7 +430,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 12,
-     "miss": 2.4,
+     "miss": 2.5,
      "se": 0.7
     },
     {
@@ -455,7 +455,7 @@
      "race_id": "H-TN-04",
      "p": 0.006,
      "won": 1,
-     "status": "counting",
+     "status": "called",
      "margin": 0.14,
      "lead_votes": 280,
      "reporting": 99,
@@ -594,20 +594,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.78,
-     "lead_votes": 7587,
+     "margin": 0.83,
+     "lead_votes": 8031,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.6,
+       "pct": 48.5,
        "incumbent": true
       }
      ]
@@ -618,7 +618,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.2,
-     "lead_votes": 8794,
+     "lead_votes": 8795,
      "reporting": 99,
      "top": [
       {
@@ -1416,7 +1416,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.6,
+     "miss": 4.7,
      "se": 0.8
     },
     {
@@ -1437,7 +1437,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 8,
-     "miss": 2.5,
+     "miss": 2.6,
      "se": 0.6
     },
     {
@@ -1462,7 +1462,7 @@
      "race_id": "H-TN-04",
      "p": 0.006,
      "won": 1,
-     "status": "counting",
+     "status": "called",
      "margin": 0.14,
      "lead_votes": 280,
      "reporting": 99,
@@ -1602,7 +1602,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.2,
-     "lead_votes": 8794,
+     "lead_votes": 8795,
      "reporting": 99,
      "top": [
       {
@@ -2358,7 +2358,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": 1.9
     }
    ],
@@ -2370,20 +2370,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.78,
-     "lead_votes": 7587,
+     "margin": 0.83,
+     "lead_votes": 8031,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.6,
+       "pct": 48.5,
        "incumbent": true
       }
      ]
@@ -2417,7 +2417,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57260,
+     "lead_votes": 57264,
      "reporting": 99,
      "top": [
       {
@@ -2462,20 +2462,20 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.02,
-     "lead_votes": 55324,
+     "margin": 5.3,
+     "lead_votes": 58878,
      "reporting": 99,
      "top": [
       {
        "name": "Adam Hamilton",
        "party": "D",
-       "pct": 51.0,
+       "pct": 51.1,
        "incumbent": false
       },
       {
        "name": "Roger Marshall",
        "party": "R",
-       "pct": 46.0,
+       "pct": 45.8,
        "incumbent": true
       }
      ]
@@ -2486,8 +2486,8 @@
      "won": 0,
      "status": "called",
      "margin": -5.88,
-     "lead_votes": 44866,
-     "reporting": 98,
+     "lead_votes": 44921,
+     "reporting": 99,
      "top": [
       {
        "name": "Pete Ricketts",
@@ -2531,8 +2531,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.84,
-     "lead_votes": 223004,
+     "margin": 4.83,
+     "lead_votes": 222605,
      "reporting": 98,
      "top": [
       {
@@ -2579,7 +2579,7 @@
      "status": "called",
      "margin": 7.08,
      "lead_votes": 339784,
-     "reporting": 98,
+     "reporting": 99,
      "top": [
       {
        "name": "Abdul El-Sayed",
@@ -2600,8 +2600,8 @@
      "p": 0.096,
      "won": 0,
      "status": "called",
-     "margin": -2.87,
-     "lead_votes": 237306,
+     "margin": -2.85,
+     "lead_votes": 236358,
      "reporting": 99,
      "top": [
       {
@@ -2927,14 +2927,14 @@
    }
   },
   "all|called": {
-   "n": 460,
-   "actual": 278,
-   "expected": 257.8,
-   "share_sims_below": 0.8457,
-   "brier": 0.0354,
-   "n_non_safe": 83,
-   "brier_non_safe": 0.1848,
-   "favourite_won": 0.9478,
+   "n": 462,
+   "actual": 279,
+   "expected": 258.0,
+   "share_sims_below": 0.8515,
+   "brier": 0.0375,
+   "n_non_safe": 84,
+   "brier_non_safe": 0.1828,
+   "favourite_won": 0.9459,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -2950,6 +2950,7 @@
     "H-CO-04",
     "H-CO-05",
     "H-MO-02",
+    "H-TN-04",
     "H-NC-03",
     "H-NC-06",
     "H-NC-09",
@@ -2974,11 +2975,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 206,
-     "chance": 0.947,
-     "won": 0.8835,
-     "expected": 195.1,
-     "actual": 182
+     "n": 208,
+     "chance": 0.9468,
+     "won": 0.8798,
+     "expected": 196.9,
+     "actual": 183
     },
     {
      "scope": "non-safe",
@@ -2992,11 +2993,11 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 48,
-     "chance": 0.8022,
-     "won": 0.5208,
-     "expected": 38.5,
-     "actual": 25
+     "n": 49,
+     "chance": 0.8033,
+     "won": 0.5306,
+     "expected": 39.4,
+     "actual": 26
     }
    ],
    "regions": [
@@ -3160,40 +3161,40 @@
     },
     {
      "region": "South",
-     "n": 173,
-     "expected": 58.5,
-     "actual": 68,
-     "brier": 0.0496,
-     "n_non_safe": 36,
-     "expected_non_safe": 13.7,
+     "n": 175,
+     "expected": 58.6,
+     "actual": 69,
+     "brier": 0.0548,
+     "n_non_safe": 37,
+     "expected_non_safe": 13.8,
      "actual_non_safe": 23,
-     "upsets_d": 12,
+     "upsets_d": 13,
      "upsets_r": 0,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 93,
+       "n": 94,
        "mean_p": 0.0101,
-       "wins": 1,
-       "freq": 0.0108,
+       "wins": 2,
+       "freq": 0.0213,
        "band": [
         0.0,
-        0.043
+        0.0532
        ]
       },
       {
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 23,
-       "mean_p": 0.1662,
+       "n": 24,
+       "mean_p": 0.1654,
        "wins": 10,
-       "freq": 0.4348,
+       "freq": 0.4167,
        "band": [
         0.0,
-        0.7391
+        0.7083
        ]
       },
       {
@@ -3316,7 +3317,7 @@
      "division": "East South Central",
      "region": "South",
      "n": 3,
-     "miss": 7.5,
+     "miss": 7.6,
      "se": 1.2
     },
     {
@@ -3330,7 +3331,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.6,
+     "miss": 4.7,
      "se": 0.8
     },
     {
@@ -3343,15 +3344,15 @@
     {
      "division": "South Atlantic",
      "region": "South",
-     "n": 25,
+     "n": 26,
      "miss": 3.4,
-     "se": 0.6
+     "se": 0.5
     },
     {
      "division": "West North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 2.5,
+     "miss": 2.6,
      "se": 0.8
     },
     {
@@ -3370,8 +3371,31 @@
     }
    ],
    "mean_miss": 4.6,
-   "n_miss": 83,
+   "n_miss": 84,
    "surprises": [
+    {
+     "race_id": "H-TN-04",
+     "p": 0.006,
+     "won": 1,
+     "status": "called",
+     "margin": 0.14,
+     "lead_votes": 280,
+     "reporting": 99,
+     "top": [
+      {
+       "name": "Victoria Broderick",
+       "party": "D",
+       "pct": 48.9,
+       "incumbent": false
+      },
+      {
+       "name": "Scott DesJarlais",
+       "party": "R",
+       "pct": 48.7,
+       "incumbent": true
+      }
+     ]
+    },
     {
      "race_id": "H-NC-06",
      "p": 0.045,
@@ -3469,20 +3493,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.78,
-     "lead_votes": 7587,
+     "margin": 0.83,
+     "lead_votes": 8031,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.6,
+       "pct": 48.5,
        "incumbent": true
       }
      ]
@@ -3493,7 +3517,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.2,
-     "lead_votes": 8794,
+     "lead_votes": 8795,
      "reporting": 99,
      "top": [
       {
@@ -3624,62 +3648,39 @@
        "incumbent": false
       }
      ]
-    },
-    {
-     "race_id": "H-OH-15",
-     "p": 0.224,
-     "won": 1,
-     "status": "called",
-     "margin": 6.63,
-     "lead_votes": 19062,
-     "reporting": 97,
-     "top": [
-      {
-       "name": "Don Leonard",
-       "party": "D",
-       "pct": 51.9,
-       "incumbent": false
-      },
-      {
-       "name": "Mike Carey",
-       "party": "R",
-       "pct": 45.3,
-       "incumbent": true
-      }
-     ]
     }
    ],
    "series": {
     "us": {
-     "n": 451,
-     "brier": 0.0361,
-     "expected": 249.8,
-     "actual": 270,
+     "n": 453,
+     "brier": 0.0382,
+     "expected": 250.0,
+     "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 157,
+       "n": 158,
        "mean_p": 0.009,
-       "wins": 1,
-       "freq": 0.0064,
+       "wins": 2,
+       "freq": 0.0127,
        "band": [
         0.0,
-        0.0382
+        0.038
        ]
       },
       {
        "bracket": "5–20%",
        "lo": 0.05,
        "hi": 0.2,
-       "n": 26,
-       "mean_p": 0.1001,
+       "n": 27,
+       "mean_p": 0.1018,
        "wins": 10,
-       "freq": 0.3846,
+       "freq": 0.3704,
        "band": [
         0.0,
-        0.5769
+        0.5556
        ]
       },
       {
@@ -3750,17 +3751,17 @@
      ]
     },
     "market": {
-     "n": 451,
-     "brier": 0.031,
-     "expected": 255.1,
-     "actual": 270,
+     "n": 453,
+     "brier": 0.0331,
+     "expected": 255.4,
+     "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 120,
-       "mean_p": 0.0233,
-       "wins": 0,
-       "freq": 0.0
+       "n": 121,
+       "mean_p": 0.0234,
+       "wins": 1,
+       "freq": 0.0083
       },
       {
        "bracket": "5–20%",
@@ -3771,10 +3772,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 13,
-       "mean_p": 0.278,
+       "n": 14,
+       "mean_p": 0.2763,
        "wins": 6,
-       "freq": 0.4615
+       "freq": 0.4286
       },
       {
        "bracket": "35–65%",
@@ -3807,24 +3808,24 @@
      ]
     },
     "fundamentals": {
-     "n": 451,
-     "brier": 0.0504,
-     "expected": 244.1,
-     "actual": 270,
+     "n": 453,
+     "brier": 0.0524,
+     "expected": 244.2,
+     "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 132,
+       "n": 133,
        "mean_p": 0.0075,
-       "wins": 0,
-       "freq": 0.0
+       "wins": 1,
+       "freq": 0.0075
       },
       {
        "bracket": "5–20%",
-       "n": 46,
-       "mean_p": 0.1017,
+       "n": 47,
+       "mean_p": 0.1029,
        "wins": 10,
-       "freq": 0.2174
+       "freq": 0.2128
       },
       {
        "bracket": "20–35%",
@@ -3864,17 +3865,17 @@
      ]
     },
     "mix": {
-     "n": 451,
-     "brier": 0.0308,
-     "expected": 255.3,
-     "actual": 270,
+     "n": 453,
+     "brier": 0.0329,
+     "expected": 255.6,
+     "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 120,
-       "mean_p": 0.0234,
-       "wins": 0,
-       "freq": 0.0
+       "n": 121,
+       "mean_p": 0.0235,
+       "wins": 1,
+       "freq": 0.0083
       },
       {
        "bracket": "5–20%",
@@ -3885,10 +3886,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 11,
-       "mean_p": 0.268,
+       "n": 12,
+       "mean_p": 0.2669,
        "wins": 6,
-       "freq": 0.5455
+       "freq": 0.5
       },
       {
        "bracket": "35–65%",
@@ -3928,20 +3929,20 @@
      "fundamentals": 0.0
     },
     "states": {
-     "mix": 0.0314,
-     "lookup": 0.0421
+     "mix": 0.0335,
+     "lookup": 0.0464
     }
    }
   },
   "house|called": {
-   "n": 426,
-   "actual": 257,
-   "expected": 239.7,
-   "share_sims_below": 0.8424,
-   "brier": 0.0337,
-   "n_non_safe": 72,
-   "brier_non_safe": 0.1863,
-   "favourite_won": 0.9507,
+   "n": 428,
+   "actual": 258,
+   "expected": 239.8,
+   "share_sims_below": 0.8498,
+   "brier": 0.0359,
+   "n_non_safe": 73,
+   "brier_non_safe": 0.1841,
+   "favourite_won": 0.9486,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -3954,6 +3955,7 @@
     "H-CO-04",
     "H-CO-05",
     "H-MO-02",
+    "H-TN-04",
     "H-NC-03",
     "H-NC-06",
     "H-NC-09",
@@ -3978,11 +3980,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 190,
-     "chance": 0.9497,
-     "won": 0.8895,
-     "expected": 180.4,
-     "actual": 169
+     "n": 192,
+     "chance": 0.9494,
+     "won": 0.8854,
+     "expected": 182.3,
+     "actual": 170
     },
     {
      "scope": "non-safe",
@@ -3996,11 +3998,11 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 43,
-     "chance": 0.8065,
-     "won": 0.5349,
-     "expected": 34.7,
-     "actual": 23
+     "n": 44,
+     "chance": 0.8076,
+     "won": 0.5455,
+     "expected": 35.5,
+     "actual": 24
     }
    ],
    "regions": [
@@ -4164,40 +4166,40 @@
     },
     {
      "region": "South",
-     "n": 158,
-     "expected": 53.2,
-     "actual": 61,
-     "brier": 0.0453,
-     "n_non_safe": 32,
-     "expected_non_safe": 12.4,
+     "n": 160,
+     "expected": 53.3,
+     "actual": 62,
+     "brier": 0.0511,
+     "n_non_safe": 33,
+     "expected_non_safe": 12.6,
      "actual_non_safe": 20,
-     "upsets_d": 10,
+     "upsets_d": 11,
      "upsets_r": 0,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 86,
-       "mean_p": 0.0099,
-       "wins": 1,
-       "freq": 0.0116,
+       "n": 87,
+       "mean_p": 0.0098,
+       "wins": 2,
+       "freq": 0.023,
        "band": [
         0.0,
-        0.0465
+        0.046
        ]
       },
       {
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 20,
-       "mean_p": 0.1681,
+       "n": 21,
+       "mean_p": 0.1671,
        "wins": 8,
-       "freq": 0.4,
+       "freq": 0.381,
        "band": [
         0.0,
-        0.7
+        0.7143
        ]
       },
       {
@@ -4334,7 +4336,7 @@
      "division": "Middle Atlantic",
      "region": "Northeast",
      "n": 9,
-     "miss": 4.6,
+     "miss": 4.7,
      "se": 0.8
     },
     {
@@ -4347,7 +4349,7 @@
     {
      "division": "South Atlantic",
      "region": "South",
-     "n": 23,
+     "n": 24,
      "miss": 3.3,
      "se": 0.6
     },
@@ -4374,8 +4376,31 @@
     }
    ],
    "mean_miss": 4.7,
-   "n_miss": 72,
+   "n_miss": 73,
    "surprises": [
+    {
+     "race_id": "H-TN-04",
+     "p": 0.006,
+     "won": 1,
+     "status": "called",
+     "margin": 0.14,
+     "lead_votes": 280,
+     "reporting": 99,
+     "top": [
+      {
+       "name": "Victoria Broderick",
+       "party": "D",
+       "pct": 48.9,
+       "incumbent": false
+      },
+      {
+       "name": "Scott DesJarlais",
+       "party": "R",
+       "pct": 48.7,
+       "incumbent": true
+      }
+     ]
+    },
     {
      "race_id": "H-NC-06",
      "p": 0.045,
@@ -4474,7 +4499,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.2,
-     "lead_votes": 8794,
+     "lead_votes": 8795,
      "reporting": 99,
      "top": [
       {
@@ -4628,62 +4653,39 @@
        "incumbent": true
       }
      ]
-    },
-    {
-     "race_id": "H-CO-05",
-     "p": 0.246,
-     "won": 1,
-     "status": "called",
-     "margin": 5.08,
-     "lead_votes": 15815,
-     "reporting": 99,
-     "top": [
-      {
-       "name": "Jessica Killin",
-       "party": "D",
-       "pct": 50.7,
-       "incumbent": false
-      },
-      {
-       "name": "Jeff Crank",
-       "party": "R",
-       "pct": 45.6,
-       "incumbent": true
-      }
-     ]
     }
    ],
    "series": {
     "us": {
-     "n": 417,
-     "brier": 0.0344,
-     "expected": 231.7,
-     "actual": 249,
+     "n": 419,
+     "brier": 0.0367,
+     "expected": 231.8,
+     "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 146,
+       "n": 147,
        "mean_p": 0.0085,
-       "wins": 1,
-       "freq": 0.0068,
+       "wins": 2,
+       "freq": 0.0136,
        "band": [
         0.0,
-        0.0411
+        0.0408
        ]
       },
       {
        "bracket": "5–20%",
        "lo": 0.05,
        "hi": 0.2,
-       "n": 24,
-       "mean_p": 0.1,
+       "n": 25,
+       "mean_p": 0.1019,
        "wins": 9,
-       "freq": 0.375,
+       "freq": 0.36,
        "band": [
         0.0,
-        0.5417
+        0.56
        ]
       },
       {
@@ -4754,17 +4756,17 @@
      ]
     },
     "market": {
-     "n": 417,
-     "brier": 0.0288,
-     "expected": 237.0,
-     "actual": 249,
+     "n": 419,
+     "brier": 0.031,
+     "expected": 237.3,
+     "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 112,
+       "n": 113,
        "mean_p": 0.0232,
-       "wins": 0,
-       "freq": 0.0
+       "wins": 1,
+       "freq": 0.0088
       },
       {
        "bracket": "5–20%",
@@ -4775,10 +4777,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 11,
-       "mean_p": 0.2717,
+       "n": 12,
+       "mean_p": 0.2703,
        "wins": 5,
-       "freq": 0.4545
+       "freq": 0.4167
       },
       {
        "bracket": "35–65%",
@@ -4811,24 +4813,24 @@
      ]
     },
     "fundamentals": {
-     "n": 417,
-     "brier": 0.0458,
-     "expected": 227.7,
-     "actual": 249,
+     "n": 419,
+     "brier": 0.048,
+     "expected": 227.9,
+     "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 129,
+       "n": 130,
        "mean_p": 0.0072,
-       "wins": 0,
-       "freq": 0.0
+       "wins": 1,
+       "freq": 0.0077
       },
       {
        "bracket": "5–20%",
-       "n": 39,
-       "mean_p": 0.1024,
+       "n": 40,
+       "mean_p": 0.1038,
        "wins": 9,
-       "freq": 0.2308
+       "freq": 0.225
       },
       {
        "bracket": "20–35%",
@@ -4868,17 +4870,17 @@
      ]
     },
     "mix": {
-     "n": 417,
-     "brier": 0.0288,
-     "expected": 237.0,
-     "actual": 249,
+     "n": 419,
+     "brier": 0.031,
+     "expected": 237.3,
+     "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 112,
-       "mean_p": 0.0232,
-       "wins": 0,
-       "freq": 0.0
+       "n": 113,
+       "mean_p": 0.0233,
+       "wins": 1,
+       "freq": 0.0088
       },
       {
        "bracket": "5–20%",
@@ -4889,10 +4891,10 @@
       },
       {
        "bracket": "20–35%",
-       "n": 13,
-       "mean_p": 0.2752,
+       "n": 14,
+       "mean_p": 0.2737,
        "wins": 7,
-       "freq": 0.5385
+       "freq": 0.5
       },
       {
        "bracket": "35–65%",
@@ -4932,8 +4934,8 @@
      "fundamentals": 0.0
     },
     "states": {
-     "mix": 0.0293,
-     "lookup": 0.0408
+     "mix": 0.0316,
+     "lookup": 0.0453
     }
    }
   },
@@ -5256,7 +5258,7 @@
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.2,
+     "miss": 2.3,
      "se": 1.9
     }
    ],
@@ -5268,20 +5270,20 @@
      "p": 0.108,
      "won": 1,
      "status": "called",
-     "margin": 0.78,
-     "lead_votes": 7587,
+     "margin": 0.83,
+     "lead_votes": 8031,
      "reporting": 99,
      "top": [
       {
        "name": "Scott Colom",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
        "name": "Cindy Hyde-Smith",
        "party": "R",
-       "pct": 48.6,
+       "pct": 48.5,
        "incumbent": true
       }
      ]
@@ -5315,7 +5317,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.2,
-     "lead_votes": 57260,
+     "lead_votes": 57264,
      "reporting": 99,
      "top": [
       {
@@ -5337,20 +5339,20 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.02,
-     "lead_votes": 55324,
+     "margin": 5.3,
+     "lead_votes": 58878,
      "reporting": 99,
      "top": [
       {
        "name": "Adam Hamilton",
        "party": "D",
-       "pct": 51.0,
+       "pct": 51.1,
        "incumbent": false
       },
       {
        "name": "Roger Marshall",
        "party": "R",
-       "pct": 46.0,
+       "pct": 45.8,
        "incumbent": true
       }
      ]
@@ -5361,8 +5363,8 @@
      "won": 0,
      "status": "called",
      "margin": -5.88,
-     "lead_votes": 44866,
-     "reporting": 98,
+     "lead_votes": 44921,
+     "reporting": 99,
      "top": [
       {
        "name": "Pete Ricketts",
@@ -5406,8 +5408,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.84,
-     "lead_votes": 223004,
+     "margin": 4.83,
+     "lead_votes": 222605,
      "reporting": 98,
      "top": [
       {
@@ -5454,7 +5456,7 @@
      "status": "called",
      "margin": 7.08,
      "lead_votes": 339784,
-     "reporting": 98,
+     "reporting": 99,
      "top": [
       {
        "name": "Abdul El-Sayed",
@@ -5475,8 +5477,8 @@
      "p": 0.096,
      "won": 0,
      "status": "called",
-     "margin": -2.87,
-     "lead_votes": 237306,
+     "margin": -2.85,
+     "lead_votes": 236358,
      "reporting": 99,
      "top": [
       {
@@ -5901,23 +5903,23 @@
   "called": [
    {
     "name": "All races",
-    "n": 451,
+    "n": 453,
     "weights": {
      "market": 0.8,
      "polls": 0.2,
      "fundamentals": 0.0
     },
-    "brier": 0.0308
+    "brier": 0.0329
    },
    {
     "name": "House",
-    "n": 417,
+    "n": 419,
     "weights": {
      "market": 0.96,
      "polls": 0.04,
      "fundamentals": 0.0
     },
-    "brier": 0.0288
+    "brier": 0.031
    },
    {
     "name": "Senate",
@@ -5951,13 +5953,13 @@
    },
    {
     "name": "South",
-    "n": 173,
+    "n": 175,
     "weights": {
      "market": 0.94,
      "polls": 0.06,
      "fundamentals": 0.0
     },
-    "brier": 0.0419
+    "brier": 0.0471
    },
    {
     "name": "West",
@@ -5978,7 +5980,7 @@
     219,
     265
    ],
-   "called": 257,
+   "called": 258,
    "with_leaders": 260,
    "off_by": 22,
    "independent_ci80": [
@@ -6131,10 +6133,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66503497,
-  "rep": 50051363,
-  "total": 118319247,
-  "share_counted": 98.07,
+  "dem": 66586151,
+  "rep": 50088212,
+  "total": 118437763,
+  "share_counted": 98.35,
   "margin": 13.9
  },
  "senate": {
