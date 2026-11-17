@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T07:17+00:00",
+ "updated": "2026-11-17T18:19+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -457,7 +457,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 274,
+     "lead_votes": 272,
      "reporting": 99,
      "top": [
       {
@@ -617,8 +617,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.2,
-     "lead_votes": 8795,
+     "margin": 3.29,
+     "lead_votes": 9085,
      "reporting": 99,
      "top": [
       {
@@ -630,7 +630,7 @@
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 47.9,
+       "pct": 47.8,
        "incumbent": true
       }
      ]
@@ -1464,7 +1464,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 274,
+     "lead_votes": 272,
      "reporting": 99,
      "top": [
       {
@@ -1601,8 +1601,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.2,
-     "lead_votes": 8795,
+     "margin": 3.29,
+     "lead_votes": 9085,
      "reporting": 99,
      "top": [
       {
@@ -1614,7 +1614,7 @@
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 47.9,
+       "pct": 47.8,
        "incumbent": true
       }
      ]
@@ -2463,7 +2463,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.4,
-     "lead_votes": 60265,
+     "lead_votes": 60255,
      "reporting": 99,
      "top": [
       {
@@ -2532,7 +2532,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.83,
-     "lead_votes": 222605,
+     "lead_votes": 222477,
      "reporting": 98,
      "top": [
       {
@@ -3379,7 +3379,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 274,
+     "lead_votes": 272,
      "reporting": 99,
      "top": [
       {
@@ -3516,8 +3516,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.2,
-     "lead_votes": 8795,
+     "margin": 3.29,
+     "lead_votes": 9085,
      "reporting": 99,
      "top": [
       {
@@ -3529,7 +3529,7 @@
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 47.9,
+       "pct": 47.8,
        "incumbent": true
       }
      ]
@@ -4384,7 +4384,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 274,
+     "lead_votes": 272,
      "reporting": 99,
      "top": [
       {
@@ -4498,8 +4498,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.2,
-     "lead_votes": 8795,
+     "margin": 3.29,
+     "lead_votes": 9085,
      "reporting": 99,
      "top": [
       {
@@ -4511,7 +4511,7 @@
       {
        "name": "Jeff Van Drew",
        "party": "R",
-       "pct": 47.9,
+       "pct": 47.8,
        "incumbent": true
       }
      ]
@@ -5340,7 +5340,7 @@
      "won": 1,
      "status": "called",
      "margin": 5.4,
-     "lead_votes": 60265,
+     "lead_votes": 60255,
      "reporting": 99,
      "top": [
       {
@@ -5409,7 +5409,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.83,
-     "lead_votes": 222605,
+     "lead_votes": 222477,
      "reporting": 98,
      "top": [
       {
@@ -6133,10 +6133,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66680999,
-  "rep": 50133154,
-  "total": 118578700,
-  "share_counted": 98.53,
+  "dem": 66708667,
+  "rep": 50141552,
+  "total": 118616223,
+  "share_counted": 98.57,
   "margin": 14.0
  },
  "senate": {
