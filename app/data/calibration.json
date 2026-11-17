@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T21:49+00:00",
+ "updated": "2026-11-17T07:17+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -457,7 +457,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 280,
+     "lead_votes": 274,
      "reporting": 99,
      "top": [
       {
@@ -1464,7 +1464,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 280,
+     "lead_votes": 274,
      "reporting": 99,
      "top": [
       {
@@ -2341,28 +2341,28 @@
      "se": null
     },
     {
-     "division": "East North Central",
-     "region": "Midwest",
-     "n": 2,
-     "miss": 2.4,
-     "se": 0.4
-    },
-    {
      "division": "Pacific",
      "region": "West",
      "n": 1,
-     "miss": 2.3,
+     "miss": 2.4,
      "se": null
     },
     {
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
-     "miss": 2.3,
+     "miss": 2.4,
      "se": 1.9
+    },
+    {
+     "division": "East North Central",
+     "region": "Midwest",
+     "n": 2,
+     "miss": 2.4,
+     "se": 0.4
     }
    ],
-   "mean_miss": 3.5,
+   "mean_miss": 3.6,
    "n_miss": 12,
    "surprises": [
     {
@@ -2439,20 +2439,20 @@
      "p": 0.677,
      "won": 1,
      "status": "counting",
-     "margin": 3.98,
-     "lead_votes": 11213,
-     "reporting": 97,
+     "margin": 4.05,
+     "lead_votes": 11475,
+     "reporting": 98,
      "top": [
       {
        "name": "Mary Peltola",
        "party": "D",
-       "pct": 49.9,
+       "pct": 50.0,
        "incumbent": false
       },
       {
        "name": "Dan Sullivan",
        "party": "R",
-       "pct": 46.0,
+       "pct": 45.9,
        "incumbent": true
       }
      ]
@@ -2462,14 +2462,14 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.3,
-     "lead_votes": 58878,
+     "margin": 5.4,
+     "lead_votes": 60265,
      "reporting": 99,
      "top": [
       {
        "name": "Adam Hamilton",
        "party": "D",
-       "pct": 51.1,
+       "pct": 51.2,
        "incumbent": false
       },
       {
@@ -2485,20 +2485,20 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -5.88,
-     "lead_votes": 44921,
+     "margin": -5.69,
+     "lead_votes": 43662,
      "reporting": 99,
      "top": [
       {
        "name": "Pete Ricketts",
        "party": "R",
-       "pct": 50.0,
+       "pct": 49.8,
        "incumbent": true
       },
       {
        "name": "Dan Osborn",
        "party": "O",
-       "pct": 44.1,
+       "pct": 44.2,
        "incumbent": false
       }
      ]
@@ -2927,14 +2927,14 @@
    }
   },
   "all|called": {
-   "n": 462,
+   "n": 463,
    "actual": 279,
    "expected": 258.0,
    "share_sims_below": 0.8515,
-   "brier": 0.0375,
+   "brier": 0.0374,
    "n_non_safe": 84,
    "brier_non_safe": 0.1828,
-   "favourite_won": 0.9459,
+   "favourite_won": 0.946,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -2975,11 +2975,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 208,
-     "chance": 0.9468,
-     "won": 0.8798,
-     "expected": 196.9,
-     "actual": 183
+     "n": 209,
+     "chance": 0.947,
+     "won": 0.8804,
+     "expected": 197.9,
+     "actual": 184
     },
     {
      "scope": "non-safe",
@@ -3240,10 +3240,10 @@
     },
     {
      "region": "West",
-     "n": 108,
+     "n": 109,
      "expected": 84.4,
      "actual": 87,
-     "brier": 0.0213,
+     "brier": 0.0211,
      "n_non_safe": 12,
      "expected_non_safe": 6.5,
      "actual_non_safe": 9,
@@ -3254,13 +3254,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 18,
-       "mean_p": 0.0118,
+       "n": 19,
+       "mean_p": 0.0114,
        "wins": 0,
        "freq": 0.0,
        "band": [
         0.0,
-        0.0556
+        0.0526
        ]
       },
       {
@@ -3353,7 +3353,7 @@
      "region": "Midwest",
      "n": 11,
      "miss": 2.6,
-     "se": 0.8
+     "se": 0.7
     },
     {
      "division": "Pacific",
@@ -3379,7 +3379,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 280,
+     "lead_votes": 274,
      "reporting": 99,
      "top": [
       {
@@ -3652,8 +3652,8 @@
    ],
    "series": {
     "us": {
-     "n": 453,
-     "brier": 0.0382,
+     "n": 454,
+     "brier": 0.0381,
      "expected": 250.0,
      "actual": 271,
      "brackets": [
@@ -3661,13 +3661,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 158,
+       "n": 159,
        "mean_p": 0.009,
        "wins": 2,
-       "freq": 0.0127,
+       "freq": 0.0126,
        "band": [
         0.0,
-        0.038
+        0.0377
        ]
       },
       {
@@ -3751,17 +3751,17 @@
      ]
     },
     "market": {
-     "n": 453,
-     "brier": 0.0331,
+     "n": 454,
+     "brier": 0.033,
      "expected": 255.4,
      "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 121,
-       "mean_p": 0.0234,
+       "n": 122,
+       "mean_p": 0.0235,
        "wins": 1,
-       "freq": 0.0083
+       "freq": 0.0082
       },
       {
        "bracket": "5–20%",
@@ -3808,15 +3808,15 @@
      ]
     },
     "fundamentals": {
-     "n": 453,
-     "brier": 0.0524,
-     "expected": 244.2,
+     "n": 454,
+     "brier": 0.0523,
+     "expected": 244.3,
      "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 133,
-       "mean_p": 0.0075,
+       "n": 134,
+       "mean_p": 0.0078,
        "wins": 1,
        "freq": 0.0075
       },
@@ -3865,17 +3865,17 @@
      ]
     },
     "mix": {
-     "n": 453,
-     "brier": 0.0329,
+     "n": 454,
+     "brier": 0.0328,
      "expected": 255.6,
      "actual": 271,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 121,
-       "mean_p": 0.0235,
+       "n": 122,
+       "mean_p": 0.0236,
        "wins": 1,
-       "freq": 0.0083
+       "freq": 0.0082
       },
       {
        "bracket": "5–20%",
@@ -3930,19 +3930,19 @@
     },
     "states": {
      "mix": 0.0335,
-     "lookup": 0.0464
+     "lookup": 0.0463
     }
    }
   },
   "house|called": {
-   "n": 428,
+   "n": 429,
    "actual": 258,
    "expected": 239.8,
-   "share_sims_below": 0.8498,
-   "brier": 0.0359,
+   "share_sims_below": 0.8497,
+   "brier": 0.0358,
    "n_non_safe": 73,
    "brier_non_safe": 0.1841,
-   "favourite_won": 0.9486,
+   "favourite_won": 0.9487,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -3980,11 +3980,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 192,
-     "chance": 0.9494,
-     "won": 0.8854,
-     "expected": 182.3,
-     "actual": 170
+     "n": 193,
+     "chance": 0.9496,
+     "won": 0.886,
+     "expected": 183.3,
+     "actual": 171
     },
     {
      "scope": "non-safe",
@@ -4245,10 +4245,10 @@
     },
     {
      "region": "West",
-     "n": 102,
-     "expected": 81.3,
+     "n": 103,
+     "expected": 81.4,
      "actual": 84,
-     "brier": 0.0225,
+     "brier": 0.0223,
      "n_non_safe": 12,
      "expected_non_safe": 6.5,
      "actual_non_safe": 9,
@@ -4259,13 +4259,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 15,
-       "mean_p": 0.0096,
+       "n": 16,
+       "mean_p": 0.0093,
        "wins": 0,
        "freq": 0.0,
        "band": [
         0.0,
-        0.0667
+        0.0625
        ]
       },
       {
@@ -4384,7 +4384,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 280,
+     "lead_votes": 274,
      "reporting": 99,
      "top": [
       {
@@ -4657,8 +4657,8 @@
    ],
    "series": {
     "us": {
-     "n": 419,
-     "brier": 0.0367,
+     "n": 420,
+     "brier": 0.0366,
      "expected": 231.8,
      "actual": 250,
      "brackets": [
@@ -4666,13 +4666,13 @@
        "bracket": "0–5%",
        "lo": 0,
        "hi": 0.05,
-       "n": 147,
+       "n": 148,
        "mean_p": 0.0085,
        "wins": 2,
-       "freq": 0.0136,
+       "freq": 0.0135,
        "band": [
         0.0,
-        0.0408
+        0.0405
        ]
       },
       {
@@ -4756,15 +4756,15 @@
      ]
     },
     "market": {
-     "n": 419,
+     "n": 420,
      "brier": 0.031,
      "expected": 237.3,
      "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 113,
-       "mean_p": 0.0232,
+       "n": 114,
+       "mean_p": 0.0233,
        "wins": 1,
        "freq": 0.0088
       },
@@ -4813,17 +4813,17 @@
      ]
     },
     "fundamentals": {
-     "n": 419,
-     "brier": 0.048,
+     "n": 420,
+     "brier": 0.0479,
      "expected": 227.9,
      "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 130,
-       "mean_p": 0.0072,
+       "n": 131,
+       "mean_p": 0.0074,
        "wins": 1,
-       "freq": 0.0077
+       "freq": 0.0076
       },
       {
        "bracket": "5–20%",
@@ -4870,15 +4870,15 @@
      ]
     },
     "mix": {
-     "n": 419,
+     "n": 420,
      "brier": 0.031,
      "expected": 237.3,
      "actual": 250,
      "brackets": [
       {
        "bracket": "0–5%",
-       "n": 113,
-       "mean_p": 0.0233,
+       "n": 114,
+       "mean_p": 0.0234,
        "wins": 1,
        "freq": 0.0088
       },
@@ -4934,8 +4934,8 @@
      "fundamentals": 0.0
     },
     "states": {
-     "mix": 0.0316,
-     "lookup": 0.0453
+     "mix": 0.0315,
+     "lookup": 0.0452
     }
    }
   },
@@ -5248,21 +5248,21 @@
      "se": null
     },
     {
+     "division": "West North Central",
+     "region": "Midwest",
+     "n": 4,
+     "miss": 2.4,
+     "se": 1.9
+    },
+    {
      "division": "East North Central",
      "region": "Midwest",
      "n": 2,
      "miss": 2.4,
      "se": 0.4
-    },
-    {
-     "division": "West North Central",
-     "region": "Midwest",
-     "n": 4,
-     "miss": 2.3,
-     "se": 1.9
     }
    ],
-   "mean_miss": 3.6,
+   "mean_miss": 3.7,
    "n_miss": 11,
    "surprises": [
     {
@@ -5339,14 +5339,14 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.3,
-     "lead_votes": 58878,
+     "margin": 5.4,
+     "lead_votes": 60265,
      "reporting": 99,
      "top": [
       {
        "name": "Adam Hamilton",
        "party": "D",
-       "pct": 51.1,
+       "pct": 51.2,
        "incumbent": false
       },
       {
@@ -5362,20 +5362,20 @@
      "p": 0.237,
      "won": 0,
      "status": "called",
-     "margin": -5.88,
-     "lead_votes": 44921,
+     "margin": -5.69,
+     "lead_votes": 43662,
      "reporting": 99,
      "top": [
       {
        "name": "Pete Ricketts",
        "party": "R",
-       "pct": 50.0,
+       "pct": 49.8,
        "incumbent": true
       },
       {
        "name": "Dan Osborn",
        "party": "O",
-       "pct": 44.1,
+       "pct": 44.2,
        "incumbent": false
       }
      ]
@@ -5903,17 +5903,17 @@
   "called": [
    {
     "name": "All races",
-    "n": 453,
+    "n": 454,
     "weights": {
      "market": 0.8,
      "polls": 0.2,
      "fundamentals": 0.0
     },
-    "brier": 0.0329
+    "brier": 0.0328
    },
    {
     "name": "House",
-    "n": 419,
+    "n": 420,
     "weights": {
      "market": 0.96,
      "polls": 0.04,
@@ -5963,13 +5963,13 @@
    },
    {
     "name": "West",
-    "n": 99,
+    "n": 100,
     "weights": {
      "market": 1.0,
      "polls": 0.0,
      "fundamentals": 0.0
     },
-    "brier": 0.0189
+    "brier": 0.0187
    }
   ]
  },
@@ -6133,11 +6133,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66586151,
-  "rep": 50088212,
-  "total": 118437763,
-  "share_counted": 98.35,
-  "margin": 13.9
+  "dem": 66680999,
+  "rep": 50133154,
+  "total": 118578700,
+  "share_counted": 98.53,
+  "margin": 14.0
  },
  "senate": {
   "p_control": 0.7754,
