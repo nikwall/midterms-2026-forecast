@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T11:21+00:00",
+ "updated": "2026-11-18T20:13+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -617,8 +617,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.29,
-     "lead_votes": 9085,
+     "margin": 3.3,
+     "lead_votes": 9112,
      "reporting": 99,
      "top": [
       {
@@ -1601,8 +1601,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.29,
-     "lead_votes": 9085,
+     "margin": 3.3,
+     "lead_votes": 9112,
      "reporting": 99,
      "top": [
       {
@@ -2532,7 +2532,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.82,
-     "lead_votes": 222199,
+     "lead_votes": 222086,
      "reporting": 98,
      "top": [
       {
@@ -3360,7 +3360,7 @@
      "region": "West",
      "n": 2,
      "miss": 2.5,
-     "se": 0.2
+     "se": 0.1
     },
     {
      "division": "New England",
@@ -3370,7 +3370,7 @@
      "se": 1.3
     }
    ],
-   "mean_miss": 4.5,
+   "mean_miss": 4.6,
    "n_miss": 85,
    "surprises": [
     {
@@ -3516,8 +3516,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.29,
-     "lead_votes": 9085,
+     "margin": 3.3,
+     "lead_votes": 9112,
      "reporting": 99,
      "top": [
       {
@@ -4498,8 +4498,8 @@
      "p": 0.125,
      "won": 1,
      "status": "called",
-     "margin": 3.29,
-     "lead_votes": 9085,
+     "margin": 3.3,
+     "lead_votes": 9112,
      "reporting": 99,
      "top": [
       {
@@ -4636,8 +4636,8 @@
      "p": 0.224,
      "won": 1,
      "status": "called",
-     "margin": 6.59,
-     "lead_votes": 18981,
+     "margin": 6.58,
+     "lead_votes": 18955,
      "reporting": 97,
      "top": [
       {
@@ -5452,7 +5452,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.82,
-     "lead_votes": 222199,
+     "lead_votes": 222086,
      "reporting": 98,
      "top": [
       {
@@ -6071,7 +6071,7 @@
     "p": 0.8405,
     "status": "called",
     "side": "D",
-    "margin": 9.87,
+    "margin": 9.83,
     "called_by": [
      "CNN",
      "NYT"
@@ -6153,10 +6153,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66746047,
-  "rep": 50154959,
-  "total": 118669725,
-  "share_counted": 98.63,
+  "dem": 66782873,
+  "rep": 50166415,
+  "total": 118718931,
+  "share_counted": 98.8,
   "margin": 14.0
  },
  "senate": {
