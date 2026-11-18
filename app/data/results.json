@@ -16,24 +16,24 @@
  },
  "senate": {
   "called": {
-   "D": 21,
+   "D": 22,
    "R": 13,
    "O": 0
   },
   "leading": {
-   "D": 1,
+   "D": 0,
    "R": 0,
    "O": 0
   },
   "runoff": 0,
   "disputed": 0,
-  "not_called": 1
+  "not_called": 0
  },
  "national": {
-  "dem": 66745505,
-  "rep": 50153200,
-  "total": 118665235,
-  "share_counted": 98.62,
+  "dem": 66746047,
+  "rep": 50154959,
+  "total": 118669725,
+  "share_counted": 98.63,
   "margin": 14.0
  },
  "control": {
@@ -56,20 +56,20 @@
    "called_by": [],
    "leader": "R",
    "leader_name": "Nick Begich",
-   "margin": -5.97,
-   "lead_votes": 16849,
-   "reporting": 98,
+   "margin": -5.77,
+   "lead_votes": 16526,
+   "reporting": 99,
    "top": [
     {
      "name": "Nick Begich",
      "party": "R",
-     "pct": 47.7,
+     "pct": 47.5,
      "incumbent": true
     },
     {
      "name": "Bill Hill",
      "party": "O",
-     "pct": 41.7,
+     "pct": 41.8,
      "incumbent": false
     }
    ]
@@ -12181,26 +12181,29 @@
    ]
   },
   "S-AK": {
-   "status": "counting",
-   "winner": null,
-   "winner_name": null,
-   "called_by": [],
-   "leader": "D",
-   "leader_name": "Mary Peltola",
-   "margin": 4.05,
-   "lead_votes": 11475,
-   "reporting": 98,
+   "status": "called",
+   "winner": "D",
+   "winner_name": "Mary Peltola",
+   "called_by": [
+    "CNN",
+    "NYT"
+   ],
+   "leader": null,
+   "leader_name": null,
+   "margin": 4.33,
+   "lead_votes": 12458,
+   "reporting": 99,
    "top": [
     {
      "name": "Mary Peltola",
      "party": "D",
-     "pct": 50.0,
+     "pct": 50.1,
      "incumbent": false
     },
     {
      "name": "Dan Sullivan",
      "party": "R",
-     "pct": 45.9,
+     "pct": 45.8,
      "incumbent": true
     }
    ]
@@ -13168,5 +13171,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-18T02:47+00:00"
+ "updated": "2026-11-18T11:21+00:00"
 }
