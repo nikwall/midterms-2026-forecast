@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T18:19+00:00",
+ "updated": "2026-11-18T02:47+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -2462,8 +2462,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.4,
-     "lead_votes": 60255,
+     "margin": 5.39,
+     "lead_votes": 60213,
      "reporting": 99,
      "top": [
       {
@@ -2531,8 +2531,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.83,
-     "lead_votes": 222477,
+     "margin": 4.82,
+     "lead_votes": 222199,
      "reporting": 98,
      "top": [
       {
@@ -4636,8 +4636,8 @@
      "p": 0.224,
      "won": 1,
      "status": "called",
-     "margin": 6.63,
-     "lead_votes": 19062,
+     "margin": 6.59,
+     "lead_votes": 18981,
      "reporting": 97,
      "top": [
       {
@@ -5339,8 +5339,8 @@
      "p": 0.71,
      "won": 1,
      "status": "called",
-     "margin": 5.4,
-     "lead_votes": 60255,
+     "margin": 5.39,
+     "lead_votes": 60213,
      "reporting": 99,
      "top": [
       {
@@ -5408,8 +5408,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.83,
-     "lead_votes": 222477,
+     "margin": 4.82,
+     "lead_votes": 222199,
      "reporting": 98,
      "top": [
       {
@@ -6105,12 +6105,12 @@
     "p": 0.6212,
     "status": "called",
     "side": "D",
-    "margin": 6.06,
+    "margin": 6.15,
     "called_by": [
      "CNN",
      "NYT"
     ],
-    "reporting": 98,
+    "reporting": 99,
     "top": [
      {
       "name": "Cait Conley",
@@ -6133,10 +6133,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66708667,
-  "rep": 50141552,
-  "total": 118616223,
-  "share_counted": 98.57,
+  "dem": 66745505,
+  "rep": 50153200,
+  "total": 118665235,
+  "share_counted": 98.62,
   "margin": 14.0
  },
  "senate": {

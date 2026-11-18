@@ -30,10 +30,10 @@
   "not_called": 1
  },
  "national": {
-  "dem": 66708667,
-  "rep": 50141552,
-  "total": 118616223,
-  "share_counted": 98.57,
+  "dem": 66745505,
+  "rep": 50153200,
+  "total": 118665235,
+  "share_counted": 98.62,
   "margin": 14.0
  },
  "control": {
@@ -2325,7 +2325,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 36.32,
-   "lead_votes": 92015,
+   "lead_votes": 92016,
    "reporting": 98,
    "top": [
     {
@@ -2353,7 +2353,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 24.85,
-   "lead_votes": 72528,
+   "lead_votes": 72529,
    "reporting": 98,
    "top": [
     {
@@ -2436,8 +2436,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 15.68,
-   "lead_votes": 39686,
+   "margin": 15.69,
+   "lead_votes": 39695,
    "reporting": 98,
    "top": [
     {
@@ -3886,20 +3886,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 45.18,
-   "lead_votes": 109175,
-   "reporting": 98,
+   "margin": 45.07,
+   "lead_votes": 109881,
+   "reporting": 99,
    "top": [
     {
      "name": "Jonathan Jackson",
      "party": "D",
-     "pct": 72.6,
+     "pct": 72.5,
      "incumbent": true
     },
     {
      "name": "Christian Maxwell",
      "party": "R",
-     "pct": 27.4,
+     "pct": 27.5,
      "incumbent": false
     }
    ]
@@ -3914,20 +3914,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 46.15,
-   "lead_votes": 103310,
-   "reporting": 97,
+   "margin": 46.31,
+   "lead_votes": 104174,
+   "reporting": 98,
    "top": [
     {
      "name": "Donna Miller",
      "party": "D",
-     "pct": 73.1,
+     "pct": 73.2,
      "incumbent": false
     },
     {
      "name": "Michael Noack",
      "party": "R",
-     "pct": 26.9,
+     "pct": 26.8,
      "incumbent": false
     }
    ]
@@ -3943,7 +3943,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 55.12,
-   "lead_votes": 112845,
+   "lead_votes": 112955,
    "reporting": 99,
    "top": [
     {
@@ -3970,14 +3970,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 55.5,
-   "lead_votes": 90589,
+   "margin": 55.6,
+   "lead_votes": 91337,
    "reporting": 99,
    "top": [
     {
      "name": "Patty Garcia",
      "party": "D",
-     "pct": 71.3,
+     "pct": 71.4,
      "incumbent": false
     },
     {
@@ -3998,8 +3998,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 54.6,
-   "lead_votes": 152780,
+   "margin": 54.61,
+   "lead_votes": 153189,
    "reporting": 99,
    "top": [
     {
@@ -4026,8 +4026,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.91,
-   "lead_votes": 69482,
+   "margin": 26.0,
+   "lead_votes": 69944,
    "reporting": 99,
    "top": [
     {
@@ -4054,20 +4054,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 78.7,
-   "lead_votes": 164974,
+   "margin": 78.71,
+   "lead_votes": 165466,
    "reporting": 99,
    "top": [
     {
      "name": "La Shawn Ford",
      "party": "D",
-     "pct": 89.3,
+     "pct": 89.4,
      "incumbent": false
     },
     {
      "name": "Chad Koppie",
      "party": "R",
-     "pct": 10.7,
+     "pct": 10.6,
      "incumbent": false
     }
    ]
@@ -4082,9 +4082,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 28.74,
-   "lead_votes": 62297,
-   "reporting": 98,
+   "margin": 28.86,
+   "lead_votes": 62736,
+   "reporting": 99,
    "top": [
     {
      "name": "Melissa Bean",
@@ -4110,9 +4110,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 53.87,
-   "lead_votes": 142002,
-   "reporting": 98,
+   "margin": 53.89,
+   "lead_votes": 143194,
+   "reporting": 99,
    "top": [
     {
      "name": "Daniel Biss",
@@ -4138,20 +4138,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 40.67,
-   "lead_votes": 97650,
-   "reporting": 98,
+   "margin": 40.91,
+   "lead_votes": 99489,
+   "reporting": 99,
    "top": [
     {
      "name": "Brad Schneider",
      "party": "D",
-     "pct": 70.3,
+     "pct": 70.5,
      "incumbent": true
     },
     {
      "name": "Carl Lambrecht",
      "party": "R",
-     "pct": 29.7,
+     "pct": 29.5,
      "incumbent": false
     }
    ]
@@ -4166,20 +4166,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 28.72,
-   "lead_votes": 76928,
-   "reporting": 97,
+   "margin": 28.95,
+   "lead_votes": 78267,
+   "reporting": 98,
    "top": [
     {
      "name": "Bill Foster",
      "party": "D",
-     "pct": 64.4,
+     "pct": 64.5,
      "incumbent": true
     },
     {
      "name": "Jeff Walter",
      "party": "R",
-     "pct": 35.6,
+     "pct": 35.5,
      "incumbent": false
     }
    ]
@@ -4194,8 +4194,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -39.02,
-   "lead_votes": 110001,
+   "margin": -39.01,
+   "lead_votes": 110004,
    "reporting": 99,
    "top": [
     {
@@ -4222,9 +4222,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.39,
-   "lead_votes": 63993,
-   "reporting": 98,
+   "margin": 25.42,
+   "lead_votes": 64149,
+   "reporting": 99,
    "top": [
     {
      "name": "Nikki Budzinski",
@@ -4250,20 +4250,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.19,
-   "lead_votes": 61811,
-   "reporting": 97,
+   "margin": 25.72,
+   "lead_votes": 64100,
+   "reporting": 99,
    "top": [
     {
      "name": "Lauren Underwood",
      "party": "D",
-     "pct": 62.6,
+     "pct": 62.9,
      "incumbent": true
     },
     {
      "name": "Jim Marter",
      "party": "R",
-     "pct": 37.4,
+     "pct": 37.1,
      "incumbent": false
     }
    ]
@@ -4278,8 +4278,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -33.79,
-   "lead_votes": 97351,
+   "margin": -33.78,
+   "lead_votes": 97349,
    "reporting": 99,
    "top": [
     {
@@ -4306,20 +4306,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -17.55,
-   "lead_votes": 51761,
+   "margin": -17.47,
+   "lead_votes": 51637,
    "reporting": 97,
    "top": [
     {
      "name": "Darin LaHood",
      "party": "R",
-     "pct": 58.8,
+     "pct": 58.7,
      "incumbent": true
     },
     {
      "name": "Paul Nolley",
      "party": "D",
-     "pct": 41.2,
+     "pct": 41.3,
      "incumbent": false
     }
    ]
@@ -4334,8 +4334,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 20.33,
-   "lead_votes": 48000,
+   "margin": 20.34,
+   "lead_votes": 48059,
    "reporting": 95,
    "top": [
     {
@@ -4614,8 +4614,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -21.12,
-   "lead_votes": 54151,
+   "margin": -21.13,
+   "lead_votes": 54177,
    "reporting": 99,
    "top": [
     {
@@ -4642,8 +4642,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -5.84,
-   "lead_votes": 14517,
+   "margin": -5.85,
+   "lead_votes": 14550,
    "reporting": 99,
    "top": [
     {
@@ -5318,20 +5318,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 30.29,
-   "lead_votes": 88172,
+   "margin": 30.34,
+   "lead_votes": 88387,
    "reporting": 99,
    "top": [
     {
      "name": "Johnny  Olszewski",
      "party": "D",
-     "pct": 65.1,
+     "pct": 65.2,
      "incumbent": true
     },
     {
      "name": "Dave Wallace",
      "party": "R",
-     "pct": 34.9,
+     "pct": 34.8,
      "incumbent": false
     }
    ]
@@ -5374,9 +5374,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 83.39,
-   "lead_votes": 165447,
-   "reporting": 91,
+   "margin": 83.41,
+   "lead_votes": 165982,
+   "reporting": 94,
    "top": [
     {
      "name": "Glenn Ivey",
@@ -5402,20 +5402,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 42.09,
-   "lead_votes": 134399,
-   "reporting": 97,
+   "margin": 42.15,
+   "lead_votes": 134743,
+   "reporting": 99,
    "top": [
     {
      "name": "Adrian Boafo",
      "party": "D",
-     "pct": 71.0,
+     "pct": 71.1,
      "incumbent": false
     },
     {
      "name": "Chris Chaffee",
      "party": "R",
-     "pct": 29.0,
+     "pct": 28.9,
      "incumbent": false
     }
    ]
@@ -5430,20 +5430,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 20.92,
-   "lead_votes": 57063,
+   "margin": 21.24,
+   "lead_votes": 58297,
    "reporting": 97,
    "top": [
     {
      "name": "April McClain Delaney",
      "party": "D",
-     "pct": 59.1,
+     "pct": 59.2,
      "incumbent": true
     },
     {
      "name": "Robin Ficker",
      "party": "R",
-     "pct": 38.1,
+     "pct": 38.0,
      "incumbent": false
     }
    ]
@@ -5458,20 +5458,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 70.53,
-   "lead_votes": 150779,
-   "reporting": 94,
+   "margin": 70.91,
+   "lead_votes": 155101,
+   "reporting": 99,
    "top": [
     {
      "name": "Kweisi Mfume",
      "party": "D",
-     "pct": 85.3,
+     "pct": 85.5,
      "incumbent": true
     },
     {
      "name": "Scott Collier",
      "party": "R",
-     "pct": 14.7,
+     "pct": 14.5,
      "incumbent": false
     }
    ]
@@ -5486,20 +5486,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 68.62,
-   "lead_votes": 188888,
-   "reporting": 86,
+   "margin": 68.89,
+   "lead_votes": 194065,
+   "reporting": 88,
    "top": [
     {
      "name": "Jamie Raskin",
      "party": "D",
-     "pct": 83.5,
+     "pct": 83.6,
      "incumbent": true
     },
     {
      "name": "Cheryl Riley",
      "party": "R",
-     "pct": 14.8,
+     "pct": 14.7,
      "incumbent": false
     }
    ]
@@ -6598,7 +6598,8 @@
    "winner": "D",
    "winner_name": "Raymond Smith",
    "called_by": [
-    "CNN"
+    "CNN",
+    "NYT"
    ],
    "leader": null,
    "leader_name": null,
@@ -8052,9 +8053,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 51.82,
-   "lead_votes": 118956,
-   "reporting": 97,
+   "margin": 51.83,
+   "lead_votes": 120352,
+   "reporting": 98,
    "top": [
     {
      "name": "George Latimer",
@@ -8080,9 +8081,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 6.06,
-   "lead_votes": 19153,
-   "reporting": 98,
+   "margin": 6.15,
+   "lead_votes": 19498,
+   "reporting": 99,
    "top": [
     {
      "name": "Cait Conley",
@@ -8136,8 +8137,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 14.92,
-   "lead_votes": 43985,
+   "margin": 14.93,
+   "lead_votes": 43997,
    "reporting": 98,
    "top": [
     {
@@ -8164,9 +8165,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 27.43,
-   "lead_votes": 79103,
-   "reporting": 97,
+   "margin": 27.51,
+   "lead_votes": 79608,
+   "reporting": 98,
    "top": [
     {
      "name": "Paul Tonko",
@@ -8192,8 +8193,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -1.69,
-   "lead_votes": 4710,
+   "margin": -1.62,
+   "lead_votes": 4515,
    "reporting": 97,
    "top": [
     {
@@ -8205,7 +8206,7 @@
     {
      "name": "Blake Gendebien",
      "party": "D",
-     "pct": 49.0,
+     "pct": 49.1,
      "incumbent": false
     }
    ]
@@ -8220,8 +8221,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 17.02,
-   "lead_votes": 47116,
+   "margin": 17.03,
+   "lead_votes": 47206,
    "reporting": 99,
    "top": [
     {
@@ -8248,14 +8249,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.35,
-   "lead_votes": 61740,
-   "reporting": 98,
+   "margin": -20.26,
+   "lead_votes": 61655,
+   "reporting": 99,
    "top": [
     {
      "name": "Nick Langworthy",
      "party": "R",
-     "pct": 60.2,
+     "pct": 60.1,
      "incumbent": true
     },
     {
@@ -8277,7 +8278,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -20.74,
-   "lead_votes": 59025,
+   "lead_votes": 59088,
    "reporting": 96,
    "top": [
     {
@@ -8332,8 +8333,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 32.02,
-   "lead_votes": 80176,
+   "margin": 32.05,
+   "lead_votes": 80284,
    "reporting": 99,
    "top": [
     {
@@ -8360,8 +8361,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 11.44,
-   "lead_votes": 37110,
+   "margin": 11.42,
+   "lead_votes": 37062,
    "reporting": 98,
    "top": [
     {
@@ -8373,7 +8374,7 @@
     {
      "name": "Eric Conroy",
      "party": "R",
-     "pct": 42.9,
+     "pct": 43.0,
      "incumbent": false
     }
    ]
@@ -8389,7 +8390,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -28.5,
-   "lead_votes": 78033,
+   "lead_votes": 78086,
    "reporting": 98,
    "top": [
     {
@@ -8444,14 +8445,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -33.19,
-   "lead_votes": 102292,
+   "margin": -33.14,
+   "lead_votes": 102295,
    "reporting": 99,
    "top": [
     {
      "name": "Jim Jordan",
      "party": "R",
-     "pct": 64.5,
+     "pct": 64.4,
      "incumbent": true
     },
     {
@@ -8586,7 +8587,7 @@
    "leader_name": null,
    "margin": 5.44,
    "lead_votes": 16491,
-   "reporting": 98,
+   "reporting": 99,
    "top": [
     {
      "name": "Marcy Kaptur",
@@ -8668,8 +8669,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -18.67,
-   "lead_votes": 60583,
+   "margin": -18.69,
+   "lead_votes": 60777,
    "reporting": 98,
    "top": [
     {
@@ -8752,8 +8753,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 6.63,
-   "lead_votes": 19062,
+   "margin": 6.59,
+   "lead_votes": 18981,
    "reporting": 97,
    "top": [
     {
@@ -9117,7 +9118,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 61.74,
-   "lead_votes": 115095,
+   "lead_votes": 115121,
    "reporting": 99,
    "top": [
     {
@@ -9145,7 +9146,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 240769,
+   "lead_votes": 240809,
    "reporting": 99,
    "top": [
     {
@@ -9172,8 +9173,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 34.51,
-   "lead_votes": 120112,
+   "margin": 34.52,
+   "lead_votes": 120201,
    "reporting": 99,
    "top": [
     {
@@ -9201,7 +9202,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 44.44,
-   "lead_votes": 132907,
+   "lead_votes": 132910,
    "reporting": 99,
    "top": [
     {
@@ -9256,20 +9257,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 12.37,
-   "lead_votes": 36437,
+   "margin": 12.58,
+   "lead_votes": 37240,
    "reporting": 99,
    "top": [
     {
      "name": "Bob Brooks",
      "party": "D",
-     "pct": 56.2,
+     "pct": 56.3,
      "incumbent": false
     },
     {
      "name": "Ryan Mackenzie",
      "party": "R",
-     "pct": 43.8,
+     "pct": 43.7,
      "incumbent": true
     }
    ]
@@ -9396,8 +9397,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 31.35,
-   "lead_votes": 94020,
+   "margin": 31.37,
+   "lead_votes": 94135,
    "reporting": 99,
    "top": [
     {
@@ -9453,7 +9454,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -14.89,
-   "lead_votes": 41333,
+   "lead_votes": 41336,
    "reporting": 99,
    "top": [
     {
@@ -9536,8 +9537,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.91,
-   "lead_votes": 86309,
+   "margin": 25.93,
+   "lead_votes": 86418,
    "reporting": 99,
    "top": [
     {
@@ -11187,8 +11188,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -7.18,
-   "lead_votes": 18470,
+   "margin": -7.11,
+   "lead_votes": 18339,
    "reporting": 99,
    "top": [
     {
@@ -11719,20 +11720,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -4.4,
-   "lead_votes": 14253,
-   "reporting": 97,
+   "margin": -4.8,
+   "lead_votes": 15676,
+   "reporting": 98,
    "top": [
     {
      "name": "Michael Baumgartner",
      "party": "R",
-     "pct": 52.0,
+     "pct": 52.2,
      "incumbent": true
     },
     {
      "name": "Carmela Conroy",
      "party": "D",
-     "pct": 47.6,
+     "pct": 47.4,
      "incumbent": false
     }
    ]
@@ -12438,20 +12439,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.59,
-   "lead_votes": 1074788,
-   "reporting": 98,
+   "margin": 25.73,
+   "lead_votes": 1085859,
+   "reporting": 99,
    "top": [
     {
      "name": "Juliana Stratton",
      "party": "D",
-     "pct": 62.0,
+     "pct": 62.1,
      "incumbent": false
     },
     {
      "name": "Don Tracy",
      "party": "R",
-     "pct": 36.4,
+     "pct": 36.3,
      "incumbent": false
     }
    ]
@@ -12466,8 +12467,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 5.4,
-   "lead_votes": 60255,
+   "margin": 5.39,
+   "lead_votes": 60213,
    "reporting": 99,
    "top": [
     {
@@ -12858,8 +12859,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 4.83,
-   "lead_votes": 222477,
+   "margin": 4.82,
+   "lead_votes": 222199,
    "reporting": 98,
    "top": [
     {
@@ -13167,5 +13168,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-17T18:19+00:00"
+ "updated": "2026-11-18T02:47+00:00"
 }
