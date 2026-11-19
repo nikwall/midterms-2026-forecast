@@ -30,10 +30,10 @@
   "not_called": 0
  },
  "national": {
-  "dem": 66782873,
-  "rep": 50166415,
-  "total": 118718931,
-  "share_counted": 98.8,
+  "dem": 66784773,
+  "rep": 50168376,
+  "total": 118722618,
+  "share_counted": 98.81,
   "margin": 14.0
  },
  "control": {
@@ -56,8 +56,8 @@
    "called_by": [],
    "leader": "R",
    "leader_name": "Nick Begich",
-   "margin": -5.77,
-   "lead_votes": 16526,
+   "margin": -5.76,
+   "lead_votes": 16511,
    "reporting": 99,
    "top": [
     {
@@ -3914,8 +3914,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 46.31,
-   "lead_votes": 104174,
+   "margin": 46.3,
+   "lead_votes": 104177,
    "reporting": 98,
    "top": [
     {
@@ -4278,8 +4278,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -33.76,
-   "lead_votes": 97338,
+   "margin": -33.74,
+   "lead_votes": 97346,
    "reporting": 99,
    "top": [
     {
@@ -6933,8 +6933,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.74,
-   "lead_votes": 48585,
+   "margin": -20.69,
+   "lead_votes": 48548,
    "reporting": 99,
    "top": [
     {
@@ -7242,7 +7242,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 39.31,
-   "lead_votes": 85842,
+   "lead_votes": 85843,
    "reporting": 99,
    "top": [
     {
@@ -8054,7 +8054,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 51.83,
-   "lead_votes": 120352,
+   "lead_votes": 120351,
    "reporting": 98,
    "top": [
     {
@@ -8222,7 +8222,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 17.03,
-   "lead_votes": 47206,
+   "lead_votes": 47207,
    "reporting": 99,
    "top": [
     {
@@ -8249,8 +8249,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.26,
-   "lead_votes": 61655,
+   "margin": -20.31,
+   "lead_votes": 62018,
    "reporting": 99,
    "top": [
     {
@@ -8333,14 +8333,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 32.05,
-   "lead_votes": 80284,
+   "margin": 32.11,
+   "lead_votes": 80609,
    "reporting": 99,
    "top": [
     {
      "name": "Tim Kennedy",
      "party": "D",
-     "pct": 65.9,
+     "pct": 66.0,
      "incumbent": true
     },
     {
@@ -8501,8 +8501,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.81,
-   "lead_votes": 56435,
+   "margin": -20.82,
+   "lead_votes": 56533,
    "reporting": 98,
    "top": [
     {
@@ -8613,14 +8613,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 1.64,
-   "lead_votes": 4938,
+   "margin": 1.67,
+   "lead_votes": 5056,
    "reporting": 98,
    "top": [
     {
      "name": "Kristina Knickerbocker",
      "party": "D",
-     "pct": 49.3,
+     "pct": 49.4,
      "incumbent": false
     },
     {
@@ -12190,8 +12190,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 4.33,
-   "lead_votes": 12458,
+   "margin": 4.34,
+   "lead_votes": 12521,
    "reporting": 99,
    "top": [
     {
@@ -12443,7 +12443,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 25.73,
-   "lead_votes": 1085902,
+   "lead_votes": 1085897,
    "reporting": 99,
    "top": [
     {
@@ -12807,7 +12807,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 27.91,
-   "lead_votes": 834644,
+   "lead_votes": 834645,
    "reporting": 99,
    "top": [
     {
@@ -12863,7 +12863,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 4.82,
-   "lead_votes": 222086,
+   "lead_votes": 222160,
    "reporting": 98,
    "top": [
     {
@@ -13171,5 +13171,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-18T20:13+00:00"
+ "updated": "2026-11-19T02:24+00:00"
 }

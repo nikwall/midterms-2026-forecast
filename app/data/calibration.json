@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T20:13+00:00",
+ "updated": "2026-11-19T02:24+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -663,14 +663,14 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.64,
-     "lead_votes": 4938,
+     "margin": 1.67,
+     "lead_votes": 5056,
      "reporting": 98,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
@@ -1647,14 +1647,14 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.64,
-     "lead_votes": 4938,
+     "margin": 1.67,
+     "lead_votes": 5056,
      "reporting": 98,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
@@ -2439,8 +2439,8 @@
      "p": 0.677,
      "won": 1,
      "status": "called",
-     "margin": 4.33,
-     "lead_votes": 12458,
+     "margin": 4.34,
+     "lead_votes": 12521,
      "reporting": 99,
      "top": [
       {
@@ -2532,7 +2532,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.82,
-     "lead_votes": 222086,
+     "lead_votes": 222160,
      "reporting": 98,
      "top": [
       {
@@ -3562,14 +3562,14 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.64,
-     "lead_votes": 4938,
+     "margin": 1.67,
+     "lead_votes": 5056,
      "reporting": 98,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
@@ -4544,14 +4544,14 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.64,
-     "lead_votes": 4938,
+     "margin": 1.67,
+     "lead_votes": 5056,
      "reporting": 98,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.3,
+       "pct": 49.4,
        "incumbent": false
       },
       {
@@ -5359,8 +5359,8 @@
      "p": 0.677,
      "won": 1,
      "status": "called",
-     "margin": 4.33,
-     "lead_votes": 12458,
+     "margin": 4.34,
+     "lead_votes": 12521,
      "reporting": 99,
      "top": [
       {
@@ -5452,7 +5452,7 @@
      "won": 1,
      "status": "called",
      "margin": 4.82,
-     "lead_votes": 222086,
+     "lead_votes": 222160,
      "reporting": 98,
      "top": [
       {
@@ -6153,10 +6153,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66782873,
-  "rep": 50166415,
-  "total": 118718931,
-  "share_counted": 98.8,
+  "dem": 66784773,
+  "rep": 50168376,
+  "total": 118722618,
+  "share_counted": 98.81,
   "margin": 14.0
  },
  "senate": {
