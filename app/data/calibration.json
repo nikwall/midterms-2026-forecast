@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T11:19+00:00",
+ "updated": "2026-11-19T20:16+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -416,7 +416,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 13,
-     "miss": 4.1,
+     "miss": 4.0,
      "se": 0.8
     },
     {
@@ -618,7 +618,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.3,
-     "lead_votes": 9112,
+     "lead_votes": 9111,
      "reporting": 99,
      "top": [
       {
@@ -1423,7 +1423,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 4.4,
+     "miss": 4.3,
      "se": 1.0
     },
     {
@@ -1602,7 +1602,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.3,
-     "lead_votes": 9112,
+     "lead_votes": 9111,
      "reporting": 99,
      "top": [
       {
@@ -2531,8 +2531,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.82,
-     "lead_votes": 222160,
+     "margin": 4.83,
+     "lead_votes": 223006,
      "reporting": 98,
      "top": [
       {
@@ -3338,7 +3338,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 13,
-     "miss": 4.1,
+     "miss": 4.0,
      "se": 0.8
     },
     {
@@ -3517,7 +3517,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.3,
-     "lead_votes": 9112,
+     "lead_votes": 9111,
      "reporting": 99,
      "top": [
       {
@@ -4343,7 +4343,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 4.4,
+     "miss": 4.3,
      "se": 1.0
     },
     {
@@ -4499,7 +4499,7 @@
      "won": 1,
      "status": "called",
      "margin": 3.3,
-     "lead_votes": 9112,
+     "lead_votes": 9111,
      "reporting": 99,
      "top": [
       {
@@ -4636,14 +4636,14 @@
      "p": 0.224,
      "won": 1,
      "status": "called",
-     "margin": 6.58,
-     "lead_votes": 18955,
-     "reporting": 97,
+     "margin": 6.49,
+     "lead_votes": 18750,
+     "reporting": 98,
      "top": [
       {
        "name": "Don Leonard",
        "party": "D",
-       "pct": 51.9,
+       "pct": 51.8,
        "incumbent": false
       },
       {
@@ -5451,8 +5451,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.82,
-     "lead_votes": 222160,
+     "margin": 4.83,
+     "lead_votes": 223006,
      "reporting": 98,
      "top": [
       {
@@ -6153,10 +6153,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66784773,
-  "rep": 50168376,
-  "total": 118722618,
-  "share_counted": 98.81,
+  "dem": 66809006,
+  "rep": 50180284,
+  "total": 118756370,
+  "share_counted": 98.84,
   "margin": 14.0
  },
  "senate": {
