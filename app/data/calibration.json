@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T02:24+00:00",
+ "updated": "2026-11-19T11:19+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -2927,14 +2927,14 @@
    }
   },
   "all|called": {
-   "n": 464,
+   "n": 465,
    "actual": 280,
-   "expected": 258.7,
-   "share_sims_below": 0.8515,
+   "expected": 258.8,
+   "share_sims_below": 0.8488,
    "brier": 0.0375,
-   "n_non_safe": 85,
-   "brier_non_safe": 0.1819,
-   "favourite_won": 0.9461,
+   "n_non_safe": 86,
+   "brier_non_safe": 0.1801,
+   "favourite_won": 0.9462,
    "wrong": [
     "S-IA",
     "S-SC",
@@ -2975,11 +2975,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 209,
-     "chance": 0.947,
-     "won": 0.8804,
-     "expected": 197.9,
-     "actual": 184
+     "n": 210,
+     "chance": 0.9465,
+     "won": 0.881,
+     "expected": 198.8,
+     "actual": 185
     },
     {
      "scope": "non-safe",
@@ -2993,11 +2993,11 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 49,
-     "chance": 0.8033,
-     "won": 0.5306,
-     "expected": 39.4,
-     "actual": 26
+     "n": 50,
+     "chance": 0.804,
+     "won": 0.54,
+     "expected": 40.2,
+     "actual": 27
     }
    ],
    "regions": [
@@ -3240,12 +3240,12 @@
     },
     {
      "region": "West",
-     "n": 110,
-     "expected": 85.1,
+     "n": 111,
+     "expected": 85.3,
      "actual": 88,
      "brier": 0.0219,
-     "n_non_safe": 13,
-     "expected_non_safe": 7.2,
+     "n_non_safe": 14,
+     "expected_non_safe": 7.4,
      "actual_non_safe": 10,
      "upsets_d": 3,
      "upsets_r": 0,
@@ -3267,13 +3267,13 @@
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 6,
-       "mean_p": 0.2055,
+       "n": 7,
+       "mean_p": 0.1991,
        "wins": 3,
-       "freq": 0.5,
+       "freq": 0.4286,
        "band": [
         0.0,
-        0.8333
+        0.8571
        ]
       },
       {
@@ -3358,9 +3358,9 @@
     {
      "division": "Pacific",
      "region": "West",
-     "n": 2,
-     "miss": 2.5,
-     "se": 0.1
+     "n": 3,
+     "miss": 1.3,
+     "se": 1.3
     },
     {
      "division": "New England",
@@ -3370,8 +3370,8 @@
      "se": 1.3
     }
    ],
-   "mean_miss": 4.6,
-   "n_miss": 85,
+   "mean_miss": 4.5,
+   "n_miss": 86,
    "surprises": [
     {
      "race_id": "H-TN-04",
@@ -3935,14 +3935,14 @@
    }
   },
   "house|called": {
-   "n": 429,
+   "n": 430,
    "actual": 258,
-   "expected": 239.8,
-   "share_sims_below": 0.8497,
+   "expected": 240.0,
+   "share_sims_below": 0.8462,
    "brier": 0.0358,
-   "n_non_safe": 73,
-   "brier_non_safe": 0.1841,
-   "favourite_won": 0.9487,
+   "n_non_safe": 74,
+   "brier_non_safe": 0.1819,
+   "favourite_won": 0.9488,
    "wrong": [
     "H-WI-01",
     "H-MI-04",
@@ -3980,11 +3980,11 @@
     {
      "scope": "all",
      "party": "R",
-     "n": 193,
-     "chance": 0.9496,
-     "won": 0.886,
-     "expected": 183.3,
-     "actual": 171
+     "n": 194,
+     "chance": 0.9491,
+     "won": 0.8866,
+     "expected": 184.1,
+     "actual": 172
     },
     {
      "scope": "non-safe",
@@ -3998,11 +3998,11 @@
     {
      "scope": "non-safe",
      "party": "R",
-     "n": 44,
-     "chance": 0.8076,
-     "won": 0.5455,
-     "expected": 35.5,
-     "actual": 24
+     "n": 45,
+     "chance": 0.8083,
+     "won": 0.5556,
+     "expected": 36.4,
+     "actual": 25
     }
    ],
    "regions": [
@@ -4245,12 +4245,12 @@
     },
     {
      "region": "West",
-     "n": 103,
-     "expected": 81.4,
+     "n": 104,
+     "expected": 81.5,
      "actual": 84,
      "brier": 0.0223,
-     "n_non_safe": 12,
-     "expected_non_safe": 6.5,
+     "n_non_safe": 13,
+     "expected_non_safe": 6.7,
      "actual_non_safe": 9,
      "upsets_d": 3,
      "upsets_r": 0,
@@ -4272,13 +4272,13 @@
        "bracket": "5–35%",
        "lo": 0.05,
        "hi": 0.35,
-       "n": 6,
-       "mean_p": 0.2055,
+       "n": 7,
+       "mean_p": 0.1991,
        "wins": 3,
-       "freq": 0.5,
+       "freq": 0.4286,
        "band": [
         0.0,
-        0.8333
+        0.8571
        ]
       },
       {
@@ -4363,9 +4363,9 @@
     {
      "division": "Pacific",
      "region": "West",
-     "n": 1,
-     "miss": 2.4,
-     "se": null
+     "n": 2,
+     "miss": 0.6,
+     "se": 1.8
     },
     {
      "division": "New England",
@@ -4375,8 +4375,8 @@
      "se": null
     }
    ],
-   "mean_miss": 4.7,
-   "n_miss": 73,
+   "mean_miss": 4.6,
+   "n_miss": 74,
    "surprises": [
     {
      "race_id": "H-TN-04",

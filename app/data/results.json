@@ -2,17 +2,17 @@
  "house": {
   "called": {
    "D": 258,
-   "R": 171,
+   "R": 172,
    "O": 0
   },
   "leading": {
    "D": 2,
-   "R": 2,
+   "R": 1,
    "O": 0
   },
   "runoff": 2,
   "disputed": 0,
-  "not_called": 6
+  "not_called": 5
  },
  "senate": {
   "called": {
@@ -50,12 +50,15 @@
  },
  "races": {
   "H-AK-AL": {
-   "status": "counting",
-   "winner": null,
-   "winner_name": null,
-   "called_by": [],
-   "leader": "R",
-   "leader_name": "Nick Begich",
+   "status": "called",
+   "winner": "R",
+   "winner_name": "Nick Begich",
+   "called_by": [
+    "CNN",
+    "NYT"
+   ],
+   "leader": null,
+   "leader_name": null,
    "margin": -5.76,
    "lead_votes": 16511,
    "reporting": 99,
@@ -63,7 +66,7 @@
     {
      "name": "Nick Begich",
      "party": "R",
-     "pct": 47.5,
+     "pct": 47.6,
      "incumbent": true
     },
     {
@@ -13171,5 +13174,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-19T02:24+00:00"
+ "updated": "2026-11-19T11:19+00:00"
 }
