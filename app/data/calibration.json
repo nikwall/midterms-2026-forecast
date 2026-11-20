@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T02:08+00:00",
+ "updated": "2026-11-20T19:48+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -416,8 +416,8 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 13,
-     "miss": 4.0,
-     "se": 0.8
+     "miss": 4.1,
+     "se": 0.9
     },
     {
      "division": "South Atlantic",
@@ -1423,7 +1423,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 4.3,
+     "miss": 4.4,
      "se": 1.0
     },
     {
@@ -2348,18 +2348,18 @@
      "se": null
     },
     {
+     "division": "East North Central",
+     "region": "Midwest",
+     "n": 2,
+     "miss": 2.5,
+     "se": 0.3
+    },
+    {
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
      "miss": 2.4,
      "se": 1.9
-    },
-    {
-     "division": "East North Central",
-     "region": "Midwest",
-     "n": 2,
-     "miss": 2.4,
-     "se": 0.4
     }
    ],
    "mean_miss": 3.6,
@@ -2531,20 +2531,20 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.82,
-     "lead_votes": 222864,
-     "reporting": 98,
+     "margin": 5.02,
+     "lead_votes": 232611,
+     "reporting": 99,
      "top": [
       {
        "name": "Sherrod Brown",
        "party": "D",
-       "pct": 50.0,
+       "pct": 50.1,
        "incumbent": false
       },
       {
        "name": "Jon Husted",
        "party": "R",
-       "pct": 45.2,
+       "pct": 45.1,
        "incumbent": true
       }
      ]
@@ -3338,8 +3338,8 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 13,
-     "miss": 4.0,
-     "se": 0.8
+     "miss": 4.1,
+     "se": 0.9
     },
     {
      "division": "South Atlantic",
@@ -4343,7 +4343,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 4.3,
+     "miss": 4.4,
      "se": 1.0
     },
     {
@@ -4636,20 +4636,20 @@
      "p": 0.224,
      "won": 1,
      "status": "called",
-     "margin": 6.49,
-     "lead_votes": 18750,
-     "reporting": 98,
+     "margin": 7.3,
+     "lead_votes": 21426,
+     "reporting": 99,
      "top": [
       {
        "name": "Don Leonard",
        "party": "D",
-       "pct": 51.8,
+       "pct": 52.2,
        "incumbent": false
       },
       {
        "name": "Mike Carey",
        "party": "R",
-       "pct": 45.3,
+       "pct": 44.9,
        "incumbent": true
       }
      ]
@@ -5268,18 +5268,18 @@
      "se": null
     },
     {
+     "division": "East North Central",
+     "region": "Midwest",
+     "n": 2,
+     "miss": 2.5,
+     "se": 0.3
+    },
+    {
      "division": "West North Central",
      "region": "Midwest",
      "n": 4,
      "miss": 2.4,
      "se": 1.9
-    },
-    {
-     "division": "East North Central",
-     "region": "Midwest",
-     "n": 2,
-     "miss": 2.4,
-     "se": 0.4
     }
    ],
    "mean_miss": 3.6,
@@ -5451,20 +5451,20 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.82,
-     "lead_votes": 222864,
-     "reporting": 98,
+     "margin": 5.02,
+     "lead_votes": 232611,
+     "reporting": 99,
      "top": [
       {
        "name": "Sherrod Brown",
        "party": "D",
-       "pct": 50.0,
+       "pct": 50.1,
        "incumbent": false
       },
       {
        "name": "Jon Husted",
        "party": "R",
-       "pct": 45.2,
+       "pct": 45.1,
        "incumbent": true
       }
      ]
@@ -6153,10 +6153,10 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66813504,
-  "rep": 50182438,
-  "total": 118763061,
-  "share_counted": 98.84,
+  "dem": 66851758,
+  "rep": 50194628,
+  "total": 118814049,
+  "share_counted": 98.9,
   "margin": 14.0
  },
  "senate": {
