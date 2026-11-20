@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T20:16+00:00",
+ "updated": "2026-11-20T02:08+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -2531,8 +2531,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.83,
-     "lead_votes": 223006,
+     "margin": 4.82,
+     "lead_votes": 222864,
      "reporting": 98,
      "top": [
       {
@@ -5451,8 +5451,8 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 4.83,
-     "lead_votes": 223006,
+     "margin": 4.82,
+     "lead_votes": 222864,
      "reporting": 98,
      "top": [
       {
@@ -6153,9 +6153,9 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66809006,
-  "rep": 50180284,
-  "total": 118756370,
+  "dem": 66813504,
+  "rep": 50182438,
+  "total": 118763061,
   "share_counted": 98.84,
   "margin": 14.0
  },

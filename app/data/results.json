@@ -30,9 +30,9 @@
   "not_called": 0
  },
  "national": {
-  "dem": 66809006,
-  "rep": 50180284,
-  "total": 118756370,
+  "dem": 66813504,
+  "rep": 50182438,
+  "total": 118763061,
   "share_counted": 98.84,
   "margin": 14.0
  },
@@ -4170,7 +4170,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 28.95,
-   "lead_votes": 78267,
+   "lead_votes": 78284,
    "reporting": 99,
    "top": [
     {
@@ -4309,8 +4309,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -17.46,
-   "lead_votes": 51642,
+   "margin": -17.45,
+   "lead_votes": 51609,
    "reporting": 97,
    "top": [
     {
@@ -8168,20 +8168,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 27.51,
-   "lead_votes": 79608,
+   "margin": 27.66,
+   "lead_votes": 80340,
    "reporting": 98,
    "top": [
     {
      "name": "Paul Tonko",
      "party": "D",
-     "pct": 63.7,
+     "pct": 63.8,
      "incumbent": true
     },
     {
      "name": "Ralph Ambrosio",
      "party": "R",
-     "pct": 36.2,
+     "pct": 36.1,
      "incumbent": false
     }
    ]
@@ -8252,8 +8252,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.31,
-   "lead_votes": 62018,
+   "margin": -20.25,
+   "lead_votes": 62062,
    "reporting": 99,
    "top": [
     {
@@ -8280,8 +8280,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.69,
-   "lead_votes": 59021,
+   "margin": -20.68,
+   "lead_votes": 59026,
    "reporting": 96,
    "top": [
     {
@@ -8336,20 +8336,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 32.11,
-   "lead_votes": 80609,
+   "margin": 32.43,
+   "lead_votes": 82271,
    "reporting": 99,
    "top": [
     {
      "name": "Tim Kennedy",
      "party": "D",
-     "pct": 66.0,
+     "pct": 66.1,
      "incumbent": true
     },
     {
      "name": "Dennis Hannon",
      "party": "R",
-     "pct": 33.9,
+     "pct": 33.7,
      "incumbent": false
     }
    ]
@@ -8392,8 +8392,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -28.21,
-   "lead_votes": 77712,
+   "margin": -28.22,
+   "lead_votes": 77789,
    "reporting": 99,
    "top": [
     {
@@ -8449,7 +8449,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -33.16,
-   "lead_votes": 102465,
+   "lead_votes": 102498,
    "reporting": 99,
    "top": [
     {
@@ -8728,8 +8728,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -9.91,
-   "lead_votes": 32583,
+   "margin": -9.92,
+   "lead_votes": 32663,
    "reporting": 99,
    "top": [
     {
@@ -11219,8 +11219,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -20.52,
-   "lead_votes": 53379,
+   "margin": -20.47,
+   "lead_votes": 53324,
    "reporting": 99,
    "top": [
     {
@@ -11667,8 +11667,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 8.28,
-   "lead_votes": 29316,
+   "margin": 8.29,
+   "lead_votes": 29404,
    "reporting": 99,
    "top": [
     {
@@ -12446,7 +12446,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 25.73,
-   "lead_votes": 1085925,
+   "lead_votes": 1085972,
    "reporting": 99,
    "top": [
     {
@@ -12865,8 +12865,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 4.83,
-   "lead_votes": 223006,
+   "margin": 4.82,
+   "lead_votes": 222864,
    "reporting": 98,
    "top": [
     {
@@ -13174,5 +13174,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-19T20:16+00:00"
+ "updated": "2026-11-20T02:08+00:00"
 }
