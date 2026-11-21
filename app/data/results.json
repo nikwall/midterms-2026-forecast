@@ -30,9 +30,9 @@
   "not_called": 0
  },
  "national": {
-  "dem": 66889980,
+  "dem": 66889972,
   "rep": 50206354,
-  "total": 118818060,
+  "total": 118818053,
   "share_counted": 98.97,
   "margin": 14.0
  },
@@ -6660,7 +6660,7 @@
    "leader": "D",
    "leader_name": "Chuck Hubbard",
    "margin": 0.12,
-   "lead_votes": 331,
+   "lead_votes": 330,
    "reporting": 99,
    "top": [
     {
@@ -13177,5 +13177,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-21T02:02+00:00"
+ "updated": "2026-11-21T18:53+00:00"
 }
