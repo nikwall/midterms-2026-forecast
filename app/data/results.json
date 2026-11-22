@@ -1,18 +1,18 @@
 {
  "house": {
   "called": {
-   "D": 258,
+   "D": 259,
    "R": 173,
    "O": 0
   },
   "leading": {
-   "D": 2,
+   "D": 1,
    "R": 0,
    "O": 0
   },
   "runoff": 2,
   "disputed": 0,
-  "not_called": 4
+  "not_called": 3
  },
  "senate": {
   "called": {
@@ -6653,12 +6653,15 @@
    ]
   },
   "H-NC-05": {
-   "status": "counting",
-   "winner": null,
-   "winner_name": null,
-   "called_by": [],
-   "leader": "D",
-   "leader_name": "Chuck Hubbard",
+   "status": "called",
+   "winner": "D",
+   "winner_name": "Chuck Hubbard",
+   "called_by": [
+    "CNN",
+    "NYT"
+   ],
+   "leader": null,
+   "leader_name": null,
    "margin": 0.12,
    "lead_votes": 331,
    "reporting": 99,
@@ -13177,5 +13180,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-22T01:03+00:00"
+ "updated": "2026-11-22T19:15+00:00"
 }
