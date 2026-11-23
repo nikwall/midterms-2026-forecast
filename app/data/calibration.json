@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T12:00+00:00",
+ "updated": "2026-11-23T23:37+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -457,7 +457,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 272,
+     "lead_votes": 275,
      "reporting": 99,
      "top": [
       {
@@ -503,7 +503,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.12,
-     "lead_votes": 331,
+     "lead_votes": 330,
      "reporting": 99,
      "top": [
       {
@@ -1464,7 +1464,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 272,
+     "lead_votes": 275,
      "reporting": 99,
      "top": [
       {
@@ -1510,7 +1510,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.12,
-     "lead_votes": 331,
+     "lead_votes": 330,
      "reporting": 99,
      "top": [
       {
@@ -3380,7 +3380,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 272,
+     "lead_votes": 275,
      "reporting": 99,
      "top": [
       {
@@ -3426,7 +3426,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.12,
-     "lead_votes": 331,
+     "lead_votes": 330,
      "reporting": 99,
      "top": [
       {
@@ -4386,7 +4386,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.14,
-     "lead_votes": 272,
+     "lead_votes": 275,
      "reporting": 99,
      "top": [
       {
@@ -4432,7 +4432,7 @@
      "won": 1,
      "status": "called",
      "margin": 0.12,
-     "lead_votes": 331,
+     "lead_votes": 330,
      "reporting": 99,
      "top": [
       {
@@ -6155,11 +6155,11 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66889971,
-  "rep": 50206359,
-  "total": 118818055,
-  "share_counted": 98.97,
-  "margin": 14.0
+  "dem": 66923371,
+  "rep": 50216093,
+  "total": 118862342,
+  "share_counted": 99,
+  "margin": 14.1
  },
  "senate": {
   "p_control": 0.7754,
