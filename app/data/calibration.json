@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T23:37+00:00",
+ "updated": "2026-11-24T22:08+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -416,7 +416,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 13,
-     "miss": 4.1,
+     "miss": 4.2,
      "se": 0.9
     },
     {
@@ -456,8 +456,8 @@
      "p": 0.006,
      "won": 1,
      "status": "called",
-     "margin": 0.14,
-     "lead_votes": 275,
+     "margin": 0.18,
+     "lead_votes": 361,
      "reporting": 99,
      "top": [
       {
@@ -663,20 +663,20 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.67,
-     "lead_votes": 5056,
-     "reporting": 98,
+     "margin": 2.19,
+     "lead_votes": 6768,
+     "reporting": 99,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.4,
+       "pct": 49.6,
        "incumbent": false
       },
       {
        "name": "Mike Turner",
        "party": "R",
-       "pct": 47.7,
+       "pct": 47.4,
        "incumbent": true
       }
      ]
@@ -1423,7 +1423,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 4.4,
+     "miss": 4.5,
      "se": 1.0
     },
     {
@@ -1455,7 +1455,7 @@
      "se": null
     }
    ],
-   "mean_miss": 4.6,
+   "mean_miss": 4.7,
    "n_miss": 76,
    "surprises": [
     {
@@ -1463,8 +1463,8 @@
      "p": 0.006,
      "won": 1,
      "status": "called",
-     "margin": 0.14,
-     "lead_votes": 275,
+     "margin": 0.18,
+     "lead_votes": 361,
      "reporting": 99,
      "top": [
       {
@@ -1647,20 +1647,20 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.67,
-     "lead_votes": 5056,
-     "reporting": 98,
+     "margin": 2.19,
+     "lead_votes": 6768,
+     "reporting": 99,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.4,
+       "pct": 49.6,
        "incumbent": false
       },
       {
        "name": "Mike Turner",
        "party": "R",
-       "pct": 47.7,
+       "pct": 47.4,
        "incumbent": true
       }
      ]
@@ -2352,7 +2352,7 @@
      "region": "Midwest",
      "n": 2,
      "miss": 2.5,
-     "se": 0.3
+     "se": 0.2
     },
     {
      "division": "West North Central",
@@ -2439,9 +2439,9 @@
      "p": 0.677,
      "won": 1,
      "status": "called",
-     "margin": 4.34,
-     "lead_votes": 12521,
-     "reporting": 99,
+     "margin": 4.36,
+     "lead_votes": 12561,
+     "reporting": 100,
      "top": [
       {
        "name": "Mary Peltola",
@@ -2531,20 +2531,20 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 5.02,
-     "lead_votes": 232611,
+     "margin": 5.16,
+     "lead_votes": 240076,
      "reporting": 99,
      "top": [
       {
        "name": "Sherrod Brown",
        "party": "D",
-       "pct": 50.1,
+       "pct": 50.2,
        "incumbent": false
       },
       {
        "name": "Jon Husted",
        "party": "R",
-       "pct": 45.1,
+       "pct": 45.0,
        "incumbent": true
       }
      ]
@@ -3339,7 +3339,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 13,
-     "miss": 4.1,
+     "miss": 4.2,
      "se": 0.9
     },
     {
@@ -3371,7 +3371,7 @@
      "se": 1.3
     }
    ],
-   "mean_miss": 4.5,
+   "mean_miss": 4.6,
    "n_miss": 87,
    "surprises": [
     {
@@ -3379,8 +3379,8 @@
      "p": 0.006,
      "won": 1,
      "status": "called",
-     "margin": 0.14,
-     "lead_votes": 275,
+     "margin": 0.18,
+     "lead_votes": 361,
      "reporting": 99,
      "top": [
       {
@@ -3586,20 +3586,20 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.67,
-     "lead_votes": 5056,
-     "reporting": 98,
+     "margin": 2.19,
+     "lead_votes": 6768,
+     "reporting": 99,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.4,
+       "pct": 49.6,
        "incumbent": false
       },
       {
        "name": "Mike Turner",
        "party": "R",
-       "pct": 47.7,
+       "pct": 47.4,
        "incumbent": true
       }
      ]
@@ -4345,7 +4345,7 @@
      "division": "East North Central",
      "region": "Midwest",
      "n": 11,
-     "miss": 4.4,
+     "miss": 4.5,
      "se": 1.0
     },
     {
@@ -4385,8 +4385,8 @@
      "p": 0.006,
      "won": 1,
      "status": "called",
-     "margin": 0.14,
-     "lead_votes": 275,
+     "margin": 0.18,
+     "lead_votes": 361,
      "reporting": 99,
      "top": [
       {
@@ -4569,20 +4569,20 @@
      "p": 0.152,
      "won": 1,
      "status": "called",
-     "margin": 1.67,
-     "lead_votes": 5056,
-     "reporting": 98,
+     "margin": 2.19,
+     "lead_votes": 6768,
+     "reporting": 99,
      "top": [
       {
        "name": "Kristina Knickerbocker",
        "party": "D",
-       "pct": 49.4,
+       "pct": 49.6,
        "incumbent": false
       },
       {
        "name": "Mike Turner",
        "party": "R",
-       "pct": 47.7,
+       "pct": 47.4,
        "incumbent": true
       }
      ]
@@ -5274,7 +5274,7 @@
      "region": "Midwest",
      "n": 2,
      "miss": 2.5,
-     "se": 0.3
+     "se": 0.2
     },
     {
      "division": "West North Central",
@@ -5361,9 +5361,9 @@
      "p": 0.677,
      "won": 1,
      "status": "called",
-     "margin": 4.34,
-     "lead_votes": 12521,
-     "reporting": 99,
+     "margin": 4.36,
+     "lead_votes": 12561,
+     "reporting": 100,
      "top": [
       {
        "name": "Mary Peltola",
@@ -5453,20 +5453,20 @@
      "p": 0.788,
      "won": 1,
      "status": "called",
-     "margin": 5.02,
-     "lead_votes": 232611,
+     "margin": 5.16,
+     "lead_votes": 240076,
      "reporting": 99,
      "top": [
       {
        "name": "Sherrod Brown",
        "party": "D",
-       "pct": 50.1,
+       "pct": 50.2,
        "incumbent": false
       },
       {
        "name": "Jon Husted",
        "party": "R",
-       "pct": 45.1,
+       "pct": 45.0,
        "incumbent": true
       }
      ]
@@ -6155,9 +6155,9 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66923371,
-  "rep": 50216093,
-  "total": 118862342,
+  "dem": 66945431,
+  "rep": 50224419,
+  "total": 118894813,
   "share_counted": 99,
   "margin": 14.1
  },
