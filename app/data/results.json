@@ -30,9 +30,9 @@
   "not_called": 0
  },
  "national": {
-  "dem": 66945431,
-  "rep": 50224419,
-  "total": 118894813,
+  "dem": 66946362,
+  "rep": 50224790,
+  "total": 118895162,
   "share_counted": 99,
   "margin": 14.1
  },
@@ -87,20 +87,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -18.14,
-   "lead_votes": 42085,
-   "reporting": 99,
+   "margin": -17.88,
+   "lead_votes": 41766,
+   "reporting": 100,
    "top": [
     {
      "name": "Jerry Carl",
      "party": "R",
-     "pct": 59.1,
+     "pct": 58.9,
      "incumbent": false
     },
     {
      "name": "Clyde Jones",
      "party": "D",
-     "pct": 40.9,
+     "pct": 41.0,
      "incumbent": false
     }
    ]
@@ -115,20 +115,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 7.51,
-   "lead_votes": 17373,
-   "reporting": 99,
+   "margin": 7.58,
+   "lead_votes": 17613,
+   "reporting": 100,
    "top": [
     {
      "name": "Shomari Figures",
      "party": "D",
-     "pct": 53.8,
+     "pct": 53.7,
      "incumbent": true
     },
     {
      "name": "Rhett Marques",
      "party": "R",
-     "pct": 46.2,
+     "pct": 46.1,
      "incumbent": false
     }
    ]
@@ -143,14 +143,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -27.91,
-   "lead_votes": 61874,
-   "reporting": 99,
+   "margin": -27.81,
+   "lead_votes": 61840,
+   "reporting": 100,
    "top": [
     {
      "name": "Mike Rogers",
      "party": "R",
-     "pct": 64.0,
+     "pct": 63.8,
      "incumbent": true
     },
     {
@@ -171,14 +171,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -49.79,
-   "lead_votes": 106375,
-   "reporting": 99,
+   "margin": -49.7,
+   "lead_votes": 106463,
+   "reporting": 100,
    "top": [
     {
      "name": "Robert Aderholt",
      "party": "R",
-     "pct": 74.9,
+     "pct": 74.8,
      "incumbent": true
     },
     {
@@ -199,14 +199,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -6.49,
-   "lead_votes": 17317,
-   "reporting": 99,
+   "margin": -6.37,
+   "lead_votes": 17075,
+   "reporting": 100,
    "top": [
     {
      "name": "Dale Strong",
      "party": "R",
-     "pct": 53.2,
+     "pct": 53.1,
      "incumbent": true
     },
     {
@@ -227,14 +227,14 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -14.94,
-   "lead_votes": 38964,
-   "reporting": 99,
+   "margin": -14.87,
+   "lead_votes": 38904,
+   "reporting": 100,
    "top": [
     {
      "name": "Gary Palmer",
      "party": "R",
-     "pct": 57.5,
+     "pct": 57.4,
      "incumbent": true
     },
     {
@@ -255,20 +255,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 38.8,
-   "lead_votes": 97738,
-   "reporting": 99,
+   "margin": 39.01,
+   "lead_votes": 97162,
+   "reporting": 100,
    "top": [
     {
      "name": "Terri Sewell",
      "party": "D",
-     "pct": 69.4,
+     "pct": 69.5,
      "incumbent": true
     },
     {
      "name": "Ammie Akin",
      "party": "R",
-     "pct": 30.6,
+     "pct": 30.5,
      "incumbent": false
     }
    ]
@@ -3721,9 +3721,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 9.55,
-   "lead_votes": 33218,
-   "reporting": 99,
+   "margin": 9.58,
+   "lead_votes": 33291,
+   "reporting": 100,
    "top": [
     {
      "name": "Christina Bohannan",
@@ -3749,9 +3749,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 3.99,
-   "lead_votes": 13831,
-   "reporting": 99,
+   "margin": 3.98,
+   "lead_votes": 13802,
+   "reporting": 100,
    "top": [
     {
      "name": "Lindsay James",
@@ -3762,7 +3762,7 @@
     {
      "name": "Joe Mitchell",
      "party": "R",
-     "pct": 45.6,
+     "pct": 45.5,
      "incumbent": false
     }
    ]
@@ -3777,20 +3777,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 7.29,
+   "margin": 7.27,
    "lead_votes": 25748,
-   "reporting": 99,
+   "reporting": 100,
    "top": [
     {
      "name": "Sarah Trone Garriott",
      "party": "D",
-     "pct": 53.6,
+     "pct": 53.5,
      "incumbent": false
     },
     {
      "name": "Zach Nunn",
      "party": "R",
-     "pct": 46.4,
+     "pct": 46.2,
      "incumbent": true
     }
    ]
@@ -3805,9 +3805,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -18.09,
-   "lead_votes": 54831,
-   "reporting": 99,
+   "margin": -18.07,
+   "lead_votes": 54832,
+   "reporting": 100,
    "top": [
     {
      "name": "Chris McGowan",
@@ -3818,7 +3818,7 @@
     {
      "name": "Dave Dawson",
      "party": "D",
-     "pct": 41.0,
+     "pct": 40.9,
      "incumbent": false
     }
    ]
@@ -7447,7 +7447,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 27.27,
-   "lead_votes": 77041,
+   "lead_votes": 77092,
    "reporting": 99,
    "top": [
     {
@@ -7475,8 +7475,8 @@
    "leader": null,
    "leader_name": null,
    "margin": 17.51,
-   "lead_votes": 36874,
-   "reporting": 98,
+   "lead_votes": 36882,
+   "reporting": 99,
    "top": [
     {
      "name": "Gabriel Vasquez",
@@ -7502,9 +7502,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 23.3,
-   "lead_votes": 53417,
-   "reporting": 98,
+   "margin": 23.33,
+   "lead_votes": 53543,
+   "reporting": 99,
    "top": [
     {
      "name": "Teresa Leger Fernandez",
@@ -9576,7 +9576,7 @@
    "leader_name": null,
    "margin": 41.12,
    "lead_votes": 67210,
-   "reporting": 99,
+   "reporting": 100,
    "top": [
     {
      "name": "Gabriel Amo",
@@ -9604,7 +9604,7 @@
    "leader_name": null,
    "margin": 24.11,
    "lead_votes": 47118,
-   "reporting": 99,
+   "reporting": 100,
    "top": [
     {
      "name": "Seth Magaziner",
@@ -11647,7 +11647,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 33.44,
-   "lead_votes": 116716,
+   "lead_votes": 116807,
    "reporting": 99,
    "top": [
     {
@@ -11675,7 +11675,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 8.3,
-   "lead_votes": 29478,
+   "lead_votes": 29473,
    "reporting": 99,
    "top": [
     {
@@ -11703,7 +11703,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -7.26,
-   "lead_votes": 17828,
+   "lead_votes": 17813,
    "reporting": 99,
    "top": [
     {
@@ -11731,7 +11731,7 @@
    "leader": null,
    "leader_name": null,
    "margin": -4.65,
-   "lead_votes": 15415,
+   "lead_votes": 15419,
    "reporting": 99,
    "top": [
     {
@@ -11759,7 +11759,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 25.14,
-   "lead_votes": 90635,
+   "lead_votes": 90639,
    "reporting": 99,
    "top": [
     {
@@ -12228,9 +12228,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -9.42,
-   "lead_votes": 158017,
-   "reporting": 99,
+   "margin": -9.48,
+   "lead_votes": 159189,
+   "reporting": 100,
    "top": [
     {
      "name": "Barry Moore",
@@ -12241,7 +12241,7 @@
     {
      "name": "Everett Wess",
      "party": "D",
-     "pct": 45.3,
+     "pct": 45.2,
      "incumbent": false
     }
    ]
@@ -12396,20 +12396,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 4.2,
-   "lead_votes": 57264,
-   "reporting": 99,
+   "margin": 4.21,
+   "lead_votes": 57337,
+   "reporting": 100,
    "top": [
     {
      "name": "Josh Turek",
      "party": "D",
-     "pct": 50.6,
+     "pct": 50.5,
      "incumbent": false
     },
     {
      "name": "Ashley Hinson",
      "party": "R",
-     "pct": 46.4,
+     "pct": 46.3,
      "incumbent": false
     }
    ]
@@ -12844,9 +12844,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 26.52,
-   "lead_votes": 192322,
-   "reporting": 98,
+   "margin": 26.53,
+   "lead_votes": 192528,
+   "reporting": 99,
    "top": [
     {
      "name": "Ben Ray Luján",
@@ -12958,7 +12958,7 @@
    "leader_name": null,
    "margin": 37.52,
    "lead_votes": 135248,
-   "reporting": 99,
+   "reporting": 100,
    "top": [
     {
      "name": "Jack Reed",
@@ -13181,5 +13181,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-24T22:08+00:00"
+ "updated": "2026-11-25T07:46+00:00"
 }

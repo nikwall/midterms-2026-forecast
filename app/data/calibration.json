@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T22:08+00:00",
+ "updated": "2026-11-25T07:46+00:00",
  "frozen": "2026-11-02T21:02+00:00",
  "views": {
   "all|leaders": {
@@ -2416,20 +2416,20 @@
      "p": 0.475,
      "won": 1,
      "status": "called",
-     "margin": 4.2,
-     "lead_votes": 57264,
-     "reporting": 99,
+     "margin": 4.21,
+     "lead_votes": 57337,
+     "reporting": 100,
      "top": [
       {
        "name": "Josh Turek",
        "party": "D",
-       "pct": 50.6,
+       "pct": 50.5,
        "incumbent": false
       },
       {
        "name": "Ashley Hinson",
        "party": "R",
-       "pct": 46.4,
+       "pct": 46.3,
        "incumbent": false
       }
      ]
@@ -5338,20 +5338,20 @@
      "p": 0.475,
      "won": 1,
      "status": "called",
-     "margin": 4.2,
-     "lead_votes": 57264,
-     "reporting": 99,
+     "margin": 4.21,
+     "lead_votes": 57337,
+     "reporting": 100,
      "top": [
       {
        "name": "Josh Turek",
        "party": "D",
-       "pct": 50.6,
+       "pct": 50.5,
        "incumbent": false
       },
       {
        "name": "Ashley Hinson",
        "party": "R",
-       "pct": 46.4,
+       "pct": 46.3,
        "incumbent": false
       }
      ]
@@ -6155,9 +6155,9 @@
  },
  "environment": 8.23,
  "national": {
-  "dem": 66945431,
-  "rep": 50224419,
-  "total": 118894813,
+  "dem": 66946362,
+  "rep": 50224790,
+  "total": 118895162,
   "share_counted": 99,
   "margin": 14.1
  },
