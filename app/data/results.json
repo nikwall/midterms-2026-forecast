@@ -30,9 +30,9 @@
   "not_called": 0
  },
  "national": {
-  "dem": 66953061,
-  "rep": 50226629,
-  "total": 118903881,
+  "dem": 66953450,
+  "rep": 50226679,
+  "total": 118904320,
   "share_counted": 99,
   "margin": 14.1
  },
@@ -1151,8 +1151,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 44.13,
-   "lead_votes": 137870,
+   "margin": 44.14,
+   "lead_votes": 137957,
    "reporting": 99,
    "top": [
     {
@@ -1291,8 +1291,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 32.81,
-   "lead_votes": 97254,
+   "margin": 32.86,
+   "lead_votes": 97506,
    "reporting": 99,
    "top": [
     {
@@ -13181,5 +13181,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-25T19:02+00:00"
+ "updated": "2026-11-26T03:25+00:00"
 }
