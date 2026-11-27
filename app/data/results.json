@@ -30,9 +30,9 @@
   "not_called": 0
  },
  "national": {
-  "dem": 66953450,
-  "rep": 50226679,
-  "total": 118904320,
+  "dem": 66966021,
+  "rep": 50230444,
+  "total": 118922132,
   "share_counted": 99,
   "margin": 14.1
  },
@@ -647,8 +647,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 17.95,
-   "lead_votes": 52111,
+   "margin": 17.96,
+   "lead_votes": 52141,
    "reporting": 99,
    "top": [
     {
@@ -675,20 +675,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 33.43,
-   "lead_votes": 107338,
+   "margin": 33.52,
+   "lead_votes": 107902,
    "reporting": 99,
    "top": [
     {
      "name": "Jared Huffman",
      "party": "D",
-     "pct": 66.7,
+     "pct": 66.8,
      "incumbent": true
     },
     {
      "name": "Robin Littau",
      "party": "R",
-     "pct": 33.3,
+     "pct": 33.2,
      "incumbent": false
     }
    ]
@@ -703,9 +703,9 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 17.51,
-   "lead_votes": 53533,
-   "reporting": 98,
+   "margin": 17.62,
+   "lead_votes": 54471,
+   "reporting": 99,
    "top": [
     {
      "name": "Ami Bera",
@@ -732,7 +732,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 12898,
+   "lead_votes": 13051,
    "reporting": 99,
    "top": [
     {
@@ -759,8 +759,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -11.16,
-   "lead_votes": 33087,
+   "margin": -11.15,
+   "lead_votes": 33067,
    "reporting": 99,
    "top": [
     {
@@ -788,8 +788,8 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 48960,
-   "reporting": 98,
+   "lead_votes": 49505,
+   "reporting": 99,
    "top": [
     {
      "name": "Richard Pan",
@@ -816,19 +816,19 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 11578,
+   "lead_votes": 10975,
    "reporting": 99,
    "top": [
     {
      "name": "Doris Matsui",
      "party": "D",
-     "pct": 52.3,
+     "pct": 52.1,
      "incumbent": true
     },
     {
      "name": "Mai Vang",
      "party": "D",
-     "pct": 47.7,
+     "pct": 47.9,
      "incumbent": false
     }
    ]
@@ -844,7 +844,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 47.29,
-   "lead_votes": 123647,
+   "lead_votes": 123733,
    "reporting": 99,
    "top": [
     {
@@ -872,7 +872,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 34.57,
-   "lead_votes": 74653,
+   "lead_votes": 74709,
    "reporting": 99,
    "top": [
     {
@@ -899,8 +899,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 39.65,
-   "lead_votes": 124780,
+   "margin": 39.64,
+   "lead_votes": 124857,
    "reporting": 99,
    "top": [
     {
@@ -956,7 +956,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 156701,
+   "lead_votes": 156814,
    "reporting": 99,
    "top": [
     {
@@ -983,8 +983,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 25.68,
-   "lead_votes": 44995,
+   "margin": 25.7,
+   "lead_votes": 45037,
    "reporting": 99,
    "top": [
     {
@@ -1012,7 +1012,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 32157,
+   "lead_votes": 32183,
    "reporting": 99,
    "top": [
     {
@@ -1068,7 +1068,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 55.98,
-   "lead_votes": 157788,
+   "lead_votes": 157805,
    "reporting": 99,
    "top": [
     {
@@ -1096,7 +1096,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 45.54,
-   "lead_votes": 96764,
+   "lead_votes": 96790,
    "reporting": 99,
    "top": [
     {
@@ -1123,8 +1123,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 46.2,
-   "lead_votes": 92425,
+   "margin": 46.21,
+   "lead_votes": 92497,
    "reporting": 99,
    "top": [
     {
@@ -1152,7 +1152,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 44.14,
-   "lead_votes": 137957,
+   "lead_votes": 137970,
    "reporting": 99,
    "top": [
     {
@@ -1179,8 +1179,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -22.08,
-   "lead_votes": 55821,
+   "margin": -22.04,
+   "lead_votes": 55769,
    "reporting": 99,
    "top": [
     {
@@ -1207,8 +1207,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 30.05,
-   "lead_votes": 50752,
+   "margin": 30.06,
+   "lead_votes": 50797,
    "reporting": 99,
    "top": [
     {
@@ -1235,8 +1235,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 36.34,
-   "lead_votes": 55205,
+   "margin": 36.38,
+   "lead_votes": 55318,
    "reporting": 99,
    "top": [
     {
@@ -1263,8 +1263,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": -1.35,
-   "lead_votes": 2942,
+   "margin": -1.34,
+   "lead_votes": 2907,
    "reporting": 99,
    "top": [
     {
@@ -1292,7 +1292,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 32.86,
-   "lead_votes": 97506,
+   "lead_votes": 97537,
    "reporting": 99,
    "top": [
     {
@@ -1319,8 +1319,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 32.23,
-   "lead_votes": 71721,
+   "margin": 32.29,
+   "lead_votes": 72162,
    "reporting": 99,
    "top": [
     {
@@ -1347,8 +1347,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 26.97,
-   "lead_votes": 75884,
+   "margin": 26.98,
+   "lead_votes": 76027,
    "reporting": 99,
    "top": [
     {
@@ -1375,8 +1375,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 28.44,
-   "lead_votes": 66073,
+   "margin": 28.43,
+   "lead_votes": 66089,
    "reporting": 99,
    "top": [
     {
@@ -1404,7 +1404,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 39.19,
-   "lead_votes": 102353,
+   "lead_votes": 102380,
    "reporting": 99,
    "top": [
     {
@@ -1432,7 +1432,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 25444,
+   "lead_votes": 25436,
    "reporting": 99,
    "top": [
     {
@@ -1460,7 +1460,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 55.27,
-   "lead_votes": 143722,
+   "lead_votes": 143762,
    "reporting": 99,
    "top": [
     {
@@ -1488,7 +1488,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 32.83,
-   "lead_votes": 78409,
+   "lead_votes": 78442,
    "reporting": 99,
    "top": [
     {
@@ -1515,8 +1515,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 34.26,
-   "lead_votes": 94615,
+   "margin": 34.25,
+   "lead_votes": 94642,
    "reporting": 99,
    "top": [
     {
@@ -1543,8 +1543,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 38.11,
-   "lead_votes": 78106,
+   "margin": 38.13,
+   "lead_votes": 78239,
    "reporting": 99,
    "top": [
     {
@@ -1572,7 +1572,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 42674,
+   "lead_votes": 42695,
    "reporting": 99,
    "top": [
     {
@@ -1599,8 +1599,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 33.81,
-   "lead_votes": 71714,
+   "margin": 33.82,
+   "lead_votes": 71861,
    "reporting": 99,
    "top": [
     {
@@ -1628,7 +1628,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 46.07,
-   "lead_votes": 141426,
+   "lead_votes": 141467,
    "reporting": 99,
    "top": [
     {
@@ -1656,7 +1656,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 39627,
+   "lead_votes": 39632,
    "reporting": 99,
    "top": [
     {
@@ -1684,7 +1684,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 34.91,
-   "lead_votes": 75315,
+   "lead_votes": 75335,
    "reporting": 99,
    "top": [
     {
@@ -1711,20 +1711,20 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 38.87,
-   "lead_votes": 76937,
+   "margin": 38.99,
+   "lead_votes": 77582,
    "reporting": 99,
    "top": [
     {
      "name": "Mark Takano",
      "party": "D",
-     "pct": 69.4,
+     "pct": 69.5,
      "incumbent": true
     },
     {
      "name": "Steve Manos",
      "party": "R",
-     "pct": 30.6,
+     "pct": 30.5,
      "incumbent": false
     }
    ]
@@ -1740,7 +1740,7 @@
    "leader": null,
    "leader_name": null,
    "margin": null,
-   "lead_votes": 12459,
+   "lead_votes": 12420,
    "reporting": 99,
    "top": [
     {
@@ -1768,7 +1768,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 35.18,
-   "lead_votes": 89177,
+   "lead_votes": 89204,
    "reporting": 99,
    "top": [
     {
@@ -1796,7 +1796,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 23.93,
-   "lead_votes": 67797,
+   "lead_votes": 67809,
    "reporting": 99,
    "top": [
     {
@@ -1823,8 +1823,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 65.94,
-   "lead_votes": 124184,
+   "margin": 65.95,
+   "lead_votes": 124243,
    "reporting": 99,
    "top": [
     {
@@ -1852,7 +1852,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 63.55,
-   "lead_votes": 115753,
+   "lead_votes": 115801,
    "reporting": 99,
    "top": [
     {
@@ -1880,7 +1880,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 22.04,
-   "lead_votes": 54898,
+   "lead_votes": 54901,
    "reporting": 99,
    "top": [
     {
@@ -1908,7 +1908,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 43.11,
-   "lead_votes": 84220,
+   "lead_votes": 84248,
    "reporting": 99,
    "top": [
     {
@@ -1936,7 +1936,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 17.18,
-   "lead_votes": 49022,
+   "lead_votes": 49035,
    "reporting": 99,
    "top": [
     {
@@ -1963,8 +1963,8 @@
    ],
    "leader": null,
    "leader_name": null,
-   "margin": 19.76,
-   "lead_votes": 55575,
+   "margin": 19.79,
+   "lead_votes": 55771,
    "reporting": 99,
    "top": [
     {
@@ -1992,7 +1992,7 @@
    "leader": null,
    "leader_name": null,
    "margin": 19.18,
-   "lead_votes": 62204,
+   "lead_votes": 62205,
    "reporting": 99,
    "top": [
     {
@@ -5547,7 +5547,7 @@
    "leader_name": null,
    "margin": -1.62,
    "lead_votes": 5458,
-   "reporting": 98,
+   "reporting": 99,
    "top": [
     {
      "name": "Paul LePage",
@@ -13181,5 +13181,5 @@
    "url": "https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html"
   }
  ],
- "updated": "2026-11-26T03:25+00:00"
+ "updated": "2026-11-27T20:54+00:00"
 }
